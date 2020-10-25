@@ -44,7 +44,7 @@ class UsersExport implements FromQuery, WithHeadings
 
     private function decode($ids)
     {
-        $encode   = ["家", "国", "叫", "老", "六", "吗", "那", "七", "美", "识", "中"];
+        $encode   = ["h", "m", "e", "p", "#", "s", "%", "b", "o", "r", "$"];
         $decode = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"];
         return str_replace($encode, $decode, $ids);
     }

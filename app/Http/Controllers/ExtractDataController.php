@@ -31,18 +31,11 @@ class ExtractDataController extends Controller
     private function endcode($ids)
     {
         $normal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"];
-        $encode   = ["家", "国", "叫", "老", "六", "吗", "那", "七", "美", "识", "中"];
+        $encode   = ["h", "m", "e", "p", "#", "s", "%", "b", "o", "r", "$"];
         $trimIds = trim($ids);
         $newPhrase = str_replace($normal, $encode, $trimIds);
         $arrayOfIds = preg_split('/\r\n|\r|\n/', $newPhrase);
         return array_filter($arrayOfIds, 'trim');
-    }
-
-    private function decode($ids)
-    {
-        $encode   = ["家", "国", "叫", "老", "六", "吗", "那", "七", "美", "识", "中"];
-        $decode = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+"];
-        return str_replace($encode, $decode, $ids);
     }
 
     public function export(Request $request) 
