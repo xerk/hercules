@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ExtractDataController;
 
 /*
@@ -26,5 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/clients', [ExtractDataController::class, 'index'])->name('clients');
 Route::middleware(['auth:sanctum', 'verified'])->put('/dashboard/clients', [ExtractDataController::class, 'export'])->name('clients.export');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{id}/download', [ExtractDataController::class, 'download'])->name('clients.download');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
 
 Route::get('users/export/', [ExtractDataController::class, 'export2']);

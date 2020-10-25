@@ -8,9 +8,10 @@
 						<!-- Logo -->
 						<div class="flex-shrink-0 flex items-center">
 							<inertia-link :href="route('dashboard')">
-								<jet-application-mark
+								<!-- <jet-application-mark
 									class="block h-9 w-auto"
-								/>
+								/> -->
+                                <span class="font-bold text-2xl">Herclues</span>
 							</inertia-link>
 						</div>
 
@@ -31,6 +32,9 @@
 							>
 								Data Area
 							</jet-nav-link>
+                            <jet-nav-link :href="route('purchase')" :active="$page.currentRouteName == 'purchase'">
+								Purchase Points
+							</jet-nav-link>
 							<jet-nav-link href="#" class="cursor-not-allowed">
 								Facebook
 								<span
@@ -45,13 +49,6 @@
 									>Coming</span
 								></jet-nav-link
 							>
-							<jet-nav-link href="#" class="cursor-not-allowed">
-								Purchase Points
-								<span
-									class="text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
-									>Coming</span
-								>
-							</jet-nav-link>
 						</div>
 					</div>
 
@@ -285,14 +282,14 @@
 					>
 						Data Area
 					</jet-responsive-nav-link>
+                    <jet-responsive-nav-link href="#">
+						Purchase Points
+					</jet-responsive-nav-link>
 					<jet-responsive-nav-link href="#">
 						Facebook
 					</jet-responsive-nav-link>
 					<jet-responsive-nav-link href="#">
 						SEO
-					</jet-responsive-nav-link>
-					<jet-responsive-nav-link href="#">
-						Purchase Points
 					</jet-responsive-nav-link>
 				</div>
 

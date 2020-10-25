@@ -250,21 +250,6 @@ async read() {
                     preserveScroll: true,
                 });
             },
-			decode(val) {
-				val.trim();
-				return val
-					.replaceAll("家", "0")
-					.replaceAll("国", "1")
-					.replaceAll("叫", "2")
-					.replaceAll("老", "3")
-					.replaceAll("六", "4")
-					.replaceAll("吗", "5")
-					.replaceAll("那", "6")
-					.replaceAll("七", "7")
-					.replaceAll("美", "8")
-					.replaceAll("识", "9")
-					.replaceAll("中", "+");
-			},
 		},
 	};
 </script>

@@ -3195,9 +3195,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -3903,10 +3900,141 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$inertia.post(route('clients.download', id), {
         preserveScroll: true
       });
-    },
-    decode: function decode(val) {
-      val.trim();
-      return val.replaceAll("家", "0").replaceAll("国", "1").replaceAll("叫", "2").replaceAll("老", "3").replaceAll("六", "4").replaceAll("吗", "5").replaceAll("那", "6").replaceAll("七", "7").replaceAll("美", "8").replaceAll("识", "9").replaceAll("中", "+");
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["purchase", 'errors'],
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__["default"],
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__["default"],
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__["default"],
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__["default"],
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        code: null
+      }, {
+        bag: "redeemCode",
+        resetOnSuccess: false
+      })
+    };
+  },
+  methods: {
+    redeemCode: function redeemCode() {
+      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      this.form.post(route('purchase.redeem'), {
+        preserveScroll: true
+      });
     }
   }
 });
@@ -26748,29 +26876,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
-      [
-        _c(
-          "div",
-          [_c("jet-application-logo", { staticClass: "block h-12 w-auto" })],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-8 text-2xl" }, [
-          _vm._v("\n\t\t\tWelcome to your Hercules application!\n\t\t")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-6 text-gray-500" }, [
-          _vm._v("\n\t\t\tHercules is a software for social marketing.\n\t\t")
-        ])
-      ]
-    )
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
+        [
+          _c("div", { staticClass: "mt-8 text-2xl" }, [
+            _vm._v("\n\t\t\tWelcome to your Hercules application!\n\t\t")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-6 text-gray-500" }, [
+            _vm._v("\n\t\t\tHercules is a software for social marketing.\n\t\t")
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -26808,11 +26937,10 @@ var render = function() {
                     "inertia-link",
                     { attrs: { href: _vm.route("dashboard") } },
                     [
-                      _c("jet-application-mark", {
-                        staticClass: "block h-9 w-auto"
-                      })
-                    ],
-                    1
+                      _c("span", { staticClass: "font-bold text-2xl" }, [
+                        _vm._v("Herclues")
+                      ])
+                    ]
                   )
                 ],
                 1
@@ -26830,7 +26958,7 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "dashboard"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\t\tDashboard\n\t\t\t\t\t\t")]
+                    [_vm._v("\n\t\t\t\t\t\t\t\tDashboard\n\t\t\t\t\t\t\t")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -26841,14 +26969,29 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "clients"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\t\tData Area\n\t\t\t\t\t\t")]
+                    [_vm._v("\n\t\t\t\t\t\t\t\tData Area\n\t\t\t\t\t\t\t")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: _vm.route("purchase"),
+                        active: _vm.$page.currentRouteName == "purchase"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\tPurchase Points\n\t\t\t\t\t\t\t"
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
                     "jet-nav-link",
                     { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
                     [
-                      _vm._v("\n\t\t\t\t\t\t\tFacebook\n\t\t\t\t\t\t\t"),
+                      _vm._v("\n\t\t\t\t\t\t\t\tFacebook\n\t\t\t\t\t\t\t\t"),
                       _c(
                         "span",
                         {
@@ -26864,23 +27007,7 @@ var render = function() {
                     "jet-nav-link",
                     { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
                     [
-                      _vm._v("\n\t\t\t\t\t\t\tSEO\n\t\t\t\t\t\t\t"),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
-                        },
-                        [_vm._v("Coming")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "jet-nav-link",
-                    { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
-                    [
-                      _vm._v("\n\t\t\t\t\t\t\tPurchase Points\n\t\t\t\t\t\t\t"),
+                      _vm._v("\n\t\t\t\t\t\t\t\tSEO\n\t\t\t\t\t\t\t\t"),
                       _c(
                         "span",
                         {
@@ -27013,7 +27140,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\tManage Account\n\t\t\t\t\t\t\t\t"
+                                    "\n\t\t\t\t\t\t\t\t\t\tManage Account\n\t\t\t\t\t\t\t\t\t"
                                   )
                                 ]
                               ),
@@ -27023,7 +27150,7 @@ var render = function() {
                                 { attrs: { href: _vm.route("profile.show") } },
                                 [
                                   _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\tProfile\n\t\t\t\t\t\t\t\t"
+                                    "\n\t\t\t\t\t\t\t\t\t\tProfile\n\t\t\t\t\t\t\t\t\t"
                                   )
                                 ]
                               ),
@@ -27038,7 +27165,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t\t\t\t"
+                                        "\n\t\t\t\t\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t\t\t\t\t"
                                       )
                                     ]
                                   )
@@ -27058,7 +27185,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t\t\t\t"
+                                          "\n\t\t\t\t\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t\t\t\t\t"
                                         )
                                       ]
                                     ),
@@ -27075,7 +27202,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t\t\t\t"
+                                          "\n\t\t\t\t\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t\t\t\t\t"
                                         )
                                       ]
                                     ),
@@ -27090,7 +27217,7 @@ var render = function() {
                                           },
                                           [
                                             _vm._v(
-                                              "\n\t\t\t\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t\t\t\t"
+                                              "\n\t\t\t\t\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t\t\t\t\t"
                                             )
                                           ]
                                         )
@@ -27108,7 +27235,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t\t\t\t"
+                                          "\n\t\t\t\t\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t\t\t\t\t"
                                         )
                                       ]
                                     ),
@@ -27174,9 +27301,9 @@ var render = function() {
                                                     _vm._v(" "),
                                                     _c("div", [
                                                       _vm._v(
-                                                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
                                                           _vm._s(team.name) +
-                                                          "\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
                                                       )
                                                     ])
                                                   ]
@@ -27211,7 +27338,7 @@ var render = function() {
                                     { attrs: { as: "button" } },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t\t\t"
+                                        "\n\t\t\t\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t\t\t\t"
                                       )
                                     ]
                                   )
@@ -27309,7 +27436,7 @@ var render = function() {
                       active: _vm.$page.currentRouteName == "dashboard"
                     }
                   },
-                  [_vm._v("\n\t\t\t\t\tDashboard\n\t\t\t\t")]
+                  [_vm._v("\n\t\t\t\t\t\tDashboard\n\t\t\t\t\t")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -27320,19 +27447,19 @@ var render = function() {
                       active: _vm.$page.currentRouteName == "clients"
                     }
                   },
-                  [_vm._v("\n\t\t\t\t\tData Area\n\t\t\t\t")]
+                  [_vm._v("\n\t\t\t\t\t\tData Area\n\t\t\t\t\t")]
                 ),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\tFacebook\n\t\t\t\t")
+                  _vm._v("\n\t\t\t\t\t\tPurchase Points\n\t\t\t\t\t")
                 ]),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\tSEO\n\t\t\t\t")
+                  _vm._v("\n\t\t\t\t\t\tFacebook\n\t\t\t\t\t")
                 ]),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\tPurchase Points\n\t\t\t\t")
+                  _vm._v("\n\t\t\t\t\t\tSEO\n\t\t\t\t\t")
                 ])
               ],
               1
@@ -27356,9 +27483,9 @@ var render = function() {
                     { staticClass: "font-medium text-base text-gray-800" },
                     [
                       _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(_vm.$page.user.name) +
-                          "\n\t\t\t\t\t\t"
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ]
                   ),
@@ -27368,9 +27495,9 @@ var render = function() {
                     { staticClass: "font-medium text-sm text-gray-500" },
                     [
                       _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(_vm.$page.user.email) +
-                          "\n\t\t\t\t\t\t"
+                          "\n\t\t\t\t\t\t\t"
                       )
                     ]
                   )
@@ -27389,7 +27516,7 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "profile.show"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\tProfile\n\t\t\t\t\t")]
+                    [_vm._v("\n\t\t\t\t\t\t\tProfile\n\t\t\t\t\t\t")]
                   ),
                   _vm._v(" "),
                   _vm.$page.jetstream.hasApiFeatures
@@ -27402,7 +27529,7 @@ var render = function() {
                               _vm.$page.currentRouteName == "api-tokens.index"
                           }
                         },
-                        [_vm._v("\n\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t")]
+                        [_vm._v("\n\t\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t\t")]
                       )
                     : _vm._e(),
                   _vm._v(" "),
@@ -27421,7 +27548,7 @@ var render = function() {
                       _c(
                         "jet-responsive-nav-link",
                         { attrs: { as: "button" } },
-                        [_vm._v("\n\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t")]
+                        [_vm._v("\n\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t")]
                       )
                     ],
                     1
@@ -27436,7 +27563,11 @@ var render = function() {
                           {
                             staticClass: "block px-4 py-2 text-xs text-gray-400"
                           },
-                          [_vm._v("\n\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t")]
+                          [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t\t"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -27452,7 +27583,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t"
+                              "\n\t\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t\t"
                             )
                           ]
                         ),
@@ -27468,7 +27599,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t"
+                              "\n\t\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t\t"
                             )
                           ]
                         ),
@@ -27480,7 +27611,11 @@ var render = function() {
                           {
                             staticClass: "block px-4 py-2 text-xs text-gray-400"
                           },
-                          [_vm._v("\n\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t")]
+                          [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t\t"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _vm._l(_vm.$page.user.all_teams, function(team) {
@@ -28776,6 +28911,276 @@ var render = function() {
                   ]
                 )
               : _vm._e()
+          ],
+          1
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [_vm._v("\n            Purchase\n        ")]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("div", { staticClass: "py-12" }, [
+        _c(
+          "div",
+          { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" },
+          [
+            _c(
+              "jet-form-section",
+              {
+                on: { submitted: _vm.redeemCode },
+                scopedSlots: _vm._u([
+                  {
+                    key: "title",
+                    fn: function() {
+                      return [_vm._v(" Redeem Code ")]
+                    },
+                    proxy: true
+                  },
+                  {
+                    key: "description",
+                    fn: function() {
+                      return [
+                        _vm._v(
+                          "\n                    Redeem code, or git card from Hercules\n                "
+                        )
+                      ]
+                    },
+                    proxy: true
+                  },
+                  {
+                    key: "form",
+                    fn: function() {
+                      return [
+                        _c("div", { staticClass: "col-span-6 sm:col-span-4" }, [
+                          _c(
+                            "div",
+                            [
+                              _vm.errors.message
+                                ? _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md",
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "flex" }, [
+                                        _c("div", { staticClass: "py-1" }, [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "fill-current h-6 w-6 text-red-500 mr-4",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                viewBox: "0 0 20 20"
+                                              }
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  d:
+                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _c(
+                                            "p",
+                                            { staticClass: "font-bold" },
+                                            [_vm._v("Ops, You have an error")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("p", { staticClass: "text-sm" }, [
+                                            _vm._v(_vm._s(_vm.errors.message))
+                                          ])
+                                        ])
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.form.recentlySuccessful
+                                ? _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md",
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "flex" }, [
+                                        _c("div", { staticClass: "py-1" }, [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "fill-current h-6 w-6 text-green-500 mr-4",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                viewBox: "0 0 20 20"
+                                              }
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  d:
+                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _c(
+                                            "p",
+                                            { staticClass: "font-bold" },
+                                            [_vm._v("Congratulations")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("p", { staticClass: "text-sm" }, [
+                                            _vm._v("Redeem code is successful.")
+                                          ])
+                                        ])
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("jet-label", {
+                                staticClass: "mt-4",
+                                attrs: { for: "code", value: "Redeem Card" }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input", {
+                                ref: "code",
+                                staticClass: "mt-1 block w-full",
+                                attrs: {
+                                  id: "code",
+                                  type: "text",
+                                  autocomplete: "off"
+                                },
+                                model: {
+                                  value: _vm.form.code,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "code", $$v)
+                                  },
+                                  expression: "form.code"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: { message: _vm.form.error("code") }
+                              })
+                            ],
+                            1
+                          )
+                        ])
+                      ]
+                    },
+                    proxy: true
+                  },
+                  {
+                    key: "actions",
+                    fn: function() {
+                      return [
+                        _c(
+                          "jet-action-message",
+                          {
+                            staticClass: "mr-3",
+                            attrs: { on: _vm.form.recentlySuccessful }
+                          },
+                          [
+                            _vm._v(
+                              "\n                        Saved.\n                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "jet-button",
+                          {
+                            class: { "opacity-25": _vm.form.processing },
+                            attrs: { disabled: _vm.form.processing }
+                          },
+                          [
+                            _vm._v(
+                              "\n                        Save\n                    "
+                            )
+                          ]
+                        )
+                      ]
+                    },
+                    proxy: true
+                  }
+                ])
+              },
+              [
+                _vm._v(" "),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-2 text-2xl" }, [
+                  _vm._v("Get In Action")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-2 text-xs text-gray-500" }, [
+                  _vm._v(
+                    "\n                    You can find Facebook accounts by add (IDs) in this\n                    Input\n                "
+                  )
+                ])
+              ]
+            )
           ],
           1
         )
@@ -45074,6 +45479,8 @@ var map = {
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard/Clients/Show": "./resources/js/Pages/Dashboard/Clients/Show.vue",
 	"./Dashboard/Clients/Show.vue": "./resources/js/Pages/Dashboard/Clients/Show.vue",
+	"./Dashboard/Purchase/Show": "./resources/js/Pages/Dashboard/Purchase/Show.vue",
+	"./Dashboard/Purchase/Show.vue": "./resources/js/Pages/Dashboard/Purchase/Show.vue",
 	"./Profile/DeleteUserForm": "./resources/js/Pages/Profile/DeleteUserForm.vue",
 	"./Profile/DeleteUserForm.vue": "./resources/js/Pages/Profile/DeleteUserForm.vue",
 	"./Profile/LogoutOtherBrowserSessionsForm": "./resources/js/Pages/Profile/LogoutOtherBrowserSessionsForm.vue",
@@ -45393,6 +45800,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_f710f030___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_f710f030___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Purchase/Show.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Purchase/Show.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Show.vue?vue&type=template&id=0d691d12& */ "./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12&");
+/* harmony import */ var _Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Show.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/Purchase/Show.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Show.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Show.vue?vue&type=template&id=0d691d12& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Purchase/Show.vue?vue&type=template&id=0d691d12&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_0d691d12___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
