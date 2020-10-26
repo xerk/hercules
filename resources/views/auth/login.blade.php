@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{-- <x-jet-authentication-card-logo /> --}}
+            <span class="font-bold text-5xl">Hercules</span>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

@@ -17,7 +17,7 @@ use App\Http\Controllers\ExtractDataController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('vendor.hercules.index');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
