@@ -193,15 +193,19 @@
             };
         },
         methods: {
-            filter(url = null) {
+            async filter(url = null) {
                 if (url == null) {
-                    this.form.post(route('clients.export'), {
+                    await this.form.post(route('clients.export'), {
                         preserveScroll: true
                     });
+                    this.$refs.photo.reset()
+                    this.form.photo = null
                 } else {
-                    this.form.post(url, {
+                    await this.form.post(url, {
                         preserveScroll: true,
                     });
+                    this.$refs.photo.reset()
+                    this.form.photo = null
                 }
             },
             readFile(file) {
