@@ -211,7 +211,7 @@
         methods: {
             filter(url = null) {
                 this.noPoints = false;
-                console.log(this.$page.user.point - this.countFile) <= 1, this.countFile, this.$page.user.point, !this.form.photo)
+                console.log((this.$page.user.point - this.countFile) <= 1, this.countFile, this.$page.user.point, !this.form.photo)
                 if ((this.$page.user.point - this.countFile) <= 1 || !this.form.photo) {
                     if (url == null) {
                         this.form.post(route('clients.export'), {
