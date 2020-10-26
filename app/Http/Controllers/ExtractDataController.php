@@ -10,6 +10,7 @@ use App\Jobs\ExportJob;
 use Illuminate\Support\Str;
 use App\Exports\UsersExport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -94,7 +95,8 @@ class ExtractDataController extends Controller
     }
 
     public function download($id) {
-        return Storage::download(Export::find($id)->file);
+        $file = Export::where('id', $id)->where('user_id', Auth::id())->firstOrFail()->file;
+        return Storage::download($file);
     }
 
     /**
