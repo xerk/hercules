@@ -3822,7 +3822,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     filter: function filter() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      console.log(this.$page.user.point - this.countFile <= 1, this.countFile, this.$page.user.point, !this.form.photo);
 
       if (url == null) {
         this.form.post(route('clients.export'), {

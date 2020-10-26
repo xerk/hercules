@@ -194,7 +194,6 @@
         },
         methods: {
             filter(url = null) {
-                console.log((this.$page.user.point - this.countFile) <= 1, this.countFile, this.$page.user.point, !this.form.photo)
                 if (url == null) {
                     this.form.post(route('clients.export'), {
                         preserveScroll: true
