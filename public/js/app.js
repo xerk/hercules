@@ -3788,21 +3788,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3831,28 +3816,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         bag: "filter",
         resetOnSuccess: false
       }),
-      countFile: 0,
-      noPoints: false
+      countFile: 0
     };
   },
   methods: {
     filter: function filter() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      this.noPoints = false;
       console.log(this.$page.user.point - this.countFile <= 1, this.countFile, this.$page.user.point, !this.form.photo);
 
-      if (this.$page.user.point - this.countFile <= 1 || !this.form.photo) {
-        if (url == null) {
-          this.form.post(route('clients.export'), {
-            preserveScroll: true
-          });
-        } else {
-          this.form.post(url, {
-            preserveScroll: true
-          });
-        }
+      if (url == null) {
+        this.form.post(route('clients.export'), {
+          preserveScroll: true
+        });
       } else {
-        this.noPoints = true;
+        this.form.post(url, {
+          preserveScroll: true
+        });
       }
     },
     readFile: function readFile(file) {
@@ -28623,64 +28602,6 @@ var render = function() {
                                     1
                                   )
                                 : _c("div", { staticClass: "text-lg" }, [
-                                    _vm.noPoints
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "mb-4 bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
-                                            attrs: { role: "alert" }
-                                          },
-                                          [
-                                            _c("div", { staticClass: "flex" }, [
-                                              _c(
-                                                "div",
-                                                { staticClass: "py-1" },
-                                                [
-                                                  _c(
-                                                    "svg",
-                                                    {
-                                                      staticClass:
-                                                        "fill-current h-6 w-6 text-teal-500 mr-4",
-                                                      attrs: {
-                                                        xmlns:
-                                                          "http://www.w3.org/2000/svg",
-                                                        viewBox: "0 0 20 20"
-                                                      }
-                                                    },
-                                                    [
-                                                      _c("path", {
-                                                        attrs: {
-                                                          d:
-                                                            "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("div", [
-                                                _c(
-                                                  "p",
-                                                  { staticClass: "font-bold" },
-                                                  [
-                                                    _vm._v(
-                                                      "Ops, You have a warning"
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "p",
-                                                  { staticClass: "text-sm" },
-                                                  [_vm._v("Not enouph points")]
-                                                )
-                                              ])
-                                            ])
-                                          ]
-                                        )
-                                      : _vm._e(),
                                     _vm._v(
                                       "\n                                Please purchase points "
                                     ),
