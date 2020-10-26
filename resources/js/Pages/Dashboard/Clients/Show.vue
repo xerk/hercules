@@ -132,22 +132,20 @@
                             <nav aria-label="Table navigation">
                                 <ul class="inline-flex items-center">
                                     <li v-for="(link, key) in clients.links" :key="key">
-                                        <button v-if="link.active || link.url"
+                                        <div v-if="link.url === null" 
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
 												'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
 													link.active,
-											}" :disabled="link.active" @click="filter(link.url)">
-                                            {{ link.label }}
-                                        </button>
-                                        <button v-else
+											}" v-html="link.label">
+                                        </div>
+                                        <inertia-link v-else
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
 												'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
 													link.active,
-											}" :disabled="link.active">
-                                            {{ link.label }}
-                                        </button>
+											}" :href="link.url" v-html="link.label">
+                                        </inertia-link>
                                     </li>
                                 </ul>
                             </nav>

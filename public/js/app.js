@@ -3786,8 +3786,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 
 
@@ -3821,17 +3819,52 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     filter: function filter() {
-      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var _arguments = arguments,
+          _this = this;
 
-      if (url == null) {
-        this.form.post(route('clients.export'), {
-          preserveScroll: true
-        });
-      } else {
-        this.form.post(url, {
-          preserveScroll: true
-        });
-      }
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                url = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : null;
+
+                if (!(url == null)) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.next = 4;
+                return _this.form.post(route('clients.export'), {
+                  preserveScroll: true
+                });
+
+              case 4:
+                _this.$refs.photo.reset();
+
+                _this.form.photo = null;
+                _context.next = 12;
+                break;
+
+              case 8:
+                _context.next = 10;
+                return _this.form.post(url, {
+                  preserveScroll: true
+                });
+
+              case 10:
+                _this.$refs.photo.reset();
+
+                _this.form.photo = null;
+
+              case 12:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     },
     readFile: function readFile(file) {
       return new Promise(function (resolve, reject) {
@@ -3845,29 +3878,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     read: function read() {
-      var _this = this;
+      var _this2 = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
         var readFile, trimFile, splitFile;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                _context.next = 2;
-                return _this.readFile(_this.$refs.photo.files[0]);
+                _context2.next = 2;
+                return _this2.readFile(_this2.$refs.photo.files[0]);
 
               case 2:
-                readFile = _context.sent;
+                readFile = _context2.sent;
                 trimFile = readFile.trim();
                 splitFile = readFile.split(/\r\n|\n|\r/);
-                _this.countFile = _.uniq(splitFile).length;
+                _this2.countFile = _.uniq(splitFile).length;
 
               case 6:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee);
+        }, _callee2);
       }))();
     },
     extractChange: function extractChange() {
@@ -28596,7 +28629,30 @@ var render = function() {
                                         attrs: {
                                           message: _vm.form.error("photo")
                                         }
-                                      })
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.countFile
+                                        ? _c(
+                                            "div",
+                                            {
+                                              staticClass: "mt-4 flex flex-col"
+                                            },
+                                            [
+                                              _c("div", [
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticClass: "text-gray-500"
+                                                  },
+                                                  [_vm._v("File count:")]
+                                                ),
+                                                _vm._v(
+                                                  " " + _vm._s(_vm.countFile)
+                                                )
+                                              ])
+                                            ]
+                                          )
+                                        : _vm._e()
                                     ],
                                     1
                                   )
@@ -28859,52 +28915,37 @@ var render = function() {
                                     link,
                                     key
                                   ) {
-                                    return _c("li", { key: key }, [
-                                      link.active || link.url
-                                        ? _c(
-                                            "button",
-                                            {
+                                    return _c(
+                                      "li",
+                                      { key: key },
+                                      [
+                                        link.url === null
+                                          ? _c("div", {
                                               staticClass:
                                                 "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
                                               class: {
                                                 "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
                                                   link.active
                                               },
-                                              attrs: { disabled: link.active },
-                                              on: {
-                                                click: function($event) {
-                                                  return _vm.filter(link.url)
-                                                }
+                                              domProps: {
+                                                innerHTML: _vm._s(link.label)
                                               }
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                            " +
-                                                  _vm._s(link.label) +
-                                                  "\n                                        "
-                                              )
-                                            ]
-                                          )
-                                        : _c(
-                                            "button",
-                                            {
+                                            })
+                                          : _c("inertia-link", {
                                               staticClass:
                                                 "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
                                               class: {
                                                 "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
                                                   link.active
                                               },
-                                              attrs: { disabled: link.active }
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                            " +
-                                                  _vm._s(link.label) +
-                                                  "\n                                        "
-                                              )
-                                            ]
-                                          )
-                                    ])
+                                              attrs: { href: link.url },
+                                              domProps: {
+                                                innerHTML: _vm._s(link.label)
+                                              }
+                                            })
+                                      ],
+                                      1
+                                    )
                                   }),
                                   0
                                 )
