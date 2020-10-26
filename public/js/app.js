@@ -3786,6 +3786,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3794,7 +3810,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["clients"],
+  props: ["clients", "errors"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -3823,7 +3839,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       this.noPoints = false;
 
-      if (this.$page.user.point - this.countFile >= 1) {
+      if (this.$page.user.point - this.countFile <= 1) {
         if (url == null) {
           this.form.post(route('clients.export'), {
             preserveScroll: true
@@ -27056,7 +27072,17 @@ var render = function() {
                                             _vm._v(_vm._s(_vm.$page.user.name))
                                           ]),
                                           _vm._v(" "),
-                                          _c("small", [_vm._v("Gold")])
+                                          _c(
+                                            "small",
+                                            { staticClass: "uppercase" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.$page.user.membership
+                                                )
+                                              )
+                                            ]
+                                          )
                                         ]
                                       ),
                                       _vm._v(" "),
@@ -28489,159 +28515,243 @@ var render = function() {
               "jet-form-section",
               {
                 on: { submitted: _vm.filter },
-                scopedSlots: _vm._u([
-                  {
-                    key: "title",
-                    fn: function() {
-                      return [_vm._v(" Extract Data ")]
+                scopedSlots: _vm._u(
+                  [
+                    {
+                      key: "title",
+                      fn: function() {
+                        return [_vm._v(" Extract Data ")]
+                      },
+                      proxy: true
                     },
-                    proxy: true
-                  },
-                  {
-                    key: "description",
-                    fn: function() {
-                      return [
-                        _vm._v(
-                          "\n                        Ensure your IDs is correct and have coma (,) after each\n                        ID (client).\n                    "
-                        )
-                      ]
+                    {
+                      key: "description",
+                      fn: function() {
+                        return [
+                          _vm._v(
+                            "\n                        Ensure your IDs is correct and have coma (,) after each\n                        ID (client).\n                    "
+                          )
+                        ]
+                      },
+                      proxy: true
                     },
-                    proxy: true
-                  },
-                  {
-                    key: "form",
-                    fn: function() {
-                      return [
-                        _c("div", { staticClass: "col-span-6 sm:col-span-4" }, [
-                          _vm.$page.user.point > 0
-                            ? _c(
-                                "div",
-                                [
-                                  _c("jet-label", {
-                                    staticClass: "mt-4",
-                                    attrs: {
-                                      for: "find",
-                                      value: "Extract By File"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    ref: "photo",
-                                    staticClass: "mt-1 block w-full",
-                                    attrs: { id: "photo", type: "file" },
-                                    on: { change: _vm.extractChange }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("jet-input-error", {
-                                    staticClass: "mt-2",
-                                    attrs: { message: _vm.form.error("photo") }
-                                  })
-                                ],
-                                1
-                              )
-                            : _c("div", { staticClass: "text-lg" }, [
-                                _vm.noPoints
-                                  ? _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "mb-4 bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
-                                        attrs: { role: "alert" }
-                                      },
-                                      [
-                                        _c("div", { staticClass: "flex" }, [
-                                          _c("div", { staticClass: "py-1" }, [
-                                            _c(
-                                              "svg",
-                                              {
-                                                staticClass:
-                                                  "fill-current h-6 w-6 text-teal-500 mr-4",
-                                                attrs: {
-                                                  xmlns:
-                                                    "http://www.w3.org/2000/svg",
-                                                  viewBox: "0 0 20 20"
-                                                }
-                                              },
-                                              [
-                                                _c("path", {
-                                                  attrs: {
-                                                    d:
-                                                      "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
-                                                  }
-                                                })
-                                              ]
-                                            )
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("div", [
-                                            _c(
-                                              "p",
-                                              { staticClass: "font-bold" },
-                                              [
-                                                _vm._v(
-                                                  "Ops, You have a warning"
+                    {
+                      key: "form",
+                      fn: function() {
+                        return [
+                          _c(
+                            "div",
+                            { staticClass: "col-span-6 sm:col-span-4" },
+                            [
+                              _vm.$page.user.point > 0
+                                ? _c(
+                                    "div",
+                                    [
+                                      _c("jet-label", {
+                                        staticClass: "mt-4",
+                                        attrs: {
+                                          for: "find",
+                                          value: "Extract By File"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        ref: "photo",
+                                        staticClass: "mt-1 block w-full",
+                                        attrs: { id: "photo", type: "file" },
+                                        on: { change: _vm.extractChange }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("jet-input-error", {
+                                        staticClass: "mt-2",
+                                        attrs: {
+                                          message: _vm.form.error("photo")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                : _c("div", { staticClass: "text-lg" }, [
+                                    _vm.errors.message
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
+                                            attrs: { role: "alert" }
+                                          },
+                                          [
+                                            _c("div", { staticClass: "flex" }, [
+                                              _c(
+                                                "div",
+                                                { staticClass: "py-1" },
+                                                [
+                                                  _c(
+                                                    "svg",
+                                                    {
+                                                      staticClass:
+                                                        "fill-current h-6 w-6 text-teal-500 mr-4",
+                                                      attrs: {
+                                                        xmlns:
+                                                          "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 20 20"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("path", {
+                                                        attrs: {
+                                                          d:
+                                                            "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("div", [
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "font-bold" },
+                                                  [
+                                                    _vm._v(
+                                                      "Ops, You have an error"
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "text-sm" },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(_vm.errors.message)
+                                                    )
+                                                  ]
                                                 )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "p",
-                                              { staticClass: "text-sm" },
-                                              [_vm._v("Not enouph points")]
-                                            )
-                                          ])
-                                        ])
+                                              ])
+                                            ])
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm.noPoints
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "mb-4 bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
+                                            attrs: { role: "alert" }
+                                          },
+                                          [
+                                            _c("div", { staticClass: "flex" }, [
+                                              _c(
+                                                "div",
+                                                { staticClass: "py-1" },
+                                                [
+                                                  _c(
+                                                    "svg",
+                                                    {
+                                                      staticClass:
+                                                        "fill-current h-6 w-6 text-teal-500 mr-4",
+                                                      attrs: {
+                                                        xmlns:
+                                                          "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 20 20"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("path", {
+                                                        attrs: {
+                                                          d:
+                                                            "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("div", [
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "font-bold" },
+                                                  [
+                                                    _vm._v(
+                                                      "Ops, You have a warning"
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "text-sm" },
+                                                  [_vm._v("Not enouph points")]
+                                                )
+                                              ])
+                                            ])
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(
+                                      "\n                                Please purchase points "
+                                    ),
+                                    _c(
+                                      "span",
+                                      { staticClass: "text-red-500" },
+                                      [
+                                        _vm._v(
+                                          "your point " +
+                                            _vm._s(_vm.$page.user.point)
+                                        )
                                       ]
                                     )
-                                  : _vm._e(),
-                                _vm._v(
-                                  "\n                                Please purchase points "
-                                ),
-                                _c("span", { staticClass: "text-red-500" }, [
+                                  ])
+                            ]
+                          )
+                        ]
+                      },
+                      proxy: true
+                    },
+                    _vm.$page.user.point > 0
+                      ? {
+                          key: "actions",
+                          fn: function() {
+                            return [
+                              _c(
+                                "jet-action-message",
+                                {
+                                  staticClass: "mr-3",
+                                  attrs: { on: _vm.form.recentlySuccessful }
+                                },
+                                [
                                   _vm._v(
-                                    "your point " + _vm._s(_vm.$page.user.point)
+                                    "\n                            Saved.\n                        "
                                   )
-                                ])
-                              ])
-                        ])
-                      ]
-                    },
-                    proxy: true
-                  },
-                  {
-                    key: "actions",
-                    fn: function() {
-                      return [
-                        _c(
-                          "jet-action-message",
-                          {
-                            staticClass: "mr-3",
-                            attrs: { on: _vm.form.recentlySuccessful }
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "jet-button",
+                                {
+                                  class: { "opacity-25": _vm.form.processing },
+                                  attrs: { disabled: _vm.form.processing }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                            Save\n                        "
+                                  )
+                                ]
+                              )
+                            ]
                           },
-                          [
-                            _vm._v(
-                              "\n                            Saved.\n                        "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "jet-button",
-                          {
-                            class: { "opacity-25": _vm.form.processing },
-                            attrs: { disabled: _vm.form.processing }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Save\n                        "
-                            )
-                          ]
-                        )
-                      ]
-                    },
-                    proxy: true
-                  }
-                ])
+                          proxy: true
+                        }
+                      : null
+                  ],
+                  null,
+                  true
+                )
               },
               [
                 _vm._v(" "),

@@ -12,6 +12,7 @@ use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 
 class ExtractDataController extends Controller
@@ -40,27 +41,35 @@ class ExtractDataController extends Controller
 
     public function export(Request $request) 
     {
+        Validator::make($request->all(), [
+            'photo' => ['required'],
+        ])->validateWithBag('filter');
         
-        $fileContent = file_get_contents($request->photo);
-        $clients = $this->endcode($fileContent);
-
+        if ($request->hasFile('photo')) {
+            $fileContent = file_get_contents($request->photo);
+            $clients = $this->endcode($fileContent);
         
-        if ((auth()->user()->point - count($clients)) <= -1) {
-            return 'You not have enough points';
-        }
+            $result = Client::query()->whereIn('unique_id', $clients)->count();
 
-        
-        $path = "/exports/extract-data-" . Str::random(6) . '.csv';
-        
-        Excel::queue(new UsersExport($clients, $path), $path)->chain([
-            new ExportJob($clients, $path, auth()->user()->id),
-        ]);
-        User::find(auth()->user()->id)->decrement('point', count($clients));
+            if ((auth()->user()->point - count($result)) <= -1) {
+                return back()->withErrors([
+                    'message' => 'You not have enough points.',
+                ]);
+            }
+
+            if ($result > 0) {
+                $path = "/exports/extract-data-" . Str::random(6) . '.csv';
+                Excel::queue(new UsersExport($clients, $path), $path)->chain([
+                    new ExportJob($clients, $path, auth()->user()->id),
+                ]);
+                User::find(auth()->user()->id)->decrement('point', $result);
+            }
 
 
-        return Inertia::render('Dashboard/Clients/Show', [
-            'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-        ]);
+            return Inertia::render('Dashboard/Clients/Show', [
+                'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
+            ]);
+        } 
 
     }
 

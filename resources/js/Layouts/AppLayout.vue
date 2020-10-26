@@ -71,7 +71,7 @@
 									>
 										<div class="px-2 py-1 leading-tight">
 											<div>{{ $page.user.name }}</div>
-											<small>Gold</small>
+											<small class="uppercase">{{$page.user.membership}}</small>
 										</div>
 										<img
 											class="h-8 w-8 rounded-full object-cover shadow-md"
