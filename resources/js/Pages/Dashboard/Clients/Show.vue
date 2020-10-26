@@ -54,13 +54,13 @@
                                 <input id="photo" type="file" class="mt-1 block w-full" ref="photo"
                                     @change="extractChange" />
                                 <jet-input-error :message="form.error('photo')" class="mt-2" />
-                                <!-- <div v-if="countFile" class="mt-4 flex flex-col">
+                                <div v-if="countFile" class="mt-4 flex flex-col">
                                     <div><span class="text-gray-500">File count:</span> {{countFile}}</div>
-                                    <div><span class="text-gray-500">Current points:</span> {{$page.user.point}}</div>
+                                    <!-- <div><span class="text-gray-500">Current points:</span> {{$page.user.point}}</div>
                                     <div :class="{ 'text-red-500' :($page.user.point - countFile < 0)}"><span
                                             class="text-gray-500">You will have:</span> {{$page.user.point - countFile}}
-                                    </div>
-                                </div> -->
+                                    </div> -->
+                                </div>
 
                             </div>
                             <div class="text-lg" v-else>
