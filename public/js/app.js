@@ -3786,26 +3786,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3834,14 +3814,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         bag: "filter",
         resetOnSuccess: false
       }),
-      countFile: 0
+      countFile: 0,
+      noPoints: false
     };
   },
   methods: {
     filter: function filter() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      this.noPoints = false;
 
-      if (this.$page.user.point - this.countFile >= 0) {
+      if (this.$page.user.point - this.countFile >= 1) {
         if (url == null) {
           this.form.post(route('clients.export'), {
             preserveScroll: true
@@ -3852,7 +3834,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           });
         }
       } else {
-        alert('You not have enough points');
+        this.noPoints = true;
       }
     },
     readFile: function readFile(file) {
@@ -28488,7 +28470,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n\t\t\t\tClients\n\t\t\t")]
+                [_vm._v("\n                Clients\n            ")]
               )
             ]
           },
@@ -28520,7 +28502,7 @@ var render = function() {
                     fn: function() {
                       return [
                         _vm._v(
-                          "\n\t\t\t\t\t\tEnsure your IDs is correct and have coma (,) after each\n\t\t\t\t\t\tID (client).\n\t\t\t\t\t"
+                          "\n                        Ensure your IDs is correct and have coma (,) after each\n                        ID (client).\n                    "
                         )
                       ]
                     },
@@ -28553,67 +28535,65 @@ var render = function() {
                                   _c("jet-input-error", {
                                     staticClass: "mt-2",
                                     attrs: { message: _vm.form.error("photo") }
-                                  }),
-                                  _vm._v(" "),
-                                  _vm.countFile
-                                    ? _c(
-                                        "div",
-                                        { staticClass: "mt-4 flex flex-col" },
-                                        [
-                                          _c("div", [
-                                            _c(
-                                              "span",
-                                              { staticClass: "text-gray-500" },
-                                              [_vm._v("File count:")]
-                                            ),
-                                            _vm._v(" " + _vm._s(_vm.countFile))
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("div", [
-                                            _c(
-                                              "span",
-                                              { staticClass: "text-gray-500" },
-                                              [_vm._v("Current points:")]
-                                            ),
-                                            _vm._v(
-                                              " " + _vm._s(_vm.$page.user.point)
-                                            )
-                                          ]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              class: {
-                                                "text-red-500":
-                                                  _vm.$page.user.point -
-                                                    _vm.countFile <
-                                                  0
-                                              }
-                                            },
-                                            [
-                                              _c(
-                                                "span",
-                                                {
-                                                  staticClass: "text-gray-500"
-                                                },
-                                                [_vm._v("You will have:")]
-                                              ),
-                                              _vm._v(
-                                                " " +
-                                                  _vm._s(
-                                                    _vm.$page.user.point -
-                                                      _vm.countFile
-                                                  )
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    : _vm._e()
+                                  })
                                 ],
                                 1
                               )
                             : _c("div", { staticClass: "text-lg" }, [
+                                _vm.noPoints
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "mb-4 bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
+                                        attrs: { role: "alert" }
+                                      },
+                                      [
+                                        _c("div", { staticClass: "flex" }, [
+                                          _c("div", { staticClass: "py-1" }, [
+                                            _c(
+                                              "svg",
+                                              {
+                                                staticClass:
+                                                  "fill-current h-6 w-6 text-teal-500 mr-4",
+                                                attrs: {
+                                                  xmlns:
+                                                    "http://www.w3.org/2000/svg",
+                                                  viewBox: "0 0 20 20"
+                                                }
+                                              },
+                                              [
+                                                _c("path", {
+                                                  attrs: {
+                                                    d:
+                                                      "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("div", [
+                                            _c(
+                                              "p",
+                                              { staticClass: "font-bold" },
+                                              [
+                                                _vm._v(
+                                                  "Ops, You have a warning"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-sm" },
+                                              [_vm._v("Not enouph points")]
+                                            )
+                                          ])
+                                        ])
+                                      ]
+                                    )
+                                  : _vm._e(),
                                 _vm._v(
                                   "\n                                Please purchase points "
                                 ),
@@ -28638,7 +28618,11 @@ var render = function() {
                             staticClass: "mr-3",
                             attrs: { on: _vm.form.recentlySuccessful }
                           },
-                          [_vm._v("\n\t\t\t\t\t\t\tSaved.\n\t\t\t\t\t\t")]
+                          [
+                            _vm._v(
+                              "\n                            Saved.\n                        "
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -28647,7 +28631,11 @@ var render = function() {
                             class: { "opacity-25": _vm.form.processing },
                             attrs: { disabled: _vm.form.processing }
                           },
-                          [_vm._v("\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t")]
+                          [
+                            _vm._v(
+                              "\n                            Save\n                        "
+                            )
+                          ]
                         )
                       ]
                     },
@@ -28664,7 +28652,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-2 text-xs text-gray-500" }, [
                   _vm._v(
-                    "\n\t\t\t\t\t\tYou can find Facebook accounts by add (IDs) in this\n\t\t\t\t\t\tInput\n\t\t\t\t\t"
+                    "\n                        You can find Facebook accounts by add (IDs) in this\n                        Input\n                    "
                   )
                 ])
               ]
@@ -28731,17 +28719,17 @@ var render = function() {
                                 [
                                   _c("td", { staticClass: "px-4 py-3" }, [
                                     _vm._v(
-                                      "\n\t\t\t\t\t\t\t\t\t\t" +
+                                      "\n                                        " +
                                         _vm._s(client.id) +
-                                        "\n\t\t\t\t\t\t\t\t\t"
+                                        "\n                                    "
                                     )
                                   ]),
                                   _vm._v(" "),
                                   _c("td", { staticClass: "px-4 py-3" }, [
                                     _vm._v(
-                                      "\n\t\t\t\t\t\t\t\t\t\t" +
+                                      "\n                                        " +
                                         _vm._s(client.name) +
-                                        "\n\t\t\t\t\t\t\t\t\t"
+                                        "\n                                    "
                                     )
                                   ]),
                                   _vm._v(" "),
@@ -28750,9 +28738,9 @@ var render = function() {
                                     { staticClass: "px-4 py-3 text-sm" },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                        "\n                                        " +
                                           _vm._s(client.count) +
-                                          "\n\t\t\t\t\t\t\t\t\t"
+                                          "\n                                    "
                                       )
                                     ]
                                   ),
@@ -28769,9 +28757,9 @@ var render = function() {
                                         },
                                         [
                                           _vm._v(
-                                            "\n\t\t\t\t\t\t\t\t\t\t\t" +
+                                            "\n                                            " +
                                               _vm._s(client.file) +
-                                              "\n\t\t\t\t\t\t\t\t\t\t"
+                                              "\n                                        "
                                           )
                                         ]
                                       )
@@ -28822,13 +28810,13 @@ var render = function() {
                           { staticClass: "flex items-center col-span-3" },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\tShowing " +
+                              "\n                            Showing " +
                                 _vm._s(_vm.clients.from) +
                                 "-" +
                                 _vm._s(_vm.clients.to) +
-                                " of\n\t\t\t\t\t\t\t" +
+                                " of\n                            " +
                                 _vm._s(_vm.clients.total) +
-                                "\n\t\t\t\t\t\t"
+                                "\n                        "
                             )
                           ]
                         ),
@@ -28873,9 +28861,9 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n\t\t\t\t\t\t\t\t\t\t\t" +
+                                                "\n                                            " +
                                                   _vm._s(link.label) +
-                                                  "\n\t\t\t\t\t\t\t\t\t\t"
+                                                  "\n                                        "
                                               )
                                             ]
                                           )
@@ -28892,9 +28880,9 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n\t\t\t\t\t\t\t\t\t\t\t" +
+                                                "\n                                            " +
                                                   _vm._s(link.label) +
-                                                  "\n\t\t\t\t\t\t\t\t\t\t"
+                                                  "\n                                        "
                                               )
                                             ]
                                           )
