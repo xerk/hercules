@@ -3839,6 +3839,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     filter: function filter() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       this.noPoints = false;
+      console.log(this.countFile, this.$page.user.point, !this.form.photo);
 
       if (this.$page.user.point - this.countFile <= 1 || !this.form.photo) {
         if (url == null) {
