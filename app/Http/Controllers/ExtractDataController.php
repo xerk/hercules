@@ -49,9 +49,9 @@ class ExtractDataController extends Controller
             $fileContent = file_get_contents($request->photo);
             $clients = $this->endcode($fileContent);
         
-            $result = Client::query()->whereIn('unique_id', $clients)->count();
+            $result = Client::whereIn('unique_id', $clients)->count();
 
-            if ((auth()->user()->point - count($result)) <= -1) {
+            if ((auth()->user()->point - $result) <= -1) {
                 return back()->withErrors([
                     'message' => 'You not have enough points.',
                 ]);
@@ -63,6 +63,10 @@ class ExtractDataController extends Controller
                     new ExportJob($clients, $path, auth()->user()->id),
                 ]);
                 User::find(auth()->user()->id)->decrement('point', $result);
+            } else {
+                return back()->withErrors([
+                    'message' => 'Not found data',
+                ]);
             }
 
 
