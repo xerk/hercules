@@ -61,7 +61,7 @@ class ExtractDataController extends Controller
             if ($result > 0) {
                 $path = "/exports/extract-data-" . Str::random(6) . '.csv';
                 Excel::queue(new UsersExport($clients, $path), $path)->chain([
-                    new ExportJob($clients, $path, auth()->user()->id),
+                    new ExportJob($result, $path, auth()->user()->id),
                 ]);
                 User::find(auth()->user()->id)->decrement('point', $result);
             } else {
@@ -82,15 +82,15 @@ class ExtractDataController extends Controller
     {
         
 
-        $path= 'asd';
-        $clients= [];
+        // $path= 'asd';
+        // $clients= [];
 
-        return Excel::queue(new UsersExport($clients, $path), 'users.csv');
+        // return Excel::queue(new UsersExport($clients, $path), 'users.csv');
 
 
-        return Inertia::render('Dashboard/Clients/Show', [
-            'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-        ]);
+        // return Inertia::render('Dashboard/Clients/Show', [
+        //     'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
+        // ]);
 
     }
 

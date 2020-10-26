@@ -41,7 +41,7 @@ class ExportJob implements ShouldQueue
             'user_id' => $this->user_id,
             'name' => 'Extract Data',
             'file' => $this->path,
-            'count' => count($this->clients),
+            'count' => $this->clients,
         ]);
     }
 }
