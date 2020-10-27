@@ -36,7 +36,7 @@ class AddPointsToUsers extends Action
             $model->save();
         }
 
-        // return Action::message($models->count());
+        return Action::message('Awasome Points Added!');
     }
 
     /**
