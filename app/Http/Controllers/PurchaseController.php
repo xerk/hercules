@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Inertia\Inertia;
 use App\Models\CardCode;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -45,7 +46,7 @@ class PurchaseController extends Controller
         ])->validateWithBag('redeemCode');
 
         $card = CardCode::where('code', $request->code)->first();
-        if ($card) {
+        if ($card && $card->expire_date >= Carbon::now()) {
             $user = User::find(Auth::id());
 
             $user->point = $user->point + $card->amount;

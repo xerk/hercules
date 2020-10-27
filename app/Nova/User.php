@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\AddPointsToUsers;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -78,15 +79,30 @@ class User extends Resource
                     ->rules('numeric'),
 
                 Select::make('Membership')->options([
+                    'bronze' => 'Bronze',
                     'silver' => 'Silver',
-                    'gold' => 'Gold',
-                    'premium' => 'Premium',
+                    'gold' => 'Gold (VIP)',
+                ])->displayUsingLabels(),
+                
+                
+                Text::make('Phone Number', 'phone')->textAlign('left'),
+                
+                
+                Country::make('Country')->hideFromIndex(),
+                
+                Text::make('Serial Number', 'serial_number'),
+                
+                
+                Select::make('Serial Type')->options([
+                    'monthly' => 'Monthly',
+                    'lifetime' => 'Lifetime',
                 ])->displayUsingLabels(),
 
-                Text::make('Phone Number', 'phone')->textAlign('left'),
-
-                Country::make('Country')->hideFromIndex(),
-
+                Text::make('Serial Year', 'serial_year'),
+                Text::make('Serial Month', 'serial_month'),
+                Text::make('Serial Day', 'serial_day'),
+                Text::make('Link', 'link'),
+                Text::make('Last Seen', 'last_seen'),
             ];
 
     }
@@ -132,6 +148,8 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new AddPointsToUsers
+        ];
     }
 }

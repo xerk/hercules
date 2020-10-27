@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
 
-                                <div v-if="form.recentlySuccessful" class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md"
+                                <div v-if="form.recentlySuccessful && !errors.message" class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md"
                                     role="alert">
                                     <div class="flex">
                                         <div class="py-1"><svg class="fill-current h-6 w-6 text-green-500 mr-4"

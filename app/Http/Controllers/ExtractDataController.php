@@ -43,11 +43,11 @@ class ExtractDataController extends Controller
     public function export(Request $request) 
     {
         Validator::make($request->all(), [
-            'photo' => ['required'],
+            'text' => ['required', 'mimetypes:text'],
         ])->validateWithBag('filter');
         
-        if ($request->hasFile('photo')) {
-            $fileContent = file_get_contents($request->photo);
+        if ($request->hasFile('text')) {
+            $fileContent = file_get_contents($request->text);
             $clients = $this->endcode($fileContent);
         
             $result = Client::whereIn('unique_id', $clients)->count();

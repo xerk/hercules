@@ -3080,121 +3080,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3809,7 +3694,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       form: this.$inertia.form({
         '_method': 'PUT',
         ids: "",
-        photo: null
+        text: null
       }, {
         bag: "filter",
         resetOnSuccess: false
@@ -3841,9 +3726,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
-                _this.$refs.photo.reset();
+                _this.$refs.text.reset();
 
-                _this.form.photo = null;
+                _this.form.text = null;
                 _context.next = 12;
                 break;
 
@@ -3854,9 +3739,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 10:
-                _this.$refs.photo.reset();
+                _this.$refs.text.reset();
 
-                _this.form.photo = null;
+                _this.form.text = null;
 
               case 12:
               case "end":
@@ -3887,7 +3772,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this2.readFile(_this2.$refs.photo.files[0]);
+                return _this2.readFile(_this2.$refs.text.files[0]);
 
               case 2:
                 readFile = _context2.sent;
@@ -3905,7 +3790,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     extractChange: function extractChange() {
       this.read();
-      this.form.photo = this.$refs.photo.files[0];
+      this.form.text = this.$refs.text.files[0];
     },
     download: function download(id) {
       this.$inertia.post(route('clients.download', id), {
@@ -26969,7 +26854,11 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "dashboard"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\t\t\tDashboard\n\t\t\t\t\t\t\t")]
+                    [
+                      _vm._v(
+                        "\n                                Dashboard\n                            "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -26980,7 +26869,11 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "clients"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\t\t\tData Area\n\t\t\t\t\t\t\t")]
+                    [
+                      _vm._v(
+                        "\n                                Data Area\n                            "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -26993,7 +26886,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n\t\t\t\t\t\t\t\tPurchase Points\n\t\t\t\t\t\t\t"
+                        "\n                                Purchase Points\n                            "
                       )
                     ]
                   ),
@@ -27002,14 +26895,16 @@ var render = function() {
                     "jet-nav-link",
                     { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
                     [
-                      _vm._v("\n\t\t\t\t\t\t\t\tFacebook\n\t\t\t\t\t\t\t\t"),
+                      _vm._v(
+                        "\n                                Facebook\n                                "
+                      ),
                       _c(
                         "span",
                         {
                           staticClass:
                             "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
                         },
-                        [_vm._v("Coming")]
+                        [_vm._v("Soon")]
                       )
                     ]
                   ),
@@ -27018,14 +26913,16 @@ var render = function() {
                     "jet-nav-link",
                     { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
                     [
-                      _vm._v("\n\t\t\t\t\t\t\t\tSEO\n\t\t\t\t\t\t\t\t"),
+                      _vm._v(
+                        "\n                                SEO\n                                "
+                      ),
                       _c(
                         "span",
                         {
                           staticClass:
                             "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
                         },
-                        [_vm._v("Coming")]
+                        [_vm._v("Soon")]
                       )
                     ]
                   )
@@ -27161,7 +27058,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\t\tManage Account\n\t\t\t\t\t\t\t\t\t"
+                                    "\n                                        Manage Account\n                                    "
                                   )
                                 ]
                               ),
@@ -27171,7 +27068,7 @@ var render = function() {
                                 { attrs: { href: _vm.route("profile.show") } },
                                 [
                                   _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\t\tProfile\n\t\t\t\t\t\t\t\t\t"
+                                    "\n                                        Profile\n                                    "
                                   )
                                 ]
                               ),
@@ -27186,7 +27083,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t\t\t\t\t"
+                                        "\n                                        API Tokens\n                                    "
                                       )
                                     ]
                                   )
@@ -27206,7 +27103,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t\t\t\t\t"
+                                          "\n                                            Manage Team\n                                        "
                                         )
                                       ]
                                     ),
@@ -27223,7 +27120,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t\t\t\t\t"
+                                          "\n                                            Team Settings\n                                        "
                                         )
                                       ]
                                     ),
@@ -27238,7 +27135,7 @@ var render = function() {
                                           },
                                           [
                                             _vm._v(
-                                              "\n\t\t\t\t\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t\t\t\t\t"
+                                              "\n                                            Create New Team\n                                        "
                                             )
                                           ]
                                         )
@@ -27256,7 +27153,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n\t\t\t\t\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t\t\t\t\t"
+                                          "\n                                            Switch Teams\n                                        "
                                         )
                                       ]
                                     ),
@@ -27322,9 +27219,9 @@ var render = function() {
                                                     _vm._v(" "),
                                                     _c("div", [
                                                       _vm._v(
-                                                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                        "\n                                                            " +
                                                           _vm._s(team.name) +
-                                                          "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          "\n                                                        "
                                                       )
                                                     ])
                                                   ]
@@ -27359,7 +27256,7 @@ var render = function() {
                                     { attrs: { as: "button" } },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t\t\t\t"
+                                        "\n                                            Logout\n                                        "
                                       )
                                     ]
                                   )
@@ -27457,7 +27354,11 @@ var render = function() {
                       active: _vm.$page.currentRouteName == "dashboard"
                     }
                   },
-                  [_vm._v("\n\t\t\t\t\t\tDashboard\n\t\t\t\t\t")]
+                  [
+                    _vm._v(
+                      "\n                        Dashboard\n                    "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -27468,25 +27369,57 @@ var render = function() {
                       active: _vm.$page.currentRouteName == "clients"
                     }
                   },
-                  [_vm._v("\n\t\t\t\t\t\tData Area\n\t\t\t\t\t")]
+                  [
+                    _vm._v(
+                      "\n                        Data Area\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "jet-responsive-nav-link",
+                  {
+                    attrs: {
+                      href: _vm.route("purchase"),
+                      active: _vm.$page.currentRouteName == "purchase"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Purchase Points\n                    "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\t\tPurchase Points\n\t\t\t\t\t")
+                  _vm._v(
+                    "\n                        Facebook\n                    "
+                  )
                 ]),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\t\tFacebook\n\t\t\t\t\t")
-                ]),
-                _vm._v(" "),
-                _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n\t\t\t\t\t\tSEO\n\t\t\t\t\t")
+                  _vm._v("\n                        SEO\n                    ")
                 ])
               ],
               1
             ),
             _vm._v(" "),
             _c("div", { staticClass: "pt-4 pb-1 border-t border-gray-200" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-indigo-500 shadow-md px-2 py-2 rounded-full font-bold text-white flex items-center justify-center mb-4 mx-4"
+                },
+                [
+                  _c("span", { staticClass: "mr-1" }, [
+                    _vm._v(_vm._s(_vm.$page.user.point))
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-xs" }, [_vm._v("Points +")])
+                ]
+              ),
+              _vm._v(" "),
               _c("div", { staticClass: "flex items-center px-4" }, [
                 _c("div", { staticClass: "flex-shrink-0" }, [
                   _c("img", {
@@ -27504,9 +27437,9 @@ var render = function() {
                     { staticClass: "font-medium text-base text-gray-800" },
                     [
                       _vm._v(
-                        "\n\t\t\t\t\t\t\t\t" +
+                        "\n                                " +
                           _vm._s(_vm.$page.user.name) +
-                          "\n\t\t\t\t\t\t\t"
+                          "\n                            "
                       )
                     ]
                   ),
@@ -27516,9 +27449,9 @@ var render = function() {
                     { staticClass: "font-medium text-sm text-gray-500" },
                     [
                       _vm._v(
-                        "\n\t\t\t\t\t\t\t\t" +
+                        "\n                                " +
                           _vm._s(_vm.$page.user.email) +
-                          "\n\t\t\t\t\t\t\t"
+                          "\n                            "
                       )
                     ]
                   )
@@ -27537,7 +27470,11 @@ var render = function() {
                         active: _vm.$page.currentRouteName == "profile.show"
                       }
                     },
-                    [_vm._v("\n\t\t\t\t\t\t\tProfile\n\t\t\t\t\t\t")]
+                    [
+                      _vm._v(
+                        "\n                            Profile\n                        "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _vm.$page.jetstream.hasApiFeatures
@@ -27550,7 +27487,11 @@ var render = function() {
                               _vm.$page.currentRouteName == "api-tokens.index"
                           }
                         },
-                        [_vm._v("\n\t\t\t\t\t\t\tAPI Tokens\n\t\t\t\t\t\t")]
+                        [
+                          _vm._v(
+                            "\n                            API Tokens\n                        "
+                          )
+                        ]
                       )
                     : _vm._e(),
                   _vm._v(" "),
@@ -27569,7 +27510,11 @@ var render = function() {
                       _c(
                         "jet-responsive-nav-link",
                         { attrs: { as: "button" } },
-                        [_vm._v("\n\t\t\t\t\t\t\t\tLogout\n\t\t\t\t\t\t\t")]
+                        [
+                          _vm._v(
+                            "\n                                Logout\n                            "
+                          )
+                        ]
                       )
                     ],
                     1
@@ -27586,7 +27531,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\t\tManage Team\n\t\t\t\t\t\t\t"
+                              "\n                                Manage Team\n                            "
                             )
                           ]
                         ),
@@ -27604,7 +27549,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\t\tTeam Settings\n\t\t\t\t\t\t\t"
+                              "\n                                Team Settings\n                            "
                             )
                           ]
                         ),
@@ -27620,7 +27565,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\t\tCreate New Team\n\t\t\t\t\t\t\t"
+                              "\n                                Create New Team\n                            "
                             )
                           ]
                         ),
@@ -27634,7 +27579,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\t\t\t\t\t\t\t\tSwitch Teams\n\t\t\t\t\t\t\t"
+                              "\n                                Switch Teams\n                            "
                             )
                           ]
                         ),
@@ -28618,16 +28563,16 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("input", {
-                                        ref: "photo",
+                                        ref: "text",
                                         staticClass: "mt-1 block w-full",
-                                        attrs: { id: "photo", type: "file" },
+                                        attrs: { id: "text", type: "file" },
                                         on: { change: _vm.extractChange }
                                       }),
                                       _vm._v(" "),
                                       _c("jet-input-error", {
                                         staticClass: "mt-2",
                                         attrs: {
-                                          message: _vm.form.error("photo")
+                                          message: _vm.form.error("text")
                                         }
                                       }),
                                       _vm._v(" "),
@@ -29096,7 +29041,7 @@ var render = function() {
                                   )
                                 : _vm._e(),
                               _vm._v(" "),
-                              _vm.form.recentlySuccessful
+                              _vm.form.recentlySuccessful && !_vm.errors.message
                                 ? _c(
                                     "div",
                                     {

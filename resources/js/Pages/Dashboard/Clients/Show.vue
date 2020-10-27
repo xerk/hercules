@@ -51,9 +51,9 @@
                             <div v-if="$page.user.point > 0">
 
                                 <jet-label class="mt-4" for="find" value="Extract By File" />
-                                <input id="photo" type="file" class="mt-1 block w-full" ref="photo"
+                                <input id="text" type="file" class="mt-1 block w-full" ref="text"
                                     @change="extractChange" />
-                                <jet-input-error :message="form.error('photo')" class="mt-2" />
+                                <jet-input-error :message="form.error('text')" class="mt-2" />
                                 <div v-if="countFile" class="mt-4 flex flex-col">
                                     <div><span class="text-gray-500">File count:</span> {{countFile}}</div>
                                     <!-- <div><span class="text-gray-500">Current points:</span> {{$page.user.point}}</div>
@@ -182,7 +182,7 @@
                 form: this.$inertia.form({
                     '_method': 'PUT',
                     ids: "",
-                    photo: null,
+                    text: null,
                 }, {
                     bag: "filter",
                     resetOnSuccess: false,
@@ -196,14 +196,14 @@
                     await this.form.post(route('clients.export'), {
                         preserveScroll: true
                     });
-                    this.$refs.photo.reset()
-                    this.form.photo = null
+                    this.$refs.text.reset()
+                    this.form.text = null
                 } else {
                     await this.form.post(url, {
                         preserveScroll: true,
                     });
-                    this.$refs.photo.reset()
-                    this.form.photo = null
+                    this.$refs.text.reset()
+                    this.form.text = null
                 }
             },
             readFile(file) {
@@ -214,14 +214,14 @@
                 })
             },
             async read() {
-                let readFile = await this.readFile(this.$refs.photo.files[0]);
+                let readFile = await this.readFile(this.$refs.text.files[0]);
                 let trimFile = readFile.trim()
                 let splitFile = readFile.split(/\r\n|\n|\r/)
                 this.countFile = _.uniq(splitFile).length
             },
             extractChange() {
                 this.read();
-                this.form.photo = this.$refs.photo.files[0]
+                this.form.text = this.$refs.text.files[0]
             },
             download(id) {
                 this.$inertia.post(route('clients.download', id), {

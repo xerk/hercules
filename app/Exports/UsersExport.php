@@ -52,9 +52,9 @@ class UsersExport implements FromQuery, WithHeadings
     public function headings(): array
     {
         return [
-            'ID',
+            'FB_ID',
             'Mobile',
-            'Nationality',
+            'Country',
         ];
     }
 }
