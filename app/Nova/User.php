@@ -2,9 +2,10 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\AddPointsToUsers;
+use Laravel\Nova\Panel;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Number;
@@ -13,6 +14,7 @@ use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Sparkline;
+use App\Nova\Actions\AddPointsToUsers;
 
 class User extends Resource
 {
@@ -87,24 +89,27 @@ class User extends Resource
                 
                 Text::make('Phone Number', 'phone')->textAlign('left'),
                 
-                
                 Country::make('Country')->hideFromIndex(),
                 
-                Text::make('Serial Number', 'serial_number'),
-                
-                
-                Select::make('Serial Type')->options([
-                    'monthly' => 'Monthly',
-                    'lifetime' => 'Lifetime',
-                ])->displayUsingLabels(),
-
-                Text::make('Serial Year', 'serial_year'),
-                Text::make('Serial Month', 'serial_month'),
-                Text::make('Serial Day', 'serial_day'),
-                Text::make('Link', 'link'),
-                Text::make('Last Seen', 'last_seen'),
+                new Panel('Addtional Information', $this->addtionalFields()),
             ];
 
+    }
+
+    public function addtionalFields() {
+        return [
+            Text::make('Serial Number', 'serial_number')->hideFromIndex(),
+            Select::make('Serial Type')->options([
+                'monthly' => 'Monthly',
+                'lifetime' => 'Lifetime',
+            ])->displayUsingLabels()->hideFromIndex(),
+            Date::make('Serial Date', 'serial_date')->hideFromIndex(),
+            
+            Text::make('Link', 'link')->hideFromIndex(),
+
+            Date::make('Last Seen', 'last_seen')->hideFromIndex(),
+
+        ];
     }
 
     /**

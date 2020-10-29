@@ -43,7 +43,7 @@ class ExtractDataController extends Controller
     public function export(Request $request) 
     {
         Validator::make($request->all(), [
-            'text' => ['required', 'mimetypes:text'],
+            'text' => ['required', 'mimetypes:text/plain'],
         ])->validateWithBag('filter');
         
         if ($request->hasFile('text')) {

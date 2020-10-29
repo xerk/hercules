@@ -433,6 +433,10 @@ Navbar Area CSS
   margin: auto;
 }
 
+.plamb-nav .navbar .navbar-nav .login {
+  display: none;
+}
+
 .plamb-nav .navbar .navbar-nav .nav-item {
   position: relative;
   padding-top: 15px;
@@ -818,6 +822,14 @@ Navbar Area CSS
     height: 336px;
     -webkit-box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
             box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
+  }
+  ..plamb-responsive-nav .plamb-responsive-menu.mean-container .mean-nav .login {
+    background: #0072bb;
+  }
+
+  ..plamb-responsive-nav .plamb-responsive-menu.mean-container .mean-nav .login a {
+    font-weight: 500;
+    color: #fff;
   }
   .plamb-responsive-nav .plamb-responsive-menu.mean-container .others-options {
     display: none;

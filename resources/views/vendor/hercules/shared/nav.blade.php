@@ -22,6 +22,11 @@
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
+                        <li class="nav-item login">
+                            <a href="/login" class="nav-link">
+                                Client Are
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="#home" class="nav-link active">
                                 Home
@@ -37,11 +42,11 @@
                                 Our Features
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#gallery" class="nav-link">
                                 Gallery
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="#products" class="nav-link">
                                 Products
