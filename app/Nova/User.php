@@ -98,7 +98,7 @@ class User extends Resource
 
     public function addtionalFields() {
         return [
-            
+
             Text::make('Serial Number', 'serial_number')->hideFromIndex(),
 
             Select::make('Serial Type')->options([
@@ -106,7 +106,7 @@ class User extends Resource
                 'lifetime' => 'Lifetime',
             ])->displayUsingLabels()->hideFromIndex(),
 
-            Date::make('serial_date')->hideFromIndex(),
+            Date::make('Serial Date')->hideFromIndex(),
             
             Text::make('Link', 'link')->hideFromIndex(),
 
