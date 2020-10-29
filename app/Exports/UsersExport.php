@@ -39,7 +39,7 @@ class UsersExport implements FromQuery, WithHeadings
         //         'nationality' => $user->nationality,
         //     ];
         // });
-        return Client::query()->whereIn('unique_id', $this->clients)->select('id', 'mobile', 'nationality');
+        return Client::query()->whereIn('unique_id', $this->clients)->select('unique_id', 'mobile', 'nationality');
     }
 
     private function decode($ids)
@@ -52,7 +52,7 @@ class UsersExport implements FromQuery, WithHeadings
     public function headings(): array
     {
         return [
-            'FB_ID',
+            'facebook ID',
             'Mobile',
             'Country',
         ];
