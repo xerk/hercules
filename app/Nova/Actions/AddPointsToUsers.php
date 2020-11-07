@@ -32,11 +32,15 @@ class AddPointsToUsers extends Action
     public function handle(ActionFields $fields, Collection $models)
     {
         foreach ($models as $model) {
-            $model->point = $model->point + $fields->amount;
+            if (($model->point + $fields->amount) >= 0) {
+                $model->point = $model->point + $fields->amount;
+            } else {
+                $model->point = 0;
+            }
             $model->save();
         }
 
-        return Action::message('Awasome Points Added!');
+        return Action::message('Awasome Points updated!');
     }
 
     /**

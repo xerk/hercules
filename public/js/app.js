@@ -3671,6 +3671,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -3714,41 +3718,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 url = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : null;
+                _context.prev = 1;
 
                 if (!(url == null)) {
-                  _context.next = 8;
+                  _context.next = 9;
                   break;
                 }
 
-                _context.next = 4;
+                _context.next = 5;
                 return _this.form.post(route('clients.export'), {
                   preserveScroll: true
                 });
 
-              case 4:
-                _this.$refs.text.reset();
-
+              case 5:
                 _this.form.text = null;
-                _context.next = 12;
+                location.reload();
+                _context.next = 13;
                 break;
 
-              case 8:
-                _context.next = 10;
+              case 9:
+                _context.next = 11;
                 return _this.form.post(url, {
                   preserveScroll: true
                 });
 
-              case 10:
-                _this.$refs.text.reset();
-
+              case 11:
                 _this.form.text = null;
+                location.reload();
 
-              case 12:
+              case 13:
+                _context.next = 18;
+                break;
+
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](1);
+                console.log(_context.t0);
+
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[1, 15]]);
       }))();
     },
     readFile: function readFile(file) {
@@ -3796,6 +3808,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$inertia.post(route('clients.download', id), {
         preserveScroll: true
       });
+    },
+    dateAgo: function dateAgo(time) {
+      return moment(time).fromNow();
     }
   }
 });
@@ -28715,6 +28730,10 @@ var render = function() {
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
+                                  _vm._v("Created At")
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "px-4 py-3" }, [
                                   _vm._v("Download")
                                 ])
                               ]
@@ -28781,6 +28800,20 @@ var render = function() {
                                               "\n                                        "
                                           )
                                         ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { staticClass: "px-4 py-3 text-sm" },
+                                    [
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(
+                                            _vm.dateAgo(client.created_at)
+                                          ) +
+                                          "\n                                    "
                                       )
                                     ]
                                   ),

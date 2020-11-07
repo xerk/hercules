@@ -91,6 +91,7 @@
                                     <th class="px-4 py-3">Name</th>
                                     <th class="px-4 py-3">Count</th>
                                     <th class="px-4 py-3">File</th>
+                                    <th class="px-4 py-3">Created At</th>
                                     <th class="px-4 py-3">Download</th>
                                 </tr>
                             </thead>
@@ -112,6 +113,9 @@
                                             {{client.file}}
                                         </span>
                                     </td>
+                                    <td class="px-4 py-3 text-sm">
+                                        {{ dateAgo(client.created_at) }}
+                                    </td>
                                     <td class="px-4 py-3 text-sm capitalize">
                                         <a class="hover:underline text-indigo-500"
                                             :href="route('clients.download', client.id)">Download</a>
@@ -132,7 +136,7 @@
                             <nav aria-label="Table navigation">
                                 <ul class="inline-flex items-center">
                                     <li v-for="(link, key) in clients.links" :key="key">
-                                        <div v-if="link.url === null" 
+                                        <div v-if="link.url === null"
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
 												'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
@@ -192,18 +196,22 @@
         },
         methods: {
             async filter(url = null) {
-                if (url == null) {
-                    await this.form.post(route('clients.export'), {
-                        preserveScroll: true
-                    });
-                    this.$refs.text.reset()
-                    this.form.text = null
-                } else {
-                    await this.form.post(url, {
-                        preserveScroll: true,
-                    });
-                    this.$refs.text.reset()
-                    this.form.text = null
+                try {
+                    if (url == null) {
+                        await this.form.post(route('clients.export'), {
+                            preserveScroll: true
+                        });
+                        this.form.text = null
+                        location.reload();
+                    } else {
+                        await this.form.post(url, {
+                            preserveScroll: true,
+                        });
+                        this.form.text = null
+                        location.reload();
+                    }
+                } catch (error) {
+                    console.log(error)
                 }
             },
             readFile(file) {
@@ -228,6 +236,9 @@
                     preserveScroll: true,
                 });
             },
+            dateAgo(time) {
+                return moment(time).fromNow()
+            }
         },
     };
 

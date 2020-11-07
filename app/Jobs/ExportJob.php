@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\User;
 use App\Models\Export;
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -39,7 +40,7 @@ class ExportJob implements ShouldQueue
 
         Export::create([
             'user_id' => $this->user_id,
-            'name' => 'Extract Data',
+            'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
             'file' => $this->path,
             'count' => $this->clients,
         ]);
