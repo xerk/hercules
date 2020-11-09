@@ -3675,6 +3675,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3708,59 +3722,47 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     filter: function filter() {
-      var _arguments = arguments,
-          _this = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : null;
-                _context.prev = 1;
+                _context.prev = 0;
 
-                if (!(url == null)) {
-                  _context.next = 9;
+                if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
+                  _context.next = 6;
                   break;
                 }
 
-                _context.next = 5;
+                _context.next = 4;
                 return _this.form.post(route('clients.export'), {
                   preserveScroll: true
                 });
 
-              case 5:
-                _this.form.text = null;
-                location.reload();
-                _context.next = 13;
+              case 4:
+                _context.next = 7;
+                break;
+
+              case 6:
+                alert('You check you max and min records');
+
+              case 7:
+                _context.next = 12;
                 break;
 
               case 9:
-                _context.next = 11;
-                return _this.form.post(url, {
-                  preserveScroll: true
-                });
-
-              case 11:
-                _this.form.text = null;
-                location.reload();
-
-              case 13:
-                _context.next = 18;
-                break;
-
-              case 15:
-                _context.prev = 15;
-                _context.t0 = _context["catch"](1);
+                _context.prev = 9;
+                _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 18:
+              case 12:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 15]]);
+        }, _callee, null, [[0, 9]]);
       }))();
     },
     readFile: function readFile(file) {
@@ -28485,6 +28487,58 @@ var render = function() {
           { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" },
           [
             _c(
+              "div",
+              {
+                staticClass:
+                  "bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mb-8",
+                attrs: { role: "alert" }
+              },
+              [
+                _c("div", { staticClass: "flex" }, [
+                  _c("div", { staticClass: "py-1" }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "fill-current h-6 w-6 text-teal-500 mr-4",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("p", { staticClass: "font-bold" }, [
+                      _vm._v("Information for upload file")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-sm" }, [
+                      _vm._v("After upload your file you have to wait for "),
+                      _c("strong", [_vm._v("5 min")])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-sm" }, [
+                      _vm._v("Export facebook IDs "),
+                      _c("strong", [_vm._v("100")]),
+                      _vm._v(" to "),
+                      _c("strong", [_vm._v("20.000")]),
+                      _vm._v(" records")
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
               "jet-form-section",
               {
                 on: { submitted: _vm.filter },
@@ -28500,11 +28554,7 @@ var render = function() {
                     {
                       key: "description",
                       fn: function() {
-                        return [
-                          _vm._v(
-                            "\n                        Ensure your IDs is correct and have coma (,) after each\n                        ID (client).\n                    "
-                          )
-                        ]
+                        return undefined
                       },
                       proxy: true
                     },

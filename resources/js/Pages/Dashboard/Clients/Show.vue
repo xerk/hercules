@@ -8,13 +8,27 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mb-8" role="alert">
+                <div class="flex">
+                    <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path
+                                d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                        </svg></div>
+                    <div>
+                        <p class="font-bold">Information for upload file</p>
+                        <p class="text-sm">After upload your file you have to wait for <strong>5 min</strong></p>
+                        <p class="text-sm">Export facebook IDs <strong>100</strong> to <strong>20.000</strong> records</p>
+                    </div>
+                </div>
+            </div>
                 <!-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> -->
                 <!-- <div class="p-6 sm:px-20 bg-white border-b border-gray-200"> -->
                 <jet-form-section @submitted="filter">
                     <template #title> Extract Data </template>
                     <template #description>
-                        Ensure your IDs is correct and have coma (,) after each
-                        ID (client).
+                        <!-- Ensure your IDs is correct and have coma (,) after each
+                        ID (client). -->
                     </template>
                     <div class="mt-2 text-2xl">Get In Action</div>
 
@@ -195,20 +209,16 @@
             };
         },
         methods: {
-            async filter(url = null) {
+            async filter() {
                 try {
-                    if (url == null) {
+                    if (this.countFile >= 100 && this.countFile <= 20000) {
                         await this.form.post(route('clients.export'), {
                             preserveScroll: true
                         });
-                        this.form.text = null
-                        location.reload();
+                        // this.form.text = null
+                        // location.reload();
                     } else {
-                        await this.form.post(url, {
-                            preserveScroll: true,
-                        });
-                        this.form.text = null
-                        location.reload();
+                        alert('You check you max and min records')
                     }
                 } catch (error) {
                     console.log(error)

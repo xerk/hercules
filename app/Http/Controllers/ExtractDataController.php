@@ -51,7 +51,6 @@ class ExtractDataController extends Controller
             $clients = $this->endcode($fileContent);
         
             $result = Client::whereIn('unique_id', $clients)->count();
-
             if ((auth()->user()->point - $result) <= -1) {
                 return back()->withErrors([
                     'message' => 'You not have enough points.',
