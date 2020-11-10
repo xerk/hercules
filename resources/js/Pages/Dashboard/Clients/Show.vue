@@ -216,7 +216,7 @@
                             preserveScroll: true
                         });
                         // this.form.text = null
-                        // location.reload();
+                        location.reload();
                     } else {
                         alert('You check you max and min records')
                     }
