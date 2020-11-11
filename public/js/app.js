@@ -2744,6 +2744,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3477,6 +3499,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3689,6 +3725,119 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3710,14 +3859,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       form: this.$inertia.form({
-        '_method': 'PUT',
+        _method: "PUT",
         ids: "",
         text: null
       }, {
         bag: "filter",
         resetOnSuccess: false
       }),
-      countFile: 0
+      countFile: 0,
+      messageSuccess: false
     };
   },
   methods: {
@@ -3732,39 +3882,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.prev = 0;
 
                 if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
-                  _context.next = 7;
+                  _context.next = 8;
                   break;
                 }
 
                 _context.next = 4;
-                return _this.form.post(route('clients.export'), {
+                return _this.form.post(route("clients.export"), {
                   preserveScroll: true
                 });
 
               case 4:
                 // this.form.text = null
-                location.reload();
-                _context.next = 8;
+                _this.messageSuccess = true;
+                setTimeout(function () {
+                  location.reload();
+                }, 7000);
+                _context.next = 9;
                 break;
-
-              case 7:
-                alert('You check you max and min records');
 
               case 8:
-                _context.next = 13;
+                alert("You check you max and min records");
+
+              case 9:
+                _context.next = 14;
                 break;
 
-              case 10:
-                _context.prev = 10;
+              case 11:
+                _context.prev = 11;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 13:
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 10]]);
+        }, _callee, null, [[0, 11]]);
       }))();
     },
     readFile: function readFile(file) {
@@ -3809,7 +3962,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.form.text = this.$refs.text.files[0];
     },
     download: function download(id) {
-      this.$inertia.post(route('clients.download', id), {
+      this.$inertia.post(route("clients.download", id), {
         preserveScroll: true
       });
     },
@@ -26804,11 +26957,51 @@ var staticRenderFns = [
         { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
         [
           _c("div", { staticClass: "mt-8 text-2xl" }, [
-            _vm._v("\n\t\t\tWelcome to your Hercules application!\n\t\t")
+            _vm._v(
+              "\n                Welcome to your Hercules application!\n            "
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "mt-6 text-gray-500" }, [
-            _vm._v("\n\t\t\tHercules is a software for social marketing.\n\t\t")
+            _vm._v(
+              "\n                Hercules is a software for social marketing.\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "my-4" }, [
+            _c("div", { staticClass: "text-gray-700 text-2xl" }, [
+              _vm._v("Hercules WhatsApp Part 1")
+            ]),
+            _vm._v(" "),
+            _c("iframe", {
+              attrs: {
+                width: "856",
+                height: "482",
+                src: "https://www.youtube.com/embed/aREKhk_C820",
+                frameborder: "0",
+                allow:
+                  "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                allowfullscreen: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("div", { staticClass: "text-gray-700 text-2xl" }, [
+              _vm._v("Hercules WhatsApp Part 2")
+            ]),
+            _vm._v(" "),
+            _c("iframe", {
+              attrs: {
+                width: "856",
+                height: "482",
+                src: "https://www.youtube.com/embed/D7wDewfFV4k",
+                frameborder: "0",
+                allow:
+                  "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                allowfullscreen: ""
+              }
+            })
           ])
         ]
       )
@@ -28414,7 +28607,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n\t\t\tDashboard\n\t\t")]
+                [_vm._v("\n            Dashboard\n        ")]
               )
             ]
           },
@@ -28431,6 +28624,32 @@ var render = function() {
             { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
             [_c("welcome")],
             1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pb-12" }, [
+        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c(
+            "div",
+            { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200"
+                },
+                [
+                  _c("div", { staticClass: "text-gray-500 text-3xl" }, [
+                    _vm._v(
+                      "\n                        Change Log\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [_c("li", [_vm._v("- v1.0.0.1")])])
+                ]
+              )
+            ]
           )
         ])
       ])
@@ -28524,16 +28743,20 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
-                      _vm._v("After upload your file you have to wait for "),
+                      _vm._v(
+                        "\n                                After upload your file you have to wait for\n                                "
+                      ),
                       _c("strong", [_vm._v("5 min")])
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
-                      _vm._v("Export facebook IDs "),
+                      _vm._v(
+                        "\n                                Export facebook IDs "
+                      ),
                       _c("strong", [_vm._v("100")]),
-                      _vm._v(" to "),
+                      _vm._v(" to\n                                "),
                       _c("strong", [_vm._v("20.000")]),
-                      _vm._v(" records")
+                      _vm._v(" records\n                            ")
                     ])
                   ])
                 ])
@@ -28605,11 +28828,74 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "font-bold" },
-                                            [_vm._v("Ops, You have an error")]
+                                            [
+                                              _vm._v(
+                                                "\n                                            Ops, You have an error\n                                        "
+                                              )
+                                            ]
                                           ),
                                           _vm._v(" "),
                                           _c("p", { staticClass: "text-sm" }, [
-                                            _vm._v(_vm._s(_vm.errors.message))
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.errors.message) +
+                                                "\n                                        "
+                                            )
+                                          ])
+                                        ])
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.messageSuccess
+                                ? _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md",
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "flex" }, [
+                                        _c("div", { staticClass: "py-1" }, [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "fill-current h-6 w-6 text-green-500 mr-4",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                viewBox: "0 0 20 20"
+                                              }
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  d:
+                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _c(
+                                            "p",
+                                            { staticClass: "font-bold" },
+                                            [
+                                              _vm._v(
+                                                "\n                                            File was uploaded to server\n                                            successfully\n                                        "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("p", { staticClass: "text-sm" }, [
+                                            _vm._v(
+                                              "\n                                            Please be patient and reload the\n                                            page within a minute or 5 minutes\n                                            maximum.\n                                        "
+                                            )
                                           ])
                                         ])
                                       ])
@@ -28659,7 +28945,9 @@ var render = function() {
                                                   [_vm._v("File count:")]
                                                 ),
                                                 _vm._v(
-                                                  " " + _vm._s(_vm.countFile)
+                                                  "\n                                        " +
+                                                    _vm._s(_vm.countFile) +
+                                                    "\n                                    "
                                                 )
                                               ])
                                             ]
@@ -28670,7 +28958,7 @@ var render = function() {
                                   )
                                 : _c("div", { staticClass: "text-lg" }, [
                                     _vm._v(
-                                      "\n                                Please purchase points "
+                                      "\n                                Please purchase points\n                                "
                                     ),
                                     _c(
                                       "span",
