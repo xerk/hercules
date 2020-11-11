@@ -3732,7 +3732,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.prev = 0;
 
                 if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
@@ -3742,27 +3742,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
-                _context.next = 7;
+                // this.form.text = null
+                location.reload();
+                _context.next = 8;
                 break;
-
-              case 6:
-                alert('You check you max and min records');
 
               case 7:
-                _context.next = 12;
+                alert('You check you max and min records');
+
+              case 8:
+                _context.next = 13;
                 break;
 
-              case 9:
-                _context.prev = 9;
+              case 10:
+                _context.prev = 10;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 12:
+              case 13:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 9]]);
+        }, _callee, null, [[0, 10]]);
       }))();
     },
     readFile: function readFile(file) {
