@@ -3882,7 +3882,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.prev = 0;
 
                 if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
-                  _context.next = 8;
+                  _context.next = 9;
                   break;
                 }
 
@@ -3892,35 +3892,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
-                // this.form.text = null
-                if (_this.form.successful) {
+                console.log(_this.form); // this.form.text = null
+
+                if (_this.form.successful && Object.keys(_this.errors).length == 0) {
                   _this.messageSuccess = true;
                 }
 
                 setTimeout(function () {
                   location.reload();
                 }, 7000);
-                _context.next = 9;
+                _context.next = 10;
                 break;
-
-              case 8:
-                alert("You check you max and min records");
 
               case 9:
-                _context.next = 14;
+                alert("You check you max and min records");
+
+              case 10:
+                _context.next = 15;
                 break;
 
-              case 11:
-                _context.prev = 11;
+              case 12:
+                _context.prev = 12;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 14:
+              case 15:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 11]]);
+        }, _callee, null, [[0, 12]]);
       }))();
     },
     readFile: function readFile(file) {

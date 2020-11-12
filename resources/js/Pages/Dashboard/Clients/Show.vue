@@ -332,8 +332,12 @@ export default {
                     await this.form.post(route("clients.export"), {
                         preserveScroll: true
                     });
+                    console.log(this.form);
                     // this.form.text = null
-                    if (this.form.successful) {
+                    if (
+                        this.form.successful &&
+                        Object.keys(this.errors).length == 0
+                    ) {
                         this.messageSuccess = true;
                     }
                     setTimeout(() => {
