@@ -3893,7 +3893,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 4:
                 // this.form.text = null
-                _this.messageSuccess = true;
+                if (_this.form.successful) {
+                  _this.messageSuccess = true;
+                }
+
                 setTimeout(function () {
                   location.reload();
                 }, 7000);

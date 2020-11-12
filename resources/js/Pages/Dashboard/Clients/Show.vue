@@ -333,7 +333,9 @@ export default {
                         preserveScroll: true
                     });
                     // this.form.text = null
-                    this.messageSuccess = true;
+                    if (this.form.successful) {
+                        this.messageSuccess = true;
+                    }
                     setTimeout(() => {
                         location.reload();
                     }, 7000);
