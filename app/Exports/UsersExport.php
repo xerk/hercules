@@ -39,7 +39,7 @@ class UsersExport implements FromQuery, WithHeadings
         //         'nationality' => $user->nationality,
         //     ];
         // });
-        return Client::query()->whereIn('unique_id', $this->clients)->select('unique_id', 'mobile', 'nationality');
+        return Client::query()->whereIn('unique_id', $this->clients)->select('unique_id', 'mobile', 'nationality')->orderBy('unique_id');
     }
 
     private function decode($ids)
