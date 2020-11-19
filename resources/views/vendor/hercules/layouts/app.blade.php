@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="zxx">
 
-<!-- Mirrored from templates.envytheme.com/plamb/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Oct 2020 21:54:23 GMT -->
-
 <head>
 
     @include('vendor.hercules.shared.header')
-    <title>Hercules - @yield('title')</title>
+    <title>Hercules Projects - Professional Programming Agency @yield('title')</title>
 
     {{-- Add CSS code  --}}
     @yield('css')
@@ -37,6 +35,30 @@
 
     {{-- Add JS code --}}
     @yield('js')
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat" attribution=install_email page_id="923976101122315" theme_color="#0A7CFF">
+    </div>
 </body>
 
 </html>

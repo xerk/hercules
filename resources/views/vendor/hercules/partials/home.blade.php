@@ -7,17 +7,15 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="main-banner-content">
                             <h1>Hercules Projects</h1>
-                            <p>Best digital marketing software, powerful & high quality service, 24/7 Free Support.
-                            </p>
+                            <p>“ Legends are born to achieve greatness ”</p>
                             <div class="banner-btn">
-                                <a href="#about" class="default-btn-one">
+                                <a href="#products" class="default-btn-one">
                                     Products
                                     <span></span>
                                 </a>
-                                <a class="default-btn" href="#pricing">
-                                    Watch Video
-                                    <span></span>
-                                </a>
+                                <a href="https://www.youtube.com/c/HerculesProjects/videos" class="default-btn">
+                                            Watch Video 
+                                            <span style="top: -3px; left: 6.40625px;"></span></a>
                             </div>
                         </div>
                     </div>

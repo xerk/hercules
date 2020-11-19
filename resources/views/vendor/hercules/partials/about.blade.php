@@ -13,9 +13,7 @@
                         <i class="flaticon-big-data"></i>
                     </div>
                     <h3>Marketing Softwares</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum Quis ipsum Quis ipsuQuis ipsumQuis ipsumQuis
-                        ipsum. </p>
+                    <p>We specialize in programming marketing tools on all social media platforms and we have very great experience in dealing with these platforms, using the latest technologies in the tools.</p>
                 </div>
             </div>
 
@@ -25,7 +23,7 @@
                         <i class="flaticon-data-analytics"></i>
                     </div>
                     <h3>Build Softwares</h3>
-                    <p>We develop custom softwares and technology uses the latest programming techniques to develop
+                    <p>We develop custom softwares and technology uses the latest programming frameworks to develop
                         desktop softwares which enables us to implement powerful softwares. </p>
                 </div>
             </div>

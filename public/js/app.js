@@ -29019,9 +29019,7 @@ var render = function() {
       [
         _c("div", { staticClass: "my-8 text-2xl" }, [
           _vm._v(
-            "\n                Welcome to your Hercules application! " +
-              _vm._s(_vm.__("login")) +
-              "\n            "
+            "\n                Welcome to your Hercules application!\n            "
           )
         ]),
         _vm._v(" "),

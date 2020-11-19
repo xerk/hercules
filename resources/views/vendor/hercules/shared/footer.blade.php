@@ -14,6 +14,12 @@
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
+						
+						<li>
+                            <a href="https://twitter.com/herculesdotnet">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
 
                         <li>
                             <a href="https://www.youtube.com/channel/UChdc4mR6MOx0LhkE89NhFEA/">
@@ -23,7 +29,8 @@
                     </ul>
                 </div>
             </div>
-
+			
+			<!-- DISABLED-UNWANTED
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="footer-heading">
@@ -32,10 +39,10 @@
 
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="about.html">About Us</a>
+                            <a href="#about">About Us</a>
                         </li>
                         <li>
-                            <a href="projects.html">Project</a>
+                            <a href="#products">Products</a>
                         </li>
                         <li>
                             <a href="services.html">Services</a>
@@ -49,7 +56,9 @@
                     </ul>
                 </div>
             </div>
-
+			-->
+			
+			<!-- DISABLED-UNWANTED
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="footer-heading">
@@ -57,7 +66,7 @@
                     </div>
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="#home">Home</a>
                         </li>
                         <li>
                             <a href="blog-1.html">Blog</a>
@@ -74,7 +83,9 @@
                     </ul>
                 </div>
             </div>
-
+			-->
+			
+			
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="footer-heading">
@@ -85,6 +96,8 @@
                         <i class="flaticon-call-answer"></i>
                         <h3>Phone</h3>
                         <span><a href="tel:+201275277770">+20 01275277770</a></span>
+						<br>
+						<span><a href="tel:+201275277770">+20 01021019322</a></span>
                     </div>
 
                     <div class="footer-info-contact">
@@ -96,10 +109,12 @@
                     <div class="footer-info-contact">
                         <i class="flaticon-maps-and-flags"></i>
                         <h3>Address</h3>
-                        <span>293 st Al Nasr, Cairo, Egypt</span>
+                        <span>291 st, New Maadi, Cairo, Egypt</span>
                     </div>
                 </div>
             </div>
+			
+			
         </div>
     </div>
 
@@ -122,7 +137,7 @@
             <div class="col-lg-6 col-md-6">
                 <p>
                     <i class="far fa-copyright"></i>
-                    2020 Plamb. All Rights Reserved by
+                    2020 Hercules. All Rights Reserved by
                     <a href="https://www.facebook.com/SoftwaresProjects/" target="_blank">
                         Hercules Projects
                     </a>

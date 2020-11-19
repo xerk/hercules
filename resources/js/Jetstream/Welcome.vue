@@ -6,7 +6,7 @@
 			</div> -->
 
             <div class="my-8 text-2xl">
-                Welcome to your Hercules application! {{ __("login") }}
+                Welcome to your Hercules application!
             </div>
             <div class="mt-6 text-gray-500">
                 Hercules is a software for social marketing.

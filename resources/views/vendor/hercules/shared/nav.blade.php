@@ -4,7 +4,7 @@
         <div class="container">
             <div class="plamb-responsive-menu">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="https://www.herculesprojects.net/">
                         <img src="{{ asset('vendor/hercules/assets/img/logo.png') }}" class="white-logo" alt="logo">
                         <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo" alt="logo">
                     </a>
@@ -16,7 +16,7 @@
     <div class="plamb-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="https://www.herculesprojects.net/">
                     <img src="{{ asset('vendor/hercules/assets/img/logo.png') }}" class="white-logo" alt="logo">
                     <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo" alt="logo">
                 </a>
@@ -24,7 +24,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item login">
                             <a href="/login" class="nav-link">
-                                Client Are
+                                Client Area
                             </a>
                         </li>
                         <li class="nav-item">

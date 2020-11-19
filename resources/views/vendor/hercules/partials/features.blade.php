@@ -50,7 +50,7 @@
                     </ul>
 
                     <div class="about-btn">
-                        <a class="default-btn" href="#">
+                        <a class="default-btn" href="https://m.me/SoftwaresProjects/">
                             Contact Us
                             <span></span>
                         </a>
