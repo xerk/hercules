@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                API Tokens
+                {{__('API Tokens')}}
             </h2>
         </template>
 
@@ -24,7 +24,7 @@
     export default {
         props: [
             'tokens',
-            'availablePermissions',
+            'Team Owner',
             'defaultPermissions',
         ],
 

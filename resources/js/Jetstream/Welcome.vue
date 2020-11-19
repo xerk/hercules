@@ -6,10 +6,10 @@
 			</div> -->
 
             <div class="my-8 text-2xl">
-                Welcome to your Hercules application!
+                {{ __("Welcome to your Hercules application!") }}
             </div>
             <div class="mt-6 text-gray-500">
-                Hercules is a software for social marketing.
+                {{ __("Hercules is a software for social marketing.") }}
             </div>
             <ul class="block my-4 mx-auto" x-data="{selected:null}">
                 <li class="flex align-center flex-col">
@@ -19,7 +19,7 @@
                         "
                         class="cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t"
                     >
-                        Hercules WhatsApp Part 1
+                        {{ __("Hercules WhatsApp Part 1") }}
                     </h4>
                     <p v-show="selected == 0" class="border py-4 px-2">
                         <iframe
@@ -39,7 +39,7 @@
                         "
                         class="cursor-pointer px-5 py-3 bg-white-400 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3"
                     >
-                        Hercules WhatsApp Part 2
+                        {{ __("Hercules WhatsApp Part 2") }}
                     </h4>
                     <p v-show="selected == 1" class="border py-4 px-2">
                         <iframe

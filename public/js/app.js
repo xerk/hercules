@@ -5066,6 +5066,140 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5294,6 +5428,89 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5321,21 +5538,21 @@ __webpack_require__.r(__webpack_exports__);
     JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_10__["default"],
     JetSectionBorder: _Jetstream_SectionBorder__WEBPACK_IMPORTED_MODULE_11__["default"]
   },
-  props: ['tokens', 'availablePermissions', 'defaultPermissions'],
+  props: ["tokens", "availablePermissions", "defaultPermissions"],
   data: function data() {
     return {
       createApiTokenForm: this.$inertia.form({
-        name: '',
+        name: "",
         permissions: this.defaultPermissions
       }, {
-        bag: 'createApiToken',
+        bag: "createApiToken",
         resetOnSuccess: true
       }),
       updateApiTokenForm: this.$inertia.form({
         permissions: []
       }, {
         resetOnSuccess: false,
-        bag: 'updateApiToken'
+        bag: "updateApiToken"
       }),
       deleteApiTokenForm: this.$inertia.form(),
       displayingToken: false,
@@ -5347,7 +5564,7 @@ __webpack_require__.r(__webpack_exports__);
     createApiToken: function createApiToken() {
       var _this = this;
 
-      this.createApiTokenForm.post(route('api-tokens.store'), {
+      this.createApiTokenForm.post(route("api-tokens.store"), {
         preserveScroll: true
       }).then(function (response) {
         if (!_this.createApiTokenForm.hasErrors()) {
@@ -5362,7 +5579,7 @@ __webpack_require__.r(__webpack_exports__);
     updateApiToken: function updateApiToken() {
       var _this2 = this;
 
-      this.updateApiTokenForm.put(route('api-tokens.update', this.managingPermissionsFor), {
+      this.updateApiTokenForm.put(route("api-tokens.update", this.managingPermissionsFor), {
         preserveScroll: true,
         preserveState: true
       }).then(function (response) {
@@ -5375,7 +5592,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteApiToken: function deleteApiToken() {
       var _this3 = this;
 
-      this.deleteApiTokenForm["delete"](route('api-tokens.destroy', this.managingPermissionsFor), {
+      this.deleteApiTokenForm["delete"](route("api-tokens.destroy", this.managingPermissionsFor), {
         preserveScroll: true,
         preserveState: true
       }).then(function () {
@@ -5424,7 +5641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['tokens', 'availablePermissions', 'defaultPermissions'],
+  props: ['tokens', 'Team Owner', 'defaultPermissions'],
   components: {
     ApiTokenManager: _ApiTokenManager__WEBPACK_IMPORTED_MODULE_0__["default"],
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -5445,6 +5662,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../Jetstream/Welcome */ "./resources/js/Jetstream/Welcome.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5902,6 +6125,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5969,7 +6212,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 break;
 
               case 9:
-                alert("You check you max and min records");
+                alert(__("You check you max and min records"));
 
               case 10:
                 _context.next = 15;
@@ -6137,6 +6380,57 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6145,7 +6439,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["purchase", 'errors'],
+  props: ["purchase", "errors"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -6168,7 +6462,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     redeemCode: function redeemCode() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      this.form.post(route('purchase.redeem'), {
+      this.form.post(route("purchase.redeem"), {
         preserveScroll: true
       });
     }
@@ -6406,6 +6700,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6414,7 +6774,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['sessions'],
+  props: ["sessions"],
   components: {
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__["default"],
     JetActionSection: _Jetstream_ActionSection__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -6428,10 +6788,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       confirmingLogout: false,
       form: this.$inertia.form({
-        '_method': 'DELETE',
-        password: ''
+        _method: "DELETE",
+        password: ""
       }, {
-        bag: 'logoutOtherBrowserSessions'
+        bag: "logoutOtherBrowserSessions"
       })
     };
   },
@@ -6439,7 +6799,7 @@ __webpack_require__.r(__webpack_exports__);
     confirmLogout: function confirmLogout() {
       var _this = this;
 
-      this.form.password = '';
+      this.form.password = "";
       this.confirmingLogout = true;
       setTimeout(function () {
         _this.$refs.password.focus();
@@ -6448,7 +6808,7 @@ __webpack_require__.r(__webpack_exports__);
     logoutOtherBrowserSessions: function logoutOtherBrowserSessions() {
       var _this2 = this;
 
-      this.form.post(route('other-browser-sessions.destroy'), {
+      this.form.post(route("other-browser-sessions.destroy"), {
         preserveScroll: true
       }).then(function (response) {
         if (!_this2.form.hasErrors()) {
@@ -6513,6 +6873,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -6521,7 +6885,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['sessions'],
+  props: ["sessions"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     DeleteUserForm: _DeleteUserForm__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -6637,6 +7001,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6663,7 +7061,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.enabling = true;
-      this.$inertia.post('/user/two-factor-authentication', {}, {
+      this.$inertia.post("/user/two-factor-authentication", {}, {
         preserveScroll: true
       }).then(function () {
         return Promise.all([_this.showQrCode(), _this.showRecoveryCodes()]);
@@ -6674,21 +7072,21 @@ __webpack_require__.r(__webpack_exports__);
     showQrCode: function showQrCode() {
       var _this2 = this;
 
-      return axios.get('/user/two-factor-qr-code').then(function (response) {
+      return axios.get("/user/two-factor-qr-code").then(function (response) {
         _this2.qrCode = response.data.svg;
       });
     },
     showRecoveryCodes: function showRecoveryCodes() {
       var _this3 = this;
 
-      return axios.get('/user/two-factor-recovery-codes').then(function (response) {
+      return axios.get("/user/two-factor-recovery-codes").then(function (response) {
         _this3.recoveryCodes = response.data;
       });
     },
     regenerateRecoveryCodes: function regenerateRecoveryCodes() {
       var _this4 = this;
 
-      axios.post('/user/two-factor-recovery-codes').then(function (response) {
+      axios.post("/user/two-factor-recovery-codes").then(function (response) {
         _this4.showRecoveryCodes();
       });
     },
@@ -6696,7 +7094,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this5 = this;
 
       this.disabling = true;
-      this.$inertia["delete"]('/user/two-factor-authentication', {
+      this.$inertia["delete"]("/user/two-factor-authentication", {
         preserveScroll: true
       }).then(function () {
         _this5.disabling = false;
@@ -6727,6 +7125,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6928,6 +7333,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6945,16 +7391,16 @@ __webpack_require__.r(__webpack_exports__);
     JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__["default"],
     JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
-  props: ['name', 'email'],
+  props: ["name", "email"],
   data: function data() {
     return {
       form: this.$inertia.form({
-        '_method': 'PUT',
+        _method: "PUT",
         name: this.name,
         email: this.email,
         photo: null
       }, {
-        bag: 'updateProfileInformation',
+        bag: "updateProfileInformation",
         resetOnSuccess: false
       }),
       photoPreview: null
@@ -6966,7 +7412,7 @@ __webpack_require__.r(__webpack_exports__);
         this.form.photo = this.$refs.photo.files[0];
       }
 
-      this.form.post(route('user-profile-information.update'), {
+      this.form.post(route("user-profile-information.update"), {
         preserveScroll: true
       });
     },
@@ -6987,7 +7433,7 @@ __webpack_require__.r(__webpack_exports__);
     deletePhoto: function deletePhoto() {
       var _this2 = this;
 
-      this.$inertia["delete"](route('current-user-photo.destroy'), {
+      this.$inertia["delete"](route("current-user-photo.destroy"), {
         preserveScroll: true
       }).then(function () {
         _this2.photoPreview = null;
@@ -7010,6 +7456,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _CreateTeamForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateTeamForm */ "./resources/js/Pages/Teams/CreateTeamForm.vue");
 /* harmony import */ var _Jetstream_SectionBorder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Jetstream/SectionBorder */ "./resources/js/Jetstream/SectionBorder.vue");
+//
 //
 //
 //
@@ -7098,6 +7545,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7116,16 +7580,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        name: ''
+        name: ""
       }, {
-        bag: 'createTeam',
+        bag: "createTeam",
         resetOnSuccess: false
       })
     };
   },
   methods: {
     createTeam: function createTeam() {
-      this.form.post(route('teams.store'), {
+      this.form.post(route("teams.store"), {
         preserveScroll: true
       });
     }
@@ -7148,6 +7612,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_ConfirmationModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../Jetstream/ConfirmationModal */ "./resources/js/Jetstream/ConfirmationModal.vue");
 /* harmony import */ var _Jetstream_DangerButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../Jetstream/DangerButton */ "./resources/js/Jetstream/DangerButton.vue");
 /* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
+//
 //
 //
 //
@@ -7272,13 +7737,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['team', 'availableRoles', 'permissions'],
+  props: ["team", "availableRoles", "permissions"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
     DeleteTeamForm: _DeleteTeamForm__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -7528,6 +8000,148 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7555,29 +8169,29 @@ __webpack_require__.r(__webpack_exports__);
     JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_10__["default"],
     JetSectionBorder: _Jetstream_SectionBorder__WEBPACK_IMPORTED_MODULE_11__["default"]
   },
-  props: ['team', 'availableRoles', 'userPermissions'],
+  props: ["team", "availableRoles", "userPermissions"],
   data: function data() {
     return {
       addTeamMemberForm: this.$inertia.form({
-        email: '',
+        email: "",
         role: null
       }, {
-        bag: 'addTeamMember',
+        bag: "addTeamMember",
         resetOnSuccess: true
       }),
       updateRoleForm: this.$inertia.form({
         role: null
       }, {
-        bag: 'updateRole',
+        bag: "updateRole",
         resetOnSuccess: false
       }),
       leaveTeamForm: this.$inertia.form({//
       }, {
-        bag: 'leaveTeam'
+        bag: "leaveTeam"
       }),
       removeTeamMemberForm: this.$inertia.form({//
       }, {
-        bag: 'removeTeamMember'
+        bag: "removeTeamMember"
       }),
       currentlyManagingRole: false,
       managingRoleFor: null,
@@ -7587,7 +8201,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addTeamMember: function addTeamMember() {
-      this.addTeamMemberForm.post(route('team-members.store', this.team), {
+      this.addTeamMemberForm.post(route("team-members.store", this.team), {
         preserveScroll: true
       });
     },
@@ -7599,7 +8213,7 @@ __webpack_require__.r(__webpack_exports__);
     updateRole: function updateRole() {
       var _this = this;
 
-      this.updateRoleForm.put(route('team-members.update', [this.team, this.managingRoleFor]), {
+      this.updateRoleForm.put(route("team-members.update", [this.team, this.managingRoleFor]), {
         preserveScroll: true
       }).then(function () {
         _this.currentlyManagingRole = false;
@@ -7609,7 +8223,7 @@ __webpack_require__.r(__webpack_exports__);
       this.confirmingLeavingTeam = true;
     },
     leaveTeam: function leaveTeam() {
-      this.leaveTeamForm["delete"](route('team-members.destroy', [this.team, this.$page.user]));
+      this.leaveTeamForm["delete"](route("team-members.destroy", [this.team, this.$page.user]));
     },
     confirmTeamMemberRemoval: function confirmTeamMemberRemoval(teamMember) {
       this.teamMemberBeingRemoved = teamMember;
@@ -7617,7 +8231,7 @@ __webpack_require__.r(__webpack_exports__);
     removeTeamMember: function removeTeamMember() {
       var _this2 = this;
 
-      this.removeTeamMemberForm["delete"](route('team-members.destroy', [this.team, this.teamMemberBeingRemoved]), {
+      this.removeTeamMemberForm["delete"](route("team-members.destroy", [this.team, this.teamMemberBeingRemoved]), {
         preserveScroll: true,
         preserveState: true
       }).then(function () {
@@ -7700,6 +8314,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7715,20 +8340,20 @@ __webpack_require__.r(__webpack_exports__);
     JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_4__["default"],
     JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
-  props: ['team', 'permissions'],
+  props: ["team", "permissions"],
   data: function data() {
     return {
       form: this.$inertia.form({
         name: this.team.name
       }, {
-        bag: 'updateTeamName',
+        bag: "updateTeamName",
         resetOnSuccess: false
       })
     };
   },
   methods: {
     updateTeamName: function updateTeamName() {
-      this.form.put(route('teams.update', this.team), {
+      this.form.put(route("teams.update", this.team), {
         preserveScroll: true
       });
     }
@@ -29019,13 +29644,17 @@ var render = function() {
       [
         _c("div", { staticClass: "my-8 text-2xl" }, [
           _vm._v(
-            "\n                Welcome to your Hercules application!\n            "
+            "\n                " +
+              _vm._s(_vm.__("Welcome to your Hercules application!")) +
+              "\n            "
           )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mt-6 text-gray-500" }, [
           _vm._v(
-            "\n                Hercules is a software for social marketing.\n            "
+            "\n                " +
+              _vm._s(_vm.__("Hercules is a software for social marketing.")) +
+              "\n            "
           )
         ]),
         _vm._v(" "),
@@ -29052,7 +29681,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                        Hercules WhatsApp Part 1\n                    "
+                    "\n                        " +
+                      _vm._s(_vm.__("Hercules WhatsApp Part 1")) +
+                      "\n                    "
                   )
                 ]
               ),
@@ -29102,7 +29733,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                        Hercules WhatsApp Part 2\n                    "
+                    "\n                        " +
+                      _vm._s(_vm.__("Hercules WhatsApp Part 2")) +
+                      "\n                    "
                   )
                 ]
               ),
@@ -29180,7 +29813,7 @@ var render = function() {
                     { attrs: { href: _vm.route("dashboard") } },
                     [
                       _c("span", { staticClass: "font-bold text-2xl" }, [
-                        _vm._v("Herclues")
+                        _vm._v(_vm._s(_vm.__("Herclues")))
                       ])
                     ]
                   )
@@ -29202,7 +29835,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                                Dashboard\n                            "
+                        "\n                                " +
+                          _vm._s(_vm.__("Dashboard")) +
+                          "\n                            "
                       )
                     ]
                   ),
@@ -29217,7 +29852,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                                Data Area\n                            "
+                        "\n                                " +
+                          _vm._s(_vm.__("Data Area")) +
+                          "\n                            "
                       )
                     ]
                   ),
@@ -29232,7 +29869,25 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                                Purchase Points\n                            "
+                        "\n                                " +
+                          _vm._s(_vm.__("Purchase Points")) +
+                          "\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
+                    [
+                      _vm._v(_vm._s(_vm.__("Facebook"))),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
+                        },
+                        [_vm._v(_vm._s("Soon"))]
                       )
                     ]
                   ),
@@ -29242,7 +29897,9 @@ var render = function() {
                     { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
                     [
                       _vm._v(
-                        "\n                                Facebook\n                                "
+                        "\n                                " +
+                          _vm._s("SEO") +
+                          "\n                                "
                       ),
                       _c(
                         "span",
@@ -29250,25 +29907,7 @@ var render = function() {
                           staticClass:
                             "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
                         },
-                        [_vm._v("Soon")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "jet-nav-link",
-                    { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
-                    [
-                      _vm._v(
-                        "\n                                SEO\n                                "
-                      ),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
-                        },
-                        [_vm._v("Soon")]
+                        [_vm._v(_vm._s("Soon"))]
                       )
                     ]
                   )
@@ -29404,7 +30043,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                        Manage Account\n                                    "
+                                    "\n                                        " +
+                                      _vm._s(_vm.__("Manage Account")) +
+                                      "\n                                    "
                                   )
                                 ]
                               ),
@@ -29414,7 +30055,9 @@ var render = function() {
                                 { attrs: { href: _vm.route("profile.show") } },
                                 [
                                   _vm._v(
-                                    "\n                                        Profile\n                                    "
+                                    "\n                                        " +
+                                      _vm._s(_vm.__("Profile")) +
+                                      "\n                                    "
                                   )
                                 ]
                               ),
@@ -29429,7 +30072,9 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                        API Tokens\n                                    "
+                                        "\n                                        " +
+                                          _vm._s(_vm.__("API Tokens")) +
+                                          "\n                                    "
                                       )
                                     ]
                                   )
@@ -29449,7 +30094,9 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                                            Manage Team\n                                        "
+                                          "\n                                            " +
+                                            _vm._s(_vm.__("Manage Team")) +
+                                            "\n                                        "
                                         )
                                       ]
                                     ),
@@ -29466,7 +30113,9 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                                            Team Settings\n                                        "
+                                          "\n                                            " +
+                                            _vm._s(_vm.__("Team Settings")) +
+                                            "\n                                        "
                                         )
                                       ]
                                     ),
@@ -29481,7 +30130,11 @@ var render = function() {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                            Create New Team\n                                        "
+                                              "\n                                            " +
+                                                _vm._s(
+                                                  _vm.__(" Create New Team")
+                                                ) +
+                                                "\n                                        "
                                             )
                                           ]
                                         )
@@ -29499,7 +30152,9 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                                            Switch Teams\n                                        "
+                                          "\n                                            " +
+                                            _vm._s(_vm.__("Switch Teams")) +
+                                            "\n                                        "
                                         )
                                       ]
                                     ),
@@ -29602,7 +30257,9 @@ var render = function() {
                                     { attrs: { as: "button" } },
                                     [
                                       _vm._v(
-                                        "\n                                            Logout\n                                        "
+                                        "\n                                            " +
+                                          _vm._s(_vm.__("Logout")) +
+                                          "\n                                        "
                                       )
                                     ]
                                   )
@@ -29702,7 +30359,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                        Dashboard\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Dashboard")) +
+                        "\n                    "
                     )
                   ]
                 ),
@@ -29717,7 +30376,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                        Data Area\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Data Area")) +
+                        "\n                    "
                     )
                   ]
                 ),
@@ -29732,19 +30393,27 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                        Purchase Points\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Purchase Points")) +
+                        "\n                    "
                     )
                   ]
                 ),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                        Facebook\n                    "
+                    "\n                        " +
+                      _vm._s(_vm.__("Facebook")) +
+                      "\n                    "
                   )
                 ]),
                 _vm._v(" "),
                 _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v("\n                        SEO\n                    ")
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("SEO")) +
+                      "\n                    "
+                  )
                 ])
               ],
               1
@@ -29762,7 +30431,9 @@ var render = function() {
                     _vm._v(_vm._s(_vm.$page.user.point))
                   ]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "text-xs" }, [_vm._v("Points +")])
+                  _c("span", { staticClass: "text-xs" }, [
+                    _vm._v(_vm._s(_vm.__("Points")) + " +")
+                  ])
                 ]
               ),
               _vm._v(" "),
@@ -29818,7 +30489,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                            Profile\n                        "
+                        "\n                            " +
+                          _vm._s(_vm.__("Profile")) +
+                          "\n                        "
                       )
                     ]
                   ),
@@ -29835,7 +30508,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                            API Tokens\n                        "
+                            "\n                            " +
+                              _vm._s(_vm.__("API Tokens")) +
+                              "\n                        "
                           )
                         ]
                       )
@@ -29858,7 +30533,9 @@ var render = function() {
                         { attrs: { as: "button" } },
                         [
                           _vm._v(
-                            "\n                                Logout\n                            "
+                            "\n                                " +
+                              _vm._s(_vm.__("Logout")) +
+                              "\n                            "
                           )
                         ]
                       )
@@ -29877,7 +30554,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Manage Team\n                            "
+                              "\n                                " +
+                                _vm._s(_vm.__("Manage Team")) +
+                                "\n                            "
                             )
                           ]
                         ),
@@ -29895,7 +30574,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Team Settings\n                            "
+                              "\n                                " +
+                                _vm._s(_vm.__("Team Settings")) +
+                                "\n                            "
                             )
                           ]
                         ),
@@ -29911,7 +30592,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Create New Team\n                            "
+                              "\n                                " +
+                                _vm._s(_vm.__("Create New Team")) +
+                                "\n                            "
                             )
                           ]
                         ),
@@ -29925,7 +30608,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Switch Teams\n                            "
+                              "\n                                " +
+                                _vm._s(_vm.__("Switch Teams")) +
+                                "\n                            "
                             )
                           ]
                         ),
@@ -30046,7 +30731,13 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            Create API Token\n        ")]
+              return [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("Create API Token")) +
+                    "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -30055,7 +30746,13 @@ var render = function() {
             fn: function() {
               return [
                 _vm._v(
-                  "\n            API tokens allow third-party services to authenticate with our application on your behalf.\n        "
+                  "\n            " +
+                    _vm._s(
+                      _vm.__(
+                        "API tokens allow third-party services to authenticate with our application on your behalf."
+                      )
+                    ) +
+                    "\n        "
                 )
               ]
             },
@@ -30069,7 +30766,9 @@ var render = function() {
                   "div",
                   { staticClass: "col-span-6 sm:col-span-4" },
                   [
-                    _c("jet-label", { attrs: { for: "name", value: "Name" } }),
+                    _c("jet-label", {
+                      attrs: { for: "name", value: _vm.__("Name") }
+                    }),
                     _vm._v(" "),
                     _c("jet-input", {
                       staticClass: "mt-1 block w-full",
@@ -30097,7 +30796,10 @@ var render = function() {
                       { staticClass: "col-span-6" },
                       [
                         _c("jet-label", {
-                          attrs: { for: "permissions", value: "Permissions" }
+                          attrs: {
+                            for: "permissions",
+                            value: _vm.__("Permissions")
+                          }
                         }),
                         _vm._v(" "),
                         _c(
@@ -30206,7 +30908,13 @@ var render = function() {
                     staticClass: "mr-3",
                     attrs: { on: _vm.createApiTokenForm.recentlySuccessful }
                   },
-                  [_vm._v("\n                Created.\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Created.")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -30215,7 +30923,13 @@ var render = function() {
                     class: { "opacity-25": _vm.createApiTokenForm.processing },
                     attrs: { disabled: _vm.createApiTokenForm.processing }
                   },
-                  [_vm._v("\n                Create\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Create")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -30242,7 +30956,9 @@ var render = function() {
                           fn: function() {
                             return [
                               _vm._v(
-                                "\n                    Manage API Tokens\n                "
+                                "\n                    " +
+                                  _vm._s(_vm.__("Manage API Tokens")) +
+                                  "\n                "
                               )
                             ]
                           },
@@ -30253,7 +30969,13 @@ var render = function() {
                           fn: function() {
                             return [
                               _vm._v(
-                                "\n                    You may delete any of your existing tokens if they are no longer needed.\n                "
+                                "\n                    " +
+                                  _vm._s(
+                                    _vm.__(
+                                      "You may delete any of your existing tokens if they are no longer needed."
+                                    )
+                                  ) +
+                                  "\n                "
                               )
                             ]
                           },
@@ -30295,7 +31017,7 @@ var render = function() {
                                                 },
                                                 [
                                                   _vm._v(
-                                                    "\n                                    Last used " +
+                                                    "\n                                    Last used\n                                    " +
                                                       _vm._s(
                                                         _vm.fromNow(
                                                           token.last_used_at
@@ -30323,7 +31045,11 @@ var render = function() {
                                                 },
                                                 [
                                                   _vm._v(
-                                                    "\n                                    Permissions\n                                "
+                                                    "\n                                    " +
+                                                      _vm._s(
+                                                        _vm.__("Permissions")
+                                                      ) +
+                                                      "\n                                "
                                                   )
                                                 ]
                                               )
@@ -30344,7 +31070,9 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                    Delete\n                                "
+                                                "\n                                    " +
+                                                  _vm._s(_vm.__("Delete")) +
+                                                  "\n                                "
                                               )
                                             ]
                                           )
@@ -30362,7 +31090,7 @@ var render = function() {
                       ],
                       null,
                       false,
-                      822305792
+                      2860255858
                     )
                   })
                 ],
@@ -30384,7 +31112,11 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            API Token\n        ")]
+              return [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.__("API Token")) + "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -30394,7 +31126,13 @@ var render = function() {
               return [
                 _c("div", [
                   _vm._v(
-                    "\n                Please copy your new API token. For your security, it won't be shown again.\n            "
+                    "\n                " +
+                      _vm._s(
+                        _vm.__(
+                          "Please copy your new API token. For your security, it won't be shown again."
+                        )
+                      ) +
+                      "\n            "
                   )
                 ]),
                 _vm._v(" "),
@@ -30431,7 +31169,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Close\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Close")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -30451,7 +31195,13 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            API Token Permissions\n        ")]
+              return [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("API Token Permissions")) +
+                    "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -30550,7 +31300,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Nevermind\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Nevermind")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -30565,7 +31321,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Save\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Save")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -30585,7 +31347,13 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            Delete API Token\n        ")]
+              return [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("Delete API Token")) +
+                    "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -30594,7 +31362,13 @@ var render = function() {
             fn: function() {
               return [
                 _vm._v(
-                  "\n            Are you sure you would like to delete this API token?\n        "
+                  "\n            " +
+                    _vm._s(
+                      _vm.__(
+                        "Are you sure you would like to delete this API token?"
+                      )
+                    ) +
+                    "\n        "
                 )
               ]
             },
@@ -30613,7 +31387,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Nevermind\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Nevermind")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -30628,7 +31408,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Delete\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Delete")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -30676,7 +31462,13 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            API Tokens\n        ")]
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.__("API Tokens")) +
+                      "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -30741,7 +31533,13 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Dashboard\n        ")]
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.__("Dashboard")) +
+                      "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -30776,7 +31574,9 @@ var render = function() {
                 [
                   _c("div", { staticClass: "text-gray-500 text-3xl" }, [
                     _vm._v(
-                      "\n                        Change Log\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Change Log")) +
+                        "\n                    "
                     )
                   ]),
                   _vm._v(" "),
@@ -30802,7 +31602,9 @@ var render = function() {
                 [
                   _c("div", { staticClass: "text-gray-500 text-3xl" }, [
                     _vm._v(
-                      "\n                        Download\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Download")) +
+                        "\n                    "
                     )
                   ]),
                   _vm._v(" "),
@@ -30831,21 +31633,35 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "px-4 py-3" }, [
-                                    _vm._v("License")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "px-4 py-3" }, [
-                                    _vm._v("Version")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "px-4 py-3" }, [
                                     _vm._v(
-                                      "\n                                            Created At\n                                        "
+                                      "\n                                            " +
+                                        _vm._s(_vm.__("License")) +
+                                        "\n                                        "
                                     )
                                   ]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "px-4 py-3" }, [
-                                    _vm._v("Download")
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(_vm.__("Version")) +
+                                        "\n                                        "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "px-4 py-3" }, [
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(_vm.__("Created At")) +
+                                        "\n                                        "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "px-4 py-3" }, [
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(_vm.__("Download")) +
+                                        "\n                                        "
+                                    )
                                   ])
                                 ]
                               )
@@ -30889,7 +31705,7 @@ var render = function() {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                 v1.0.0\n                                            "
+                                              "\n                                                v1.0.0\n                                            "
                                             )
                                           ]
                                         )
@@ -30914,7 +31730,7 @@ var render = function() {
                                               "hover:underline text-indigo-500",
                                             attrs: { href: "#" }
                                           },
-                                          [_vm._v("Download")]
+                                          [_vm._v(_vm._s(_vm.__("Download")))]
                                         )
                                       ]
                                     )
@@ -30948,7 +31764,9 @@ var render = function() {
                 [
                   _c("div", { staticClass: "text-gray-500 text-3xl" }, [
                     _vm._v(
-                      "\n                        Terms and Conditions\n                    "
+                      "\n                        " +
+                        _vm._s(_vm.__("Terms and Conditions")) +
+                        "\n                    "
                     )
                   ]),
                   _vm._v(" "),
@@ -31004,7 +31822,13 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n                Clients\n            ")]
+                [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.__("Clients")) +
+                      "\n            "
+                  )
+                ]
               )
             ]
           },
@@ -31051,24 +31875,44 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", [
                     _c("p", { staticClass: "font-bold" }, [
-                      _vm._v("Information for upload file")
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.__("Information for upload file")) +
+                          "\n                            "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
                       _vm._v(
-                        "\n                                After upload your file you have to wait for\n                                "
+                        "\n                                " +
+                          _vm._s(
+                            _vm.__(
+                              "After upload your file you have to wait for"
+                            )
+                          ) +
+                          "\n                                "
                       ),
-                      _c("strong", [_vm._v("5 min")])
+                      _c("strong", [_vm._v(_vm._s(_vm.__("5 min")))])
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
                       _vm._v(
-                        "\n                                Export facebook IDs "
+                        "\n                                " +
+                          _vm._s(_vm.__("Export facebook IDs")) +
+                          "\n                                "
                       ),
                       _c("strong", [_vm._v("100")]),
-                      _vm._v(" to\n                                "),
+                      _vm._v(
+                        " " +
+                          _vm._s(_vm.__("to")) +
+                          "\n                                "
+                      ),
                       _c("strong", [_vm._v("20.000")]),
-                      _vm._v(" records\n                            ")
+                      _vm._v(
+                        " " +
+                          _vm._s(_vm.__("records")) +
+                          "\n                            "
+                      )
                     ])
                   ])
                 ])
@@ -31084,7 +31928,9 @@ var render = function() {
                     {
                       key: "title",
                       fn: function() {
-                        return [_vm._v(" Extract Data ")]
+                        return [
+                          _vm._v(" " + _vm._s(_vm.__("Extract Data")) + " ")
+                        ]
                       },
                       proxy: true
                     },
@@ -31142,7 +31988,13 @@ var render = function() {
                                             { staticClass: "font-bold" },
                                             [
                                               _vm._v(
-                                                "\n                                            Ops, You have an error\n                                        "
+                                                "\n                                            " +
+                                                  _vm._s(
+                                                    _vm.__(
+                                                      "Ops, You have an error"
+                                                    )
+                                                  ) +
+                                                  "\n                                        "
                                               )
                                             ]
                                           ),
@@ -31199,14 +32051,26 @@ var render = function() {
                                             { staticClass: "font-bold" },
                                             [
                                               _vm._v(
-                                                "\n                                            File was uploaded to server\n                                            successfully\n                                        "
+                                                "\n                                            " +
+                                                  _vm._s(
+                                                    _vm.__(
+                                                      "File was uploaded to server successfully"
+                                                    )
+                                                  ) +
+                                                  "\n                                        "
                                               )
                                             ]
                                           ),
                                           _vm._v(" "),
                                           _c("p", { staticClass: "text-sm" }, [
                                             _vm._v(
-                                              "\n                                            Please be patient and reload the\n                                            page within a minute or 5 minutes\n                                            maximum.\n                                        "
+                                              "\n                                            " +
+                                                _vm._s(
+                                                  _vm.__(
+                                                    "Please be patient and reload the page within a minute or 5 minutes maximum."
+                                                  )
+                                                ) +
+                                                "\n                                        "
                                             )
                                           ])
                                         ])
@@ -31223,7 +32087,7 @@ var render = function() {
                                         staticClass: "mt-4",
                                         attrs: {
                                           for: "find",
-                                          value: "Extract By File"
+                                          value: _vm.__("Extract By File")
                                         }
                                       }),
                                       _vm._v(" "),
@@ -31254,7 +32118,13 @@ var render = function() {
                                                   {
                                                     staticClass: "text-gray-500"
                                                   },
-                                                  [_vm._v("File count:")]
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        _vm.__("File count")
+                                                      ) + ":"
+                                                    )
+                                                  ]
                                                 ),
                                                 _vm._v(
                                                   "\n                                        " +
@@ -31270,14 +32140,19 @@ var render = function() {
                                   )
                                 : _c("div", { staticClass: "text-lg" }, [
                                     _vm._v(
-                                      "\n                                Please purchase points\n                                "
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.__("Please purchase points")
+                                        ) +
+                                        "\n                                "
                                     ),
                                     _c(
                                       "span",
                                       { staticClass: "text-red-500" },
                                       [
                                         _vm._v(
-                                          "your point " +
+                                          _vm._s(_vm.__("your point")) +
+                                            "\n                                    " +
                                             _vm._s(_vm.$page.user.point)
                                         )
                                       ]
@@ -31302,7 +32177,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                            Saved.\n                        "
+                                    "\n                            " +
+                                      _vm._s(_vm.__("Saved.")) +
+                                      "\n                        "
                                   )
                                 ]
                               ),
@@ -31315,7 +32192,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                            Save\n                        "
+                                    "\n                            " +
+                                      _vm._s(_vm.__("Save")) +
+                                      "\n                        "
                                   )
                                 ]
                               )
@@ -31333,12 +32212,18 @@ var render = function() {
                 _vm._v(" "),
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-2 text-2xl" }, [
-                  _vm._v("Get In Action")
+                  _vm._v(_vm._s(_vm.__("Get In Action")))
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-2 text-xs text-gray-500" }, [
                   _vm._v(
-                    "\n                        You can find Facebook accounts by add (IDs) in this\n                        Input\n                    "
+                    "\n                        " +
+                      _vm._s(
+                        _vm.__(
+                          "You can find Facebook accounts by add (IDs) in this Input"
+                        )
+                      ) +
+                      "\n                    "
                   )
                 ])
               ]
@@ -31370,23 +32255,31 @@ var render = function() {
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
-                                  _vm._v("Name")
+                                  _vm._v(_vm._s(_vm.__("Name")))
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
-                                  _vm._v("Count")
+                                  _vm._v(_vm._s(_vm.__("Count")))
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
-                                  _vm._v("File")
+                                  _vm._v(_vm._s(_vm.__("File")))
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
-                                  _vm._v("Created At")
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.__("Created At")) +
+                                      "\n                                    "
+                                  )
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
-                                  _vm._v("Download")
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(_vm.__("Download")) +
+                                      "\n                                    "
+                                  )
                                 ])
                               ]
                             )
@@ -31489,7 +32382,7 @@ var render = function() {
                                             )
                                           }
                                         },
-                                        [_vm._v("Download")]
+                                        [_vm._v(_vm._s(_vm.__("Download")))]
                                       )
                                     ]
                                   )
@@ -31514,11 +32407,15 @@ var render = function() {
                           { staticClass: "flex items-center col-span-3" },
                           [
                             _vm._v(
-                              "\n                            Showing " +
+                              "\n                            " +
+                                _vm._s(_vm.__("Showing")) +
+                                " " +
                                 _vm._s(_vm.clients.from) +
                                 "-" +
                                 _vm._s(_vm.clients.to) +
-                                " of\n                            " +
+                                " " +
+                                _vm._s(_vm.__("of")) +
+                                "\n                            " +
                                 _vm._s(_vm.clients.total) +
                                 "\n                        "
                             )
@@ -31631,7 +32528,11 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Purchase\n        ")]
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Purchase")) + "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -31654,7 +32555,7 @@ var render = function() {
                   {
                     key: "title",
                     fn: function() {
-                      return [_vm._v(" Redeem Code ")]
+                      return [_vm._v(" " + _vm._s(_vm.__("Redeem Code")) + " ")]
                     },
                     proxy: true
                   },
@@ -31663,7 +32564,11 @@ var render = function() {
                     fn: function() {
                       return [
                         _vm._v(
-                          "\n                    Redeem code, or git card from Hercules\n                "
+                          "\n                    " +
+                            _vm._s(
+                              _vm.__("Redeem code, or git card from Hercules")
+                            ) +
+                            "\n                "
                         )
                       ]
                     },
@@ -31714,11 +32619,25 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "font-bold" },
-                                            [_vm._v("Ops, You have an error")]
+                                            [
+                                              _vm._v(
+                                                "\n                                            " +
+                                                  _vm._s(
+                                                    _vm.__(
+                                                      "Ops, You have an error"
+                                                    )
+                                                  ) +
+                                                  "\n                                        "
+                                              )
+                                            ]
                                           ),
                                           _vm._v(" "),
                                           _c("p", { staticClass: "text-sm" }, [
-                                            _vm._v(_vm._s(_vm.errors.message))
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.errors.message) +
+                                                "\n                                        "
+                                            )
                                           ])
                                         ])
                                       ])
@@ -31763,11 +32682,17 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "font-bold" },
-                                            [_vm._v("Congratulations")]
+                                            [
+                                              _vm._v(
+                                                "\n                                            Congratulations\n                                        "
+                                              )
+                                            ]
                                           ),
                                           _vm._v(" "),
                                           _c("p", { staticClass: "text-sm" }, [
-                                            _vm._v("Redeem code is successful.")
+                                            _vm._v(
+                                              "\n                                            Redeem code is successful.\n                                        "
+                                            )
                                           ])
                                         ])
                                       ])
@@ -31777,7 +32702,10 @@ var render = function() {
                               _vm._v(" "),
                               _c("jet-label", {
                                 staticClass: "mt-4",
-                                attrs: { for: "code", value: "Redeem Card" }
+                                attrs: {
+                                  for: "code",
+                                  value: _vm.__("Redeem Card")
+                                }
                               }),
                               _vm._v(" "),
                               _c("jet-input", {
@@ -31821,7 +32749,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                        Saved.\n                    "
+                              "\n                        " +
+                                _vm._s(_vm.__("Saved.")) +
+                                "\n                    "
                             )
                           ]
                         ),
@@ -31834,7 +32764,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                        Save\n                    "
+                              "\n                        " +
+                                _vm._s(_vm.__("Save")) +
+                                "\n                    "
                             )
                           ]
                         )
@@ -31853,7 +32785,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-2 text-xs text-gray-500" }, [
                   _vm._v(
-                    "\n                    You can find Facebook accounts by add (IDs) in this\n                    Input\n                "
+                    "\n                    " +
+                      _vm._s(
+                        _vm.__(
+                          "You can find Facebook accounts by add (IDs) in this Input"
+                        )
+                      ) +
+                      "\n                "
                   )
                 ])
               ]
@@ -31892,14 +32830,22 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Delete Account\n    ")]
+          return [
+            _vm._v("\n        " + _vm._s(_vm.__("Delete Account")) + "\n    ")
+          ]
         },
         proxy: true
       },
       {
         key: "description",
         fn: function() {
-          return [_vm._v("\n        Permanently delete your account.\n    ")]
+          return [
+            _vm._v(
+              "\n        " +
+                _vm._s(_vm.__("Permanently delete your account.")) +
+                "\n    "
+            )
+          ]
         },
         proxy: true
       },
@@ -31909,7 +32855,13 @@ var render = function() {
           return [
             _c("div", { staticClass: "max-w-xl text-sm text-gray-600" }, [
               _vm._v(
-                "\n            Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.\n        "
+                "\n            " +
+                  _vm._s(
+                    _vm.__(
+                      "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain."
+                    )
+                  ) +
+                  "\n        "
               )
             ]),
             _vm._v(" "),
@@ -31926,7 +32878,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Delete Account\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Delete Account")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ],
               1
@@ -31944,7 +32902,11 @@ var render = function() {
                   key: "title",
                   fn: function() {
                     return [
-                      _vm._v("\n                Delete Account\n            ")
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.__("Delete Account")) +
+                          "\n            "
+                      )
                     ]
                   },
                   proxy: true
@@ -31954,7 +32916,13 @@ var render = function() {
                   fn: function() {
                     return [
                       _vm._v(
-                        "\n                Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.\n\n                "
+                        "\n                " +
+                          _vm._s(
+                            _vm.__(
+                              "Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account."
+                            )
+                          ) +
+                          "\n\n                "
                       ),
                       _c(
                         "div",
@@ -32019,7 +32987,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Nevermind\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Nevermind")) +
+                              "\n                "
                           )
                         ]
                       ),
@@ -32038,7 +33008,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Delete Account\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Delete Account")) +
+                              "\n                "
                           )
                         ]
                       )
@@ -32082,7 +33054,9 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Browser Sessions\n    ")]
+          return [
+            _vm._v("\n        " + _vm._s(_vm.__("Browser Sessions")) + "\n    ")
+          ]
         },
         proxy: true
       },
@@ -32091,7 +33065,13 @@ var render = function() {
         fn: function() {
           return [
             _vm._v(
-              "\n        Manage and logout your active sessions on other browsers and devices.\n    "
+              "\n        " +
+                _vm._s(
+                  _vm.__(
+                    "Manage and logout your active sessions on other browsers and devices."
+                  )
+                ) +
+                "\n    "
             )
           ]
         },
@@ -32103,7 +33083,13 @@ var render = function() {
           return [
             _c("div", { staticClass: "max-w-xl text-sm text-gray-600" }, [
               _vm._v(
-                "\n            If necessary, you may logout of all of your other browser sessions across all of your devices. If you feel your account has been compromised, you should also update your password.\n        "
+                "\n            " +
+                  _vm._s(
+                    _vm.__(
+                      "If necessary, you may logout of all of your other browser sessions across all of your devices. If you feel your account has been compromised, you should also update your password."
+                    )
+                  ) +
+                  "\n        "
               )
             ]),
             _vm._v(" "),
@@ -32155,6 +33141,7 @@ var render = function() {
                                 _c("path", {
                                   attrs: { d: "M0 0h24v24H0z", stroke: "none" }
                                 }),
+                                _vm._v(" "),
                                 _c("rect", {
                                   attrs: {
                                     x: "7",
@@ -32164,6 +33151,7 @@ var render = function() {
                                     rx: "1"
                                   }
                                 }),
+                                _vm._v(" "),
                                 _c("path", {
                                   attrs: { d: "M11 5h2M12 17v.01" }
                                 })
@@ -32176,7 +33164,7 @@ var render = function() {
                           _vm._v(
                             "\n                        " +
                               _vm._s(session.agent.platform) +
-                              " - " +
+                              " -\n                        " +
                               _vm._s(session.agent.browser) +
                               "\n                    "
                           )
@@ -32195,11 +33183,13 @@ var render = function() {
                                   {
                                     staticClass: "text-green-500 font-semibold"
                                   },
-                                  [_vm._v("This device")]
+                                  [_vm._v(_vm._s(_vm.__("This device")))]
                                 )
                               : _c("span", [
                                   _vm._v(
-                                    "Last active " + _vm._s(session.last_active)
+                                    _vm._s(_vm.__("Last active")) +
+                                      "\n                                " +
+                                      _vm._s(session.last_active)
                                   )
                                 ])
                           ])
@@ -32226,7 +33216,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                Logout Other Browser Sessions\n            "
+                      "\n                " +
+                        _vm._s(_vm.__("Logout Other Browser Sessions")) +
+                        "\n            "
                     )
                   ]
                 ),
@@ -32237,7 +33229,13 @@ var render = function() {
                     staticClass: "ml-3",
                     attrs: { on: _vm.form.recentlySuccessful }
                   },
-                  [_vm._v("\n                Done.\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Done.")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ],
               1
@@ -32256,7 +33254,9 @@ var render = function() {
                   fn: function() {
                     return [
                       _vm._v(
-                        "\n                Logout Other Browser Sessions\n            "
+                        "\n                " +
+                          _vm._s(_vm.__("Logout Other Browser Sessions")) +
+                          "\n            "
                       )
                     ]
                   },
@@ -32267,7 +33267,13 @@ var render = function() {
                   fn: function() {
                     return [
                       _vm._v(
-                        "\n                Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.\n\n                "
+                        "\n                " +
+                          _vm._s(
+                            _vm.__(
+                              "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices."
+                            )
+                          ) +
+                          "\n\n                "
                       ),
                       _c(
                         "div",
@@ -32332,7 +33338,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Nevermind\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Nevermind")) +
+                              "\n                "
                           )
                         ]
                       ),
@@ -32351,7 +33359,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Logout Other Browser Sessions\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Logout Other Browser Sessions")) +
+                              "\n                "
                           )
                         ]
                       )
@@ -32404,7 +33414,11 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Profile\n        ")]
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Profile")) + "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -32485,7 +33499,13 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Two Factor Authentication\n    ")]
+          return [
+            _vm._v(
+              "\n        " +
+                _vm._s(_vm.__("Two Factor Authentication")) +
+                "\n    "
+            )
+          ]
         },
         proxy: true
       },
@@ -32494,7 +33514,13 @@ var render = function() {
         fn: function() {
           return [
             _vm._v(
-              "\n        Add additional security to your account using two factor authentication.\n    "
+              "\n        " +
+                _vm._s(
+                  _vm.__(
+                    "Add additional security to your account using two factor authentication."
+                  )
+                ) +
+                "\n    "
             )
           ]
         },
@@ -32507,19 +33533,35 @@ var render = function() {
             _vm.twoFactorEnabled
               ? _c("h3", { staticClass: "text-lg font-medium text-gray-900" }, [
                   _vm._v(
-                    "\n            You have enabled two factor authentication.\n        "
+                    "\n            " +
+                      _vm._s(
+                        _vm.__("You have enabled two factor authentication.")
+                      ) +
+                      "\n        "
                   )
                 ])
               : _c("h3", { staticClass: "text-lg font-medium text-gray-900" }, [
                   _vm._v(
-                    "\n            You have not enabled two factor authentication.\n        "
+                    "\n            " +
+                      _vm._s(
+                        _vm.__(
+                          "You have not enabled two factor authentication."
+                        )
+                      ) +
+                      "\n        "
                   )
                 ]),
             _vm._v(" "),
             _c("div", { staticClass: "mt-3 max-w-xl text-sm text-gray-600" }, [
               _c("p", [
                 _vm._v(
-                  "\n                When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.\n            "
+                  "\n                " +
+                    _vm._s(
+                      _vm.__(
+                        "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application."
+                      )
+                    ) +
+                    "\n            "
                 )
               ])
             ]),
@@ -32536,7 +33578,13 @@ var render = function() {
                           [
                             _c("p", { staticClass: "font-semibold" }, [
                               _vm._v(
-                                "\n                        Two factor authentication is now enabled. Scan the following QR code using your phone's authenticator application.\n                    "
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.__(
+                                      "Two factor authentication is now enabled. Scan the following QR code using your phone's authenticator application."
+                                    )
+                                  ) +
+                                  "\n                    "
                               )
                             ])
                           ]
@@ -32559,7 +33607,13 @@ var render = function() {
                           [
                             _c("p", { staticClass: "font-semibold" }, [
                               _vm._v(
-                                "\n                        Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.\n                    "
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm.__(
+                                      "Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost."
+                                    )
+                                  ) +
+                                  "\n                    "
                               )
                             ])
                           ]
@@ -32606,7 +33660,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                        Enable\n                    "
+                                "\n                        " +
+                                  _vm._s(_vm.__("Enable")) +
+                                  "\n                    "
                               )
                             ]
                           )
@@ -32629,7 +33685,11 @@ var render = function() {
                                 { staticClass: "mr-3" },
                                 [
                                   _vm._v(
-                                    "\n                        Regenerate Recovery Codes\n                    "
+                                    "\n                        " +
+                                      _vm._s(
+                                        _vm.__("Regenerate Recovery Codes")
+                                      ) +
+                                      "\n                    "
                                   )
                                 ]
                               )
@@ -32648,7 +33708,9 @@ var render = function() {
                                 { staticClass: "mr-3" },
                                 [
                                   _vm._v(
-                                    "\n                        Show Recovery Codes\n                    "
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Show Recovery Codes")) +
+                                      "\n                    "
                                   )
                                 ]
                               )
@@ -32671,7 +33733,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                        Disable\n                    "
+                                "\n                        " +
+                                  _vm._s(_vm.__("Disable")) +
+                                  "\n                    "
                               )
                             ]
                           )
@@ -32717,7 +33781,7 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v(" Update Password ")]
+          return [_vm._v(" " + _vm._s(_vm.__("Update Password")) + " ")]
         },
         proxy: true
       },
@@ -32726,7 +33790,13 @@ var render = function() {
         fn: function() {
           return [
             _vm._v(
-              "\n\t\tEnsure your account is using a long, random password to stay secure.\n\t"
+              "\n        " +
+                _vm._s(
+                  _vm.__(
+                    "Ensure your account is using a long, random password to stay secure."
+                  )
+                ) +
+                "\n    "
             )
           ]
         },
@@ -32741,7 +33811,10 @@ var render = function() {
               { staticClass: "col-span-6 sm:col-span-4" },
               [
                 _c("jet-label", {
-                  attrs: { for: "current_password", value: "Current Password" }
+                  attrs: {
+                    for: "current_password",
+                    value: _vm.__("Current Password")
+                  }
                 }),
                 _vm._v(" "),
                 _c("jet-input", {
@@ -32774,7 +33847,7 @@ var render = function() {
               { staticClass: "col-span-6 sm:col-span-4" },
               [
                 _c("jet-label", {
-                  attrs: { for: "password", value: "New Password" }
+                  attrs: { for: "password", value: _vm.__("New Password") }
                 }),
                 _vm._v(" "),
                 _c("jet-input", {
@@ -32808,7 +33881,7 @@ var render = function() {
                 _c("jet-label", {
                   attrs: {
                     for: "password_confirmation",
-                    value: "Confirm Password"
+                    value: _vm.__("Confirm Password")
                   }
                 }),
                 _vm._v(" "),
@@ -32849,7 +33922,11 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.form.recentlySuccessful }
               },
-              [_vm._v("\n\t\t\tSaved.\n\t\t")]
+              [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.__("Saved.")) + "\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -32858,7 +33935,7 @@ var render = function() {
                 class: { "opacity-25": _vm.form.processing },
                 attrs: { disabled: _vm.form.processing }
               },
-              [_vm._v("\n\t\t\tSave\n\t\t")]
+              [_vm._v("\n            " + _vm._s(_vm.__("Save")) + "\n        ")]
             )
           ]
         },
@@ -32895,7 +33972,7 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Profile Information\n    ")]
+          return [_vm._v(_vm._s(_vm.__("Profile Information")))]
         },
         proxy: true
       },
@@ -32904,7 +33981,13 @@ var render = function() {
         fn: function() {
           return [
             _vm._v(
-              "\n        Update your account's profile information and email address.\n    "
+              "\n        " +
+                _vm._s(
+                  _vm.__(
+                    "Update your account's profile information and email address."
+                  )
+                ) +
+                "\n    "
             )
           ]
         },
@@ -32927,7 +34010,7 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("jet-label", {
-                      attrs: { for: "photo", value: "Photo" }
+                      attrs: { for: "photo", value: _vm.__("Photo") }
                     }),
                     _vm._v(" "),
                     _c(
@@ -32938,7 +34021,7 @@ var render = function() {
                             name: "show",
                             rawName: "v-show",
                             value: !_vm.photoPreview,
-                            expression: "! photoPreview"
+                            expression: "!photoPreview"
                           }
                         ],
                         staticClass: "mt-2"
@@ -32992,7 +34075,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                Select A New Photo\n            "
+                          "\n                " +
+                            _vm._s(_vm.__("Select A New Photo")) +
+                            "\n            "
                         )
                       ]
                     ),
@@ -33012,7 +34097,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                Remove Photo\n            "
+                              "\n                " +
+                                _vm._s(_vm.__("Remove Photo")) +
+                                "\n            "
                             )
                           ]
                         )
@@ -33031,7 +34118,9 @@ var render = function() {
               "div",
               { staticClass: "col-span-6 sm:col-span-4" },
               [
-                _c("jet-label", { attrs: { for: "name", value: "Name" } }),
+                _c("jet-label", {
+                  attrs: { for: "name", value: _vm.__("Name") }
+                }),
                 _vm._v(" "),
                 _c("jet-input", {
                   staticClass: "mt-1 block w-full",
@@ -33057,7 +34146,9 @@ var render = function() {
               "div",
               { staticClass: "col-span-6 sm:col-span-4" },
               [
-                _c("jet-label", { attrs: { for: "email", value: "Email" } }),
+                _c("jet-label", {
+                  attrs: { for: "email", value: _vm.__("Email") }
+                }),
                 _vm._v(" "),
                 _c("jet-input", {
                   staticClass: "mt-1 block w-full",
@@ -33092,7 +34183,11 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.form.recentlySuccessful }
               },
-              [_vm._v("\n            Saved.\n        ")]
+              [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.__("Saved.")) + "\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -33101,7 +34196,7 @@ var render = function() {
                 class: { "opacity-25": _vm.form.processing },
                 attrs: { disabled: _vm.form.processing }
               },
-              [_vm._v("\n            Save\n        ")]
+              [_vm._v("\n            " + _vm._s(_vm.__("Save")) + "\n        ")]
             )
           ]
         },
@@ -33146,7 +34241,13 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Create Team\n        ")]
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.__("Create Team")) +
+                      "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -33195,7 +34296,9 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Team Details\n    ")]
+          return [
+            _vm._v("\n        " + _vm._s(_vm.__("Team Details")) + "\n    ")
+          ]
         },
         proxy: true
       },
@@ -33204,7 +34307,13 @@ var render = function() {
         fn: function() {
           return [
             _vm._v(
-              "\n        Create a new team to collaborate with others on projects.\n    "
+              "\n        " +
+                _vm._s(
+                  _vm.__(
+                    "Create a new team to collaborate with others on projects."
+                  )
+                ) +
+                "\n    "
             )
           ]
         },
@@ -33218,7 +34327,7 @@ var render = function() {
               "div",
               { staticClass: "col-span-6" },
               [
-                _c("jet-label", { attrs: { value: "Team Owner" } }),
+                _c("jet-label", { attrs: { value: _vm.__("Team Owner") } }),
                 _vm._v(" "),
                 _c("div", { staticClass: "flex items-center mt-2" }, [
                   _c("img", {
@@ -33233,7 +34342,11 @@ var render = function() {
                     _c("div", [_vm._v(_vm._s(_vm.$page.user.name))]),
                     _vm._v(" "),
                     _c("div", { staticClass: "text-gray-700 text-sm" }, [
-                      _vm._v(_vm._s(_vm.$page.user.email))
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.$page.user.email) +
+                          "\n                    "
+                      )
                     ])
                   ])
                 ])
@@ -33245,7 +34358,9 @@ var render = function() {
               "div",
               { staticClass: "col-span-6 sm:col-span-4" },
               [
-                _c("jet-label", { attrs: { for: "name", value: "Team Name" } }),
+                _c("jet-label", {
+                  attrs: { for: "name", value: _vm.__("Team Name") }
+                }),
                 _vm._v(" "),
                 _c("jet-input", {
                   staticClass: "mt-1 block w-full",
@@ -33280,7 +34395,11 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.form.recentlySuccessful }
               },
-              [_vm._v("\n            Saved.\n        ")]
+              [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.__("Saved.")) + "\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -33289,7 +34408,7 @@ var render = function() {
                 class: { "opacity-25": _vm.form.processing },
                 attrs: { disabled: _vm.form.processing }
               },
-              [_vm._v("\n            Save\n        ")]
+              [_vm._v("\n            " + _vm._s(_vm.__("Save")) + "\n        ")]
             )
           ]
         },
@@ -33325,14 +34444,22 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Delete Team\n    ")]
+          return [
+            _vm._v("\n        " + _vm._s(_vm.__("Delete Team")) + "\n    ")
+          ]
         },
         proxy: true
       },
       {
         key: "description",
         fn: function() {
-          return [_vm._v("\n        Permanently delete this team.\n    ")]
+          return [
+            _vm._v(
+              "\n        " +
+                _vm._s(_vm.__("Permanently delete this team.")) +
+                "\n    "
+            )
+          ]
         },
         proxy: true
       },
@@ -33342,7 +34469,13 @@ var render = function() {
           return [
             _c("div", { staticClass: "max-w-xl text-sm text-gray-600" }, [
               _vm._v(
-                "\n            Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain.\n        "
+                "\n            " +
+                  _vm._s(
+                    _vm.__(
+                      "Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain."
+                    )
+                  ) +
+                  "\n        "
               )
             ]),
             _vm._v(" "),
@@ -33359,7 +34492,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Delete Team\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Delete Team")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ],
               1
@@ -33377,7 +34516,11 @@ var render = function() {
                   key: "title",
                   fn: function() {
                     return [
-                      _vm._v("\n                Delete Team\n            ")
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.__("Delete Team")) +
+                          "\n            "
+                      )
                     ]
                   },
                   proxy: true
@@ -33387,7 +34530,13 @@ var render = function() {
                   fn: function() {
                     return [
                       _vm._v(
-                        "\n                Are you sure you want to delete this team? Once a team is deleted, all of its resources and data will be permanently deleted.\n            "
+                        "\n                " +
+                          _vm._s(
+                            _vm.__(
+                              "Are you sure you want to delete this team? Once a team is deleted, all of its resources and data will be permanently deleted."
+                            )
+                          ) +
+                          "\n            "
                       )
                     ]
                   },
@@ -33408,7 +34557,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Nevermind\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Nevermind")) +
+                              "\n                "
                           )
                         ]
                       ),
@@ -33427,7 +34578,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Delete Team\n                "
+                            "\n                    " +
+                              _vm._s(_vm.__("Delete Team")) +
+                              "\n                "
                           )
                         ]
                       )
@@ -33480,7 +34633,13 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Team Settings\n        ")]
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.__("Team Settings")) +
+                      "\n        "
+                  )
+                ]
               )
             ]
           },
@@ -33565,7 +34724,9 @@ var render = function() {
                       fn: function() {
                         return [
                           _vm._v(
-                            "\n                Add Team Member\n            "
+                            "\n                " +
+                              _vm._s(_vm.__("Add Team Member")) +
+                              "\n            "
                           )
                         ]
                       },
@@ -33576,7 +34737,13 @@ var render = function() {
                       fn: function() {
                         return [
                           _vm._v(
-                            "\n                Add a new team member to your team, allowing them to collaborate with you.\n            "
+                            "\n                " +
+                              _vm._s(
+                                _vm.__(
+                                  "Add a new team member to your team, allowing them to collaborate with you."
+                                )
+                              ) +
+                              "\n            "
                           )
                         ]
                       },
@@ -33592,7 +34759,13 @@ var render = function() {
                               { staticClass: "max-w-xl text-sm text-gray-600" },
                               [
                                 _vm._v(
-                                  "\n                        Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account.\n                    "
+                                  "\n                        " +
+                                    _vm._s(
+                                      _vm.__(
+                                        "Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account."
+                                      )
+                                    ) +
+                                    "\n                    "
                                 )
                               ]
                             )
@@ -33603,7 +34776,7 @@ var render = function() {
                             { staticClass: "col-span-6 sm:col-span-4" },
                             [
                               _c("jet-label", {
-                                attrs: { for: "email", value: "Email" }
+                                attrs: { for: "email", value: _vm.__("Email") }
                               }),
                               _vm._v(" "),
                               _c("jet-input", {
@@ -33638,7 +34811,10 @@ var render = function() {
                                 { staticClass: "col-span-6 lg:col-span-4" },
                                 [
                                   _c("jet-label", {
-                                    attrs: { for: "roles", value: "Role" }
+                                    attrs: {
+                                      for: "roles",
+                                      value: _vm.__("Role")
+                                    }
                                   }),
                                   _vm._v(" "),
                                   _c("jet-input-error", {
@@ -33789,7 +34965,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                    Added.\n                "
+                                "\n                    " +
+                                  _vm._s(_vm.__("Added.")) +
+                                  "\n                "
                               )
                             ]
                           ),
@@ -33806,7 +34984,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                    Add\n                "
+                                "\n                    " +
+                                  _vm._s(_vm.__("Add")) +
+                                  "\n                "
                               )
                             ]
                           )
@@ -33817,7 +34997,7 @@ var render = function() {
                   ],
                   null,
                   false,
-                  969523371
+                  732333005
                 )
               })
             ],
@@ -33839,7 +35019,11 @@ var render = function() {
                       key: "title",
                       fn: function() {
                         return [
-                          _vm._v("\n                Team Members\n            ")
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(_vm.__("Team Members")) +
+                              "\n            "
+                          )
                         ]
                       },
                       proxy: true
@@ -33849,7 +35033,13 @@ var render = function() {
                       fn: function() {
                         return [
                           _vm._v(
-                            "\n                All of the people that are part of this team.\n            "
+                            "\n                " +
+                              _vm._s(
+                                _vm.__(
+                                  "All of the people that are part of this team."
+                                )
+                              ) +
+                              "\n            "
                           )
                         ]
                       },
@@ -33951,7 +35141,9 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                Leave\n                            "
+                                                "\n                                " +
+                                                  _vm._s(_vm.__("Leave")) +
+                                                  "\n                            "
                                               )
                                             ]
                                           )
@@ -33973,7 +35165,9 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                Remove\n                            "
+                                                "\n                                " +
+                                                  _vm._s(_vm.__("Remove")) +
+                                                  "\n                            "
                                               )
                                             ]
                                           )
@@ -33992,7 +35186,7 @@ var render = function() {
                   ],
                   null,
                   false,
-                  2137951881
+                  858486403
                 )
               })
             ],
@@ -34011,7 +35205,13 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            Manage Role\n        ")]
+              return [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("Manage Role")) +
+                    "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -34141,7 +35341,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Nevermind\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Nevermind")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -34156,7 +35362,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Save\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Save")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -34176,7 +35388,11 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            Leave Team\n        ")]
+              return [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.__("Leave Team")) + "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -34185,7 +35401,11 @@ var render = function() {
             fn: function() {
               return [
                 _vm._v(
-                  "\n            Are you sure you would like to leave this team?\n        "
+                  "\n            " +
+                    _vm._s(
+                      _vm.__("Are you sure you would like to leave this team?")
+                    ) +
+                    "\n        "
                 )
               ]
             },
@@ -34204,7 +35424,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Nevermind\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Nevermind")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -34219,7 +35445,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Leave\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Leave")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -34239,7 +35471,13 @@ var render = function() {
           {
             key: "title",
             fn: function() {
-              return [_vm._v("\n            Remove Team Member\n        ")]
+              return [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("Remove Team Member")) +
+                    "\n        "
+                )
+              ]
             },
             proxy: true
           },
@@ -34248,7 +35486,13 @@ var render = function() {
             fn: function() {
               return [
                 _vm._v(
-                  "\n            Are you sure you would like to remove this person from the team?\n        "
+                  "\n            " +
+                    _vm._s(
+                      _vm.__(
+                        "Are you sure you would like to remove this person from the team?"
+                      )
+                    ) +
+                    "\n        "
                 )
               ]
             },
@@ -34267,7 +35511,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Nevermind\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Nevermind")) +
+                        "\n            "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -34284,7 +35534,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                Remove\n            ")]
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.__("Remove")) +
+                        "\n            "
+                    )
+                  ]
                 )
               ]
             },
@@ -34325,7 +35581,9 @@ var render = function() {
         {
           key: "title",
           fn: function() {
-            return [_vm._v("\n        Team Name\n    ")]
+            return [
+              _vm._v("\n        " + _vm._s(_vm.__("Team Name")) + "\n    ")
+            ]
           },
           proxy: true
         },
@@ -34333,7 +35591,11 @@ var render = function() {
           key: "description",
           fn: function() {
             return [
-              _vm._v("\n        The team's name and owner information.\n    ")
+              _vm._v(
+                "\n        " +
+                  _vm._s(_vm.__("The team's name and owner information.")) +
+                  "\n    "
+              )
             ]
           },
           proxy: true
@@ -34346,7 +35608,7 @@ var render = function() {
                 "div",
                 { staticClass: "col-span-6" },
                 [
-                  _c("jet-label", { attrs: { value: "Team Owner" } }),
+                  _c("jet-label", { attrs: { value: _vm.__("Team Owner") } }),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex items-center mt-2" }, [
                     _c("img", {
@@ -34361,7 +35623,11 @@ var render = function() {
                       _c("div", [_vm._v(_vm._s(_vm.team.owner.name))]),
                       _vm._v(" "),
                       _c("div", { staticClass: "text-gray-700 text-sm" }, [
-                        _vm._v(_vm._s(_vm.team.owner.email))
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.team.owner.email) +
+                            "\n                    "
+                        )
                       ])
                     ])
                   ])
@@ -34374,7 +35640,7 @@ var render = function() {
                 { staticClass: "col-span-6 sm:col-span-4" },
                 [
                   _c("jet-label", {
-                    attrs: { for: "name", value: "Team Name" }
+                    attrs: { for: "name", value: _vm.__("Team Name") }
                   }),
                   _vm._v(" "),
                   _c("jet-input", {
@@ -34415,7 +35681,13 @@ var render = function() {
                       staticClass: "mr-3",
                       attrs: { on: _vm.form.recentlySuccessful }
                     },
-                    [_vm._v("\n            Saved.\n        ")]
+                    [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.__("Saved.")) +
+                          "\n        "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -34424,7 +35696,11 @@ var render = function() {
                       class: { "opacity-25": _vm.form.processing },
                       attrs: { disabled: _vm.form.processing }
                     },
-                    [_vm._v("\n            Save\n        ")]
+                    [
+                      _vm._v(
+                        "\n            " + _vm._s(_vm.__("Save")) + "\n        "
+                      )
+                    ]
                   )
                 ]
               },
@@ -46613,7 +47889,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nSyntaxError: Unexpected token (20:16)\n    at _class.pp$4.raise (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2927:15)\n    at _class.pp.unexpected (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:698:10)\n    at _class.pp$3.parsePropertyValue (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2672:19)\n    at _class.pp$3.parseProperty (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2621:10)\n    at _class.pp$3.parseObj (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2567:23)\n    at _class.pp$3.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2302:19)\n    at _class.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/dynamic-import/index.js:77:117)\n    at _class.pp$3.parseExprSubscripts (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2129:21)\n    at _class.pp$3.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2106:19)\n    at _class.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/private-class-elements/index.js:122:54)\n    at _class.pp$3.parseExprOps (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2041:21)\n    at _class.pp$3.parseMaybeConditional (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2024:21)\n    at _class.pp$3.parseMaybeAssign (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:1997:21)\n    at _class.pp$3.parsePropertyValue (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2630:89)\n    at _class.pp$3.parseProperty (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2621:10)\n    at _class.pp$3.parseObj (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2567:23)\n    at _class.pp$3.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2302:19)\n    at _class.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/dynamic-import/index.js:77:117)\n    at _class.pp$3.parseExprSubscripts (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2129:21)\n    at _class.pp$3.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2106:19)\n    at _class.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/private-class-elements/index.js:122:54)\n    at _class.pp$3.parseExprOps (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2041:21)\n    at _class.pp$3.parseMaybeConditional (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2024:21)\n    at _class.pp$3.parseMaybeAssign (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:1997:21)\n    at _class.pp$3.parsePropertyValue (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2630:89)\n    at _class.pp$3.parseProperty (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2621:10)\n    at _class.pp$3.parseObj (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2567:23)\n    at _class.pp$3.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2302:19)\n    at _class.parseExprAtom (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/dynamic-import/index.js:77:117)\n    at _class.pp$3.parseExprSubscripts (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2129:21)\n    at _class.pp$3.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2106:19)\n    at _class.parseMaybeUnary (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/lib/private-class-elements/index.js:122:54)\n    at _class.pp$3.parseExprOps (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2041:21)\n    at _class.pp$3.parseMaybeConditional (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2024:21)\n    at _class.pp$3.parseMaybeAssign (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:1997:21)\n    at _class.pp$3.parsePropertyValue (/Users/egy10/Code/laravel/hercules/node_modules/acorn-node/node_modules/acorn/dist/acorn.js:2630:89)\n    at /Users/egy10/Code/laravel/hercules/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/egy10/Code/laravel/hercules/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/egy10/Code/laravel/hercules/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/egy10/Code/laravel/hercules/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /Users/egy10/Code/laravel/hercules/node_modules/postcss-loader/src/index.js:208:9");
 
 /***/ }),
 
@@ -48140,6 +49416,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Mixins/Localization.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Mixins/Localization.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    /**
+     * Translate the given key.
+     */
+    __: function __(key, replace) {
+      var translation = window.config.translations[key] ? window.config.translations[key] : key;
+
+      _.forEach(replace, function (value, key) {
+        key = new String(key);
+
+        if (value === null) {
+          console.error("Translation '".concat(translation, "' for key '").concat(key, "' contains a null replacement."));
+          return;
+        }
+
+        value = new String(value);
+        var searches = [':' + key, ':' + key.toUpperCase(), ':' + key.charAt(0).toUpperCase() + key.slice(1)];
+        var replacements = [value, value.toUpperCase(), value.charAt(0).toUpperCase() + value.slice(1)];
+
+        for (var i = searches.length - 1; i >= 0; i--) {
+          translation = translation.replace(searches[i], replacements[i]);
+        }
+      });
+
+      return translation;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/Pages sync recursive ^\\.\\/.*$":
 /*!******************************************!*\
   !*** ./resources/js/Pages sync ^\.\/.*$ ***!
@@ -49396,9 +50713,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_jetstream__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(laravel_jetstream__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! portal-vue */ "./node_modules/portal-vue/dist/portal-vue.common.js");
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(portal_vue__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
-/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Mixins_Localization__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Mixins/Localization */ "./resources/js/Mixins/Localization.js");
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_5__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -49410,6 +50729,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
     route: route
   }
 });
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin(_Mixins_Localization__WEBPACK_IMPORTED_MODULE_4__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_1__["InertiaApp"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(laravel_jetstream__WEBPACK_IMPORTED_MODULE_2__["InertiaForm"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(portal_vue__WEBPACK_IMPORTED_MODULE_3___default.a);

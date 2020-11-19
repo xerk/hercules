@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Clients
+                {{ __("Clients") }}
             </h2>
         </template>
 
@@ -25,14 +25,21 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-bold">Information for upload file</p>
-                            <p class="text-sm">
-                                After upload your file you have to wait for
-                                <strong>5 min</strong>
+                            <p class="font-bold">
+                                {{ __("Information for upload file") }}
                             </p>
                             <p class="text-sm">
-                                Export facebook IDs <strong>100</strong> to
-                                <strong>20.000</strong> records
+                                {{
+                                    __(
+                                        "After upload your file you have to wait for"
+                                    )
+                                }}
+                                <strong>{{ __("5 min") }}</strong>
+                            </p>
+                            <p class="text-sm">
+                                {{ __("Export facebook IDs") }}
+                                <strong>100</strong> {{ __("to") }}
+                                <strong>20.000</strong> {{ __("records") }}
                             </p>
                         </div>
                     </div>
@@ -40,16 +47,19 @@
                 <!-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> -->
                 <!-- <div class="p-6 sm:px-20 bg-white border-b border-gray-200"> -->
                 <jet-form-section @submitted="filter">
-                    <template #title> Extract Data </template>
+                    <template #title> {{ __("Extract Data") }} </template>
                     <template #description>
                         <!-- Ensure your IDs is correct and have coma (,) after each
                         ID (client). -->
                     </template>
-                    <div class="mt-2 text-2xl">Get In Action</div>
+                    <div class="mt-2 text-2xl">{{ __("Get In Action") }}</div>
 
                     <div class="mt-2 text-xs text-gray-500">
-                        You can find Facebook accounts by add (IDs) in this
-                        Input
+                        {{
+                            __(
+                                "You can find Facebook accounts by add (IDs) in this Input"
+                            )
+                        }}
                     </div>
 
                     <template #form>
@@ -80,7 +90,7 @@
                                     </div>
                                     <div>
                                         <p class="font-bold">
-                                            Ops, You have an error
+                                            {{ __("Ops, You have an error") }}
                                         </p>
                                         <p class="text-sm">
                                             {{ errors.message }}
@@ -107,13 +117,18 @@
                                     </div>
                                     <div>
                                         <p class="font-bold">
-                                            File was uploaded to server
-                                            successfully
+                                            {{
+                                                __(
+                                                    "File was uploaded to server successfully"
+                                                )
+                                            }}
                                         </p>
                                         <p class="text-sm">
-                                            Please be patient and reload the
-                                            page within a minute or 5 minutes
-                                            maximum.
+                                            {{
+                                                __(
+                                                    "Please be patient and reload the page within a minute or 5 minutes maximum."
+                                                )
+                                            }}
                                         </p>
                                     </div>
                                 </div>
@@ -122,7 +137,7 @@
                                 <jet-label
                                     class="mt-4"
                                     for="find"
-                                    value="Extract By File"
+                                    :value="__('Extract By File')"
                                 />
                                 <input
                                     id="text"
@@ -141,7 +156,7 @@
                                 >
                                     <div>
                                         <span class="text-gray-500"
-                                            >File count:</span
+                                            >{{ __("File count") }}:</span
                                         >
                                         {{ countFile }}
                                     </div>
@@ -152,9 +167,10 @@
                                 </div>
                             </div>
                             <div class="text-lg" v-else>
-                                Please purchase points
+                                {{ __("Please purchase points") }}
                                 <span class="text-red-500"
-                                    >your point {{ $page.user.point }}</span
+                                    >{{ __("your point") }}
+                                    {{ $page.user.point }}</span
                                 >
                             </div>
                         </div>
@@ -165,14 +181,14 @@
                             :on="form.recentlySuccessful"
                             class="mr-3"
                         >
-                            Saved.
+                            {{ __("Saved.") }}
                         </jet-action-message>
 
                         <jet-button
                             :class="{ 'opacity-25': form.processing }"
                             :disabled="form.processing"
                         >
-                            Save
+                            {{ __("Save") }}
                         </jet-button>
                     </template>
                 </jet-form-section>
@@ -189,11 +205,15 @@
                                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                                 >
                                     <th class="px-4 py-3">#</th>
-                                    <th class="px-4 py-3">Name</th>
-                                    <th class="px-4 py-3">Count</th>
-                                    <th class="px-4 py-3">File</th>
-                                    <th class="px-4 py-3">Created At</th>
-                                    <th class="px-4 py-3">Download</th>
+                                    <th class="px-4 py-3">{{ __("Name") }}</th>
+                                    <th class="px-4 py-3">{{ __("Count") }}</th>
+                                    <th class="px-4 py-3">{{ __("File") }}</th>
+                                    <th class="px-4 py-3">
+                                        {{ __("Created At") }}
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        {{ __("Download") }}
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody
@@ -232,7 +252,7 @@
                                                     client.id
                                                 )
                                             "
-                                            >Download</a
+                                            >{{ __("Download") }}</a
                                         >
                                     </td>
                                 </tr>
@@ -243,7 +263,7 @@
                         class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
                     >
                         <span class="flex items-center col-span-3">
-                            Showing {{ clients.from }}-{{ clients.to }} of
+                            {{__('Showing')}} {{ clients.from }}-{{ clients.to }} {{__('of')}}
                             {{ clients.total }}
                         </span>
                         <span class="col-span-2"></span>
@@ -344,7 +364,7 @@ export default {
                         location.reload();
                     }, 7000);
                 } else {
-                    alert("You check you max and min records");
+                    alert(__("You check you max and min records"));
                 }
             } catch (error) {
                 console.log(error);

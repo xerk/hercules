@@ -35,30 +35,30 @@
 
     {{-- Add JS code --}}
     @yield('js')
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v9.0'
-            });
-        };
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         xfbml            : true,
+         version          : 'v9.0'
+       });
+     };
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+     (function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = 'https://connect.facebook.net/ar_AR/sdk/xfbml.customerchat.js';
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));</script>
 
-    </script>
-
-    <!-- Your Chat Plugin code -->
-    <div class="fb-customerchat" attribution=install_email page_id="923976101122315" theme_color="#0A7CFF">
-    </div>
+   <!-- Your Chat Plugin code -->
+   <div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="923976101122315"
+theme_color="#0A7CFF">
+   </div>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                {{ __("Dashboard") }}
             </h2>
         </template>
 
@@ -18,7 +18,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="text-gray-500 text-3xl">
-                            Change Log
+                            {{ __("Change Log") }}
                         </div>
                         <ul>
                             <li>- v1.0.0.1</li>
@@ -32,7 +32,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="text-gray-500 text-3xl">
-                            Download
+                            {{ __("Download") }}
                         </div>
                         <div
                             class="w-full my-8 overflow-hidden rounded-lg shadow-md"
@@ -44,12 +44,18 @@
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                                         >
                                             <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3">License</th>
-                                            <th class="px-4 py-3">Version</th>
                                             <th class="px-4 py-3">
-                                                Created At
+                                                {{ __("License") }}
                                             </th>
-                                            <th class="px-4 py-3">Download</th>
+                                            <th class="px-4 py-3">
+                                                {{ __("Version") }}
+                                            </th>
+                                            <th class="px-4 py-3">
+                                                {{ __("Created At") }}
+                                            </th>
+                                            <th class="px-4 py-3">
+                                                {{ __("Download") }}
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody
@@ -71,7 +77,7 @@
                                                     class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                                                 >
                                                     <!-- {{ client.file }} -->
-                                                     v1.0.0
+                                                    v1.0.0
                                                 </span>
                                             </td>
                                             <td class="px-4 py-3 text-sm">
@@ -83,7 +89,7 @@
                                                 <a
                                                     class="hover:underline text-indigo-500"
                                                     href="#"
-                                                    >Download</a
+                                                    >{{ __("Download") }}</a
                                                 >
                                             </td>
                                         </tr>
@@ -112,7 +118,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="text-gray-500 text-3xl">
-                            Terms and Conditions
+                            {{__('Terms and Conditions')}}
                         </div>
                         <ul>
                             <li>
