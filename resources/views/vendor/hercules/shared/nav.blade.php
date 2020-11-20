@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#home" class="nav-link active">
+                            <a href="#home" class="nav-link {{ (request()->is('/')) ? 'active' : '' }}">
                                 Home
                             </a>
                         </li>

@@ -1,5 +1,5 @@
 <!-- Start About Section -->
-<section class="about-section pb-100" id="features">
+<section class="about-section ptb-100" id="features">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
