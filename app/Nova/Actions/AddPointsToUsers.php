@@ -16,11 +16,14 @@ class AddPointsToUsers extends Action
 
 
     /**
-     * The displayable name of the action.
+     * Get the displayable name of the action.
      *
-     * @var string
+     * @return string
      */
-    public $name = 'Action Points';
+    public function name()
+    {
+        return __('Action Points');
+    }
 
     /**
      * Perform the action on the given models.

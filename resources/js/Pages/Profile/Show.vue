@@ -11,6 +11,7 @@
                 <update-profile-information-form
                     :name="$page.user.name"
                     :email="$page.user.email"
+                    :locale="$page.user.locale"
                 />
 
                 <jet-section-border />

@@ -6,6 +6,7 @@ use Laravel\Nova\Nova;
 use App\Models\CardCode;
 use Laravel\Nova\Cards\Help;
 use App\Observers\CardCodeObserver;
+use Day4\SwitchLocale\SwitchLocale;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -81,7 +82,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+        ];
     }
 
     /**

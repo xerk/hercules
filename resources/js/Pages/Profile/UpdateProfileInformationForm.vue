@@ -92,6 +92,20 @@
                 />
                 <jet-input-error :message="form.error('email')" class="mt-2" />
             </div>
+
+            <!-- Locale -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="locale" :value="__('Locale')" />
+                <select
+                    v-model="form.locale"
+                    class="form-input rounded-md shadow-sm mt-1 block w-full"
+                    id="locale"
+                >
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                </select>
+                <jet-input-error :message="form.error('locale')" class="mt-2" />
+            </div>
         </template>
 
         <template #actions>
@@ -129,7 +143,7 @@ export default {
         JetSecondaryButton
     },
 
-    props: ["name", "email"],
+    props: ["name", "email", "locale"],
 
     data() {
         return {
@@ -138,7 +152,8 @@ export default {
                     _method: "PUT",
                     name: this.name,
                     email: this.email,
-                    photo: null
+                    photo: null,
+                    locale: this.locale
                 },
                 {
                     bag: "updateProfileInformation",

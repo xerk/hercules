@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'locale'
     ];
 
     /**
@@ -66,4 +66,5 @@ class User extends Authenticatable
     public function exports() {
         return $this->hasMany(Export::class);
     }
+
 }

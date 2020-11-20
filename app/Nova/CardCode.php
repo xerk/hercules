@@ -25,7 +25,7 @@ class CardCode extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -33,8 +33,48 @@ class CardCode extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Card Codes');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Card Code');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel()
+    {
+        return __('Create Code');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string|null
+     */
+    public static function updateButtonLabel()
+    {
+        return __('Save Changes');
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -47,15 +87,15 @@ class CardCode extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title')
+            Text::make(__('Title'), 'title')
                 ->rules('required'),
 
-            Text::make('Code')->onlyOnDetail(),
+            Text::make(__('Code'), 'code')->onlyOnDetail(),
 
-            Number::make('Amount')
+            Number::make(__('Amount'), 'amount')
                 ->rules('required'),
 
-            DateTime::make('Expire Date'),
+            DateTime::make(__('Expire Date'), 'expire_date'),
 
         ];
     }

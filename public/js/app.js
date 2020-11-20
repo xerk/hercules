@@ -6877,6 +6877,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -7374,6 +7375,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7391,14 +7406,15 @@ __webpack_require__.r(__webpack_exports__);
     JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__["default"],
     JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
-  props: ["name", "email"],
+  props: ["name", "email", "locale"],
   data: function data() {
     return {
       form: this.$inertia.form({
         _method: "PUT",
         name: this.name,
         email: this.email,
-        photo: null
+        photo: null,
+        locale: this.locale
       }, {
         bag: "updateProfileInformation",
         resetOnSuccess: false
@@ -33436,7 +33452,11 @@ var render = function() {
           { staticClass: "max-w-7xl mx-auto py-10 sm:px-6 lg:px-8" },
           [
             _c("update-profile-information-form", {
-              attrs: { name: _vm.$page.user.name, email: _vm.$page.user.email }
+              attrs: {
+                name: _vm.$page.user.name,
+                email: _vm.$page.user.email,
+                locale: _vm.$page.user.locale
+              }
             }),
             _vm._v(" "),
             _c("jet-section-border"),
@@ -34167,6 +34187,65 @@ var render = function() {
                 _c("jet-input-error", {
                   staticClass: "mt-2",
                   attrs: { message: _vm.form.error("email") }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-6 sm:col-span-4" },
+              [
+                _c("jet-label", {
+                  attrs: { for: "locale", value: _vm.__("Locale") }
+                }),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.locale,
+                        expression: "form.locale"
+                      }
+                    ],
+                    staticClass:
+                      "form-input rounded-md shadow-sm mt-1 block w-full",
+                    attrs: { id: "locale" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.form,
+                          "locale",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "en" } }, [
+                      _vm._v("English")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "ar" } }, [_vm._v("Arabic")])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.form.error("locale") }
                 })
               ],
               1

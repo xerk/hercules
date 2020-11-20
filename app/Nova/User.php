@@ -11,9 +11,7 @@ use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Country;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
-use Laravel\Nova\Fields\Sparkline;
 use App\Nova\Actions\AddPointsToUsers;
 
 class User extends Resource
@@ -42,6 +40,46 @@ class User extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Users');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('User');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel()
+    {
+        return __('Create User');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string|null
+     */
+    public static function updateButtonLabel()
+    {
+        return __('Save Changes');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -52,10 +90,10 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Avatar::make('Profile', 'profile_photo_path')->maxWidth(50),
+            Avatar::make(__('Profile'), 'profile_photo_path')->maxWidth(50),
             // Gravatar::make()->maxWidth(50),
 
-            Text::make('Name')
+            Text::make(__('Name'), 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -65,33 +103,38 @@ class User extends Resource
             //     ->creationRules('unique:users,username')
             //     ->updateRules('unique:users,username,{{resourceId}}'),
 
-            Text::make('Email')
+            Text::make(__('Email'), 'email')
                 ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
                 
-                Password::make('Password')
+                Password::make(__('Password'), 'password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
 
-                Number::make('Point')
+                Number::make(__('Point'), 'point')
                         ->sortable()
                     ->rules('numeric'),
 
-                Select::make('Membership')->options([
+                Select::make(__('Membership'), 'membership')->options([
                     'bronze' => 'Bronze',
                     'silver' => 'Silver',
                     'gold' => 'Gold (VIP)',
                 ])->displayUsingLabels(),
                 
                 
-                Text::make('Phone Number', 'phone')->textAlign('left'),
+                Text::make(__('Phone Number'), 'phone')->textAlign('left'),
                 
-                Country::make('Country')->hideFromIndex(),
+                Country::make(__('Country'), 'country')->hideFromIndex(),
                 
-                new Panel('Addtional Information', $this->addtionalFields()),
+                Select::make(__('Locale'), 'locale')->options([
+                    'en' => 'English',
+                    'ar' => 'Arabic',
+                ])->displayUsingLabels(),
+
+                new Panel(__('Additional Information'), $this->addtionalFields()),
             ];
 
     }
@@ -99,19 +142,18 @@ class User extends Resource
     public function addtionalFields() {
         return [
 
-            Text::make('Serial Number', 'serial_number')->hideFromIndex(),
+            Text::make(__('Serial Number'), 'serial_number')->hideFromIndex(),
 
-            Select::make('Serial Type')->options([
+            Select::make(__('Serial Type'), 'serial_type')->options([
                 'monthly' => 'Monthly',
                 'lifetime' => 'Lifetime',
             ])->displayUsingLabels()->hideFromIndex(),
 
-            Date::make('Serial Date')->hideFromIndex(),
+            Date::make(__('Serial Date'), 'serial_date')->hideFromIndex(),
             
-            Text::make('Link', 'link')->hideFromIndex(),
+            Text::make(__('Link'), 'link')->hideFromIndex(),
 
-            Date::make('Last Seen', 'last_seen')->hideFromIndex(),
-
+            Date::make(__('Last Seen'), 'last_seen')->hideFromIndex(),
         ];
     }
 
