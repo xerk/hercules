@@ -21,7 +21,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-apple antialiased">
+<body class="font-sans antialiased">
     @inertia
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>

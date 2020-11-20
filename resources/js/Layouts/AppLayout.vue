@@ -12,7 +12,7 @@
 									class="block h-9 w-auto"
 								/> -->
                                 <span class="font-bold text-2xl">{{
-                                    __("Herclues")
+                                    __("Hercules")
                                 }}</span>
                             </inertia-link>
                         </div>

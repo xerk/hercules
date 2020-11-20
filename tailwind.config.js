@@ -16,8 +16,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                apple: ["SF Pro AR", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['"SF Pro AR"', '"SF Pro Gulf"', '"SF Pro Display"', '"SF Pro Icons"', 'Nunito'],
+                // sans: ['"SF Pro AR"', '"SF Pro Gulf"', '"SF Pro Display"', '"SF Pro Icons"', 'Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
     },
