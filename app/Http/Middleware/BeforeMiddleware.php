@@ -18,10 +18,24 @@ class BeforeMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        
         if($user = Auth::user()) {
-            $locale = App::setLocale($user->locale);
+            $locale = $user->locale;
             session()->put('locale', $locale);   
         }
+
+        if (session()->has('locale')) { 
+            $locale = session()->get('locale', config()->get('app.locale'));
+        } else {
+            $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+
+            if ($locale != 'ar' && $locale != 'en') {
+                $locale = 'en';
+            }
+        }
+
+        App::setLocale($locale);
+
         return $next($request);
     }
 }

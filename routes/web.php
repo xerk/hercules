@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ExtractDataController;
@@ -32,3 +33,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [Pur
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
 
 Route::get('users/export/', [ExtractDataController::class, 'export2']);
+
+Route::get('lang/{locale}', function ($locale) {
+    $validLocale = in_array($locale, ['ar', 'en']);
+    if ($validLocale) {
+        session()->put('locale', $locale);
+        session()->get('locale');
+    }
+    // session()->put('locale', $locale);
+    // app()->setlocale($locale);
+    return back();
+});
