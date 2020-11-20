@@ -458,6 +458,10 @@ Navbar Area CSS
     display: none;
 }
 
+.plamb-nav .navbar .navbar-nav .locale-switcher {
+    display: none;
+}
+
 .plamb-nav .navbar .navbar-nav .nav-item {
     position: relative;
     padding-top: 15px;
@@ -1372,14 +1376,17 @@ Navbar Area CSS
         -webkit-box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
         box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
     }
-    ..plamb-responsive-nav
+    .plamb-responsive-nav
         .plamb-responsive-menu.mean-container
         .mean-nav
         .login {
         background: #0072bb;
     }
+    .plamb-nav .navbar .navbar-nav .locale-switcher {
+        display: block;
+    }
 
-    ..plamb-responsive-nav
+    .plamb-responsive-nav
         .plamb-responsive-menu.mean-container
         .mean-nav
         .login
