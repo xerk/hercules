@@ -44,8 +44,7 @@
     <!-- Your Chat Plugin code -->
     <div class="fb-customerchat"
       attribution=setup_tool
-      page_id="923976101122315"
-theme_color="#0A7CFF">
+      page_id="101813674977573">
     </div>
     @php
     $newTrans = [];

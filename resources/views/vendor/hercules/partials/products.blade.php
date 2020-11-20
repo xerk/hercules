@@ -2,8 +2,8 @@
 <section class="team-section pt-100 pb-70" id="products">
     <div class="container">
         <div class="section-title">
-            <span>Our Products</span>
-            <h3>Our Latest Projects</h3>
+            <span>{{ __('Our Products') }}</span>
+            <h3>{{ __('Our Latest Projects') }}</h3>
         </div>
 
         <div class="row">
@@ -14,8 +14,8 @@
 
                     </div>
                     <div class="team-content">
-                        <h3>Hercules</h3>
-                        <span>300+ Marketing tools</span>
+                        <h3>{{ __('Hercules') }}</h3>
+                        <span>{{ __('300+ Marketing tools') }}</span>
                     </div>
                 </div>
             </div>
@@ -26,8 +26,8 @@
 
                     </div>
                     <div class="team-content">
-                        <h3>Hercules Whatsapp Sender</h3>
-                        <span>Marketing using whatsapp</span>
+                        <h3>{{ __('Hercules Whatsapp Sender') }}</h3>
+                        <span>{{ __('Marketing using whatsapp') }}</span>
                     </div>
                 </div>
             </div>
@@ -38,8 +38,8 @@
 
                     </div>
                     <div class="team-content">
-                        <h3>Hercules Mailer Sender</h3>
-                        <span>Send Emails to your clients easily</span>
+                        <h3>{{ __('Hercules Mailer Sender') }}</h3>
+                        <span>{{ __('Send Emails to your clients easily') }}</span>
                     </div>
                 </div>
             </div>
@@ -50,8 +50,8 @@
 
                     </div>
                     <div class="team-content">
-                        <h3>Hercules OLX Extractor</h3>
-                        <span>Extract fresh ads from olx</span>
+                        <h3>{{ __('Hercules OLX Extractor') }}</h3>
+                        <span>{{ __('Extract fresh ads from olx') }}</span>
                     </div>
                 </div>
             </div>
@@ -62,8 +62,8 @@
 
                     </div>
                     <div class="team-content">
-                        <h3>Hercules Yellow Pages</h3>
-                        <span>Collect companies in seconds</span>
+                        <h3>{{ __('Hercules Yellow Pages') }}</h3>
+                        <span>{{ __('Collect companies in seconds') }}</span>
                     </div>
                 </div>
             </div>
@@ -81,8 +81,8 @@
                         </div>
                     </div>
                     <div class="team-content">
-                        <h3>Contact Us</h3>
-                        <span>To view more products</span>
+                        <h3>{{ __('Contact Us') }}</h3>
+                        <span>{{ __('To view more products') }}</span>
                     </div>
                 </div>
             </div>

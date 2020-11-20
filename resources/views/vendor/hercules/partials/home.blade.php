@@ -6,16 +6,15 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="main-banner-content">
-                            <h1>Hercules Projects</h1>
-                            <p>“ Legends are born to achieve greatness ”</p>
+                            <h1>{{ __('Hercules Projects') }}</h1>
+                            <p>{{ __('“ Legends are born to achieve greatness ”') }}</p>
                             <div class="banner-btn">
                                 <a href="#products" class="default-btn-one">
-                                    Products
+                                    {{ __('Products') }}
                                     <span></span>
                                 </a>
-                                <a href="https://www.youtube.com/watch?v=XQrmFaXnT1U" class="video-btn popup-youtube pl-3">
-                                            <i class="fa fa-play"></i>
-                                            Watch Video 
+                                <a href="https://www.youtube.com/c/HerculesProjects/videos" class="default-btn">
+                                    {{ __('Watch Video') }} 
                                             <span style="top: -3px; left: 6.40625px;"></span></a>
                             </div>
                         </div>

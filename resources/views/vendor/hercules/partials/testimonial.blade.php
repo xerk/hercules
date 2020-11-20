@@ -2,8 +2,8 @@
 <section class="testimonial-section ptb-100" id="testimonial">
     <div class="container">
         <div class="section-title">
-            <span>Testimonial</span>
-            <h3>What Our Clients Say</h3>
+            <span>{{ __('Testimonial') }}</span>
+            <h3>{{ __('What Our Clients Say') }}</h3>
         </div>
 
         <div class="testimonial-slider owl-carousel owl-theme">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Azmy</h3>
-                    <span>Facebook Review</span>
+                    <span><a href="https://www.facebook.com/mohamedahmedazmyahmed/posts/789582475197160">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="testimonial-info">
                     <h3>Malek Waleed</h3>
-                    <span>Facebook Review</span>
+                    <span><a href="https://www.facebook.com/permalink.php?story_fbid=2535540460100582&id=100009339592711">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="testimonial-info">
                     <h3>Ibrahim Samir</h3>
-                    <span>Facebook Review</span>
+                    <span><a href="https://www.facebook.com/Eng.ibrahim.samir/posts/10219433764059020">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Mostafa</h3>
-                    <span>Facebook Review</span>
+                    <span><a href="https://www.facebook.com/mohamed.sonbel.5/posts/909499382893493">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">
@@ -78,8 +78,8 @@
                     <img src="https://www.linkpicture.com/q/ahmed_hussen.png" alt="image">
                 </div>
                 <div class="testimonial-info">
-                    <h3>Ahmed Hussen</h3>
-                    <span>Facebook Review</span>
+                    <h3>احمد محمد حسين</h3>
+                    <span><a href="https://www.facebook.com/ahmed.mohamed.hussen1987/posts/10157903717759654">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">
@@ -95,7 +95,7 @@
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Agami</h3>
-                    <span>Facebook Review</span>
+                    <span><a href="https://www.facebook.com/mohmedagami1978/posts/416735209134189">{{ __('Facebook Review') }}</a></span>
                 </div>
                 <div class="testimonial-content">
                     <div class="icon">

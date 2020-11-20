@@ -6,8 +6,7 @@
                 <div class="logo">
                     <a href="https://www.herculesprojects.net/">
                         <img src="{{ asset('vendor/hercules/assets/img/logo.png') }}" class="white-logo" alt="logo">
-                        <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo"
-                            alt="logo">
+                        <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo" alt="logo">
                     </a>
                 </div>
             </div>
@@ -25,22 +24,22 @@
                     <ul class="navbar-nav">
                         <li class="nav-item login">
                             <a href="/login" class="nav-link">
-                                Client Area
+                                {{ __('Client Area') }}
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#home" class="nav-link {{ (request()->is('/')) ? 'active' : '' }}">
-                                Home
+                            <a href="#home" class="nav-link">
+                                {{ __('Home') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#about" class="nav-link">
-                                About Us
+                                {{ __('About Us') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#features" class="nav-link">
-                                Our Features
+                                {{ __('Our Features') }}
                             </a>
                         </li>
                         {{-- <li class="nav-item">
@@ -50,29 +49,29 @@
                         </li> --}}
                         <li class="nav-item">
                             <a href="#products" class="nav-link">
-                                Products
+                                {{ __('Products') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#pricing" class="nav-link">
-                                Pricing
+                                {{ __('Pricing') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#faq" class="nav-link">
-                                FAQ
+                                {{ __('FAQ') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">
-                                Contact Us
+                                {{ __('Contact Us') }}
                             </a>
                         </li>
                     </ul>
 
                     <div class="other-option">
                         <a class="default-btn" href="/login">
-                            Client Area
+                            {{ __('Client Area') }}
                             <span></span>
                         </a>
                     </div>

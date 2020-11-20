@@ -2,8 +2,8 @@
 <section class="project-section pt-100 pb-70" id="gallery">
     <div class="container">
         <div class="section-title">
-            <span>Videos</span>
-            <h3>Our Tutorials</h3>
+            <span>{{ __('Videos') }}</span>
+            <h3>{{ __('Our Tutorials') }}</h3>
         </div>
 
         <div class="row">

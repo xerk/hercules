@@ -10,48 +10,48 @@
 
             <div class="col-lg-6">
                 <div class="about-content">
-                    <span>Our Features</span>
-                    <h3>We strive to satisfy our customers</h3>
-                    <p>Our most important goal is to provide the best services to our customers.</p>
+                    <span>{{ __('Our Features') }}</span>
+                    <h3>{{ __('We strive to satisfy our customers') }}</h3>
+                    <p>{{ __('Our most important goal is to provide the best services to our customers.') }}</p>
 
                     <ul class="about-list">
                         <li>
                             <i class="flaticon-tick"></i>
-                            Professional Team
+                            {{ __('Professional Team') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Support Center
+                            {{ __('Support Center') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Periodically Updates
+                            {{ __('Periodically Updates') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            High Quality, With Low Price
+                            {{ __('High Quality, With Low Price') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Our Softwares Supporting Many Languages
+                            {{ __('Our Softwares Supporting Many Languages') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Attractive Offers For Companies
+                            {{ __('Attractive Offers For Companies') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Different Packages For Individuals
+                            {{ __('Different Packages For Individuals') }}
                         </li>
                         <li>
                             <i class="flaticon-tick"></i>
-                            Affiliate System
+                            {{ __('Affiliate System') }}
                         </li>
                     </ul>
 
                     <div class="about-btn">
                         <a class="default-btn" href="https://m.me/SoftwaresProjects/">
-                            Contact Us
+                            {{ __('Contact Us') }}
                             <span></span>
                         </a>
                     </div>
@@ -72,7 +72,7 @@
                         <span class="odometer" data-count="320">00</span>
                         <span class="sign-icon">+</span>
                     </h3>
-                    <p>Our Clients</p>
+                    <p>{{ __('Our Clients') }}</p>
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
                         <span class="odometer" data-count="50">00</span>
                         <span class="sign-icon">+</span>
                     </h3>
-                    <p>Developed</p>
+                    <p>{{ __('Developed') }}</p>
                 </div>
             </div>
 
@@ -92,7 +92,7 @@
                         <span class="odometer" data-count="20">00</span>
                         <span class="sign-icon">+</span>
                     </h3>
-                    <p>Our Projects</p>
+                    <p>{{ __('Our Projects') }}</p>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
                         <span class="odometer" data-count="206">00</span>
                         <span class="sign-icon">M+</span>
                     </h3>
-                    <p>World Data</p>
+                    <p>{{ __('World Data') }}</p>
                 </div>
             </div>
         </div>

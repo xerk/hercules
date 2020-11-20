@@ -5,9 +5,9 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="footer-heading">
-                        <h3>About Us</h3>
+                        <h3>{{ __('About Us') }}</h3>
                     </div>
-                    <p>Best digital marketing software, powerful & high quality service, 24/7 Free Support. </p>
+                    <p>{{ __('Best digital marketing software, powerful & high quality service, 24/7 Free Support.') }} </p>
                     <ul class="footer-social">
                         <li>
                             <a href="https://www.facebook.com/SoftwaresProjects/">
@@ -89,12 +89,12 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
                     <div class="footer-heading">
-                        <h3>Contact</h3>
+                        <h3>{{ __('Contact') }}</h3>
                     </div>
 
                     <div class="footer-info-contact">
                         <i class="flaticon-call-answer"></i>
-                        <h3>Phone</h3>
+                        <h3>{{ __('Phone') }}</h3>
                         <span><a href="tel:+201275277770">+20 01275277770</a></span>
 						<br>
 						<span><a href="tel:+201275277770">+20 01021019322</a></span>
@@ -102,14 +102,14 @@
 
                     <div class="footer-info-contact">
                         <i class="flaticon-envelope"></i>
-                        <h3>Email</h3>
+                        <h3>{{ __('Email') }}</h3>
                         <span><a href="mailto:support@herculesoftwares.com">support@herculesoftwares.com</a></span>
                     </div>
 
                     <div class="footer-info-contact">
                         <i class="flaticon-maps-and-flags"></i>
-                        <h3>Address</h3>
-                        <span>291 st, New Maadi, Cairo, Egypt</span>
+                        <h3>{{ __('Address') }}</h3>
+                        <span>{{ __('291 st, New Maadi, Cairo, Egypt') }}</span>
                     </div>
                 </div>
             </div>
@@ -137,9 +137,9 @@
             <div class="col-lg-6 col-md-6">
                 <p>
                     <i class="far fa-copyright"></i>
-                    2020 Hercules. All Rights Reserved by
+                    {{ __('2020 Hercules. All Rights Reserved by') }}
                     <a href="https://www.facebook.com/SoftwaresProjects/" target="_blank">
-                        Hercules Projects
+                        {{ __('Hercules Projects') }}
                     </a>
                 </p>
             </div>
@@ -147,10 +147,10 @@
             <div class="col-lg-6 col-md-6">
                 <ul>
                     <li>
-                        <a href="#">Terms & Conditions</a>
+                        <a href="#">{{ __('Terms & Conditions') }}</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">{{ __('Privacy Policy') }}</a>
                     </li>
                 </ul>
             </div>
