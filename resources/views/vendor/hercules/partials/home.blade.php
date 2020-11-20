@@ -16,6 +16,7 @@
                                 <a href="https://www.youtube.com/watch?v=XQrmFaXnT1U" class="video-btn popup-youtube">
                                             <i class="fa fa-play"></i>
                                             Watch Video 
+                                            <span style="top: -3px; left: 6.40625px;"></span></a>
                             </div>
                         </div>
                     </div>
