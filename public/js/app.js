@@ -29934,7 +29934,9 @@ var render = function() {
                       _vm._v(_vm._s(_vm.$page.user.point))
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "text-xs" }, [_vm._v("Points +")])
+                    _c("span", { staticClass: "text-xs" }, [
+                      _vm._v(_vm._s(_vm.__("Points")) + " +")
+                    ])
                   ]
                 ),
                 _vm._v(" "),

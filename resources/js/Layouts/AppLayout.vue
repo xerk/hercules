@@ -65,7 +65,7 @@
                             class="bg-indigo-500 shadow-md px-2 py-1 rounded-full font-bold text-white flex items-center"
                         >
                             <span class="mr-1">{{ $page.user.point }}</span>
-                            <span class="text-xs">Points +</span>
+                            <span class="text-xs">{{ __("Points") }} +</span>
                         </div>
                         <div class="ml-3 relative">
                             <jet-dropdown align="right" width="48">
