@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/ico" href="{{ asset('vendor/hercules/assets/img/favicon.ico') }}">
 
     <!-- Fonts -->
     <link href="//db.onlinewebfonts.com/c/c36ae25995bf2b3f70549cfd6fdf0b42?family=SF+Pro+AR+Display+Black" rel="stylesheet" type="text/css"/>

@@ -25,4 +25,4 @@
 <!-- Responsive CSS -->
 <link rel="stylesheet" href="{{ asset('vendor/hercules/assets/css/responsive.css') }}">
 
-<link rel="icon" type="image/png" href="{{ asset('vendor/hercules/assets/img/favicon.png') }}">
+<link rel="icon" type="image/ico" href="{{ asset('vendor/hercules/assets/img/favicon.ico') }}">
