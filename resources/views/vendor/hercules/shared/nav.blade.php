@@ -10,9 +10,9 @@
                             alt="logo"> --}}
                             <svg fill="currentColor"
                             class="white-logo"
-            width="{{ $width ?? '126' }}"
+            width="{{ $width ?? '160' }}"
             height="{{ $height ?? '24' }}"
-            viewBox="{{ $viewBox ?? '0 0 126 24' }}"
+            viewBox="{{ $viewBox ?? '0 0 148 24' }}"
             xmlns="http://www.w3.org/2000/svg">
                 <g id="Group_7" data-name="Group 7" transform="translate(-473 -375)">
                   <g id="Group_5" data-name="Group 5" transform="translate(473 375)">
@@ -42,9 +42,9 @@
               </svg>
               <svg fill="#315DA8"
                             class="black-logo"
-            width="{{ $width ?? '126' }}"
+            width="{{ $width ?? '160' }}"
             height="{{ $height ?? '24' }}"
-            viewBox="{{ $viewBox ?? '0 0 126 24' }}"
+            viewBox="{{ $viewBox ?? '0 0 148 24' }}"
             xmlns="http://www.w3.org/2000/svg">
                 <g id="Group_7" data-name="Group 7" transform="translate(-473 -375)">
                   <g id="Group_5" data-name="Group 5" transform="translate(473 375)">
@@ -86,9 +86,9 @@
                     <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo" alt="logo"> --}}
                     <svg fill="currentColor"
                     class="white-logo"
-    width="{{ $width ?? '126' }}"
+    width="{{ $width ?? '160' }}"
     height="{{ $height ?? '24' }}"
-    viewBox="{{ $viewBox ?? '0 0 126 24' }}"
+    viewBox="{{ $viewBox ?? '0 0 148 24' }}"
     xmlns="http://www.w3.org/2000/svg">
         <g id="Group_7" data-name="Group 7" transform="translate(-473 -375)">
           <g id="Group_5" data-name="Group 5" transform="translate(473 375)">
@@ -118,9 +118,9 @@
       </svg>
       <svg fill="#315DA8"
                     class="black-logo"
-    width="{{ $width ?? '126' }}"
+    width="{{ $width ?? '160' }}"
     height="{{ $height ?? '24' }}"
-    viewBox="{{ $viewBox ?? '0 0 126 24' }}"
+    viewBox="{{ $viewBox ?? '0 0 148 24' }}"
     xmlns="http://www.w3.org/2000/svg">
         <g id="Group_7" data-name="Group 7" transform="translate(-473 -375)">
           <g id="Group_5" data-name="Group 5" transform="translate(473 375)">

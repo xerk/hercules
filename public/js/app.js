@@ -29946,9 +29946,9 @@ var render = function() {
                         {
                           attrs: {
                             fill: "#315DA8",
-                            width: "126",
+                            width: "148",
                             height: "24",
-                            viewBox: "0 0 126 24",
+                            viewBox: "0 0 164 24",
                             xmlns: "http://www.w3.org/2000/svg"
                           }
                         },
