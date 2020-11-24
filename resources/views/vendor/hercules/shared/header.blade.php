@@ -23,6 +23,10 @@
 <!-- Style CSS -->
 <link rel="stylesheet" href="{{ asset('vendor/hercules/assets/css/style.css') }}">
 <!-- Responsive CSS -->
+@if (app()->getLocale() == 'ar')
+<link rel="stylesheet" href="{{ asset('vendor/hercules/assets/css/rtl.css') }}">
+@endif
+
 <link rel="stylesheet" href="{{ asset('vendor/hercules/assets/css/responsive.css') }}">
 
 <link rel="icon" type="image/ico" href="{{ asset('vendor/hercules/assets/img/favicon.ico') }}">

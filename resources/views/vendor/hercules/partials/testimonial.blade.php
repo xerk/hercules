@@ -1,5 +1,5 @@
 <!-- Start Testimonial Section -->
-<section class="testimonial-section ptb-100" id="testimonial">
+<section class="testimonial-section ptb-100" id="testimonial" dir="ltr">
     <div class="container">
         <div class="section-title">
             <span>{{ __('Testimonial') }}</span>

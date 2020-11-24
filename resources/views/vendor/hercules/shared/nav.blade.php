@@ -3,7 +3,7 @@
     <div class="plamb-responsive-nav">
         <div class="container">
             <div class="plamb-responsive-menu">
-                <div class="logo ">
+                <div class="logo">
                     <a href="https://www.herculesprojects.net/" class="text-white">
                         {{-- <img src="{{ asset('vendor/hercules/assets/img/logo.png') }}" class="white-logo" alt="logo">
                         <img src="{{ asset('vendor/hercules/assets/img/logo-black.png') }}" class="black-logo"
@@ -154,7 +154,7 @@
                         <li class="nav-item locale-switcher">
                             @if (app()->getLocale() == 'en')
                             <a class="nav-link" style="display: flex; align-items:center" href="/lang/ar">
-                                <div class="mr-2">
+                                <div class="mx-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     id="flag-icon-css-eg" viewBox="0 0 640 480" height="24" width="24">
                                     <path d="M0 320h640v160H0z" />
@@ -219,7 +219,7 @@
                             </a>
                             @elseif (app()->getLocale() == 'ar')
                             <a class="nav-link" style="display: flex; align-items:center" href="/lang/en">
-                                <div class="mr-2">
+                                <div class="mx-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 640 480" width="24" height="24">
                                         <g fill-rule="evenodd">
                                             <g stroke-width="1pt">
@@ -301,7 +301,7 @@
                         <li class="nav-item">
                             @if (app()->getLocale() == 'en')
                             <a class="nav-link" style="display: flex; align-items:center" href="/lang/ar">
-                                <div class="mr-2">
+                                <div class="mx-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         id="flag-icon-css-eg" viewBox="0 0 640 480" width="24" height="24">
                                         <path d="M0 320h640v160H0z" />
@@ -366,7 +366,7 @@
                             </a>
                             @elseif (app()->getLocale() == 'ar')
                             <a class="nav-link" href="/lang/en" style="display: flex; align-items:center">
-                                <div class="mr-2">
+                                <div class="mx-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="flag-icon-css-us" viewBox="0 0 640 480">
                                         <g fill-rule="evenodd">
                                             <g stroke-width="1pt">
