@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\PrepareDataJob;
 use App\Models\User;
 use Inertia\Inertia;
 use App\Models\Client;
@@ -40,56 +41,22 @@ class ExtractDataController extends Controller
         return array_filter($arrayOfIds, 'trim');
     }
 
-    public function export(Request $request) 
+    public function export(Request $request)
     {
         Validator::make($request->all(), [
             'text' => ['required', 'mimetypes:text/plain'],
         ])->validateWithBag('filter');
-        
+
         if ($request->hasFile('text')) {
             $fileContent = file_get_contents($request->text);
             $clients = $this->endcode($fileContent);
-        
-            $result = Client::whereIn('unique_id', $clients)->count();
-            if ((auth()->user()->point - $result) <= -1) {
-                return back()->withErrors([
-                    'message' => 'You not have enough points.',
-                ]);
-            }
 
-            if ($result > 0) {
-                $path = "/exports/extract-data-" . Str::random(6) . '.csv';
-                Excel::queue(new UsersExport($clients, $path), $path)->chain([
-                    new ExportJob($result, $path, auth()->user()->id),
-                ]);
-                User::find(auth()->user()->id)->decrement('point', $result);
-            } else {
-                return back()->withErrors([
-                    'message' => 'Not found data',
-                ]);
-            }
-
+            PrepareDataJob::dispatch($clients)->afterResponse();
 
             return Inertia::render('Dashboard/Clients/Show', [
                 'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
             ]);
-        } 
-
-    }
-
-    public function export2(Request $request) 
-    {
-        
-
-        // $path= 'asd';
-        // $clients= [];
-
-        // return Excel::queue(new UsersExport($clients, $path), 'users.csv');
-
-
-        // return Inertia::render('Dashboard/Clients/Show', [
-        //     'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-        // ]);
+        }
 
     }
 
