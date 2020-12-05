@@ -37,12 +37,11 @@ class ExportJob implements ShouldQueue
      */
     public function handle()
     {
-
         Export::create([
             'user_id' => $this->user_id,
             'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
             'file' => $this->path,
-            'count' => $this->clients,
+            'count' => count($this->clients),
         ]);
     }
 }

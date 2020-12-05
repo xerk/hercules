@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Inertia\Inertia;
 use App\Models\Client;
@@ -9,7 +10,10 @@ use App\Models\Export;
 use App\Jobs\ExportJob;
 use Illuminate\Support\Str;
 use App\Exports\UsersExport;
+use App\Jobs\PrepareDataJob;
 use Illuminate\Http\Request;
+use App\Exports\ClientsExport;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +22,8 @@ use Illuminate\Support\Facades\Validator;
 
 class ExtractDataController extends Controller
 {
+    private $result = [];
+    private $file = '';
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +55,7 @@ class ExtractDataController extends Controller
         if ($request->hasFile('text')) {
             $fileContent = file_get_contents($request->text);
             $clients = $this->endcode($fileContent);
-        
+            
             $result = Client::whereIn('unique_id', $clients)->count();
             if ((auth()->user()->point - $result) <= -1) {
                 return back()->withErrors([
@@ -79,18 +85,19 @@ class ExtractDataController extends Controller
 
     public function export2(Request $request) 
     {
-        
+        Validator::make($request->all(), [
+            'text' => ['required', 'mimetypes:text/plain'],
+        ])->validateWithBag('filter');
 
-        // $path= 'asd';
-        // $clients= [];
+        $fileContent = file_get_contents($request->text);
+        $clients = $this->endcode($fileContent);
+        $this->file = "/exports/extract-data-" . Str::random(6) . '.csv';
 
-        // return Excel::queue(new UsersExport($clients, $path), 'users.csv');
+        PrepareDataJob::dispatch($clients, auth()->user()->id)->afterResponse();
 
-
-        // return Inertia::render('Dashboard/Clients/Show', [
-        //     'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-        // ]);
-
+        return Inertia::render('Dashboard/Clients/Show', [
+            'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
+        ]);
     }
 
     public function download($id) {

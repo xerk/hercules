@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/clients', [ExtractDataController::class, 'index'])->name('clients');
-Route::middleware(['auth:sanctum', 'verified'])->put('/dashboard/clients', [ExtractDataController::class, 'export'])->name('clients.export');
+Route::middleware(['auth:sanctum', 'verified'])->put('/dashboard/clients', [ExtractDataController::class, 'export2'])->name('clients.export');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{id}/download', [ExtractDataController::class, 'download'])->name('clients.download');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
