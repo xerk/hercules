@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\Client;
 use App\Models\Export;
 use App\Jobs\ExportJob;
+use App\Mail\DataExported;
 use Illuminate\Support\Str;
 use App\Exports\UsersExport;
 use App\Jobs\PrepareDataJob;
@@ -15,6 +16,7 @@ use Illuminate\Http\Request;
 use App\Exports\ClientsExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -93,7 +95,8 @@ class ExtractDataController extends Controller
         $clients = $this->endcode($fileContent);
         $this->file = "/exports/extract-data-" . Str::random(6) . '.csv';
 
-        PrepareDataJob::dispatch($clients, auth()->user()->id)->afterResponse();
+        PrepareDataJob::dispatch($clients, $request->user())->afterResponse();
+
 
         return Inertia::render('Dashboard/Clients/Show', [
             'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),

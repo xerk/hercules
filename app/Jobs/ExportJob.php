@@ -2,10 +2,11 @@
 
 namespace App\Jobs;
 
-use App\Models\User;
-use App\Models\Export;
 use Carbon\Carbon;
+use App\Models\Export;
+use App\Mail\DataExported;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -37,11 +38,15 @@ class ExportJob implements ShouldQueue
      */
     public function handle()
     {
+
         Export::create([
             'user_id' => $this->user_id,
             'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
             'file' => $this->path,
             'count' => count($this->clients),
         ]);
+
+        
+
     }
 }

@@ -5,11 +5,10 @@ namespace App\Models;
 use App\Casts\Serialize;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Client extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +16,7 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'unique_id', 'mobile',
+        'unique_id', 'mobile', 'nationality'
     ];
 
         /**
@@ -26,17 +25,8 @@ class Client extends Model
      * @var array
      */
     protected $hidden = [
-        'email',
-        'name',
-        'username',
-        'religion',
-        'birthday',
-        'work',
-        'position',
-        'hometown',
-        'location',
-        'education',
-        'relationship',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -45,7 +35,7 @@ class Client extends Model
      * @var array
      */
     protected $casts = [
-        'unique_id' => Serialize::class,
-        'mobile' => Serialize::class,
+        // 'unique_id' => Serialize::class,
+        // 'mobile' => Serialize::class,
     ];
 }

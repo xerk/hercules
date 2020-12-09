@@ -3,10 +3,12 @@
 namespace App\Jobs;
 
 use App\Models\User;
+use App\Mail\DataExported;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use App\Exports\ClientsExport;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -20,20 +22,20 @@ class PrepareDataJob implements ShouldQueue
     private $clients;
     private $file;
     private $result = [];
-    private $user_id;
+    private $user;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($clients, $user_id)
+    public function __construct($clients, $user)
     {
         $this->file = "/exports/extract-data-" . Str::random(6) . '.csv';
 
         $this->clients = $clients;
 
-        $this->user_id = $user_id;
+        $this->user = $user;
     }
 
     /**
@@ -43,18 +45,21 @@ class PrepareDataJob implements ShouldQueue
      */
     public function handle()
     {
-        DB::table('clients')->orderBy('id')->select('unique_id', 'mobile', 'nationality')->whereIn('unique_id', $this->clients)->chunk(1000, function ($clients) {
+        DB::table('clients')->orderBy('id')->select('unique_id', 'mobile', 'nationality')->whereIn('unique_id', $this->clients)->chunk(10000, function ($clients) {
             foreach ($clients as $client) {
                 $this->result[] = $client;
             }
         });
-        
-        if ($this->result > 0) {
+
+        if (count($this->result) > 0) {
             Excel::store(new ClientsExport($this->result), $this->file);
 
-            ExportJob::dispatch($this->result, $this->file, $this->user_id);
+            ExportJob::dispatch($this->result, $this->file, $this->user->id);
 
-            User::find($this->user_id)->decrement('point', ($this->result));
+            dispatch(Mail::to($this->user)->queue(new DataExported()));
+
+            User::find($this->user->id)->decrement('point', count($this->result));
+        
         }
     }
 }
