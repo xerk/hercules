@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Export;
 use App\Mail\DataExported;
 use Illuminate\Bus\Queueable;
@@ -18,17 +19,17 @@ class ExportJob implements ShouldQueue
 
     protected $path;
     protected $clients;
-    protected $user_id;
+    protected $user;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($clients, $path, $user_id)
+    public function __construct($clients, $path, $user)
     {
         $this->clients = $clients;
         $this->path = $path;
-        $this->user_id = $user_id;
+        $this->user = $user;
     }
 
     /**
@@ -40,12 +41,13 @@ class ExportJob implements ShouldQueue
     {
 
         Export::create([
-            'user_id' => $this->user_id,
+            'user_id' => $this->user->id,
             'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
             'file' => $this->path,
             'count' => count($this->clients),
         ]);
 
+        User::find($this->user->id)->decrement('point', count($this->clients));
         
 
     }

@@ -59,11 +59,12 @@ class PrepareDataJob implements ShouldQueue
         if (count($uniques) > 0) {
             Excel::store(new ClientsExport($uniques), $this->file);
 
-            ExportJob::dispatch($uniques, $this->file, $this->user->id);
+            ExportJob::dispatch($uniques, $this->file, $this->user);
 
             dispatch(Mail::to($this->user)->queue(new DataExported()));
 
-            User::find($this->user->id)->decrement('point', count($uniques));
+            
+
         
         }
     }
