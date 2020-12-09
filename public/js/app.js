@@ -6325,7 +6325,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 break;
 
               case 9:
-                alert(__("You check you max and min records"));
+                alert(_this.__("You check you max and min records"));
 
               case 10:
                 _context.next = 15;

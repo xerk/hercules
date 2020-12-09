@@ -364,7 +364,7 @@ export default {
                         location.reload();
                     }, 7000);
                 } else {
-                    alert(__("You check you max and min records"));
+                    alert(this.__("You check you max and min records"));
                 }
             } catch (error) {
                 console.log(error);
