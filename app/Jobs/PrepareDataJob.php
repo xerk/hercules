@@ -45,20 +45,25 @@ class PrepareDataJob implements ShouldQueue
      */
     public function handle()
     {
-        DB::table('clients')->orderBy('id')->select('unique_id', 'mobile', 'nationality')->whereIn('unique_id', $this->clients)->chunk(1000, function ($clients) {
+        DB::table('clients')->orderBy('id')->select('unique_id', 'mobile', 'nationality')->whereIn('unique_id', $this->clients)->chunk(10000, function ($clients) {
             foreach ($clients as $client) {
                 $this->result[] = $client;
             }
         });
 
-        if (count($this->result) > 0) {
-            Excel::store(new ClientsExport($this->result), $this->file);
+        $uniques = [];
+        foreach ($this->result as $c) {
+            $uniques[$c->unique_id] = $c; // Get unique country by code.
+        }
 
-            ExportJob::dispatch($this->result, $this->file, $this->user->id);
+        if (count($uniques) > 0) {
+            Excel::store(new ClientsExport($uniques), $this->file);
+
+            ExportJob::dispatch($uniques, $this->file, $this->user->id);
 
             dispatch(Mail::to($this->user)->queue(new DataExported()));
 
-            User::find($this->user->id)->decrement('point', count($this->result));
+            User::find($this->user->id)->decrement('point', count($uniques));
         
         }
     }
