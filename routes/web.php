@@ -33,7 +33,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{id}/download',
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
 
-// Route::get('users/export/', [ExtractDataController::class, 'export2']);
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);
@@ -41,7 +40,5 @@ Route::get('lang/{locale}', function ($locale) {
         session()->put('locale', $locale);
         session()->get('locale');
     }
-    // session()->put('locale', $locale);
-    // app()->setlocale($locale);
     return back();
 });
