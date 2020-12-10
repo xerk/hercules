@@ -6302,18 +6302,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.prev = 0;
 
                 if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
+                  _context.next = 12;
+                  break;
+                }
+
+                if (!(_this.countFile <= _this.$page.user.point)) {
                   _context.next = 9;
                   break;
                 }
 
-                _context.next = 4;
+                _context.next = 5;
                 return _this.form.post(route("clients.export"), {
                   preserveScroll: true
                 });
 
-              case 4:
-                console.log(_this.form); // this.form.text = null
-
+              case 5:
                 if (_this.form.successful && Object.keys(_this.errors).length == 0) {
                   _this.messageSuccess = true;
                 }
@@ -6325,23 +6328,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 break;
 
               case 9:
-                alert(_this.__("You check you max and min records"));
+                alert(_this.__("You didn\'t have points enough"));
 
               case 10:
-                _context.next = 15;
+                _context.next = 13;
                 break;
 
               case 12:
-                _context.prev = 12;
+                alert(_this.__("You check you max and min records"));
+
+              case 13:
+                _context.next = 18;
+                break;
+
+              case 15:
+                _context.prev = 15;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 15:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 12]]);
+        }, _callee, null, [[0, 15]]);
       }))();
     },
     readFile: function readFile(file) {

@@ -47,8 +47,7 @@ class ExportJob implements ShouldQueue
             'count' => count($this->clients),
         ]);
 
-        User::find($this->user->id)->decrement('point', count($this->clients));
-        
+        User::find($this->user->id)->decrement('point', count($this->clients)); 
 
     }
 }

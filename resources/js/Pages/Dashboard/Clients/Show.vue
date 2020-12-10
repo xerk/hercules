@@ -349,20 +349,23 @@ export default {
         async filter() {
             try {
                 if (this.countFile >= 100 && this.countFile <= 20000) {
-                    await this.form.post(route("clients.export"), {
-                        preserveScroll: true
-                    });
-                    console.log(this.form);
-                    // this.form.text = null
-                    if (
-                        this.form.successful &&
-                        Object.keys(this.errors).length == 0
-                    ) {
-                        this.messageSuccess = true;
+                    if (this.countFile <= this.$page.user.point) {
+
+                        await this.form.post(route("clients.export"), {
+                            preserveScroll: true
+                        });
+                        if (
+                            this.form.successful &&
+                            Object.keys(this.errors).length == 0
+                        ) {
+                            this.messageSuccess = true;
+                        }
+                        setTimeout(() => {
+                            location.reload();
+                        }, 7000);
+                    } else {
+                        alert(this.__("You didn\'t have points enough"));
                     }
-                    setTimeout(() => {
-                        location.reload();
-                    }, 7000);
                 } else {
                     alert(this.__("You check you max and min records"));
                 }
