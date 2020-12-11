@@ -15,6 +15,6 @@ class Export extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'file', 'user_id', 'count'
+        'name', 'file', 'user_id', 'count', 'result', 'status'
     ];
 }

@@ -62,15 +62,8 @@
                         }}
                     </div>
 
-                    <template #form>
+                    <template #form v-if="status == 0">
                         <div class="col-span-6 sm:col-span-4">
-                            <!-- <jet-label for="find" value="Extract Data" />
-							<textarea
-								id="find"
-								class="form-input rounded-md shadow-sm w-full mt-1 text-sm"
-								rows="6"
-								v-model="form.ids"
-							></textarea> -->
                             <div
                                 v-if="errors.message"
                                 class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
@@ -175,8 +168,21 @@
                             </div>
                         </div>
                     </template>
+                    <template #form v-else>
+                        <div class="col-span-6 sm:col-span-4">
+                        <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+                            <div class="flex">
+                                <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                                <div>
+                                <p class="font-bold">{{__('We are working on it')}}</p>
+                                <p class="text-sm">{{__('We will send you an email, keep waiting until we finish.')}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </template>
 
-                    <template #actions v-if="$page.user.point > 0">
+                    <template #actions >
                         <jet-action-message
                             :on="form.recentlySuccessful"
                             class="mr-3"
@@ -187,13 +193,12 @@
                         <jet-button
                             :class="{ 'opacity-25': form.processing }"
                             :disabled="form.processing"
-                        >
+                         v-if="$page.user.point > 0 && status == 0">
                             {{ __("Save") }}
                         </jet-button>
                     </template>
                 </jet-form-section>
-                <!-- </div> -->
-                <!-- </div> -->
+
                 <div
                     class="w-full my-8 overflow-hidden rounded-lg shadow-md"
                     v-if="clients"
@@ -207,6 +212,8 @@
                                     <th class="px-4 py-3">#</th>
                                     <th class="px-4 py-3">{{ __("Name") }}</th>
                                     <th class="px-4 py-3">{{ __("Count") }}</th>
+                                    <th class="px-4 py-3">{{ __("Result") }}</th>
+                                    <th class="px-4 py-3">{{ __("Status") }}</th>
                                     <th class="px-4 py-3">{{ __("File") }}</th>
                                     <th class="px-4 py-3">
                                         {{ __("Created At") }}
@@ -233,6 +240,17 @@
                                     <td class="px-4 py-3 text-sm">
                                         {{ client.count }}
                                     </td>
+                                    <td class="px-4 py-3 text-sm">
+                                        {{ client.result }}
+                                    </td>
+                                    <td class="px-4 py-3 text-xs">
+                                        <span
+                                            class="px-2 capitalize py-1 font-semibold leading-tight rounded-full"
+                                            :class="client.status == 'processing' ? 'text-yellow-700  bg-yellow-100 dark:bg-yellow-700 dark:text-yellow-100' : 'text-green-700  bg-green-100 dark:bg-green-700 dark:text-green-100'"
+                                        >
+                                            {{ client.status == 'processing' && __('Processing') || __('Completed') }}
+                                        </span>
+                                    </td>
                                     <td class="px-4 py-3 text-xs">
                                         <span
                                             class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
@@ -243,7 +261,7 @@
                                     <td class="px-4 py-3 text-sm">
                                         {{ dateAgo(client.created_at) }}
                                     </td>
-                                    <td class="px-4 py-3 text-sm capitalize">
+                                    <td class="px-4 py-3 text-sm capitalize" v-if="client.status == 'completed'">
                                         <a
                                             class="hover:underline text-indigo-500"
                                             :href="
@@ -254,6 +272,9 @@
                                             "
                                             >{{ __("Download") }}</a
                                         >
+                                    </td>
+                                    <td class="px-4 py-3 text-sm capitalize text-gray-400" v-if="client.status == 'processing'">
+                                            {{ __("Loading...") }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -317,7 +338,7 @@ import JetInput from "./../../../Jetstream/Input";
 import JetInputError from "./../../../Jetstream/InputError";
 import JetLabel from "./../../../Jetstream/Label";
 export default {
-    props: ["clients", "errors"],
+    props: ["clients", "status", "errors"],
 
     components: {
         AppLayout,
@@ -348,7 +369,7 @@ export default {
     methods: {
         async filter() {
             try {
-                if (this.countFile >= 100 && this.countFile <= 20000) {
+                if (this.countFile >= 100 && this.countFile <= 20000 && this.status == 0) {
                     if (this.countFile <= this.$page.user.point) {
 
                         await this.form.post(route("clients.export"), {

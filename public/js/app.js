@@ -6258,6 +6258,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6266,7 +6287,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["clients", "errors"],
+  props: ["clients", "status", "errors"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -6301,7 +6322,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.prev = 0;
 
-                if (!(_this.countFile >= 100 && _this.countFile <= 20000)) {
+                if (!(_this.countFile >= 100 && _this.countFile <= 20000 && _this.status == 0)) {
                   _context.next = 12;
                   break;
                 }
@@ -32173,9 +32194,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                " +
-                      _vm._s(_vm.__("Clients")) +
-                      "\n            "
+                    "\n            " + _vm._s(_vm.__("Clients")) + "\n        "
                   )
                 ]
               )
@@ -32225,42 +32244,42 @@ var render = function() {
                   _c("div", [
                     _c("p", { staticClass: "font-bold" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n                            " +
                           _vm._s(_vm.__("Information for upload file")) +
-                          "\n                            "
+                          "\n                        "
                       )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n                            " +
                           _vm._s(
                             _vm.__(
                               "After upload your file you have to wait for"
                             )
                           ) +
-                          "\n                                "
+                          "\n                            "
                       ),
                       _c("strong", [_vm._v(_vm._s(_vm.__("5 min")))])
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "text-sm" }, [
                       _vm._v(
-                        "\n                                " +
+                        "\n                            " +
                           _vm._s(_vm.__("Export facebook IDs")) +
-                          "\n                                "
+                          "\n                            "
                       ),
                       _c("strong", [_vm._v("100")]),
                       _vm._v(
                         " " +
                           _vm._s(_vm.__("to")) +
-                          "\n                                "
+                          "\n                            "
                       ),
                       _c("strong", [_vm._v("20.000")]),
                       _vm._v(
                         " " +
                           _vm._s(_vm.__("records")) +
-                          "\n                            "
+                          "\n                        "
                       )
                     ])
                   ])
@@ -32290,250 +32309,335 @@ var render = function() {
                       },
                       proxy: true
                     },
-                    {
-                      key: "form",
-                      fn: function() {
-                        return [
-                          _c(
-                            "div",
-                            { staticClass: "col-span-6 sm:col-span-4" },
-                            [
-                              _vm.errors.message
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md",
-                                      attrs: { role: "alert" }
-                                    },
-                                    [
-                                      _c("div", { staticClass: "flex" }, [
-                                        _c("div", { staticClass: "py-1" }, [
-                                          _c(
-                                            "svg",
-                                            {
-                                              staticClass:
-                                                "fill-current h-6 w-6 text-red-500 mr-4",
-                                              attrs: {
-                                                xmlns:
-                                                  "http://www.w3.org/2000/svg",
-                                                viewBox: "0 0 20 20"
-                                              }
-                                            },
-                                            [
-                                              _c("path", {
-                                                attrs: {
-                                                  d:
-                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
-                                                }
-                                              })
-                                            ]
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", [
-                                          _c(
-                                            "p",
-                                            { staticClass: "font-bold" },
-                                            [
-                                              _vm._v(
-                                                "\n                                            " +
-                                                  _vm._s(
-                                                    _vm.__(
-                                                      "Ops, You have an error"
-                                                    )
-                                                  ) +
-                                                  "\n                                        "
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("p", { staticClass: "text-sm" }, [
-                                            _vm._v(
-                                              "\n                                            " +
-                                                _vm._s(_vm.errors.message) +
-                                                "\n                                        "
-                                            )
-                                          ])
-                                        ])
-                                      ])
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.messageSuccess
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md",
-                                      attrs: { role: "alert" }
-                                    },
-                                    [
-                                      _c("div", { staticClass: "flex" }, [
-                                        _c("div", { staticClass: "py-1" }, [
-                                          _c(
-                                            "svg",
-                                            {
-                                              staticClass:
-                                                "fill-current h-6 w-6 text-green-500 mr-4",
-                                              attrs: {
-                                                xmlns:
-                                                  "http://www.w3.org/2000/svg",
-                                                viewBox: "0 0 20 20"
-                                              }
-                                            },
-                                            [
-                                              _c("path", {
-                                                attrs: {
-                                                  d:
-                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
-                                                }
-                                              })
-                                            ]
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", [
-                                          _c(
-                                            "p",
-                                            { staticClass: "font-bold" },
-                                            [
-                                              _vm._v(
-                                                "\n                                            " +
-                                                  _vm._s(
-                                                    _vm.__(
-                                                      "File was uploaded to server successfully"
-                                                    )
-                                                  ) +
-                                                  "\n                                        "
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("p", { staticClass: "text-sm" }, [
-                                            _vm._v(
-                                              "\n                                            " +
-                                                _vm._s(
-                                                  _vm.__(
-                                                    "Please be patient and reload the page within a minute or 5 minutes maximum."
-                                                  )
-                                                ) +
-                                                "\n                                        "
-                                            )
-                                          ])
-                                        ])
-                                      ])
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.$page.user.point > 0
-                                ? _c(
-                                    "div",
-                                    [
-                                      _c("jet-label", {
-                                        staticClass: "mt-4",
-                                        attrs: {
-                                          for: "find",
-                                          value: _vm.__("Extract By File")
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        ref: "text",
-                                        staticClass: "mt-1 block w-full",
-                                        attrs: { id: "text", type: "file" },
-                                        on: { change: _vm.extractChange }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("jet-input-error", {
-                                        staticClass: "mt-2",
-                                        attrs: {
-                                          message: _vm.form.error("text")
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _vm.countFile
-                                        ? _c(
-                                            "div",
-                                            {
-                                              staticClass: "mt-4 flex flex-col"
-                                            },
-                                            [
-                                              _c("div", [
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass: "text-gray-500"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        _vm.__("File count")
-                                                      ) + ":"
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(
-                                                  "\n                                        " +
-                                                    _vm._s(_vm.countFile) +
-                                                    "\n                                    "
-                                                )
-                                              ])
-                                            ]
-                                          )
-                                        : _vm._e()
-                                    ],
-                                    1
-                                  )
-                                : _c("div", { staticClass: "text-lg" }, [
-                                    _vm._v(
-                                      "\n                                " +
-                                        _vm._s(
-                                          _vm.__("Please purchase points")
-                                        ) +
-                                        "\n                                "
-                                    ),
-                                    _c(
-                                      "span",
-                                      { staticClass: "text-red-500" },
-                                      [
-                                        _vm._v(
-                                          _vm._s(_vm.__("your point")) +
-                                            "\n                                    " +
-                                            _vm._s(_vm.$page.user.point)
-                                        )
-                                      ]
-                                    )
-                                  ])
-                            ]
-                          )
-                        ]
-                      },
-                      proxy: true
-                    },
-                    _vm.$page.user.point > 0
+                    _vm.status == 0
                       ? {
-                          key: "actions",
+                          key: "form",
                           fn: function() {
                             return [
                               _c(
-                                "jet-action-message",
-                                {
-                                  staticClass: "mr-3",
-                                  attrs: { on: _vm.form.recentlySuccessful }
-                                },
+                                "div",
+                                { staticClass: "col-span-6 sm:col-span-4" },
                                 [
-                                  _vm._v(
-                                    "\n                            " +
-                                      _vm._s(_vm.__("Saved.")) +
-                                      "\n                        "
+                                  _vm.errors.message
+                                    ? _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md",
+                                          attrs: { role: "alert" }
+                                        },
+                                        [
+                                          _c("div", { staticClass: "flex" }, [
+                                            _c("div", { staticClass: "py-1" }, [
+                                              _c(
+                                                "svg",
+                                                {
+                                                  staticClass:
+                                                    "fill-current h-6 w-6 text-red-500 mr-4",
+                                                  attrs: {
+                                                    xmlns:
+                                                      "http://www.w3.org/2000/svg",
+                                                    viewBox: "0 0 20 20"
+                                                  }
+                                                },
+                                                [
+                                                  _c("path", {
+                                                    attrs: {
+                                                      d:
+                                                        "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("div", [
+                                              _c(
+                                                "p",
+                                                { staticClass: "font-bold" },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                        " +
+                                                      _vm._s(
+                                                        _vm.__(
+                                                          "Ops, You have an error"
+                                                        )
+                                                      ) +
+                                                      "\n                                    "
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                { staticClass: "text-sm" },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                        " +
+                                                      _vm._s(
+                                                        _vm.errors.message
+                                                      ) +
+                                                      "\n                                    "
+                                                  )
+                                                ]
+                                              )
+                                            ])
+                                          ])
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _vm.messageSuccess
+                                    ? _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md",
+                                          attrs: { role: "alert" }
+                                        },
+                                        [
+                                          _c("div", { staticClass: "flex" }, [
+                                            _c("div", { staticClass: "py-1" }, [
+                                              _c(
+                                                "svg",
+                                                {
+                                                  staticClass:
+                                                    "fill-current h-6 w-6 text-green-500 mr-4",
+                                                  attrs: {
+                                                    xmlns:
+                                                      "http://www.w3.org/2000/svg",
+                                                    viewBox: "0 0 20 20"
+                                                  }
+                                                },
+                                                [
+                                                  _c("path", {
+                                                    attrs: {
+                                                      d:
+                                                        "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("div", [
+                                              _c(
+                                                "p",
+                                                { staticClass: "font-bold" },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                        " +
+                                                      _vm._s(
+                                                        _vm.__(
+                                                          "File was uploaded to server successfully"
+                                                        )
+                                                      ) +
+                                                      "\n                                    "
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                { staticClass: "text-sm" },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                        " +
+                                                      _vm._s(
+                                                        _vm.__(
+                                                          "Please be patient and reload the page within a minute or 5 minutes maximum."
+                                                        )
+                                                      ) +
+                                                      "\n                                    "
+                                                  )
+                                                ]
+                                              )
+                                            ])
+                                          ])
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _vm.$page.user.point > 0
+                                    ? _c(
+                                        "div",
+                                        [
+                                          _c("jet-label", {
+                                            staticClass: "mt-4",
+                                            attrs: {
+                                              for: "find",
+                                              value: _vm.__("Extract By File")
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("input", {
+                                            ref: "text",
+                                            staticClass: "mt-1 block w-full",
+                                            attrs: { id: "text", type: "file" },
+                                            on: { change: _vm.extractChange }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("jet-input-error", {
+                                            staticClass: "mt-2",
+                                            attrs: {
+                                              message: _vm.form.error("text")
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.countFile
+                                            ? _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "mt-4 flex flex-col"
+                                                },
+                                                [
+                                                  _c("div", [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "text-gray-500"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            _vm.__("File count")
+                                                          ) + ":"
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(_vm.countFile) +
+                                                        "\n                                "
+                                                    )
+                                                  ])
+                                                ]
+                                              )
+                                            : _vm._e()
+                                        ],
+                                        1
+                                      )
+                                    : _c("div", { staticClass: "text-lg" }, [
+                                        _vm._v(
+                                          "\n                            " +
+                                            _vm._s(
+                                              _vm.__("Please purchase points")
+                                            ) +
+                                            "\n                            "
+                                        ),
+                                        _c(
+                                          "span",
+                                          { staticClass: "text-red-500" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.__("your point")) +
+                                                "\n                                " +
+                                                _vm._s(_vm.$page.user.point)
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                ]
+                              )
+                            ]
+                          },
+                          proxy: true
+                        }
+                      : {
+                          key: "form",
+                          fn: function() {
+                            return [
+                              _c(
+                                "div",
+                                { staticClass: "col-span-6 sm:col-span-4" },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "flex" }, [
+                                        _c("div", { staticClass: "py-1" }, [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "fill-current h-6 w-6 text-teal-500 mr-4",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                viewBox: "0 0 20 20"
+                                              }
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  d:
+                                                    "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _c(
+                                            "p",
+                                            { staticClass: "font-bold" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.__("We are working on it")
+                                                )
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("p", { staticClass: "text-sm" }, [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.__(
+                                                  "We will send you an email, keep waiting until we finish."
+                                                )
+                                              )
+                                            )
+                                          ])
+                                        ])
+                                      ])
+                                    ]
                                   )
                                 ]
-                              ),
-                              _vm._v(" "),
-                              _c(
+                              )
+                            ]
+                          },
+                          proxy: true
+                        },
+                    {
+                      key: "actions",
+                      fn: function() {
+                        return [
+                          _c(
+                            "jet-action-message",
+                            {
+                              staticClass: "mr-3",
+                              attrs: { on: _vm.form.recentlySuccessful }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.__("Saved.")) +
+                                  "\n                    "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm.$page.user.point > 0 && _vm.status == 0
+                            ? _c(
                                 "jet-button",
                                 {
                                   class: { "opacity-25": _vm.form.processing },
@@ -32541,17 +32645,17 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                            " +
+                                    "\n                        " +
                                       _vm._s(_vm.__("Save")) +
-                                      "\n                        "
+                                      "\n                    "
                                   )
                                 ]
                               )
-                            ]
-                          },
-                          proxy: true
-                        }
-                      : null
+                            : _vm._e()
+                        ]
+                      },
+                      proxy: true
+                    }
                   ],
                   null,
                   true
@@ -32566,13 +32670,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-2 text-xs text-gray-500" }, [
                   _vm._v(
-                    "\n                        " +
+                    "\n                    " +
                       _vm._s(
                         _vm.__(
                           "You can find Facebook accounts by add (IDs) in this Input"
                         )
                       ) +
-                      "\n                    "
+                      "\n                "
                   )
                 ])
               ]
@@ -32612,22 +32716,30 @@ var render = function() {
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
+                                  _vm._v(_vm._s(_vm.__("Result")))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "px-4 py-3" }, [
+                                  _vm._v(_vm._s(_vm.__("Status")))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "px-4 py-3" }, [
                                   _vm._v(_vm._s(_vm.__("File")))
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
                                   _vm._v(
-                                    "\n                                        " +
+                                    "\n                                    " +
                                       _vm._s(_vm.__("Created At")) +
-                                      "\n                                    "
+                                      "\n                                "
                                   )
                                 ]),
                                 _vm._v(" "),
                                 _c("th", { staticClass: "px-4 py-3" }, [
                                   _vm._v(
-                                    "\n                                        " +
+                                    "\n                                    " +
                                       _vm._s(_vm.__("Download")) +
-                                      "\n                                    "
+                                      "\n                                "
                                   )
                                 ])
                               ]
@@ -32651,17 +32763,17 @@ var render = function() {
                                 [
                                   _c("td", { staticClass: "px-4 py-3" }, [
                                     _vm._v(
-                                      "\n                                        " +
+                                      "\n                                    " +
                                         _vm._s(client.id) +
-                                        "\n                                    "
+                                        "\n                                "
                                     )
                                   ]),
                                   _vm._v(" "),
                                   _c("td", { staticClass: "px-4 py-3" }, [
                                     _vm._v(
-                                      "\n                                        " +
+                                      "\n                                    " +
                                         _vm._s(client.name) +
-                                        "\n                                    "
+                                        "\n                                "
                                     )
                                   ]),
                                   _vm._v(" "),
@@ -32670,9 +32782,51 @@ var render = function() {
                                     { staticClass: "px-4 py-3 text-sm" },
                                     [
                                       _vm._v(
-                                        "\n                                        " +
+                                        "\n                                    " +
                                           _vm._s(client.count) +
-                                          "\n                                    "
+                                          "\n                                "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { staticClass: "px-4 py-3 text-sm" },
+                                    [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(client.result) +
+                                          "\n                                "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { staticClass: "px-4 py-3 text-xs" },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "px-2 capitalize py-1 font-semibold leading-tight rounded-full",
+                                          class:
+                                            client.status == "processing"
+                                              ? "text-yellow-700  bg-yellow-100 dark:bg-yellow-700 dark:text-yellow-100"
+                                              : "text-green-700  bg-green-100 dark:bg-green-700 dark:text-green-100"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                        " +
+                                              _vm._s(
+                                                (client.status ==
+                                                  "processing" &&
+                                                  _vm.__("Processing")) ||
+                                                  _vm.__("Completed")
+                                              ) +
+                                              "\n                                    "
+                                          )
+                                        ]
                                       )
                                     ]
                                   ),
@@ -32689,9 +32843,9 @@ var render = function() {
                                         },
                                         [
                                           _vm._v(
-                                            "\n                                            " +
+                                            "\n                                        " +
                                               _vm._s(client.file) +
-                                              "\n                                        "
+                                              "\n                                    "
                                           )
                                         ]
                                       )
@@ -32703,38 +32857,57 @@ var render = function() {
                                     { staticClass: "px-4 py-3 text-sm" },
                                     [
                                       _vm._v(
-                                        "\n                                        " +
+                                        "\n                                    " +
                                           _vm._s(
                                             _vm.dateAgo(client.created_at)
                                           ) +
-                                          "\n                                    "
+                                          "\n                                "
                                       )
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _c(
-                                    "td",
-                                    {
-                                      staticClass:
-                                        "px-4 py-3 text-sm capitalize"
-                                    },
-                                    [
-                                      _c(
-                                        "a",
+                                  client.status == "completed"
+                                    ? _c(
+                                        "td",
                                         {
                                           staticClass:
-                                            "hover:underline text-indigo-500",
-                                          attrs: {
-                                            href: _vm.route(
-                                              "clients.download",
-                                              client.id
-                                            )
-                                          }
+                                            "px-4 py-3 text-sm capitalize"
                                         },
-                                        [_vm._v(_vm._s(_vm.__("Download")))]
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "hover:underline text-indigo-500",
+                                              attrs: {
+                                                href: _vm.route(
+                                                  "clients.download",
+                                                  client.id
+                                                )
+                                              }
+                                            },
+                                            [_vm._v(_vm._s(_vm.__("Download")))]
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  client.status == "processing"
+                                    ? _c(
+                                        "td",
+                                        {
+                                          staticClass:
+                                            "px-4 py-3 text-sm capitalize text-gray-400"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                        " +
+                                              _vm._s(_vm.__("Loading...")) +
+                                              "\n                                "
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
                                 ]
                               )
                             }),
@@ -32756,7 +32929,7 @@ var render = function() {
                           { staticClass: "flex items-center col-span-3" },
                           [
                             _vm._v(
-                              "\n                            " +
+                              "\n                        " +
                                 _vm._s(_vm.__("Showing")) +
                                 " " +
                                 _vm._s(_vm.clients.from) +
@@ -32764,9 +32937,9 @@ var render = function() {
                                 _vm._s(_vm.clients.to) +
                                 " " +
                                 _vm._s(_vm.__("of")) +
-                                "\n                            " +
+                                "\n                        " +
                                 _vm._s(_vm.clients.total) +
-                                "\n                        "
+                                "\n                    "
                             )
                           ]
                         ),

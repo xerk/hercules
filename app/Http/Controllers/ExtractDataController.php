@@ -35,6 +35,7 @@ class ExtractDataController extends Controller
     {
         return Inertia::render('Dashboard/Clients/Show', [
             'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
+            'status' => Export::where('user_id', auth()->user()->id)->where('status', 'processing')->count(),
         ]);
     }
 
@@ -92,11 +93,19 @@ class ExtractDataController extends Controller
         $clients = $this->endcode($fileContent);
         $this->file = "/exports/extract-data-" . Str::random(6) . '.csv';
 
-        PrepareDataJob::dispatch($clients, $request->user())->afterResponse();
+        $exportTable = Export::create([
+            'user_id' => auth()->user()->id,
+            'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
+            'count' => count($clients),
+            'status' => 'processing',
+        ]);
+
+        PrepareDataJob::dispatch($clients, $request->user(), $exportTable)->afterResponse();
 
 
         return Inertia::render('Dashboard/Clients/Show', [
             'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
+            'status' => Export::where('user_id', auth()->user()->id)->where('status', 'processing')->count(),
         ]);
     }
 

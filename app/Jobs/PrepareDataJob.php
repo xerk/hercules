@@ -23,19 +23,22 @@ class PrepareDataJob implements ShouldQueue
     private $file;
     private $result = [];
     private $user;
+    private $export;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($clients, $user)
+    public function __construct($clients, $user, $export)
     {
         $this->file = "/exports/extract-data-" . Str::random(6) . '.csv';
 
         $this->clients = $clients;
 
         $this->user = $user;
+
+        $this->export = $export;
     }
 
     /**
@@ -56,16 +59,12 @@ class PrepareDataJob implements ShouldQueue
             $uniques[$c->unique_id] = $c; // Get unique country by code.
         }
 
-        if (count($uniques) > 0) {
+        if (count($uniques) > 0 && count($uniques) <= $this->user->point) {
             Excel::store(new ClientsExport($uniques), $this->file);
 
-            ExportJob::dispatch($uniques, $this->file, $this->user);
+            ExportJob::dispatch($uniques, $this->file, $this->user, $this->export);
 
             dispatch(Mail::to($this->user)->queue(new DataExported()));
-
-            
-
-        
         }
     }
 }

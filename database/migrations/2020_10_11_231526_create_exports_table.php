@@ -17,8 +17,10 @@ class CreateExportsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->index();
             $table->string('name');
-            $table->string('count');
-            $table->string('file');
+            $table->enum('status', ['processing', 'completed']);
+            $table->integer('count')->default(0);
+            $table->integer('result')->default(0);
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

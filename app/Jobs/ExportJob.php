@@ -20,16 +20,18 @@ class ExportJob implements ShouldQueue
     protected $path;
     protected $clients;
     protected $user;
+    protected $export;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($clients, $path, $user)
+    public function __construct($clients, $path, $user, $export)
     {
         $this->clients = $clients;
         $this->path = $path;
         $this->user = $user;
+        $this->export = $export;
     }
 
     /**
@@ -40,11 +42,10 @@ class ExportJob implements ShouldQueue
     public function handle()
     {
 
-        Export::create([
-            'user_id' => $this->user->id,
-            'name' => 'Extract Data - '. Carbon::now()->toDateTimeString(),
+        Export::where('id', $this->export->id)->update([
             'file' => $this->path,
-            'count' => count($this->clients),
+            'result' => count($this->clients),
+            'status' => 'completed',
         ]);
 
         User::find($this->user->id)->decrement('point', count($this->clients)); 
