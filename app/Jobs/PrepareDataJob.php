@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\User;
+use App\Models\Export;
 use App\Mail\DataExported;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
@@ -65,6 +66,10 @@ class PrepareDataJob implements ShouldQueue
             ExportJob::dispatch($uniques, $this->file, $this->user, $this->export);
 
             dispatch(Mail::to($this->user)->queue(new DataExported()));
+        } else {
+            $export = Export::find($this->export->id);
+
+            $export->delete();
         }
     }
 }
