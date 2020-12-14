@@ -15,27 +15,21 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('unique_id')->nullable();
+            $table->bigInteger('unique_id')->nullable()->index();
             $table->string('mobile', 20)->nullable();
             $table->string('email', 45)->nullable();
             $table->string('name', 100)->nullable();
             $table->string('username')->nullable();
-            $table->string('religion', 45)->nullable();
+            $table->string('religion', 45)->nullable()->index();
             $table->string('birthday', 45)->nullable();
-            $table->string('work')->nullable();
-            $table->string('position')->nullable();
-            $table->string('hometown')->nullable();
+            $table->string('work')->nullable()->index();
+            $table->string('position')->nullable()->index();
+            $table->string('hometown')->nullable()->index();
             $table->string('location')->nullable();
-            $table->string('education')->nullable();
-            $table->string('relationship')->nullable();
-            $table->string('nationality', 20)->nullable();
+            $table->string('education')->nullable()->index();
+            $table->string('relationship')->nullable()->index();
+            $table->string('nationality', 20)->nullable()->index();
 
-            $table->index(['unique_id',
-                               'religion',
-                               'work',
-                               'position',
-                               'education',
-                               'relationship', 'hometown']);
             // Timestamps
             $table->timestamps();
         });
