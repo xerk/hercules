@@ -65,7 +65,7 @@ class PrepareDataJob implements ShouldQueue
 
             ExportJob::dispatch($uniques, $this->file, $this->user, $this->export);
 
-            dispatch(Mail::to($this->user)->queue(new DataExported()));
+            // dispatch(Mail::to($this->user)->queue(new DataExported()));
         } else {
             $export = Export::find($this->export->id);
 

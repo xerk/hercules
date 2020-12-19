@@ -33,9 +33,10 @@ class ExtractDataController extends Controller
      */
     public function index(Request $request)
     {
+        $export = Export::where('user_id', auth()->user()->id);
         return Inertia::render('Dashboard/Clients/Show', [
-            'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-            'status' => Export::where('user_id', auth()->user()->id)->where('status', 'processing')->count(),
+            'clients' => $export->latest()->paginate(15),
+            'status' => $export->where('status', 'processing')->count(),
         ]);
     }
 
