@@ -5878,9 +5878,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -31901,61 +31898,56 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm.terms.name
-                    ? _c(
-                        "ul",
-                        {
-                          staticClass: "block my-4 mx-auto",
-                          attrs: { "x-data": "{selectChangeLog:null}" }
-                        },
-                        _vm._l(_vm.changeLogs, function(changeLog, key) {
-                          return _c(
-                            "li",
+                  _c(
+                    "ul",
+                    {
+                      staticClass: "block my-4 mx-auto",
+                      attrs: { "x-data": "{selectChangeLog:null}" }
+                    },
+                    _vm._l(_vm.changeLogs, function(changeLog, key) {
+                      return _c(
+                        "li",
+                        { key: key, staticClass: "flex align-center flex-col" },
+                        [
+                          _c(
+                            "h4",
                             {
-                              key: key,
-                              staticClass: "flex align-center flex-col"
+                              staticClass:
+                                "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t flex justify-between items-center",
+                              on: {
+                                click: function($event) {
+                                  _vm.selectChangeLog !== 0
+                                    ? (_vm.selectChangeLog = 0)
+                                    : (_vm.selectChangeLog = null)
+                                }
+                              }
                             },
                             [
-                              _c(
-                                "h4",
-                                {
-                                  staticClass:
-                                    "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t flex justify-between items-center",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.selectChangeLog !== 0
-                                        ? (_vm.selectChangeLog = 0)
-                                        : (_vm.selectChangeLog = null)
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("span", [_vm._v(_vm._s(changeLog.name))]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v("v" + _vm._s(changeLog.version))
-                                  ])
-                                ]
-                              ),
+                              _c("span", [_vm._v(_vm._s(changeLog.name))]),
                               _vm._v(" "),
-                              _c("p", {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.selectChangeLog == 0,
-                                    expression: "selectChangeLog == 0"
-                                  }
-                                ],
-                                staticClass: "border py-4 px-2",
-                                domProps: { innerHTML: _vm._s(changeLog.desc) }
-                              })
+                              _c("span", [
+                                _vm._v("v" + _vm._s(changeLog.version))
+                              ])
                             ]
-                          )
-                        }),
-                        0
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.selectChangeLog == 0,
+                                expression: "selectChangeLog == 0"
+                              }
+                            ],
+                            staticClass: "border py-4 px-2",
+                            domProps: { innerHTML: _vm._s(changeLog.desc) }
+                          })
+                        ]
                       )
-                    : _vm._e()
+                    }),
+                    0
+                  )
                 ]
               )
             ]
@@ -32192,7 +32184,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm.terms.name
+                  _vm.terms && _vm.terms.name
                     ? _c(
                         "ul",
                         {

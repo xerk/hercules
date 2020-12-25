@@ -20,7 +20,7 @@
                         <div class="text-gray-500 text-3xl">
                             {{ __("Change Log") }}
                         </div>
-                        <ul class="block my-4 mx-auto" x-data="{selectChangeLog:null}" v-if="terms.name">
+                        <ul class="block my-4 mx-auto" x-data="{selectChangeLog:null}">
                             <li class="flex align-center flex-col" v-for="(changeLog, key) in changeLogs" :key="key">
                                 <h4 @click="
                             selectChangeLog !== 0 ? (selectChangeLog = 0) : (selectChangeLog = null)
@@ -70,17 +70,14 @@
                                             <tr class="text-gray-700 dark:text-gray-400" :key="key"
                                                 v-if="lic.status == 'active'">
                                                 <td class="px-4 py-3">
-                                                    <!-- {{ client.id }} -->
                                                     {{lic.id}}
                                                 </td>
                                                 <td class="px-4 py-3">
-                                                    <!-- {{ client.name }} -->
                                                     {{lic.name}}
                                                 </td>
                                                 <td class="px-4 py-3 text-xs">
                                                     <span
                                                         class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                        <!-- {{ client.file }} -->
                                                         {{lic.version}}
                                                     </span>
                                                 </td>
@@ -124,7 +121,7 @@
                         <div class="text-gray-500 text-3xl">
                             {{__('Terms and Conditions')}}
                         </div>
-                        <ul class="block my-4 mx-auto" x-data="{selected:null}" v-if="terms.name">
+                        <ul class="block my-4 mx-auto" x-data="{selected:null}" v-if="terms && terms.name">
                             <li class="flex align-center flex-col">
                                 <h4 @click="
                             selected !== 0 ? (selected = 0) : (selected = null)
