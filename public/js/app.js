@@ -4685,48 +4685,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['tutorials'],
   components: {
     JetApplicationLogo: _Jetstream_ApplicationLogo__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -5913,12 +5874,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['license', 'terms', 'changeLogs', 'tutorials'],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Welcome: _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      selected: 0,
+      selectChangeLog: 0
+    };
+  },
+  methods: {
+    dateAgo: function dateAgo(time) {
+      return moment(time).fromNow();
+    },
+    download: function download(id) {
+      this.$inertia.post(route("clients.download", id), {
+        preserveScroll: true
+      });
+    }
   }
 });
 
@@ -29824,111 +29809,77 @@ var render = function() {
             staticClass: "block my-4 mx-auto",
             attrs: { "x-data": "{selected:null}" }
           },
-          [
-            _c("li", { staticClass: "flex align-center flex-col" }, [
-              _c(
-                "h4",
-                {
-                  staticClass:
-                    "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t",
-                  on: {
-                    click: function($event) {
-                      _vm.selected !== 0
-                        ? (_vm.selected = 0)
-                        : (_vm.selected = null)
+          _vm._l(_vm.tutorials, function(tutorial) {
+            return _c(
+              "li",
+              { key: tutorial.id, staticClass: "flex align-center flex-col" },
+              [
+                _c(
+                  "h4",
+                  {
+                    staticClass:
+                      "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t",
+                    on: {
+                      click: function($event) {
+                        _vm.selected !== 0
+                          ? (_vm.selected = 0)
+                          : (_vm.selected = null)
+                      }
                     }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.__("Hercules WhatsApp Part 1")) +
-                      "\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selected == 0,
-                      expression: "selected == 0"
-                    }
-                  ],
-                  staticClass: "border py-4 px-2"
-                },
-                [
-                  _c("iframe", {
-                    attrs: {
-                      width: "856",
-                      height: "482",
-                      src: "https://www.youtube.com/embed/aREKhk_C820",
-                      frameborder: "0",
-                      allow:
-                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                      allowfullscreen: ""
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "flex align-center flex-col" }, [
-              _c(
-                "h4",
-                {
-                  staticClass:
-                    "cursor-pointer px-5 py-3 bg-white-400 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3",
-                  on: {
-                    click: function($event) {
-                      _vm.selected !== 1
-                        ? (_vm.selected = 1)
-                        : (_vm.selected = null)
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.__("Hercules WhatsApp Part 2")) +
-                      "\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selected == 1,
-                      expression: "selected == 1"
-                    }
-                  ],
-                  staticClass: "border py-4 px-2"
-                },
-                [
-                  _c("iframe", {
-                    attrs: {
-                      width: "856",
-                      height: "482",
-                      src: "https://www.youtube.com/embed/D7wDewfFV4k",
-                      frameborder: "0",
-                      allow:
-                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                      allowfullscreen: ""
-                    }
-                  })
-                ]
-              )
-            ])
-          ]
+                  },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(tutorial.name) +
+                        "\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selected == 0,
+                        expression: "selected == 0"
+                      }
+                    ],
+                    staticClass: "border py-4 px-2"
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "relative overflow-hidden",
+                        staticStyle: { "padding-top": "56.25%" }
+                      },
+                      [
+                        _c("iframe", {
+                          staticClass: "absolute top-0 left-0 w-full h-full",
+                          attrs: {
+                            src: tutorial.url,
+                            frameborder: "0",
+                            allow:
+                              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                            allowfullscreen: ""
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "mt-4 mx-4",
+                      domProps: { innerHTML: _vm._s(tutorial.desc) }
+                    })
+                  ]
+                )
+              ]
+            )
+          }),
+          0
         )
       ]
     )
@@ -31924,7 +31875,7 @@ var render = function() {
           _c(
             "div",
             { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
-            [_c("welcome")],
+            [_c("welcome", { attrs: { tutorials: _vm.tutorials } })],
             1
           )
         ])
@@ -31950,7 +31901,61 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("ul", [_c("li", [_vm._v("- v1.0.0.1")])])
+                  _vm.terms.name
+                    ? _c(
+                        "ul",
+                        {
+                          staticClass: "block my-4 mx-auto",
+                          attrs: { "x-data": "{selectChangeLog:null}" }
+                        },
+                        _vm._l(_vm.changeLogs, function(changeLog, key) {
+                          return _c(
+                            "li",
+                            {
+                              key: key,
+                              staticClass: "flex align-center flex-col"
+                            },
+                            [
+                              _c(
+                                "h4",
+                                {
+                                  staticClass:
+                                    "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t flex justify-between items-center",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selectChangeLog !== 0
+                                        ? (_vm.selectChangeLog = 0)
+                                        : (_vm.selectChangeLog = null)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("span", [_vm._v(_vm._s(changeLog.name))]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _vm._v("v" + _vm._s(changeLog.version))
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.selectChangeLog == 0,
+                                    expression: "selectChangeLog == 0"
+                                  }
+                                ],
+                                staticClass: "border py-4 px-2",
+                                domProps: { innerHTML: _vm._s(changeLog.desc) }
+                              })
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    : _vm._e()
                 ]
               )
             ]
@@ -32044,69 +32049,116 @@ var render = function() {
                                   "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                               },
                               [
-                                _c(
-                                  "tr",
-                                  {
-                                    staticClass:
-                                      "text-gray-700 dark:text-gray-400"
-                                  },
-                                  [
-                                    _c("td", { staticClass: "px-4 py-3" }, [
-                                      _vm._v(
-                                        "\n                                            1\n                                        "
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", { staticClass: "px-4 py-3" }, [
-                                      _vm._v(
-                                        "\n                                            Hercules v1.0.0\n                                        "
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "td",
-                                      { staticClass: "px-4 py-3 text-xs" },
-                                      [
-                                        _c(
-                                          "span",
+                                _vm._l(_vm.license, function(lic, key) {
+                                  return [
+                                    lic.status == "active"
+                                      ? _c(
+                                          "tr",
                                           {
+                                            key: key,
                                             staticClass:
-                                              "px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                              "text-gray-700 dark:text-gray-400"
                                           },
                                           [
-                                            _vm._v(
-                                              "\n                                                v1.0.0\n                                            "
+                                            _c(
+                                              "td",
+                                              { staticClass: "px-4 py-3" },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                " +
+                                                    _vm._s(lic.id) +
+                                                    "\n                                            "
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              { staticClass: "px-4 py-3" },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                " +
+                                                    _vm._s(lic.name) +
+                                                    "\n                                            "
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass: "px-4 py-3 text-xs"
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                    " +
+                                                        _vm._s(lic.version) +
+                                                        "\n                                                "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass: "px-4 py-3 text-sm"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                " +
+                                                    _vm._s(
+                                                      _vm.dateAgo(
+                                                        lic.created_at
+                                                      )
+                                                    ) +
+                                                    "\n                                            "
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
+                                                staticClass:
+                                                  "px-4 py-3 text-sm capitalize"
+                                              },
+                                              [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    staticClass:
+                                                      "hover:underline text-indigo-500",
+                                                    attrs: {
+                                                      href: _vm.route(
+                                                        "license.download",
+                                                        lic.id
+                                                      )
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(_vm.__("Download"))
+                                                    )
+                                                  ]
+                                                )
+                                              ]
                                             )
                                           ]
                                         )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("td", {
-                                      staticClass: "px-4 py-3 text-sm"
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "td",
-                                      {
-                                        staticClass:
-                                          "px-4 py-3 text-sm capitalize"
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "hover:underline text-indigo-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [_vm._v(_vm._s(_vm.__("Download")))]
-                                        )
-                                      ]
-                                    )
+                                      : _vm._e()
                                   ]
-                                )
-                              ]
+                                })
+                              ],
+                              2
                             )
                           ]
                         )
@@ -32140,13 +32192,57 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("ul", [
-                    _c("li", [
-                      _vm._v(
-                        "\n                            Lorem ipsum dolor sit, amet consectetur\n                            adipisicing elit. Odio nobis ipsum voluptates ea\n                            quas quae animi, soluta inventore sint sed\n                            necessitatibus, ducimus aperiam ab nemo! Atque\n                            sunt dolor est sequi!\n                        "
+                  _vm.terms.name
+                    ? _c(
+                        "ul",
+                        {
+                          staticClass: "block my-4 mx-auto",
+                          attrs: { "x-data": "{selected:null}" }
+                        },
+                        [
+                          _c(
+                            "li",
+                            { staticClass: "flex align-center flex-col" },
+                            [
+                              _c(
+                                "h4",
+                                {
+                                  staticClass:
+                                    "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t",
+                                  on: {
+                                    click: function($event) {
+                                      _vm.selected !== 0
+                                        ? (_vm.selected = 0)
+                                        : (_vm.selected = null)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(_vm.terms.name) +
+                                      "\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.selected == 0,
+                                    expression: "selected == 0"
+                                  }
+                                ],
+                                staticClass: "border py-4 px-2",
+                                domProps: { innerHTML: _vm._s(_vm.terms.desc) }
+                              })
+                            ]
+                          )
+                        ]
                       )
-                    ])
-                  ])
+                    : _vm._e()
                 ]
               )
             ]
