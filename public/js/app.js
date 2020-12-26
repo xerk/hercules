@@ -6001,6 +6001,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -34072,67 +34073,69 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "ul",
-                {
-                  staticClass:
-                    "divide-y divide-gray-200 rounded-b-lg overflow-hidden h-auto block mx-auto",
-                  attrs: { "x-data": "{selected:null}" }
-                },
-                [
-                  _c("li", { staticClass: "flex align-center flex-col" }, [
-                    _c(
-                      "h4",
-                      {
-                        staticClass:
-                          "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t",
-                        on: {
-                          click: function($event) {
-                            _vm.selected !== 0
-                              ? (_vm.selected = 0)
-                              : (_vm.selected = null)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.terms.name) +
-                            "\n                        "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm.local == "en"
-                      ? _c("p", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.selected == 0,
-                              expression: "selected == 0"
+              _vm.terms && _vm.terms.name
+                ? _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "divide-y divide-gray-200 rounded-b-lg overflow-hidden h-auto block mx-auto",
+                      attrs: { "x-data": "{selected:null}" }
+                    },
+                    [
+                      _c("li", { staticClass: "flex align-center flex-col" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "cursor-pointer px-5 py-3 bg-white-300 text-grey-700 inline-block hover:opacity-75 shadow-md hover:-mb-3 rounded-t",
+                            on: {
+                              click: function($event) {
+                                _vm.selected !== 0
+                                  ? (_vm.selected = 0)
+                                  : (_vm.selected = null)
+                              }
                             }
-                          ],
-                          staticClass:
-                            "py-4 px-8 rounded-b-lg transform transition-all duration-150 ease-in-out h-full",
-                          domProps: { innerHTML: _vm._s(_vm.terms.desc.en) }
-                        })
-                      : _c("p", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.selected == 0,
-                              expression: "selected == 0"
-                            }
-                          ],
-                          staticClass:
-                            "py-4 px-8 rounded-b-lg transform transition-all duration-150 ease-in-out h-full text-right",
-                          domProps: { innerHTML: _vm._s(_vm.terms.desc.ar) }
-                        })
-                  ])
-                ]
-              )
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(_vm.terms.name) +
+                                "\n                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm.local == "en"
+                          ? _c("p", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.selected == 0,
+                                  expression: "selected == 0"
+                                }
+                              ],
+                              staticClass:
+                                "py-4 px-8 rounded-b-lg transform transition-all duration-150 ease-in-out h-full",
+                              domProps: { innerHTML: _vm._s(_vm.terms.desc.en) }
+                            })
+                          : _c("p", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.selected == 0,
+                                  expression: "selected == 0"
+                                }
+                              ],
+                              staticClass:
+                                "py-4 px-8 rounded-b-lg transform transition-all duration-150 ease-in-out h-full text-right",
+                              domProps: { innerHTML: _vm._s(_vm.terms.desc.ar) }
+                            })
+                      ])
+                    ]
+                  )
+                : _vm._e()
             ]
           )
         ])

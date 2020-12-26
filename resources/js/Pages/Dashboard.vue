@@ -253,6 +253,7 @@
                     <ul
                         class="divide-y divide-gray-200 rounded-b-lg overflow-hidden h-auto block mx-auto"
                         x-data="{selected:null}"
+                        v-if="terms && terms.name"
                     >
                         <li class="flex align-center flex-col">
                             <h4

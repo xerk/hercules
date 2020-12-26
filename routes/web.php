@@ -18,23 +18,23 @@ use App\Http\Controllers\ExtractDataController;
 |
 */
 
-Route::get('/', function () {
+Route::middleware('local')->get('/', function () {
     return view('vendor.hercules.index');
 })->name('landingpage');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/license/{id}/download', [DashboardController::class, 'download'])->name('license.download');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/clients', [ExtractDataController::class, 'index'])->name('clients');
-Route::middleware(['auth:sanctum', 'verified'])->put('/dashboard/clients', [ExtractDataController::class, 'export2'])->name('clients.export');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{id}/download', [ExtractDataController::class, 'download'])->name('clients.download');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/license/{id}/download', [DashboardController::class, 'download'])->name('license.download');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/clients', [ExtractDataController::class, 'index'])->name('clients');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->put('/dashboard/clients', [ExtractDataController::class, 'export2'])->name('clients.export');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/{id}/download', [ExtractDataController::class, 'download'])->name('clients.download');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
-Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials', [TutorialController::class, 'index'])->name('tutorials');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials/{category}', [TutorialController::class, 'show'])->name('tutorials.show');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials', [TutorialController::class, 'index'])->name('tutorials');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}', [TutorialController::class, 'show'])->name('tutorials.show');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
 
 
 Route::get('lang/{locale}', function ($locale) {
