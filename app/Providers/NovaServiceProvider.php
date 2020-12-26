@@ -9,6 +9,7 @@ use App\Observers\CardCodeObserver;
 use Day4\SwitchLocale\SwitchLocale;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Digitalcloud\MultilingualNova\NovaLanguageTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -83,6 +84,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            new \Bernhardh\NovaTranslationEditor\NovaTranslationEditor(),
+            new NovaLanguageTool(),
         ];
     }
 

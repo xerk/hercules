@@ -94,7 +94,7 @@
             </div>
 
             <!-- Locale -->
-            <div class="col-span-6 sm:col-span-4">
+            <!-- <div class="col-span-6 sm:col-span-4">
                 <jet-label for="locale" :value="__('Locale')" />
                 <select
                     v-model="form.locale"
@@ -105,7 +105,7 @@
                     <option value="ar">Arabic</option>
                 </select>
                 <jet-input-error :message="form.error('locale')" class="mt-2" />
-            </div>
+            </div> -->
         </template>
 
         <template #actions>

@@ -19,10 +19,10 @@ class BeforeMiddleware
     public function handle(Request $request, Closure $next)
     {
         
-        if($user = Auth::user()) {
-            $locale = $user->locale;
-            session()->put('locale', $locale);   
-        }
+        // if($user = Auth::user()) {
+        //     $locale = $user->locale;
+        //     session()->put('locale', $locale);   
+        // }
 
         if (session()->has('locale')) { 
             $locale = session()->get('locale', config()->get('app.locale'));

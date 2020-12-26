@@ -4,22 +4,19 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Tutorial extends Resource
+class Category extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Tutorial::class;
+    public static $model = \App\Models\Category::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -48,22 +45,16 @@ class Tutorial extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            BelongsTo::make('Category', 'category', 'App\Nova\Category'),
-            
             Text::make(__('Name'), 'name')->sortable()->rules('required', 'max:255'),
 
             Slug::make(__('Slug'), 'slug')->from('Name')
-            ->rules('required', 'max:254')
-            ->creationRules('unique:tutorials,slug')
-            ->updateRules('unique:tutorials,slug,{{resourceId}}'),
+                ->rules('required', 'max:254')
+                ->creationRules('unique:categories,slug')
+                ->updateRules('unique:categories,slug,{{resourceId}}'),
 
-            Image::make(__('Image'), 'image'),
+            Text::make(__('Description'), 'desc')->sortable(),
 
-            Text::make(__('URL'), 'url')->sortable(),
-
-            Textarea::make(__('Short Description'), 'short_desc'),
-
-            Trix::make(__('Description'), 'desc'),
+            HasMany::make(__('Tutorials'), 'tutorials'),
         ];
     }
 

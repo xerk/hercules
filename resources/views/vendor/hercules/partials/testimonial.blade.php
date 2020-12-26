@@ -9,7 +9,7 @@
         <div class="testimonial-slider owl-carousel owl-theme">
             <div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/mohamed_azmy.png" alt="image">
+                    <img src="{{ asset('/storage/images/mohamed_azmy.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Azmy</h3>
@@ -27,7 +27,7 @@
 
             <div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/malek_waleed.png" alt="image">
+                    <img src="{{ asset('/storage/images/malek_waleed.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>Malek Waleed</h3>
@@ -43,7 +43,7 @@
 
             <div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/ibrahim_samir.png" alt="image">
+                    <img src="{{ asset('/storage/images/ibrahim_samir.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>Ibrahim Samir</h3>
@@ -59,7 +59,7 @@
 			
 			<div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/mohamed_mostafa.png" alt="image">
+                    <img src="{{ asset('/storage/images/mohamed_mostafa.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Mostafa</h3>
@@ -75,7 +75,7 @@
 			
 			<div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/ahmed_hussen.png" alt="image">
+                    <img src="{{ asset('/storage/images/ahmed_hussen.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>احمد محمد حسين</h3>
@@ -91,7 +91,7 @@
 			
 			<div class="testimonial-single-item">
                 <div class="testimonial-image">
-                    <img src="https://www.linkpicture.com/q/mohamed_agami.png" alt="image">
+                    <img src="{{ asset('/storage/images/mohamed_agami.png') }}" alt="image">
                 </div>
                 <div class="testimonial-info">
                     <h3>Mohamed Agami</h3>

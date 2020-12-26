@@ -17,6 +17,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['"SF Pro AR"', '"SF Pro Gulf"', '"SF Pro Display"', '"SF Pro Icons"', 'Nunito'],
+                // sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI,"', 'Roboto', 'Helvetica', 'Neue', 'Arial', '"Noto Sans"', 'sans-serif'],
                 // sans: ['"SF Pro AR"', '"SF Pro Gulf"', '"SF Pro Display"', '"SF Pro Icons"', 'Nunito', ...defaultTheme.fontFamily.sans],
             },
         },

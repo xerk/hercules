@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Digitalcloud\MultilingualNova\Multilingual;
 
 class TermsAndCondition extends Resource
 {
@@ -42,6 +43,8 @@ class TermsAndCondition extends Resource
     public function fields(Request $request)
     {
         return [
+            Multilingual::make('Language'),
+            
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make(__('Name'), 'name')->sortable(),

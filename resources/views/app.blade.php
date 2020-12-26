@@ -10,7 +10,9 @@
     <link rel="icon" type="image/ico" href="{{ asset('vendor/hercules/assets/img/favicon.ico') }}">
 
     <!-- Fonts -->
-    <link href="//db.onlinewebfonts.com/c/c36ae25995bf2b3f70549cfd6fdf0b42?family=SF+Pro+AR+Display+Black" rel="stylesheet" type="text/css"/>
+    {{-- <link href="//db.onlinewebfonts.com/c/c36ae25995bf2b3f70549cfd6fdf0b42?family=SF+Pro+AR+Display+Black" rel="stylesheet" type="text/css"/> --}}
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('js/all.min.js') }}"> --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
@@ -62,7 +64,8 @@
     @endphp
     <script>
         window.config = @json([
-            'translations' => $newTrans
+            'translations' => $newTrans,
+            'local' => app()->getLocale()
         ]);
     </script>
 </body>

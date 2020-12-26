@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtractDataController;
 
@@ -19,7 +20,7 @@ use App\Http\Controllers\ExtractDataController;
 
 Route::get('/', function () {
     return view('vendor.hercules.index');
-});
+})->name('landingpage');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -31,6 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/{id}/download',
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/purchase', [PurchaseController::class, 'redeem'])->name('purchase.redeem');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials', [TutorialController::class, 'index'])->name('tutorials');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials/{category}', [TutorialController::class, 'show'])->name('tutorials.show');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
+
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);
@@ -38,6 +43,7 @@ Route::get('lang/{locale}', function ($locale) {
         session()->put('locale', $locale);
         session()->get('locale');
     }
+    App::setLocale($locale);
     return back();
 });
 
