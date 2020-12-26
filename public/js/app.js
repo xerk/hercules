@@ -6001,8 +6001,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -31207,7 +31205,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(_vm.__("Tutorials")) +
+                        _vm._s(_vm.__("Our Tutorials")) +
                           "\n                            "
                       )
                     ]
@@ -32071,7 +32069,7 @@ var render = function() {
                   [
                     _vm._v(
                       "\n                        " +
-                        _vm._s(_vm.__("Tutorials")) +
+                        _vm._s(_vm.__("Our Tutorials")) +
                         "\n                    "
                     )
                   ]
@@ -33571,7 +33569,9 @@ var render = function() {
                   _c("h2", { staticClass: "text-md font-medium" }, [
                     _c("span", { staticClass: "mr-2" }, [_vm._v("🚀")]),
                     _vm._v(
-                      " Finish up your account\n                        (" +
+                      " " +
+                        _vm._s(_vm.__("Finish up your account")) +
+                        "\n                        (" +
                         _vm._s(_vm.countDone()) +
                         "/3)\n                    "
                     )
@@ -33619,7 +33619,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                                Purchase Points\n                            "
+                            "\n                                " +
+                              _vm._s(_vm.__("Purchase Points")) +
+                              "\n                            "
                           )
                         ]
                       )
@@ -33632,7 +33634,7 @@ var render = function() {
                           "inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm",
                         attrs: { target: "_self", href: _vm.route("purchase") }
                       },
-                      [_vm._v("Redeem points +")]
+                      [_vm._v(_vm._s(_vm.__("Redeem points")) + " +")]
                     )
                   ],
                   1
@@ -33671,7 +33673,9 @@ var render = function() {
                     _c("div", { staticClass: "flex-1" }, [
                       _c("h3", { staticClass: "text-md font-medium" }, [
                         _vm._v(
-                          "\n                                Create your first excel file\n                                "
+                          "\n                                " +
+                            _vm._s(_vm.__("Create your first excel file")) +
+                            "\n                                "
                         ),
                         _c(
                           "span",
@@ -33681,7 +33685,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    Optional\n                                "
+                              "\n                                    " +
+                                _vm._s(_vm.__("Optional")) +
+                                "\n                                "
                             )
                           ]
                         )
@@ -33695,7 +33701,7 @@ var render = function() {
                           "inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm",
                         attrs: { target: "_self", href: _vm.route("clients") }
                       },
-                      [_vm._v("Find Facebook Data")]
+                      [_vm._v(_vm._s(_vm.__("Find Facebook Data")))]
                     )
                   ],
                   1
@@ -33731,7 +33737,9 @@ var render = function() {
                   _c("div", { staticClass: "flex-1" }, [
                     _c("h3", { staticClass: "text-md font-medium" }, [
                       _vm._v(
-                        "\n                                Upgrade your plan\n                                "
+                        "\n                                " +
+                          _vm._s(_vm.__("Upgrade your plan")) +
+                          "\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -33743,7 +33751,13 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                Upgrade your plan to lift restrictions and\n                                enjoy the most out of managing your\n                                services.\n                            "
+                          "\n                                " +
+                            _vm._s(
+                              _vm.__(
+                                "Upgrade your plan to lift restrictions and enjoy the most out of managing your services."
+                              )
+                            ) +
+                            "\n                            "
                         )
                       ]
                     )
@@ -33756,7 +33770,7 @@ var render = function() {
                         "inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm",
                       attrs: { target: "_self", href: "/" }
                     },
-                    [_vm._v("Upgrade plan")]
+                    [_vm._v(_vm._s(_vm.__("Upgrade plan")))]
                   )
                 ])
               ]),
@@ -35334,7 +35348,7 @@ var render = function() {
                 [
                   _vm._v(
                     "\n            " +
-                      _vm._s(_vm.__("Tutorials")) +
+                      _vm._s(_vm.__("Our Tutorials")) +
                       "\n        "
                   )
                 ]
@@ -35350,7 +35364,7 @@ var render = function() {
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
           _c("div", { staticClass: "mb-4 font-semibold text-gray-500" }, [
-            _vm._v("Categories")
+            _vm._v(_vm._s(_vm.__("Categories")))
           ]),
           _vm._v(" "),
           _c(
@@ -35519,7 +35533,7 @@ var render = function() {
                 [
                   _vm._v(
                     "\n            " +
-                      _vm._s(_vm.__("Tutorials")) +
+                      _vm._s(_vm.__("Our Tutorials")) +
                       "\n        "
                   )
                 ]
@@ -35535,7 +35549,7 @@ var render = function() {
       _c("div", { staticClass: "py-12", attrs: { id: "docs" } }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
           _c("div", { staticClass: "mb-4 font-semibold text-gray-500" }, [
-            _vm._v("Tutorials")
+            _vm._v(_vm._s(_vm.__("Our Tutorials")))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex flex-wrap -mx-2" }, [
@@ -35655,7 +35669,7 @@ var render = function() {
                 [
                   _vm._v(
                     "\n            " +
-                      _vm._s(_vm.__("Tutorials")) +
+                      _vm._s(_vm.__("Our Tutorials")) +
                       "\n        "
                   )
                 ]
@@ -35671,7 +35685,7 @@ var render = function() {
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
           _c("div", { staticClass: "mb-4 font-semibold text-gray-500" }, [
-            _vm._v("Tutorials")
+            _vm._v(_vm._s(_vm.__("Our Tutorials")))
           ]),
           _vm._v(" "),
           _c(
@@ -53921,7 +53935,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Mixins_Localization__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Mixins/Localization */ "./resources/js/Mixins/Localization.js");
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _filters_filters__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./filters/filters */ "./resources/js/filters/filters.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -53983,6 +53999,95 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/filters/filters.js":
+/*!*****************************************!*\
+  !*** ./resources/js/filters/filters.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('capitalize', function (value) {
+  if (!value) return '';
+  value = value.toString();
+  var arr = value.split(' ');
+  var capitalized_array = [];
+  arr.forEach(function (word) {
+    var capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+    capitalized_array.push(capitalized);
+  });
+  return capitalized_array.join(' ');
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('title', function (value) {
+  var replacer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '_';
+  if (!value) return '';
+  value = value.toString();
+  var arr = value.split(replacer);
+  var capitalized_array = [];
+  arr.forEach(function (word) {
+    var capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+    capitalized_array.push(capitalized);
+  });
+  return capitalized_array.join(' ');
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('truncate', function (value, limit) {
+  return value.substring(0, limit);
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('tailing', function (value, tail) {
+  return value + tail;
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('time', function (value) {
+  var is24HrFormat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  if (value) {
+    var date = new Date(Date.parse(value));
+    var hours = date.getHours();
+    var min = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+
+    if (!is24HrFormat) {
+      var time = hours > 12 ? 'AM' : 'PM';
+      hours = hours % 12 || 12;
+      return "".concat(hours, ":").concat(min, " ").concat(time);
+    }
+
+    return "".concat(hours, ":").concat(min);
+  }
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('date', function (value) {
+  var fullDate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  value = String(value);
+  var date = value.slice(8, 10).trim();
+  var month = value.slice(4, 7).trim();
+  var year = value.slice(11, 15);
+  if (!fullDate) return "".concat(date, " ").concat(month);else return "".concat(date, " ").concat(month, " ").concat(year);
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('month', function (val) {
+  var showYear = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  val = String(val);
+  var regx = /\w+\s(\w+)\s\d+\s(\d+)./;
+
+  if (!showYear) {
+    return regx.exec(val)[1];
+  } else {
+    return "".concat(regx.exec(val)[1], " ").concat(regx.exec(val)[2]);
+  }
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('csv', function (value) {
+  return value.join(', ');
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('filter_tags', function (value) {
+  return value.replace(/<\/?[^>]+(>|$)/g, '');
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('k_formatter', function (num) {
+  return num > 999 ? "".concat((num / 1000).toFixed(1), "k") : num;
+});
 
 /***/ }),
 

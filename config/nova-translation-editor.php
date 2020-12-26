@@ -3,7 +3,7 @@ return [
     'groups' => [
         'auth',
         'validation',
-        '*'
+        '*',
     ],
     'languages' => [
         'en',

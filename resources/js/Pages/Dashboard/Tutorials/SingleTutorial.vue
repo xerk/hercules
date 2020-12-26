@@ -2,12 +2,12 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __("Tutorials") }}
+                {{ __("Our Tutorials") }}
             </h2>
         </template>
         <div class="py-12" id="docs">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="mb-4 font-semibold text-gray-500">Tutorials</div>
+                <div class="mb-4 font-semibold text-gray-500">{{__('Our Tutorials')}}</div>
                 <div class="flex flex-wrap -mx-2">
                     <div class="relative w-full mb-4 px-2">
                         <div class="bg-white shadow rounded-lg overflow-hidden h-auto">

@@ -76,7 +76,7 @@
                             <jet-nav-link :href="route('purchase')" :active="$page.currentRouteName == 'purchase'">
                                 {{ __("Purchase Points") }}
                             </jet-nav-link>
-                            <jet-nav-link :href="route('tutorials')" :active="$page.currentRouteName == 'tutorials'">{{ __("Tutorials")
+                            <jet-nav-link :href="route('tutorials')" :active="$page.currentRouteName == 'tutorials'">{{ __("Our Tutorials")
                                 }}
                             </jet-nav-link>
                             <jet-nav-link href="#" class="cursor-not-allowed">
@@ -331,7 +331,7 @@
                         {{ __("Purchase Points") }}
                     </jet-responsive-nav-link>
                     <jet-responsive-nav-link :href="route('tutorials')" :active="$page.currentRouteName == 'tutorials'">
-                        {{ __("Tutorials") }}
+                        {{ __("Our Tutorials") }}
                     </jet-responsive-nav-link>
                     <jet-responsive-nav-link href="#">
                         {{ __("SEO") }}

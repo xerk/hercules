@@ -7,6 +7,7 @@ import { InertiaForm } from 'laravel-jetstream';
 import PortalVue from 'portal-vue';
 import Localization from './Mixins/Localization';
 import 'alpinejs';
+import './filters/filters';
 
 Vue.mixin({ methods: { route } });
 Vue.mixin(Localization)

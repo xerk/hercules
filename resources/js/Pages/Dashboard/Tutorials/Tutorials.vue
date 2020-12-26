@@ -2,12 +2,12 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __("Tutorials") }}
+                {{ __("Our Tutorials") }}
             </h2>
         </template>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="mb-4 font-semibold text-gray-500">Tutorials</div>
+                <div class="mb-4 font-semibold text-gray-500">{{__('Our Tutorials')}}</div>
                 <div class="flex flex-wrap -mx-2">
                     <inertia-link
                         class="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 mb-4 px-2"

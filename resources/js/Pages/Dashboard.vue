@@ -15,7 +15,7 @@
                         class="px-4 py-3 bg-white dark:bg-gray-700 rounded-t-lg"
                     >
                         <h2 class="text-md font-medium">
-                            <span class="mr-2">🚀</span> Finish up your account
+                            <span class="mr-2">🚀</span> {{__('Finish up your account')}}
                             ({{ countDone() }}/3)
                         </h2>
                     </header>
@@ -38,7 +38,7 @@
                                 <h3
                                     class="text-md font-medium flex items-center justify-between"
                                 >
-                                    Purchase Points
+                                    {{__('Purchase Points')}}
                                 </h3>
                                 <!---->
                             </div>
@@ -46,7 +46,7 @@
                                 target="_self"
                                 :href="route('purchase')"
                                 class="inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm"
-                                >Redeem points +</inertia-link
+                                >{{__('Redeem points')}} +</inertia-link
                             >
                             <!---->
                         </li>
@@ -66,11 +66,11 @@
                             <!---->
                             <div class="flex-1">
                                 <h3 class="text-md font-medium">
-                                    Create your first excel file
+                                    {{__('Create your first excel file')}}
                                     <span
                                         class="text-sm px-2 font-medium tracking-wide rounded-full bg-gray-100 text-gray-900 inline-flex items-center justify-center text-center"
                                     >
-                                        Optional
+                                        {{__('Optional')}}
                                     </span>
                                 </h3>
                                 <!---->
@@ -80,7 +80,7 @@
                                 target="_self"
                                 :href="route('clients')"
                                 class="inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm"
-                                >Find Facebook Data</inertia-link
+                                >{{__('Find Facebook Data')}}</inertia-link
                             >
                         </li>
                         <li class="flex items-center space-x-4 p-4">
@@ -99,22 +99,20 @@
                             </div>
                             <div class="flex-1">
                                 <h3 class="text-md font-medium">
-                                    Upgrade your plan
+                                    {{__('Upgrade your plan')}}
                                     <!---->
                                 </h3>
                                 <p
                                     class="text-sm text-gray-500 dark:text-gray-400 max-w-2xl"
                                 >
-                                    Upgrade your plan to lift restrictions and
-                                    enjoy the most out of managing your
-                                    services.
+                                    {{__('Upgrade your plan to lift restrictions and enjoy the most out of managing your services.')}}
                                 </p>
                             </div>
                             <a
                                 target="_self"
                                 href="/"
                                 class="inline-flex items-center justify-center text-sm font-medium border rounded-md transition-all ease-in-out duration-100 focus:outline-none focus:shadow-outline border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-300 shadow-sm hover:bg-gray-50 focus:border-gray-400 focus:bg-white px-3 py-2 text-sm"
-                                >Upgrade plan</a
+                                >{{__('Upgrade plan')}}</a
                             >
                         </li>
                     </ul>

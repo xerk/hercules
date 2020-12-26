@@ -51,7 +51,7 @@
     </div>
     @php
     $newTrans = [];
-    $translations = resource_path('lang/vendor/jetstream/'.app()->getLocale().'.json');
+    $translations = resource_path('lang/'.app()->getLocale().'.json');
         if (is_string($translations)) {
             if (! is_readable($translations)) {
                 return $newTrans;
