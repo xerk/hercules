@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\Price;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\TutorialController;
@@ -19,7 +20,10 @@ use App\Http\Controllers\ExtractDataController;
 */
 
 Route::middleware('local')->get('/', function () {
-    return view('vendor.hercules.index');
+    $prices = Price::all();
+    return view('vendor.hercules.index')->with([
+        'prices' => $prices->load('priceLists')
+    ]);
 })->name('landingpage');
 
 

@@ -6,7 +6,7 @@
     @include('vendor.hercules.partials.features')
     @include('vendor.hercules.partials.gallery')
     @include('vendor.hercules.partials.products')
-    @include('vendor.hercules.partials.pricing')
+    @include('vendor.hercules.partials.pricing', ['prices', $prices])
     @include('vendor.hercules.partials.FAQ')
     @include('vendor.hercules.partials.testimonial')
     @include('vendor.hercules.partials.contact')
