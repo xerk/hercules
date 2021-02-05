@@ -5246,6 +5246,393 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6551,6 +6938,455 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     dateAgo: function dateAgo(time) {
       return moment(time).fromNow();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["purchase", "errors"],
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__["default"],
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__["default"],
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__["default"],
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__["default"],
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        code: null
+      }, {
+        bag: "redeemCode",
+        resetOnSuccess: false
+      })
+    };
+  },
+  methods: {
+    redeemCode: function redeemCode() {
+      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      this.form.post(route("purchase.redeem"), {
+        preserveScroll: true
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["purchase", "errors"],
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__["default"],
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__["default"],
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__["default"],
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__["default"],
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        country: 'all',
+        count: 500,
+        religion: '',
+        birthdate: 'all',
+        work: '',
+        position: '',
+        gender: 'all',
+        hometown: '',
+        location: '',
+        relationship: 'all'
+      }, {
+        bag: "redeemCode",
+        resetOnSuccess: false
+      }),
+      relationships: [{
+        name: 'Single',
+        value: 'single'
+      }, {
+        name: 'In a relationship',
+        value: 'In a relationship'
+      }, {
+        name: 'Engaged',
+        value: 'Engaged'
+      }, {
+        name: 'Married',
+        value: 'Married'
+      }, {
+        name: 'In a civil partnership',
+        value: 'In a civil partnership'
+      }, {
+        name: 'In a domestic partnership',
+        value: 'In a domestic partnership'
+      }, {
+        name: 'In an open relationship',
+        value: 'In an open relationship'
+      }, {
+        name: 'It\'s complicated',
+        value: 'It\'s complicated'
+      }, {
+        name: 'Separated',
+        value: 'Separated'
+      }, {
+        name: 'Divorced',
+        value: 'Divorced'
+      }, {
+        name: 'Widowed',
+        value: 'Widowed'
+      }],
+      genders: [{
+        name: 'Male',
+        value: 'male'
+      }, {
+        name: 'Female',
+        value: 'female'
+      }, {
+        name: 'Other',
+        value: 'other'
+      }],
+      countries: [{
+        name: 'Egypt',
+        value: 'egypt'
+      }, {
+        name: 'Turkey',
+        value: 'turkey'
+      }, {
+        name: 'SaudiArabia',
+        value: 'saudiArabia'
+      }, {
+        name: 'Emirates',
+        value: 'emirates'
+      }, {
+        name: 'Qatar',
+        value: 'qatar'
+      }, {
+        name: 'Kuwait',
+        value: 'kuwait'
+      }, {
+        name: 'Bahrain',
+        value: 'bahrain'
+      }, {
+        name: 'Oman',
+        value: 'oman'
+      }, {
+        name: 'Syria',
+        value: 'syria'
+      }, {
+        name: 'Jordan',
+        value: 'jordan'
+      }, {
+        name: 'Palestine',
+        value: 'palestine'
+      }, {
+        name: 'Iraq',
+        value: 'iraq'
+      }, {
+        name: 'Yemen',
+        value: 'yemen'
+      }, {
+        name: 'Lebanon',
+        value: 'lebanon'
+      }, {
+        name: 'Algeria',
+        value: 'algeria'
+      }, {
+        name: 'Tunisia',
+        value: 'tunisia'
+      }, {
+        name: 'Libya',
+        value: 'libya'
+      }, {
+        name: 'Morocco',
+        value: 'morocco'
+      }, {
+        name: 'Sudan',
+        value: 'sudan'
+      }],
+      birthdates: [{
+        name: 'Between 13 to 15',
+        value: '13-15'
+      }, {
+        name: 'Between 16 to 22',
+        value: '16-22'
+      }, {
+        name: 'Between 23 to 28',
+        value: '23-28'
+      }, {
+        name: 'Between 29 to 34',
+        value: '29-34'
+      }, {
+        name: 'Between 35 to 40',
+        value: '35-40'
+      }, {
+        name: 'Between 41 to 46',
+        value: '41-46'
+      }, {
+        name: 'Between 47 to 52',
+        value: '47-52'
+      }, {
+        name: 'Between 53+',
+        value: '53'
+      }]
+    };
+  },
+  methods: {
+    redeemCode: function redeemCode() {
+      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      this.form.post(route("purchase.redeem"), {
+        preserveScroll: true
+      });
     }
   }
 });
@@ -31214,20 +32050,17 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "jet-nav-link",
-                    { staticClass: "cursor-not-allowed", attrs: { href: "#" } },
+                    {
+                      attrs: {
+                        href: _vm.route("facebook.search"),
+                        active: _vm.$page.currentRouteName == "facebook"
+                      }
+                    },
                     [
                       _vm._v(
                         "\n                                " +
-                          _vm._s("SEO") +
-                          "\n                                "
-                      ),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "text-xs bg-red-500 rounded-full mx-2 text-white px-2 shadow-md py-1"
-                        },
-                        [_vm._v(_vm._s("Soon"))]
+                          _vm._s("Facebook") +
+                          "\n                            "
                       )
                     ]
                   )
@@ -32076,13 +32909,22 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("jet-responsive-nav-link", { attrs: { href: "#" } }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.__("SEO")) +
-                      "\n                    "
-                  )
-                ])
+                _c(
+                  "jet-responsive-nav-link",
+                  {
+                    attrs: {
+                      href: _vm.route("facebook.search"),
+                      active: _vm.$page.currentRouteName == "facebook"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.__("Facebook")) +
+                        "\n                    "
+                    )
+                  ]
+                )
               ],
               1
             ),
@@ -34997,6 +35839,959 @@ var render = function() {
           ],
           1
         )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Facebook")) + "\n        "
+                  )
+                ]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("div", { staticClass: "py-12" }, [
+        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c("div", { staticClass: "grid grid-rows-3 grid-flow-col gap-4" }, [
+            _c("div", { staticClass: "row-span-3 relative" }, [
+              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Facebook Results\n                        "
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-span-2" }, [
+              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Facebook Search\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-6 flex flex-wrap" }, [
+                  _c(
+                    "div",
+                    [
+                      _c("jet-label", {
+                        staticClass: "mt-4",
+                        attrs: { for: "code", value: _vm.__("Facebook ID") }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        ref: "code",
+                        staticClass: "mt-1 block w-full",
+                        attrs: {
+                          id: "code",
+                          type: "text",
+                          autocomplete: "off"
+                        },
+                        model: {
+                          value: _vm.form.code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "code", $$v)
+                          },
+                          expression: "form.code"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.error("code") }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row-span-2 col-span-2" }, [
+              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Facebook Search\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-6 flex flex-wrap" }, [
+                  _c(
+                    "div",
+                    [
+                      _c("jet-label", {
+                        staticClass: "mt-4",
+                        attrs: { for: "code", value: _vm.__("Facebook ID") }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        ref: "code",
+                        staticClass: "mt-1 block w-full",
+                        attrs: {
+                          id: "code",
+                          type: "text",
+                          autocomplete: "off"
+                        },
+                        model: {
+                          value: _vm.form.code,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "code", $$v)
+                          },
+                          expression: "form.code"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.error("code") }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Facebook")) + "\n        "
+                  )
+                ]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("div", { staticClass: "py-12" }, [
+        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c("div", { staticClass: "flex flex-wrap" }, [
+            _c(
+              "div",
+              {
+                staticClass: "relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2"
+              },
+              [
+                _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Facebook Results\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-6" }, [
+                    _c("ul", [
+                      _c(
+                        "li",
+                        {
+                          staticClass: "pb-2 flex justify-between items-center"
+                        },
+                        [
+                          _c("div", { staticClass: "text-gray-400" }, [
+                            _vm._v("Country")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "font-semibold capitalize" },
+                            [_vm._v(_vm._s(_vm.form.country))]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        {
+                          staticClass: "pb-2 flex justify-between items-center"
+                        },
+                        [
+                          _c("div", { staticClass: "text-gray-400" }, [
+                            _vm._v("Facebook Count")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "font-semibold" }, [
+                            _vm._v(_vm._s(_vm.form.count))
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2" },
+              [
+                _c("div", { staticClass: "bg-white shadow rounded-lg mb-6" }, [
+                  _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Getting Started\n                            "
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-6 flex flex-wrap items-end" }, [
+                    _c(
+                      "div",
+                      { staticClass: "w-full sm:w-1/2 px-2" },
+                      [
+                        _c("jet-label", {
+                          attrs: { for: "country", value: "Country" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.country,
+                                expression: "form.country"
+                              }
+                            ],
+                            staticClass:
+                              "form-input rounded-md shadow-sm mt-1 block w-full",
+                            attrs: { id: "country" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.form,
+                                  "country",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { attrs: { value: "all" } }, [
+                              _vm._v("All")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.countries, function(country, key) {
+                              return _c(
+                                "option",
+                                {
+                                  key: key,
+                                  domProps: { value: country.value }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(country.name)
+                                  )
+                                ]
+                              )
+                            })
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c("jet-input-error", {
+                          staticClass: "mt-2",
+                          attrs: { message: _vm.form.error("country") }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "w-full sm:w-1/2 px-2" },
+                      [
+                        _c("jet-label", {
+                          attrs: {
+                            for: "count",
+                            value: _vm.__("Facebook Count")
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("jet-input", {
+                          ref: "count",
+                          staticClass: "mt-1 block w-full",
+                          attrs: {
+                            id: "count",
+                            type: "text",
+                            autocomplete: "off"
+                          },
+                          model: {
+                            value: _vm.form.count,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "count", $$v)
+                            },
+                            expression: "form.count"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("jet-input-error", {
+                          staticClass: "mt-2",
+                          attrs: { message: _vm.form.error("count") }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Facebook Search\n                            "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "p-6 flex flex-wrap items-end" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "religion",
+                              value: _vm.__("Religion")
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "religion",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "religion",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.religion,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "religion", $$v)
+                              },
+                              expression: "form.religion"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("religion") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: { for: "birthdate", value: "Birthdate" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.birthdate,
+                                  expression: "form.birthdate"
+                                }
+                              ],
+                              staticClass:
+                                "form-input rounded-md shadow-sm mt-1 block w-full",
+                              attrs: { id: "birthdate" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "birthdate",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "all" } }, [
+                                _vm._v("All")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.birthdates, function(birthdate, key) {
+                                return _c(
+                                  "option",
+                                  {
+                                    key: key,
+                                    domProps: { value: birthdate.value }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(birthdate.name)
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: { for: "gender", value: "Gender" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.gender,
+                                  expression: "form.gender"
+                                }
+                              ],
+                              staticClass:
+                                "form-input rounded-md shadow-sm mt-1 block w-full",
+                              attrs: { id: "gender" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "gender",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "all" } }, [
+                                _vm._v("All")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.genders, function(gender, key) {
+                                return _c(
+                                  "option",
+                                  {
+                                    key: key,
+                                    domProps: { value: gender.value }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(gender.name)
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: { for: "work", value: _vm.__("Work") }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "work",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "work",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.work,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "work", $$v)
+                              },
+                              expression: "form.work"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("work") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "position",
+                              value: _vm.__("Position")
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "position",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "position",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.position,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "position", $$v)
+                              },
+                              expression: "form.position"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("position") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "hometown",
+                              value: _vm.__("Home Town")
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "hometown",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "hometown",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.hometown,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "hometown", $$v)
+                              },
+                              expression: "form.hometown"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("hometown") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "location",
+                              value: _vm.__("Location")
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "location",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "location",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.location,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "location", $$v)
+                              },
+                              expression: "form.location"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("location") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "education",
+                              value: _vm.__("Education")
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "education",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "education",
+                              type: "text",
+                              autocomplete: "off"
+                            },
+                            model: {
+                              value: _vm.form.education,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "education", $$v)
+                              },
+                              expression: "form.education"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("education") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c("jet-label", {
+                            attrs: {
+                              for: "relationship",
+                              value: "Relationship"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.relationship,
+                                  expression: "form.relationship"
+                                }
+                              ],
+                              staticClass:
+                                "form-input rounded-md shadow-sm mt-1 block w-full",
+                              attrs: { id: "relationship" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.form,
+                                    "relationship",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "all" } }, [
+                                _vm._v("All")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.relationships, function(
+                                relationship,
+                                key
+                              ) {
+                                return _c(
+                                  "option",
+                                  {
+                                    key: key,
+                                    domProps: { value: relationship.value }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                            " +
+                                        _vm._s(relationship.name)
+                                    )
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "bg-gray-50 rounded-lg px-4 py-2 text-right"
+                      },
+                      [
+                        _c("jet-button", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Advanced")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "jet-button",
+                          {
+                            class: { "opacity-25": _vm.form.processing },
+                            attrs: { disabled: _vm.form.processing }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(_vm.__("Save")) +
+                                "\n                                "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
       ])
     ]
   )
@@ -52464,6 +54259,10 @@ var map = {
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard/Clients/Show": "./resources/js/Pages/Dashboard/Clients/Show.vue",
 	"./Dashboard/Clients/Show.vue": "./resources/js/Pages/Dashboard/Clients/Show.vue",
+	"./Dashboard/Facebook/FacebookSearch": "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue",
+	"./Dashboard/Facebook/FacebookSearch.vue": "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue",
+	"./Dashboard/Facebook/Show": "./resources/js/Pages/Dashboard/Facebook/Show.vue",
+	"./Dashboard/Facebook/Show.vue": "./resources/js/Pages/Dashboard/Facebook/Show.vue",
 	"./Dashboard/Purchase/Show": "./resources/js/Pages/Dashboard/Purchase/Show.vue",
 	"./Dashboard/Purchase/Show.vue": "./resources/js/Pages/Dashboard/Purchase/Show.vue",
 	"./Dashboard/Tutorials/Show": "./resources/js/Pages/Dashboard/Tutorials/Show.vue",
@@ -52791,6 +54590,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_f710f030___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_f710f030___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacebookSearch.vue?vue&type=template&id=57cdd4ba& */ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&");
+/* harmony import */ var _FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacebookSearch.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookSearch.vue?vue&type=template&id=57cdd4ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/Show.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/Show.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Show.vue?vue&type=template&id=2422ed5c& */ "./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c&");
+/* harmony import */ var _Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Show.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/Facebook/Show.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Show.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Show.vue?vue&type=template&id=2422ed5c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/Show.vue?vue&type=template&id=2422ed5c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Show_vue_vue_type_template_id_2422ed5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -3,6 +3,7 @@
 
 use App\Models\Price;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
@@ -40,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutori
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}', [TutorialController::class, 'show'])->name('tutorials.show');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
 
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook', [FacebookController::class, 'index'])->name('facebook.search');
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);
