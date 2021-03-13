@@ -17,7 +17,7 @@ class Client extends Model
      * @var array
      */
     protected $fillable = [
-        'unique_id', 'mobile', 'nationality'
+        'unique_id', 'mobile', 'nationality', 'gender', 'email', 'name', 'username', 'religion', 'birthday', 'work', 'position', 'hometown', 'location', 'education', 'relationship'
     ];
 
         /**
@@ -47,7 +47,7 @@ class Client extends Model
         }
 
         if ($request->filled('country')) {
-            if ($request->counter != 'all') {
+            if ($request->country != 'all') {
                 $query->where('nationality', $request->country);
             }
         }
