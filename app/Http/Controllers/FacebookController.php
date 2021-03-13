@@ -16,7 +16,9 @@ class FacebookController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Dashboard/Facebook/Show');
+        return Inertia::render('Dashboard/Facebook/Show', [
+            'clients' => []
+        ]);
     }
 
     /**

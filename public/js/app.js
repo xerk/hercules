@@ -36176,50 +36176,56 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
-                    },
-                    [
-                      _vm._v(
-                        "\n                            Display Data (" +
-                          _vm._s(_vm.clients.length) +
-                          ")\n                        "
+                _vm.clients.length > 0
+                  ? _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Display Data (" +
+                              _vm._s(_vm.clients.length) +
+                              ")\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "p-6 overflow-scroll max-h-96" },
+                        [
+                          _c(
+                            "ul",
+                            _vm._l(_vm.clients, function(client, key) {
+                              return _c(
+                                "li",
+                                {
+                                  key: key,
+                                  staticClass:
+                                    "pb-2 flex justify-between items-center"
+                                },
+                                [
+                                  _c("div", { staticClass: "text-gray-400" }, [
+                                    _vm._v(_vm._s(client.name))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "font-semibold capitalize" },
+                                    [_vm._v(_vm._s(client.gender))]
+                                  )
+                                ]
+                              )
+                            }),
+                            0
+                          )
+                        ]
                       )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-6" }, [
-                    _c(
-                      "ul",
-                      _vm._l(_vm.clients, function(client, key) {
-                        return _c(
-                          "li",
-                          {
-                            key: key,
-                            staticClass:
-                              "pb-2 flex justify-between items-center"
-                          },
-                          [
-                            _c("div", { staticClass: "text-gray-400" }, [
-                              _vm._v(_vm._s(client.name))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "font-semibold capitalize" },
-                              [_vm._v(_vm._s(client.gender))]
-                            )
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  ])
-                ])
+                    ])
+                  : _vm._e()
               ]
             ),
             _vm._v(" "),

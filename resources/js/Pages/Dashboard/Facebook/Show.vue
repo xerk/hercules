@@ -26,11 +26,11 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bg-white shadow rounded-lg">
+                        <div class="bg-white shadow rounded-lg" v-if="clients.length > 0">
                             <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
                                 Display Data ({{clients.length}})
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 overflow-scroll max-h-96">
                                 <ul>
                                     <li class="pb-2 flex justify-between items-center" v-for="(client, key) in clients" :key="key">
                                         <div class="text-gray-400">{{client.name}}</div>
