@@ -9,7 +9,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex flex-wrap">
                     <div class="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2">
-                        <div class="bg-white shadow rounded-lg">
+                        <div class="bg-white shadow rounded-lg mb-6">
                             <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
                                 Facebook Results
                             </div>
@@ -22,6 +22,19 @@
                                     <li class="pb-2 flex justify-between items-center">
                                         <div class="text-gray-400">Facebook Count</div>
                                         <div class="font-semibold">{{form.count}}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg">
+                            <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
+                                Display Data ({{clients.length}})
+                            </div>
+                            <div class="p-6">
+                                <ul>
+                                    <li class="pb-2 flex justify-between items-center" v-for="(client, key) in clients" :key="key">
+                                        <div class="text-gray-400">{{client.name}}</div>
+                                        <div class="font-semibold capitalize">{{client.gender}}</div>
                                     </li>
                                 </ul>
                             </div>
@@ -127,6 +140,27 @@
                                             </select>
                                             <jet-input-error :message="form.error('birthdate')" class="mt-2" />
                                         </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <div class="flex mt-4 items-center">
+                                                <input id="exist-email" v-model="form.existEmail" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2">
+                                                <jet-label for="exist-email" value="Exist Email Mandatory" class="bold" />
+                                            </div>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <div class="flex mt-4 items-center">
+                                                <input id="exist-mobile" v-model="form.existMobile" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2">
+                                                <jet-label for="exist-mobile" value="Exist Mobile Mandatory" class="bold" />
+                                            </div>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <div class="flex mt-4 items-center">
+                                                <input id="exist-username" v-model="form.existUsername" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2">
+                                                <jet-label for="exist-username" value="Exist Username Mandatory" class="bold" />
+                                            </div>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg px-4 py-2 text-right">
                                         <jet-button>
@@ -156,7 +190,7 @@
     import JetLabel from "./../../../Jetstream/Label";
 
     export default {
-        props: ["purchase", "errors"],
+        props: ["clients", "errors"],
 
         components: {
             AppLayout,
@@ -181,6 +215,9 @@
                     hometown: '',
                     location: '',
                     relationship: 'all',
+                    existEmail: false,
+                    existMobile: false,
+                    existUsername: false
                 }, {
                     bag: "redeemCode",
                     resetOnSuccess: false

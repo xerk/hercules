@@ -37,8 +37,11 @@ class FacebookController extends Controller
      */
     public function find(Request $request)
     {
-
-        return Client::filter($request)->limit($request->count)->get();
+        // dd($request->existEmail);
+        $client = Client::filter($request)->limit($request->count)->get();
+        return Inertia::render('Dashboard/Facebook/Show', [
+            'clients' => $client
+        ]);
     }
 
     /**

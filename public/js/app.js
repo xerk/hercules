@@ -7217,6 +7217,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7225,7 +7259,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["purchase", "errors"],
+  props: ["clients", "errors"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -7247,7 +7281,10 @@ __webpack_require__.r(__webpack_exports__);
         gender: 'all',
         hometown: '',
         location: '',
-        relationship: 'all'
+        relationship: 'all',
+        existEmail: false,
+        existMobile: false,
+        existUsername: false
       }, {
         bag: "redeemCode",
         resetOnSuccess: false
@@ -36086,7 +36123,7 @@ var render = function() {
                 staticClass: "relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2"
               },
               [
-                _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                _c("div", { staticClass: "bg-white shadow rounded-lg mb-6" }, [
                   _c(
                     "div",
                     {
@@ -36136,6 +36173,51 @@ var render = function() {
                         ]
                       )
                     ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Display Data (" +
+                          _vm._s(_vm.clients.length) +
+                          ")\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-6" }, [
+                    _c(
+                      "ul",
+                      _vm._l(_vm.clients, function(client, key) {
+                        return _c(
+                          "li",
+                          {
+                            key: key,
+                            staticClass:
+                              "pb-2 flex justify-between items-center"
+                          },
+                          [
+                            _c("div", { staticClass: "text-gray-400" }, [
+                              _vm._v(_vm._s(client.name))
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "font-semibold capitalize" },
+                              [_vm._v(_vm._s(client.gender))]
+                            )
+                          ]
+                        )
+                      }),
+                      0
+                    )
                   ])
                 ])
               ]
@@ -36761,6 +36843,246 @@ var render = function() {
                               })
                             ],
                             2
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex mt-4 items-center" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.existEmail,
+                                    expression: "form.existEmail"
+                                  }
+                                ],
+                                staticClass:
+                                  "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
+                                attrs: { id: "exist-email", type: "checkbox" },
+                                domProps: {
+                                  checked: Array.isArray(_vm.form.existEmail)
+                                    ? _vm._i(_vm.form.existEmail, null) > -1
+                                    : _vm.form.existEmail
+                                },
+                                on: {
+                                  change: function($event) {
+                                    var $$a = _vm.form.existEmail,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = null,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existEmail",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existEmail",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(_vm.form, "existEmail", $$c)
+                                    }
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-label", {
+                                staticClass: "bold",
+                                attrs: {
+                                  for: "exist-email",
+                                  value: "Exist Email Mandatory"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex mt-4 items-center" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.existMobile,
+                                    expression: "form.existMobile"
+                                  }
+                                ],
+                                staticClass:
+                                  "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
+                                attrs: { id: "exist-mobile", type: "checkbox" },
+                                domProps: {
+                                  checked: Array.isArray(_vm.form.existMobile)
+                                    ? _vm._i(_vm.form.existMobile, null) > -1
+                                    : _vm.form.existMobile
+                                },
+                                on: {
+                                  change: function($event) {
+                                    var $$a = _vm.form.existMobile,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = null,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existMobile",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existMobile",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(_vm.form, "existMobile", $$c)
+                                    }
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-label", {
+                                staticClass: "bold",
+                                attrs: {
+                                  for: "exist-mobile",
+                                  value: "Exist Mobile Mandatory"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.error("birthdate") }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex mt-4 items-center" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.existUsername,
+                                    expression: "form.existUsername"
+                                  }
+                                ],
+                                staticClass:
+                                  "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
+                                attrs: {
+                                  id: "exist-username",
+                                  type: "checkbox"
+                                },
+                                domProps: {
+                                  checked: Array.isArray(_vm.form.existUsername)
+                                    ? _vm._i(_vm.form.existUsername, null) > -1
+                                    : _vm.form.existUsername
+                                },
+                                on: {
+                                  change: function($event) {
+                                    var $$a = _vm.form.existUsername,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = null,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existUsername",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            _vm.form,
+                                            "existUsername",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(_vm.form, "existUsername", $$c)
+                                    }
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-label", {
+                                staticClass: "bold",
+                                attrs: {
+                                  for: "exist-username",
+                                  value: "Exist Username Mandatory"
+                                }
+                              })
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c("jet-input-error", {

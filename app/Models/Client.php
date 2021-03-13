@@ -88,5 +88,17 @@ class Client extends Model
             }
         }
 
+        if ($request->existEmail) {
+            $query->whereNotNull('email');
+        }
+
+        if ($request->existMobile) {
+            $query->whereNotNull('mobile');
+        }
+
+        if ($request->existUsername) {
+            $query->whereNotNull('username');
+        }
+
     }
 }
