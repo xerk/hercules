@@ -30,11 +30,11 @@
                             <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
                                 Display Data ({{clients.length}})
                             </div>
-                            <div class="p-6 overflow-scroll max-h-96">
-                                <ul>
+                            <div class="p-2">
+                                <ul class="px-4 overflow-scroll max-h-96 my-2">
                                     <li class="pb-2 flex justify-between items-center" v-for="(client, key) in clients" :key="key">
-                                        <div class="text-gray-400">{{client.name}}</div>
-                                        <div class="font-semibold capitalize">{{client.gender}}</div>
+                                        <div class="font-semibold capitalize">{{client.name}}</div>
+                                        <div class="text-gray-400">{{client.gender}}</div>
                                     </li>
                                 </ul>
                             </div>

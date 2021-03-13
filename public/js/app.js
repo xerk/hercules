@@ -36193,37 +36193,34 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "p-6 overflow-scroll max-h-96" },
-                        [
-                          _c(
-                            "ul",
-                            _vm._l(_vm.clients, function(client, key) {
-                              return _c(
-                                "li",
-                                {
-                                  key: key,
-                                  staticClass:
-                                    "pb-2 flex justify-between items-center"
-                                },
-                                [
-                                  _c("div", { staticClass: "text-gray-400" }, [
-                                    _vm._v(_vm._s(client.name))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "font-semibold capitalize" },
-                                    [_vm._v(_vm._s(client.gender))]
-                                  )
-                                ]
-                              )
-                            }),
-                            0
-                          )
-                        ]
-                      )
+                      _c("div", { staticClass: "p-2" }, [
+                        _c(
+                          "ul",
+                          { staticClass: "px-4 overflow-scroll max-h-96 my-2" },
+                          _vm._l(_vm.clients, function(client, key) {
+                            return _c(
+                              "li",
+                              {
+                                key: key,
+                                staticClass:
+                                  "pb-2 flex justify-between items-center"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "font-semibold capitalize" },
+                                  [_vm._v(_vm._s(client.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "text-gray-400" }, [
+                                  _vm._v(_vm._s(client.gender))
+                                ])
+                              ]
+                            )
+                          }),
+                          0
+                        )
+                      ])
                     ])
                   : _vm._e()
               ]
