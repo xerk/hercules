@@ -38,7 +38,7 @@ class FacebookController extends Controller
     public function find(Request $request)
     {
 
-        return Client::filter($request)->limit($request->count)->count();
+        return Client::filter($request)->limit($request->count)->get();
     }
 
     /**
