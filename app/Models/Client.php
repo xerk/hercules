@@ -59,7 +59,7 @@ class Client extends Model
         }
 
         if ($request->filled('relationship')) {
-            if ($request->gender != 'all') {
+            if ($request->relationship != 'all') {
                 $query->where('relationship', $request->relationship);
             }
         }
