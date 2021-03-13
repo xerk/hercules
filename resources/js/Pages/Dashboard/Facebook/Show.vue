@@ -27,118 +27,118 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2">
-                        <div class="bg-white shadow rounded-lg mb-6">
-                            <div>
-                                <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
-                                    Getting Started
-                                </div>
-                            </div>
-                            <div class="p-6 flex flex-wrap items-end">
-                                <div class="w-full sm:w-1/2 px-2">
-                                    <jet-label for="country" value="Country" />
-                                    <select v-model="form.country"
-                                        class="form-input rounded-md shadow-sm mt-1 block w-full" id="country">
-                                        <option value="all">All</option>
-                                        <option :value="country.value" v-for="(country, key) in countries" :key="key">
-                                            {{country.name}}</option>
-                                    </select>
-                                    <jet-input-error :message="form.error('country')" class="mt-2" />
-                                </div>
-                                <div class="w-full sm:w-1/2 px-2">
-                                    <jet-label for="count" :value="__('Facebook Count')" />
-                                    <jet-input id="count" type="text" class="mt-1 block w-full" v-model="form.count"
-                                        ref="count" autocomplete="off" />
-                                    <jet-input-error :message="form.error('count')" class="mt-2" />
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="bg-white shadow rounded-lg">
-                                <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
-                                    Facebook Search
+                    <form @submit.prevent="searchResult" class="w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2">
+                            <div class="bg-white shadow rounded-lg mb-6">
+                                <div>
+                                    <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
+                                        Getting Started
+                                    </div>
                                 </div>
                                 <div class="p-6 flex flex-wrap items-end">
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="religion" :value="__('Religion')" />
-                                        <jet-input id="religion" type="text" class="mt-1 block w-full"
-                                            v-model="form.religion" ref="religion" autocomplete="off" />
-                                        <jet-input-error :message="form.error('religion')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="birthdate" value="Birthdate" />
-                                        <select v-model="form.birthdate"
-                                            class="form-input rounded-md shadow-sm mt-1 block w-full" id="birthdate">
+                                    <div class="w-full sm:w-1/2 px-2">
+                                        <jet-label for="country" value="Country" />
+                                        <select v-model="form.country"
+                                            class="form-input rounded-md shadow-sm mt-1 block w-full" id="country">
                                             <option value="all">All</option>
-                                            <option :value="birthdate.value" v-for="(birthdate, key) in birthdates"
-                                                :key="key">
-                                                {{birthdate.name}}</option>
+                                            <option :value="country.value" v-for="(country, key) in countries" :key="key">
+                                                {{country.name}}</option>
                                         </select>
-                                        <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        <jet-input-error :message="form.error('country')" class="mt-2" />
                                     </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="gender" value="Gender" />
-                                        <select v-model="form.gender"
-                                            class="form-input rounded-md shadow-sm mt-1 block w-full" id="gender">
-                                            <option value="all">All</option>
-                                            <option :value="gender.value" v-for="(gender, key) in genders" :key="key">
-                                                {{gender.name}}</option>
-                                        </select>
-                                        <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                    <div class="w-full sm:w-1/2 px-2">
+                                        <jet-label for="count" :value="__('Facebook Count')" />
+                                        <jet-input id="count" type="text" class="mt-1 block w-full" v-model="form.count"
+                                            ref="count" autocomplete="off" />
+                                        <jet-input-error :message="form.error('count')" class="mt-2" />
                                     </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="work" :value="__('Work')" />
-                                        <jet-input id="work" type="text" class="mt-1 block w-full" v-model="form.work"
-                                            ref="work" autocomplete="off" />
-                                        <jet-input-error :message="form.error('work')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="position" :value="__('Position')" />
-                                        <jet-input id="position" type="text" class="mt-1 block w-full"
-                                            v-model="form.position" ref="position" autocomplete="off" />
-                                        <jet-input-error :message="form.error('position')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="hometown" :value="__('Home Town')" />
-                                        <jet-input id="hometown" type="text" class="mt-1 block w-full"
-                                            v-model="form.hometown" ref="hometown" autocomplete="off" />
-                                        <jet-input-error :message="form.error('hometown')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="location" :value="__('Location')" />
-                                        <jet-input id="location" type="text" class="mt-1 block w-full"
-                                            v-model="form.location" ref="location" autocomplete="off" />
-                                        <jet-input-error :message="form.error('location')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="education" :value="__('Education')" />
-                                        <jet-input id="education" type="text" class="mt-1 block w-full"
-                                            v-model="form.education" ref="education" autocomplete="off" />
-                                        <jet-input-error :message="form.error('education')" class="mt-2" />
-                                    </div>
-                                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
-                                        <jet-label for="relationship" value="Relationship" />
-                                        <select v-model="form.relationship"
-                                            class="form-input rounded-md shadow-sm mt-1 block w-full" id="relationship">
-                                            <option value="all">All</option>
-                                            <option :value="relationship.value" v-for="(relationship, key) in relationships"
-                                                :key="key">
-                                                {{relationship.name}}</option>
-                                        </select>
-                                        <jet-input-error :message="form.error('birthdate')" class="mt-2" />
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 rounded-lg px-4 py-2 text-right">
-                                    <jet-button>
-                                        {{ __("Advanced") }}
-                                    </jet-button>
-                                    <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                        {{ __("Save") }}
-                                    </jet-button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <div>
+                                <div class="bg-white shadow rounded-lg">
+                                    <div class="bg-gray-50 rounded-lg px-4 py-2 font-semibold">
+                                        Facebook Search
+                                    </div>
+                                    <div class="p-6 flex flex-wrap items-end">
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="religion" :value="__('Religion')" />
+                                            <jet-input id="religion" type="text" class="mt-1 block w-full"
+                                                v-model="form.religion" ref="religion" autocomplete="off" />
+                                            <jet-input-error :message="form.error('religion')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="birthdate" value="Birthdate" />
+                                            <select v-model="form.birthdate"
+                                                class="form-input rounded-md shadow-sm mt-1 block w-full" id="birthdate">
+                                                <option value="all">All</option>
+                                                <option :value="[birthdate.start, birthdate.end]" v-for="(birthdate, key) in birthdates"
+                                                    :key="key">
+                                                    {{birthdate.name}}</option>
+                                            </select>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="gender" value="Gender" />
+                                            <select v-model="form.gender"
+                                                class="form-input rounded-md shadow-sm mt-1 block w-full" id="gender">
+                                                <option value="all">All</option>
+                                                <option :value="gender.value" v-for="(gender, key) in genders" :key="key">
+                                                    {{gender.name}}</option>
+                                            </select>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="work" :value="__('Work')" />
+                                            <jet-input id="work" type="text" class="mt-1 block w-full" v-model="form.work"
+                                                ref="work" autocomplete="off" />
+                                            <jet-input-error :message="form.error('work')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="position" :value="__('Position')" />
+                                            <jet-input id="position" type="text" class="mt-1 block w-full"
+                                                v-model="form.position" ref="position" autocomplete="off" />
+                                            <jet-input-error :message="form.error('position')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="hometown" :value="__('Home Town')" />
+                                            <jet-input id="hometown" type="text" class="mt-1 block w-full"
+                                                v-model="form.hometown" ref="hometown" autocomplete="off" />
+                                            <jet-input-error :message="form.error('hometown')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="location" :value="__('Location')" />
+                                            <jet-input id="location" type="text" class="mt-1 block w-full"
+                                                v-model="form.location" ref="location" autocomplete="off" />
+                                            <jet-input-error :message="form.error('location')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="education" :value="__('Education')" />
+                                            <jet-input id="education" type="text" class="mt-1 block w-full"
+                                                v-model="form.education" ref="education" autocomplete="off" />
+                                            <jet-input-error :message="form.error('education')" class="mt-2" />
+                                        </div>
+                                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2">
+                                            <jet-label for="relationship" value="Relationship" />
+                                            <select v-model="form.relationship"
+                                                class="form-input rounded-md shadow-sm mt-1 block w-full" id="relationship">
+                                                <option value="all">All</option>
+                                                <option :value="relationship.value" v-for="(relationship, key) in relationships"
+                                                    :key="key">
+                                                    {{relationship.name}}</option>
+                                            </select>
+                                            <jet-input-error :message="form.error('birthdate')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg px-4 py-2 text-right">
+                                        <jet-button>
+                                            {{ __("Advanced") }}
+                                        </jet-button>
+                                        <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                            {{ __("Save") }}
+                                        </jet-button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
                 </div>
 
             </div>
@@ -322,43 +322,51 @@
                 ],
                 birthdates: [{
                         name: 'Between 13 to 15',
-                        value: '13-15'
+                        start: '13',
+                        end: '15'
                     },
                     {
                         name: 'Between 16 to 22',
-                        value: '16-22'
+                        start: '16',
+                        end: '22'
                     },
                     {
                         name: 'Between 23 to 28',
-                        value: '23-28'
+                        start: '23',
+                        end: '28'
                     },
                     {
                         name: 'Between 29 to 34',
-                        value: '29-34'
+                        start: '29',
+                        end: '34'
                     },
                     {
                         name: 'Between 35 to 40',
-                        value: '35-40'
+                        start: '35',
+                        end: '40'
                     },
                     {
                         name: 'Between 41 to 46',
-                        value: '41-46'
+                        start: '41',
+                        end: '46'
                     },
                     {
                         name: 'Between 47 to 52',
-                        value: '47-52'
+                        start: '47',
+                        end: '52'
                     },
                     {
                         name: 'Between 53+',
-                        value: '53'
+                        start: '53',
+                        end: '100'
                     },
                 ],
             };
         },
 
         methods: {
-            redeemCode(url = null) {
-                this.form.post(route("purchase.redeem"), {
+            searchResult(url = null) {
+                this.form.post(route("facebook.find"), {
                     preserveScroll: true
                 });
             }

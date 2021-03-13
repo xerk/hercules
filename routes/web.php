@@ -42,6 +42,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutori
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook', [FacebookController::class, 'index'])->name('facebook.search');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook', [FacebookController::class, 'find'])->name('facebook.find');
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);

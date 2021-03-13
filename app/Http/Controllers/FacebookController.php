@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Inertia\Inertia;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class FacebookController extends Controller
@@ -33,9 +35,10 @@ class FacebookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function find(Request $request)
     {
-        //
+
+        Client::filter($request)->limit($request->count)->count();
     }
 
     /**

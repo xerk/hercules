@@ -7356,35 +7356,43 @@ __webpack_require__.r(__webpack_exports__);
       }],
       birthdates: [{
         name: 'Between 13 to 15',
-        value: '13-15'
+        start: '13',
+        end: '15'
       }, {
         name: 'Between 16 to 22',
-        value: '16-22'
+        start: '16',
+        end: '22'
       }, {
         name: 'Between 23 to 28',
-        value: '23-28'
+        start: '23',
+        end: '28'
       }, {
         name: 'Between 29 to 34',
-        value: '29-34'
+        start: '29',
+        end: '34'
       }, {
         name: 'Between 35 to 40',
-        value: '35-40'
+        start: '35',
+        end: '40'
       }, {
         name: 'Between 41 to 46',
-        value: '41-46'
+        start: '41',
+        end: '46'
       }, {
         name: 'Between 47 to 52',
-        value: '47-52'
+        start: '47',
+        end: '52'
       }, {
         name: 'Between 53+',
-        value: '53'
+        start: '53',
+        end: '100'
       }]
     };
   },
   methods: {
-    redeemCode: function redeemCode() {
+    searchResult: function searchResult() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      this.form.post(route("purchase.redeem"), {
+      this.form.post(route("facebook.find"), {
         preserveScroll: true
       });
     }
@@ -36134,8 +36142,16 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "div",
-              { staticClass: "w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2" },
+              "form",
+              {
+                staticClass: "w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.searchResult($event)
+                  }
+                }
+              },
               [
                 _c("div", { staticClass: "bg-white shadow rounded-lg mb-6" }, [
                   _c("div", [
@@ -36147,7 +36163,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                Getting Started\n                            "
+                          "\n                                    Getting Started\n                                "
                         )
                       ]
                     )
@@ -36210,7 +36226,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                        " +
+                                    "\n                                            " +
                                       _vm._s(country.name)
                                   )
                                 ]
@@ -36276,7 +36292,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                Facebook Search\n                            "
+                          "\n                                    Facebook Search\n                                "
                         )
                       ]
                     ),
@@ -36377,11 +36393,13 @@ var render = function() {
                                   "option",
                                   {
                                     key: key,
-                                    domProps: { value: birthdate.value }
+                                    domProps: {
+                                      value: [birthdate.start, birthdate.end]
+                                    }
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                            " +
+                                      "\n                                                " +
                                         _vm._s(birthdate.name)
                                     )
                                   ]
@@ -36459,7 +36477,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                            " +
+                                      "\n                                                " +
                                         _vm._s(gender.name)
                                     )
                                   ]
@@ -36735,7 +36753,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                            " +
+                                      "\n                                                " +
                                         _vm._s(relationship.name)
                                     )
                                   ]
@@ -36763,9 +36781,9 @@ var render = function() {
                       [
                         _c("jet-button", [
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                        " +
                               _vm._s(_vm.__("Advanced")) +
-                              "\n                                "
+                              "\n                                    "
                           )
                         ]),
                         _vm._v(" "),
@@ -36777,9 +36795,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                        " +
                                 _vm._s(_vm.__("Save")) +
-                                "\n                                "
+                                "\n                                    "
                             )
                           ]
                         )
