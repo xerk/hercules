@@ -7251,6 +7251,113 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7272,16 +7379,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        country: 'all',
+        country: "all",
         count: 500,
-        religion: '',
-        birthdate: 'all',
-        work: '',
-        position: '',
-        gender: 'all',
-        hometown: '',
-        location: '',
-        relationship: 'all',
+        religion: "",
+        birthdate: "all",
+        work: "",
+        position: "",
+        gender: "all",
+        hometown: "",
+        location: "",
+        relationship: "all",
         existEmail: false,
         existMobile: false,
         existUsername: false
@@ -7290,139 +7397,139 @@ __webpack_require__.r(__webpack_exports__);
         resetOnSuccess: false
       }),
       relationships: [{
-        name: 'Single',
-        value: 'single'
+        name: "Single",
+        value: "single"
       }, {
-        name: 'In a relationship',
-        value: 'In a relationship'
+        name: "In a relationship",
+        value: "In a relationship"
       }, {
-        name: 'Engaged',
-        value: 'Engaged'
+        name: "Engaged",
+        value: "Engaged"
       }, {
-        name: 'Married',
-        value: 'Married'
+        name: "Married",
+        value: "Married"
       }, {
-        name: 'In a civil partnership',
-        value: 'In a civil partnership'
+        name: "In a civil partnership",
+        value: "In a civil partnership"
       }, {
-        name: 'In a domestic partnership',
-        value: 'In a domestic partnership'
+        name: "In a domestic partnership",
+        value: "In a domestic partnership"
       }, {
-        name: 'In an open relationship',
-        value: 'In an open relationship'
+        name: "In an open relationship",
+        value: "In an open relationship"
       }, {
-        name: 'It\'s complicated',
-        value: 'It\'s complicated'
+        name: "It's complicated",
+        value: "It's complicated"
       }, {
-        name: 'Separated',
-        value: 'Separated'
+        name: "Separated",
+        value: "Separated"
       }, {
-        name: 'Divorced',
-        value: 'Divorced'
+        name: "Divorced",
+        value: "Divorced"
       }, {
-        name: 'Widowed',
-        value: 'Widowed'
+        name: "Widowed",
+        value: "Widowed"
       }],
       genders: [{
-        name: 'Male',
-        value: 'male'
+        name: "Male",
+        value: "male"
       }, {
-        name: 'Female',
-        value: 'female'
+        name: "Female",
+        value: "female"
       }, {
-        name: 'Other',
-        value: 'other'
+        name: "Other",
+        value: "other"
       }],
       countries: [{
-        name: 'Egypt',
-        value: 'egypt'
+        name: "Egypt",
+        value: "egypt"
       }, {
-        name: 'Turkey',
-        value: 'turkey'
+        name: "Turkey",
+        value: "turkey"
       }, {
-        name: 'SaudiArabia',
-        value: 'saudiArabia'
+        name: "SaudiArabia",
+        value: "saudiArabia"
       }, {
-        name: 'Emirates',
-        value: 'emirates'
+        name: "Emirates",
+        value: "emirates"
       }, {
-        name: 'Qatar',
-        value: 'qatar'
+        name: "Qatar",
+        value: "qatar"
       }, {
-        name: 'Kuwait',
-        value: 'kuwait'
+        name: "Kuwait",
+        value: "kuwait"
       }, {
-        name: 'Bahrain',
-        value: 'bahrain'
+        name: "Bahrain",
+        value: "bahrain"
       }, {
-        name: 'Oman',
-        value: 'oman'
+        name: "Oman",
+        value: "oman"
       }, {
-        name: 'Syria',
-        value: 'syria'
+        name: "Syria",
+        value: "syria"
       }, {
-        name: 'Jordan',
-        value: 'jordan'
+        name: "Jordan",
+        value: "jordan"
       }, {
-        name: 'Palestine',
-        value: 'palestine'
+        name: "Palestine",
+        value: "palestine"
       }, {
-        name: 'Iraq',
-        value: 'iraq'
+        name: "Iraq",
+        value: "iraq"
       }, {
-        name: 'Yemen',
-        value: 'yemen'
+        name: "Yemen",
+        value: "yemen"
       }, {
-        name: 'Lebanon',
-        value: 'lebanon'
+        name: "Lebanon",
+        value: "lebanon"
       }, {
-        name: 'Algeria',
-        value: 'algeria'
+        name: "Algeria",
+        value: "algeria"
       }, {
-        name: 'Tunisia',
-        value: 'tunisia'
+        name: "Tunisia",
+        value: "tunisia"
       }, {
-        name: 'Libya',
-        value: 'libya'
+        name: "Libya",
+        value: "libya"
       }, {
-        name: 'Morocco',
-        value: 'morocco'
+        name: "Morocco",
+        value: "morocco"
       }, {
-        name: 'Sudan',
-        value: 'sudan'
+        name: "Sudan",
+        value: "sudan"
       }],
       birthdates: [{
-        name: 'Between 13 to 15',
-        start: '13',
-        end: '15'
+        name: "Between 13 to 15",
+        start: "13",
+        end: "15"
       }, {
-        name: 'Between 16 to 22',
-        start: '16',
-        end: '22'
+        name: "Between 16 to 22",
+        start: "16",
+        end: "22"
       }, {
-        name: 'Between 23 to 28',
-        start: '23',
-        end: '28'
+        name: "Between 23 to 28",
+        start: "23",
+        end: "28"
       }, {
-        name: 'Between 29 to 34',
-        start: '29',
-        end: '34'
+        name: "Between 29 to 34",
+        start: "29",
+        end: "34"
       }, {
-        name: 'Between 35 to 40',
-        start: '35',
-        end: '40'
+        name: "Between 35 to 40",
+        start: "35",
+        end: "40"
       }, {
-        name: 'Between 41 to 46',
-        start: '41',
-        end: '46'
+        name: "Between 41 to 46",
+        start: "41",
+        end: "46"
       }, {
-        name: 'Between 47 to 52',
-        start: '47',
-        end: '52'
+        name: "Between 47 to 52",
+        start: "47",
+        end: "52"
       }, {
-        name: 'Between 53+',
-        start: '53',
-        end: '100'
+        name: "Between 53+",
+        start: "53",
+        end: "100"
       }]
     };
   },
@@ -7431,6 +7538,14 @@ __webpack_require__.r(__webpack_exports__);
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       this.form.post(route("facebook.find"), {
         preserveScroll: true
+      });
+    },
+    result: function result() {
+      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      this.form.post(route("facebook.store"), {
+        preserveScroll: true
+      }, {
+        resetOnSuccess: false
       });
     }
   }
@@ -32098,7 +32213,7 @@ var render = function() {
                     {
                       attrs: {
                         href: _vm.route("facebook.search"),
-                        active: _vm.$page.currentRouteName == "facebook"
+                        active: _vm.$page.currentRouteName == "facebook.search"
                       }
                     },
                     [
@@ -36152,7 +36267,13 @@ var render = function() {
                           _c(
                             "div",
                             { staticClass: "font-semibold capitalize" },
-                            [_vm._v(_vm._s(_vm.form.country))]
+                            [
+                              _vm._v(
+                                "\n                                        " +
+                                  _vm._s(_vm.form.country) +
+                                  "\n                                    "
+                              )
+                            ]
                           )
                         ]
                       ),
@@ -36164,11 +36285,17 @@ var render = function() {
                         },
                         [
                           _c("div", { staticClass: "text-gray-400" }, [
-                            _vm._v("Facebook Count")
+                            _vm._v(
+                              "\n                                        Facebook Count\n                                    "
+                            )
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "font-semibold" }, [
-                            _vm._v(_vm._s(_vm.form.count))
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(_vm.form.count) +
+                                "\n                                    "
+                            )
                           ])
                         ]
                       )
@@ -36182,13 +36309,40 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
+                            "bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
                         },
                         [
-                          _vm._v(
-                            "\n                            Display Data (" +
-                              _vm._s(_vm.clients.length) +
-                              ")\n                        "
+                          _c("div", [_vm._v("Display Data")]),
+                          _vm._v(" "),
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.result($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "jet-button",
+                                {
+                                  class: {
+                                    "opacity-25": _vm.form.processing
+                                  },
+                                  attrs: { disabled: _vm.form.processing }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(_vm.__("Save")) +
+                                      "\n                                "
+                                  )
+                                ]
+                              )
+                            ],
+                            1
                           )
                         ]
                       ),
@@ -36209,13 +36363,25 @@ var render = function() {
                                 _c(
                                   "div",
                                   { staticClass: "text-gray-400 capitalize" },
-                                  [_vm._v(_vm._s(client.name))]
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(client.name) +
+                                        "\n                                    "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _c(
                                   "div",
                                   { staticClass: "font-semibold capitalize" },
-                                  [_vm._v(_vm._s(client.gender))]
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(client.gender) +
+                                        "\n                                    "
+                                    )
+                                  ]
                                 )
                               ]
                             )
@@ -36250,7 +36416,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                    Getting Started\n                                "
+                          "\n                                Getting Started\n                            "
                         )
                       ]
                     )
@@ -36313,7 +36479,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                            " +
+                                    "\n                                        " +
                                       _vm._s(country.name)
                                   )
                                 ]
@@ -36379,7 +36545,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                    Facebook Search\n                                "
+                          "\n                                Facebook Search\n                            "
                         )
                       ]
                     ),
@@ -36486,7 +36652,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                                " +
+                                      "\n                                            " +
                                         _vm._s(birthdate.name)
                                     )
                                   ]
@@ -36564,7 +36730,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                                " +
+                                      "\n                                            " +
                                         _vm._s(gender.name)
                                     )
                                   ]
@@ -36840,7 +37006,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                                " +
+                                      "\n                                            " +
                                         _vm._s(relationship.name)
                                     )
                                   ]
@@ -37108,23 +37274,25 @@ var render = function() {
                       [
                         _c("jet-button", [
                           _vm._v(
-                            "\n                                        " +
+                            "\n                                    " +
                               _vm._s(_vm.__("Advanced")) +
-                              "\n                                    "
+                              "\n                                "
                           )
                         ]),
                         _vm._v(" "),
                         _c(
                           "jet-button",
                           {
-                            class: { "opacity-25": _vm.form.processing },
+                            class: {
+                              "opacity-25": _vm.form.processing
+                            },
                             attrs: { disabled: _vm.form.processing }
                           },
                           [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                                    " +
                                 _vm._s(_vm.__("Save")) +
-                                "\n                                    "
+                                "\n                                "
                             )
                           ]
                         )
@@ -37135,7 +37303,228 @@ var render = function() {
                 ])
               ]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _vm.clients
+            ? _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full my-8 overflow-hidden rounded-lg shadow-md"
+                },
+                [
+                  _c("div", { staticClass: "w-full overflow-x-auto" }, [
+                    _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
+                      _c("thead", [
+                        _c(
+                          "tr",
+                          {
+                            staticClass:
+                              "text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                          },
+                          [
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v("#")
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(_vm._s(_vm.__("Name")))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Mobile")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(_vm._s(_vm.__("Email")))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Username")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Religion")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Gender")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(_vm._s(_vm.__("Work")))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Position")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Hometown")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Education")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(_vm.__("Nationality")) +
+                                  "\n                                "
+                              )
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        {
+                          staticClass:
+                            "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        },
+                        _vm._l(_vm.clients, function(client, key) {
+                          return _c(
+                            "tr",
+                            {
+                              key: key,
+                              staticClass: "text-gray-700 dark:text-gray-400"
+                            },
+                            [
+                              _c("td", { staticClass: "px-4 py-3" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.id) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.name) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.mobile) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.email) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.username) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.religion) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.gender) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.work) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.position) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.hometown) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.education) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(client.nationality) +
+                                    "\n                                "
+                                )
+                              ])
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e()
         ])
       ])
     ]

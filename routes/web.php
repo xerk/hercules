@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\User;
 use App\Models\Price;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacebookController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtractDataController;
+use App\Models\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,11 @@ Route::middleware('local')->get('/', function () {
     ]);
 })->name('landingpage');
 
+Route::get('dev', function() {
+    return Client::doesntHave('users')->take(15)->get();
+});
+
+
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/license/{id}/download', [DashboardController::class, 'download'])->name('license.download');
@@ -43,6 +50,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutori
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook', [FacebookController::class, 'index'])->name('facebook.search');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook', [FacebookController::class, 'find'])->name('facebook.find');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook/store', [FacebookController::class, 'store'])->name('facebook.store');
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);

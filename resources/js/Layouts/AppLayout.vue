@@ -159,7 +159,7 @@
                                 >{{ __("Our Tutorials") }}
                             </jet-nav-link>
                             <jet-nav-link :href="route('facebook.search')"
-                        :active="$page.currentRouteName == 'facebook'">
+                        :active="$page.currentRouteName == 'facebook.search'">
                                 {{ "Facebook" }}
                             </jet-nav-link>
                         </div>

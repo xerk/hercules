@@ -67,4 +67,11 @@ class User extends Authenticatable
         return $this->hasMany(Export::class);
     }
 
+    /**
+     * The clients that belong to the user.
+     */
+    public function clients()
+    {
+        return $this->belongsToMany(Client::class)->withPivot('group');;
+    }
 }

@@ -40,10 +40,18 @@ class Client extends Model
         // 'mobile' => Serialize::class,
     ];
 
+    /**
+     * The clients that belong to the user.
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withPivot('group');;
+    }
+
     public function scopeFilter($query, $request) {
 
         if ($request->filled('religion')) {
-            $query->where('religion', $request->religion);
+            $query->where('religion',  'like', '%' . $request->religion . '%');
         }
 
         if ($request->filled('country')) {
@@ -65,19 +73,19 @@ class Client extends Model
         }
 
         if ($request->filled('work')) {
-            $query->where('work', $request->work);
+            $query->where('work',  'like', '%' . $request->work . '%');
         }
 
         if ($request->filled('position')) {
-            $query->where('position', $request->position);
+            $query->where('position',  'like', '%' . $request->position . '%');
         }
 
         if ($request->filled('hometown')) {
-            $query->where('hometown', $request->hometown);
+            $query->where('hometown', 'like', '%' . $request->hometown . '%');
         }
 
         if ($request->filled('location')) {
-            $query->where('location', $request->location);
+            $query->where('location', 'like', '%' . $request->location . '%');
         }
 
         if ($request->filled('birthdate')) {
