@@ -46,7 +46,7 @@ class FacebookController extends Controller
     public function find(Request $request)
     {
         // dd($request->existEmail);
-        $client = Client::doesntHave('users')->filter($request)->limit(10)->get();
+        $client = Client::select('name', 'gender', 'id')->doesntHave('users')->filter($request)->limit(10)->get();
 
         return Inertia::render('Dashboard/Facebook/Show', [
             'clients' => $client
