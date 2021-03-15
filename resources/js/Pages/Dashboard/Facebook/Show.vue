@@ -436,32 +436,9 @@
                                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                                 >
                                     <th class="px-4 py-3">#</th>
-                                    <th class="px-4 py-3">{{ __("Name") }}</th>
+                                    <th class="px-4 py-3">{{__("Count")}}</th>
                                     <th class="px-4 py-3">
-                                        {{ __("Mobile") }}
-                                    </th>
-                                    <th class="px-4 py-3">{{ __("Email") }}</th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Username") }}
-                                    </th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Religion") }}
-                                    </th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Gender") }}
-                                    </th>
-                                    <th class="px-4 py-3">{{ __("Work") }}</th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Position") }}
-                                    </th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Hometown") }}
-                                    </th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Education") }}
-                                    </th>
-                                    <th class="px-4 py-3">
-                                        {{ __("Nationality") }}
+                                        {{ __("Download") }}
                                     </th>
                                 </tr>
                             </thead>
@@ -470,44 +447,26 @@
                             >
                                 <tr
                                     class="text-gray-700 dark:text-gray-400"
-                                    v-for="(client, key) in clients"
+                                    v-for="(result, key) in results"
                                     :key="key"
                                 >
                                     <td class="px-4 py-3">
-                                        {{ client.id }}
+                                        {{ key }}
                                     </td>
                                     <td class="px-4 py-3">
-                                        {{ client.name }}
+                                        {{ result.length }}
                                     </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.mobile }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.email }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.username }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.religion }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.gender }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.work }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.position }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.hometown }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.education }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ client.nationality }}
+                                    <td class="px-4 py-3 text-sm capitalize">
+                                        <a
+                                            class="hover:underline text-indigo-500"
+                                            href="#"
+                                            >{{ __("Download") }}</a
+                                        >
+                                        <a
+                                            class="hover:underline ml-2 text-indigo-500"
+                                            :href="route('facebook.data', key)"
+                                            >{{ __("Show") }}</a
+                                        >
                                     </td>
                                 </tr>
                             </tbody>
@@ -529,7 +488,7 @@ import JetInputError from "./../../../Jetstream/InputError";
 import JetLabel from "./../../../Jetstream/Label";
 
 export default {
-    props: ["clients", "errors"],
+    props: ["clients", "errors", "results"],
 
     components: {
         AppLayout,

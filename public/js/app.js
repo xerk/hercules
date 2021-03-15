@@ -6944,10 +6944,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7013,6 +7013,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7021,7 +7068,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["purchase", "errors"],
+  props: ["result"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -7040,14 +7087,6 @@ __webpack_require__.r(__webpack_exports__);
         resetOnSuccess: false
       })
     };
-  },
-  methods: {
-    redeemCode: function redeemCode() {
-      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      this.form.post(route("purchase.redeem"), {
-        preserveScroll: true
-      });
-    }
   }
 });
 
@@ -7549,47 +7588,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -7598,7 +7596,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["clients", "errors"],
+  props: ["clients", "errors", "results"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -36240,10 +36238,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -36285,125 +36283,219 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
-          _c("div", { staticClass: "grid grid-rows-3 grid-flow-col gap-4" }, [
-            _c("div", { staticClass: "row-span-3 relative" }, [
-              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
-                  },
-                  [
-                    _vm._v(
-                      "\n                            Facebook Results\n                        "
+          _c(
+            "div",
+            { staticClass: "w-full my-8 overflow-hidden rounded-lg shadow-md" },
+            [
+              _c("div", { staticClass: "w-full overflow-x-auto" }, [
+                _c("table", { staticClass: "w-full whitespace-no-wrap" }, [
+                  _c("thead", [
+                    _c(
+                      "tr",
+                      {
+                        staticClass:
+                          "text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      },
+                      [
+                        _c("th", { staticClass: "px-4 py-3" }, [_vm._v("#")]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(_vm._s(_vm.__("Name")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Mobile")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(_vm._s(_vm.__("Email")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Username")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Religion")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Gender")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(_vm._s(_vm.__("Work")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Position")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Hometown")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Education")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Nationality")) +
+                              "\n                                "
+                          )
+                        ])
+                      ]
                     )
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-span-2" }, [
-              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
-                  },
-                  [
-                    _vm._v(
-                      "\n                            Facebook Search\n                        "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "p-6 flex flex-wrap" }, [
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "div",
-                    [
-                      _c("jet-label", {
-                        staticClass: "mt-4",
-                        attrs: { for: "code", value: _vm.__("Facebook ID") }
-                      }),
-                      _vm._v(" "),
-                      _c("jet-input", {
-                        ref: "code",
-                        staticClass: "mt-1 block w-full",
-                        attrs: {
-                          id: "code",
-                          type: "text",
-                          autocomplete: "off"
+                    "tbody",
+                    {
+                      staticClass:
+                        "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                    },
+                    _vm._l(_vm.result, function(client, key) {
+                      return _c(
+                        "tr",
+                        {
+                          key: key,
+                          staticClass: "text-gray-700 dark:text-gray-400"
                         },
-                        model: {
-                          value: _vm.form.code,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "code", $$v)
-                          },
-                          expression: "form.code"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("jet-input-error", {
-                        staticClass: "mt-2",
-                        attrs: { message: _vm.form.error("code") }
-                      })
-                    ],
-                    1
+                        [
+                          _c("td", { staticClass: "px-4 py-3" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.id) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.name) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.mobile) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.email) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.username) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.religion) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.gender) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.work) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.position) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.hometown) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.education) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(client.nationality) +
+                                "\n                                "
+                            )
+                          ])
+                        ]
+                      )
+                    }),
+                    0
                   )
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row-span-2 col-span-2" }, [
-              _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "bg-gray-50 rounded-lg px-4 py-2 font-semibold"
-                  },
-                  [
-                    _vm._v(
-                      "\n                            Facebook Search\n                        "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "p-6 flex flex-wrap" }, [
-                  _c(
-                    "div",
-                    [
-                      _c("jet-label", {
-                        staticClass: "mt-4",
-                        attrs: { for: "code", value: _vm.__("Facebook ID") }
-                      }),
-                      _vm._v(" "),
-                      _c("jet-input", {
-                        ref: "code",
-                        staticClass: "mt-1 block w-full",
-                        attrs: {
-                          id: "code",
-                          type: "text",
-                          autocomplete: "off"
-                        },
-                        model: {
-                          value: _vm.form.code,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "code", $$v)
-                          },
-                          expression: "form.code"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("jet-input-error", {
-                        staticClass: "mt-2",
-                        attrs: { message: _vm.form.error("code") }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ])
-            ])
-          ])
+            ]
+          )
         ])
       ])
     ]
@@ -37558,77 +37650,13 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(_vm._s(_vm.__("Name")))
+                              _vm._v(_vm._s(_vm.__("Count")))
                             ]),
                             _vm._v(" "),
                             _c("th", { staticClass: "px-4 py-3" }, [
                               _vm._v(
                                 "\n                                    " +
-                                  _vm._s(_vm.__("Mobile")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(_vm._s(_vm.__("Email")))
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Username")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Religion")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Gender")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(_vm._s(_vm.__("Work")))
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Position")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Hometown")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Education")) +
-                                  "\n                                "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "px-4 py-3" }, [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Nationality")) +
+                                  _vm._s(_vm.__("Download")) +
                                   "\n                                "
                               )
                             ])
@@ -37642,7 +37670,7 @@ var render = function() {
                           staticClass:
                             "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                         },
-                        _vm._l(_vm.clients, function(client, key) {
+                        _vm._l(_vm.results, function(result, key) {
                           return _c(
                             "tr",
                             {
@@ -37653,7 +37681,7 @@ var render = function() {
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
-                                    _vm._s(client.id) +
+                                    _vm._s(key) +
                                     "\n                                "
                                 )
                               ]),
@@ -37661,90 +37689,38 @@ var render = function() {
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
-                                    _vm._s(client.name) +
+                                    _vm._s(result.length) +
                                     "\n                                "
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.mobile) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.email) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.username) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.religion) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.gender) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.work) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.position) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.hometown) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.education) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3 text-sm" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(client.nationality) +
-                                    "\n                                "
-                                )
-                              ])
+                              _c(
+                                "td",
+                                { staticClass: "px-4 py-3 text-sm capitalize" },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "hover:underline text-indigo-500",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v(_vm._s(_vm.__("Download")))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "hover:underline ml-2 text-indigo-500",
+                                      attrs: {
+                                        href: _vm.route("facebook.data", key)
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.__("Show")))]
+                                  )
+                                ]
+                              )
                             ]
                           )
                         }),
@@ -55223,8 +55199,8 @@ var map = {
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard/Clients/Show": "./resources/js/Pages/Dashboard/Clients/Show.vue",
 	"./Dashboard/Clients/Show.vue": "./resources/js/Pages/Dashboard/Clients/Show.vue",
-	"./Dashboard/Facebook/FacebookSearch": "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue",
-	"./Dashboard/Facebook/FacebookSearch.vue": "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue",
+	"./Dashboard/Facebook/FacebookData": "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue",
+	"./Dashboard/Facebook/FacebookData.vue": "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue",
 	"./Dashboard/Facebook/Show": "./resources/js/Pages/Dashboard/Facebook/Show.vue",
 	"./Dashboard/Facebook/Show.vue": "./resources/js/Pages/Dashboard/Facebook/Show.vue",
 	"./Dashboard/Purchase/Show": "./resources/js/Pages/Dashboard/Purchase/Show.vue",
@@ -55559,17 +55535,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue":
-/*!******************************************************************!*\
-  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue ***!
-  \******************************************************************/
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookData.vue ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacebookSearch.vue?vue&type=template&id=57cdd4ba& */ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&");
-/* harmony import */ var _FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacebookSearch.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&");
+/* harmony import */ var _FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FacebookData.vue?vue&type=template&id=b7406936& */ "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936&");
+/* harmony import */ var _FacebookData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FacebookData.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -55579,9 +55555,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _FacebookData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -55591,38 +55567,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue"
+component.options.__file = "resources/js/Pages/Dashboard/Facebook/FacebookData.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************/
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookData.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba& ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936& ***!
+  \***********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookSearch.vue?vue&type=template&id=57cdd4ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookSearch.vue?vue&type=template&id=57cdd4ba&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FacebookData.vue?vue&type=template&id=b7406936& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Facebook/FacebookData.vue?vue&type=template&id=b7406936&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookSearch_vue_vue_type_template_id_57cdd4ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FacebookData_vue_vue_type_template_id_b7406936___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

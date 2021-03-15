@@ -30,7 +30,9 @@ Route::middleware('local')->get('/', function () {
 })->name('landingpage');
 
 Route::get('dev', function() {
-    return Client::doesntHave('users')->take(15)->get();
+    $user = User::find(1);
+    // return $user->clients->groupBy('pivot.group');
+    // return $user->clients;
 });
 
 
@@ -50,6 +52,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutori
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook', [FacebookController::class, 'index'])->name('facebook.search');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook', [FacebookController::class, 'find'])->name('facebook.find');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook/{key}', [FacebookController::class, 'data'])->name('facebook.data');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook/store', [FacebookController::class, 'store'])->name('facebook.store');
 
 Route::get('lang/{locale}', function ($locale) {

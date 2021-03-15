@@ -21,9 +21,21 @@ class FacebookController extends Controller
     public function index()
     {
         $user = User::find(Auth::id());
-        // dd($user->clients);
         return Inertia::render('Dashboard/Facebook/Show', [
-            'clients' => $user->clients,
+            'results' => $user->clients->groupBy('pivot.group'),
+            'clients' => [],
+        ]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function data($key)
+    {
+        $user = User::find(Auth::id());
+        return Inertia::render('Dashboard/Facebook/FacebookData', [
+            'result' => $user->clients->where('pivot.group', $key),
         ]);
     }
 
