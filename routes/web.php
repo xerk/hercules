@@ -54,6 +54,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebo
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook', [FacebookController::class, 'find'])->name('facebook.find');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook/{key}', [FacebookController::class, 'data'])->name('facebook.data');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook/store', [FacebookController::class, 'store'])->name('facebook.store');
+Route::get('/dashboard/{token}/download/facebook', [FacebookController::class, 'download'])->name('clients.fb.download');
 
 Route::get('lang/{locale}', function ($locale) {
     $validLocale = in_array($locale, ['ar', 'en']);

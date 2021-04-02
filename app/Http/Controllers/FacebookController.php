@@ -8,7 +8,10 @@ use Inertia\Inertia;
 use App\Models\Client;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Exports\FacebookExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class FacebookController extends Controller
@@ -37,6 +40,14 @@ class FacebookController extends Controller
         return Inertia::render('Dashboard/Facebook/FacebookData', [
             'result' => $user->clients->where('pivot.group', $key),
         ]);
+    }
+
+    public function download($token) {
+        $user = User::find(Auth::id());
+        $clients = $user->clients->where('pivot.group', $token);
+        
+        // $file = Export::where('id', $id)->where('user_id', Auth::id())->firstOrFail()->file;
+        return Excel::download(new FacebookExport($clients), 'clients.csv');
     }
 
     /**
