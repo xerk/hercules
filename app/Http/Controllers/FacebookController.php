@@ -89,7 +89,7 @@ class FacebookController extends Controller
         $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
         $user = User::find(Auth::id());
         // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        FacebookJob::dispatch($client, $user)->afterResponse();
+        // FacebookJob::dispatch($client, $user)->afterResponse();
         
         return Redirect::route('facebook.find')->with('clients', $client);
 
