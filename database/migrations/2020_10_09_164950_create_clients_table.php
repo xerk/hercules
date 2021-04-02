@@ -21,7 +21,7 @@ class CreateClientsTable extends Migration
             $table->string('name')->nullable();
             $table->string('username')->nullable();
             $table->string('religion')->nullable()->index();
-            $table->string('birthday')->nullable()->index();
+            $table->string('birthday')->nullable();
             $table->string('work')->nullable()->index();
             $table->string('position')->nullable()->index();
             $table->string('hometown')->nullable()->index();
