@@ -16,7 +16,7 @@ class AddFiledToClientsTable extends Migration
         Schema::table('clients', function (Blueprint $table) {
             $table->index('mobile');
             $table->index('email');
-            $table->index('name');
+            // $table->index('name');
             $table->index('username');
             $table->index('birthday');
             $table->index('location');
@@ -33,7 +33,7 @@ class AddFiledToClientsTable extends Migration
         Schema::table('clients', function (Blueprint $table) {
             $table->dropIndex('mobile');
             $table->dropIndex('email');
-            $table->dropIndex('name');
+            // $table->dropIndex('name');
             $table->dropIndex('username');
             $table->dropIndex('birthday');
             $table->dropIndex('location');
