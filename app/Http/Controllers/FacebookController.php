@@ -9,6 +9,7 @@ use App\Models\Client;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Exports\FacebookExport;
+use App\Jobs\FacebookJob;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
@@ -84,13 +85,12 @@ class FacebookController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->existEmail);
+        
         $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
         $user = User::find(Auth::id());
-        $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        // return Inertia::render('Dashboard/Facebook/Show', [
-        //     'results' => $client
-        // ]);
+        // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
+        FacebookJob::dispatch($client, $user)->afterResponse();
+        
         return Redirect::route('facebook.find')->with('clients', $client);
 
     }
