@@ -14,8 +14,8 @@ class AddFiledToClientsTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->index('mobile');
-            $table->index('email');
+            // $table->index('mobile');
+            // $table->index('email');
             // $table->index('name');
             $table->index('username');
             $table->index('birthday');
