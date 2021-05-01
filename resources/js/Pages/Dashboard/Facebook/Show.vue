@@ -418,7 +418,7 @@
                                     class="bg-gray-50 rounded-lg px-4 py-2 text-right"
                                 >
                                 <jet-button
-                                    @click.stop="getResult"
+                                    @click="getResult"
                                     :class="{
                                         'opacity-25': form.processing
                                     }"
@@ -427,7 +427,7 @@
                                     {{ __("Save") }}
                                 </jet-button>
                                 <jet-button
-                                    @click.stop="searchResult"
+                                    @click="searchResult"
                                     :class="{
                                         'opacity-25': form.processing
                                     }"

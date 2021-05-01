@@ -37710,12 +37710,7 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            on: {
-                              click: function($event) {
-                                $event.stopPropagation()
-                                return _vm.getResult($event)
-                              }
-                            }
+                            on: { click: _vm.getResult }
                           },
                           [
                             _vm._v(
@@ -37733,12 +37728,7 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            on: {
-                              click: function($event) {
-                                $event.stopPropagation()
-                                return _vm.searchResult($event)
-                              }
-                            }
+                            on: { click: _vm.searchResult }
                           },
                           [
                             _vm._v(
