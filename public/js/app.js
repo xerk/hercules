@@ -7598,6 +7598,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -36741,7 +36745,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "p-2" }, [
-                    _vm.clients.length > 0
+                    _vm.clients.length > 0 && !_vm.form.processing
                       ? _c(
                           "ul",
                           { staticClass: "px-4 overflow-scroll max-h-96 my-2" },
@@ -36782,7 +36786,8 @@ var render = function() {
                           }),
                           0
                         )
-                      : _c(
+                      : !_vm.form.processing
+                      ? _c(
                           "div",
                           {
                             staticClass:
@@ -36797,6 +36802,13 @@ var render = function() {
                           ],
                           1
                         )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.form.processing
+                      ? _c("div", { staticClass: "font-semibold mb-4" }, [
+                          _vm._v("Loading data...")
+                        ])
+                      : _vm._e()
                   ])
                 ])
               ]
@@ -37456,8 +37468,9 @@ var render = function() {
                                   "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
                                 attrs: { id: "exist-email", type: "checkbox" },
                                 domProps: {
+                                  value: false,
                                   checked: Array.isArray(_vm.form.existEmail)
-                                    ? _vm._i(_vm.form.existEmail, null) > -1
+                                    ? _vm._i(_vm.form.existEmail, false) > -1
                                     : _vm.form.existEmail
                                 },
                                 on: {
@@ -37466,7 +37479,7 @@ var render = function() {
                                       $$el = $event.target,
                                       $$c = $$el.checked ? true : false
                                     if (Array.isArray($$a)) {
-                                      var $$v = null,
+                                      var $$v = false,
                                         $$i = _vm._i($$a, $$v)
                                       if ($$el.checked) {
                                         $$i < 0 &&
@@ -37535,8 +37548,9 @@ var render = function() {
                                   "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
                                 attrs: { id: "exist-mobile", type: "checkbox" },
                                 domProps: {
+                                  value: false,
                                   checked: Array.isArray(_vm.form.existMobile)
-                                    ? _vm._i(_vm.form.existMobile, null) > -1
+                                    ? _vm._i(_vm.form.existMobile, false) > -1
                                     : _vm.form.existMobile
                                 },
                                 on: {
@@ -37545,7 +37559,7 @@ var render = function() {
                                       $$el = $event.target,
                                       $$c = $$el.checked ? true : false
                                     if (Array.isArray($$a)) {
-                                      var $$v = null,
+                                      var $$v = false,
                                         $$i = _vm._i($$a, $$v)
                                       if ($$el.checked) {
                                         $$i < 0 &&
@@ -37617,8 +37631,9 @@ var render = function() {
                                   type: "checkbox"
                                 },
                                 domProps: {
+                                  value: false,
                                   checked: Array.isArray(_vm.form.existUsername)
-                                    ? _vm._i(_vm.form.existUsername, null) > -1
+                                    ? _vm._i(_vm.form.existUsername, false) > -1
                                     : _vm.form.existUsername
                                 },
                                 on: {
@@ -37627,7 +37642,7 @@ var render = function() {
                                       $$el = $event.target,
                                       $$c = $$el.checked ? true : false
                                     if (Array.isArray($$a)) {
-                                      var $$v = null,
+                                      var $$v = false,
                                         $$i = _vm._i($$a, $$v)
                                       if ($$el.checked) {
                                         $$i < 0 &&

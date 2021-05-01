@@ -59,7 +59,7 @@
                             <div class="p-2">
                                 <ul
                                     class="px-4 overflow-scroll max-h-96 my-2"
-                                    v-if="clients.length > 0"
+                                    v-if="clients.length > 0 && !form.processing"
                                 >
                                     <li
                                         class="pb-2 flex justify-between items-center"
@@ -74,10 +74,11 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <div class="flex items-center justify-center flex-col" v-else>
+                                <div class="flex items-center justify-center flex-col" v-else-if="!form.processing">
                                     <no-data-svg />
                                     <div class="font-semibold mb-4">No Data</div>
                                 </div>
+                                <div class="font-semibold mb-4" v-if="form.processing">Loading data...</div>
                             </div>
                         </div>
                     </div>
@@ -354,6 +355,7 @@
                                                 id="exist-email"
                                                 v-model="form.existEmail"
                                                 type="checkbox"
+                                                :value="false"
                                                 class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2"
                                             />
                                             <jet-label
@@ -375,6 +377,7 @@
                                                 id="exist-mobile"
                                                 v-model="form.existMobile"
                                                 type="checkbox"
+                                                :value="false"
                                                 class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2"
                                             />
                                             <jet-label
@@ -393,6 +396,7 @@
                                     >
                                         <div class="flex mt-4 items-center">
                                             <input
+                                                :value="false"
                                                 id="exist-username"
                                                 v-model="form.existUsername"
                                                 type="checkbox"
