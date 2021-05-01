@@ -45,7 +45,7 @@
                                 class="bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
                             >
                                 <div>Display Data</div>
-                                <form @submit.prevent="result">
+                                <form @submit.prevent="getResult">
                                     <jet-button
                                         :class="{
                                             'opacity-25': form.processing
@@ -417,8 +417,8 @@
                                 <div
                                     class="bg-gray-50 rounded-lg px-4 py-2 text-right"
                                 >
-                                    <jet-button>
-                                        {{ __("Advanced") }}
+                                    <jet-button @click="getResult">
+                                        {{ __("Save Without Display") }}
                                     </jet-button>
                                     <jet-button
                                         :class="{
@@ -728,7 +728,7 @@ export default {
                 preserveScroll: true
             });
         },
-        result(url = null) {
+        getResult(url = null) {
             this.form.post(route("facebook.store"), {
                 preserveScroll: true
             });

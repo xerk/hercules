@@ -7787,7 +7787,7 @@ __webpack_require__.r(__webpack_exports__);
         preserveScroll: true
       });
     },
-    result: function result() {
+    getResult: function getResult() {
       var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       this.form.post(route("facebook.store"), {
         preserveScroll: true
@@ -36717,7 +36717,7 @@ var render = function() {
                           on: {
                             submit: function($event) {
                               $event.preventDefault()
-                              return _vm.result($event)
+                              return _vm.getResult($event)
                             }
                           }
                         },
@@ -37697,10 +37697,10 @@ var render = function() {
                           "bg-gray-50 rounded-lg px-4 py-2 text-right"
                       },
                       [
-                        _c("jet-button", [
+                        _c("jet-button", { on: { click: _vm.getResult } }, [
                           _vm._v(
                             "\n                                    " +
-                              _vm._s(_vm.__("Advanced")) +
+                              _vm._s(_vm.__("Save Without Display")) +
                               "\n                                "
                           )
                         ]),
