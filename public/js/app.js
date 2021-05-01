@@ -7607,6 +7607,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -37710,13 +37711,14 @@ var render = function() {
                             class: {
                               "opacity-25": _vm.form.processing
                             },
-                            attrs: { disabled: _vm.form.processing }
+                            attrs: { disabled: _vm.form.processing },
+                            on: { click: _vm.getResult }
                           },
                           [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                " +
                                 _vm._s(_vm.__("Save Without Display")) +
-                                "\n                                "
+                                "\n                            "
                             )
                           ]
                         ),
