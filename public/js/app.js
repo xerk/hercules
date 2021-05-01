@@ -7627,6 +7627,7 @@ __webpack_require__.r(__webpack_exports__);
         birthdate: "all",
         work: "",
         position: "",
+        education: "",
         gender: "all",
         hometown: "",
         location: "",

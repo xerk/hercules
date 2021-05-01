@@ -521,6 +521,7 @@ export default {
                     birthdate: "all",
                     work: "",
                     position: "",
+                    education: "",
                     gender: "all",
                     hometown: "",
                     location: "",

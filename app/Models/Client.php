@@ -88,6 +88,10 @@ class Client extends Model
             $query->where('location', 'like', '%' . $request->location . '%');
         }
 
+        if ($request->filled('education')) {
+            $query->where('education', 'like', '%' . $request->education . '%');
+        }
+
         if ($request->filled('birthdate')) {
             if ($request->birthdate != 'all') {
                 $from = Carbon::now()->subYears($request->birthdate[0])->format('d-m-Y');
