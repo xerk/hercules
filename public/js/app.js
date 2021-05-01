@@ -7597,6 +7597,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -36780,7 +36781,21 @@ var render = function() {
                           }),
                           0
                         )
-                      : _c("div", [_c("no-data-svg")], 1)
+                      : _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex items-center justify-center flex-col"
+                          },
+                          [
+                            _c("no-data-svg"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "font-semibold mb-4" }, [
+                              _vm._v("No Data")
+                            ])
+                          ],
+                          1
+                        )
                   ])
                 ])
               ]
@@ -37840,8 +37855,8 @@ var render = function() {
         id: "b21613c9-2bf0-4d37-bef0-3b193d34fc5d",
         "data-name": "Layer 1",
         xmlns: "http://www.w3.org/2000/svg",
-        width: "647.63626",
-        height: "632.17383",
+        width: "200",
+        height: "300",
         viewBox: "0 0 647.63626 632.17383"
       }
     },

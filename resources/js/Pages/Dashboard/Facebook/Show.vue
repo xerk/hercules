@@ -74,8 +74,9 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <div v-else>
+                                <div class="flex items-center justify-center flex-col" v-else>
                                     <no-data-svg />
+                                    <div class="font-semibold mb-4">No Data</div>
                                 </div>
                             </div>
                         </div>
