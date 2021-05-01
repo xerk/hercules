@@ -422,12 +422,12 @@
                                         'opacity-25': form.processing
                                     }"
                                     :disabled="form.processing"
-                                    @click="getResult"
+                                    @click.native="getResult"
                                 >
                                     {{ __("Save Without Display") }}
                                 </button>
                                 <jet-button
-                                    @click="searchResult"
+                                    @click.native="searchResult"
                                     :class="{
                                         'opacity-25': form.processing
                                     }"

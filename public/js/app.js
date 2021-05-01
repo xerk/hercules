@@ -37712,7 +37712,11 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            on: { click: _vm.getResult }
+                            nativeOn: {
+                              click: function($event) {
+                                return _vm.getResult($event)
+                              }
+                            }
                           },
                           [
                             _vm._v(
@@ -37730,7 +37734,11 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            on: { click: _vm.searchResult }
+                            nativeOn: {
+                              click: function($event) {
+                                return _vm.searchResult($event)
+                              }
+                            }
                           },
                           [
                             _vm._v(
