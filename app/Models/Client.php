@@ -97,15 +97,15 @@ class Client extends Model
         }
 
         if ($request->existEmail) {
-            $query->whereNotNull('email');
+            $query->whereNotNull('email')->where('email', '<>', '');
         }
 
         if ($request->existMobile) {
-            $query->whereNotNull('mobile');
+            $query->whereNotNull('mobile')->where('mobile', '<>', '');
         }
 
         if ($request->existUsername) {
-            $query->whereNotNull('username');
+            $query->whereNotNull('username')->where('username', '<>', '');
         }
 
     }
