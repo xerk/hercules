@@ -7609,6 +7609,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -36804,7 +36822,9 @@ var render = function() {
                             _c("no-data-svg"),
                             _vm._v(" "),
                             _c("div", { staticClass: "font-semibold mb-4" }, [
-                              _vm._v("No Data")
+                              _vm._v(
+                                "\n                                    No Data\n                                "
+                              )
                             ])
                           ],
                           1
@@ -36815,7 +36835,11 @@ var render = function() {
                       ? _c(
                           "div",
                           { staticClass: "font-semibold my-4 text-center" },
-                          [_vm._v("Loading data...")]
+                          [
+                            _vm._v(
+                              "\n                                Loading data...\n                            "
+                            )
+                          ]
                         )
                       : _vm._e()
                   ])
@@ -36830,6 +36854,7 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
+                    return _vm.searchResult($event)
                   }
                 }
               },
@@ -37029,66 +37054,63 @@ var render = function() {
                             attrs: { for: "birthdate", value: "Birthdate" }
                           }),
                           _vm._v(" "),
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.form.birthdate,
-                                  expression: "form.birthdate"
-                                }
-                              ],
-                              staticClass:
-                                "form-input rounded-md shadow-sm mt-1 block w-full",
-                              attrs: { id: "birthdate" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.form,
-                                    "birthdate",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { attrs: { value: "all" } }, [
-                                _vm._v("All")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.birthdates, function(birthdate, key) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: key,
-                                    domProps: {
-                                      value: [birthdate.start, birthdate.end]
-                                    }
+                          _c("div", { staticClass: "flex items-center" }, [
+                            _c(
+                              "div",
+                              [
+                                _c("jet-input", {
+                                  ref: "religion",
+                                  staticClass: "mt-1 block w-full",
+                                  attrs: {
+                                    id: "religion",
+                                    type: "text",
+                                    autocomplete: "off"
                                   },
-                                  [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(birthdate.name)
-                                    )
-                                  ]
-                                )
-                              })
-                            ],
-                            2
-                          ),
+                                  model: {
+                                    value: _vm.form.religion,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.form, "religion", $$v)
+                                    },
+                                    expression: "form.religion"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("jet-input-error", {
+                                  staticClass: "mt-2",
+                                  attrs: { message: _vm.form.error("religion") }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              [
+                                _c("jet-input", {
+                                  ref: "religion",
+                                  staticClass: "mt-1 block w-full",
+                                  attrs: {
+                                    id: "religion",
+                                    type: "text",
+                                    autocomplete: "off"
+                                  },
+                                  model: {
+                                    value: _vm.form.religion,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.form, "religion", $$v)
+                                    },
+                                    expression: "form.religion"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("jet-input-error", {
+                                  staticClass: "mt-2",
+                                  attrs: { message: _vm.form.error("religion") }
+                                })
+                              ],
+                              1
+                            )
+                          ]),
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
@@ -37709,32 +37731,13 @@ var render = function() {
                             class: {
                               "opacity-25": _vm.form.processing
                             },
-                            attrs: { disabled: _vm.form.processing },
-                            on: { click: _vm.getResult }
+                            attrs: { disabled: _vm.form.processing }
                           },
                           [
                             _vm._v(
-                              "\n                                " +
+                              "\n                                    " +
                                 _vm._s(_vm.__("Save")) +
-                                "\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "jet-button",
-                          {
-                            class: {
-                              "opacity-25": _vm.form.processing
-                            },
-                            attrs: { disabled: _vm.form.processing },
-                            on: { click: _vm.searchResult }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(_vm.__("Save")) +
-                                "\n                            "
+                                "\n                                "
                             )
                           ]
                         )

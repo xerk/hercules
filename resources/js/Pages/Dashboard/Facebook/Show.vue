@@ -59,7 +59,9 @@
                             <div class="p-2">
                                 <ul
                                     class="px-4 overflow-scroll max-h-96 my-2"
-                                    v-if="clients.length > 0 && !form.processing"
+                                    v-if="
+                                        clients.length > 0 && !form.processing
+                                    "
                                 >
                                     <li
                                         class="pb-2 flex justify-between items-center"
@@ -74,16 +76,26 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <div class="flex items-center justify-center flex-col" v-else-if="!form.processing">
+                                <div
+                                    class="flex items-center justify-center flex-col"
+                                    v-else-if="!form.processing"
+                                >
                                     <no-data-svg />
-                                    <div class="font-semibold mb-4">No Data</div>
+                                    <div class="font-semibold mb-4">
+                                        No Data
+                                    </div>
                                 </div>
-                                <div class="font-semibold my-4 text-center" v-if="form.processing">Loading data...</div>
+                                <div
+                                    class="font-semibold my-4 text-center"
+                                    v-if="form.processing"
+                                >
+                                    Loading data...
+                                </div>
                             </div>
                         </div>
                     </div>
                     <form
-                        @submit.prevent
+                        @submit.prevent="searchResult"
                         class="w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2"
                     >
                         <div class="bg-white shadow rounded-lg mb-6">
@@ -171,24 +183,40 @@
                                             for="birthdate"
                                             value="Birthdate"
                                         />
-                                        <select
-                                            v-model="form.birthdate"
-                                            class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                            id="birthdate"
-                                        >
-                                            <option value="all">All</option>
-                                            <option
-                                                :value="[
-                                                    birthdate.start,
-                                                    birthdate.end
-                                                ]"
-                                                v-for="(birthdate,
-                                                key) in birthdates"
-                                                :key="key"
-                                            >
-                                                {{ birthdate.name }}</option
-                                            >
-                                        </select>
+                                        <div class="flex items-center">
+                                            <div>
+                                                <jet-input
+                                                    id="religion"
+                                                    type="text"
+                                                    class="mt-1 block w-full"
+                                                    v-model="form.religion"
+                                                    ref="religion"
+                                                    autocomplete="off"
+                                                />
+                                                <jet-input-error
+                                                    :message="
+                                                        form.error('religion')
+                                                    "
+                                                    class="mt-2"
+                                                />
+                                            </div>
+                                            <div>
+                                                <jet-input
+                                                    id="religion"
+                                                    type="text"
+                                                    class="mt-1 block w-full"
+                                                    v-model="form.religion"
+                                                    ref="religion"
+                                                    autocomplete="off"
+                                                />
+                                                <jet-input-error
+                                                    :message="
+                                                        form.error('religion')
+                                                    "
+                                                    class="mt-2"
+                                                />
+                                            </div>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('birthdate')"
                                             class="mt-2"
@@ -417,24 +445,14 @@
                                 <div
                                     class="bg-gray-50 rounded-lg px-4 py-2 text-right"
                                 >
-                                <jet-button
-                                    @click="getResult"
-                                    :class="{
-                                        'opacity-25': form.processing
-                                    }"
-                                    :disabled="form.processing"
-                                >
-                                    {{ __("Save") }}
-                                </jet-button>
-                                <jet-button
-                                    @click="searchResult"
-                                    :class="{
-                                        'opacity-25': form.processing
-                                    }"
-                                    :disabled="form.processing"
-                                >
-                                    {{ __("Save") }}
-                                </jet-button>
+                                    <jet-button
+                                        :class="{
+                                            'opacity-25': form.processing
+                                        }"
+                                        :disabled="form.processing"
+                                    >
+                                        {{ __("Save") }}
+                                    </jet-button>
                                 </div>
                             </div>
                         </div>
