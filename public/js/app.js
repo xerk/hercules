@@ -7607,8 +7607,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -37705,34 +37703,22 @@ var render = function() {
                       },
                       [
                         _c(
-                          "form",
+                          "button",
                           {
-                            on: {
-                              submit: function($event) {
-                                $event.preventDefault()
-                                return _vm.getResult($event)
-                              }
-                            }
+                            staticClass:
+                              "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
+                            class: {
+                              "opacity-25": _vm.form.processing
+                            },
+                            attrs: { disabled: _vm.form.processing }
                           },
                           [
-                            _c(
-                              "jet-button",
-                              {
-                                class: {
-                                  "opacity-25": _vm.form.processing
-                                },
-                                attrs: { disabled: _vm.form.processing }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(_vm.__("Save Without Display")) +
-                                    "\n                                "
-                                )
-                              ]
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(_vm.__("Save Without Display")) +
+                                "\n                                "
                             )
-                          ],
-                          1
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
