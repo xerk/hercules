@@ -36805,9 +36805,11 @@ var render = function() {
                       : _vm._e(),
                     _vm._v(" "),
                     _vm.form.processing
-                      ? _c("div", { staticClass: "font-semibold mb-4" }, [
-                          _vm._v("Loading data...")
-                        ])
+                      ? _c(
+                          "div",
+                          { staticClass: "font-semibold my-4 text-center" },
+                          [_vm._v("Loading data...")]
+                        )
                       : _vm._e()
                   ])
                 ])

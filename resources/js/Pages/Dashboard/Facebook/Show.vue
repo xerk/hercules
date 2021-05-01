@@ -78,7 +78,7 @@
                                     <no-data-svg />
                                     <div class="font-semibold mb-4">No Data</div>
                                 </div>
-                                <div class="font-semibold mb-4" v-if="form.processing">Loading data...</div>
+                                <div class="font-semibold my-4 text-center" v-if="form.processing">Loading data...</div>
                             </div>
                         </div>
                     </div>
