@@ -184,11 +184,11 @@
                                             value="Birthdate"
                                         />
                                         <div class="flex items-center">
-                                            <div>
+                                            <div class="w-full mr-2">
                                                 <select
                                                     v-model="form.birthdateFrom"
                                                     class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                                    id="gender"
+                                                    id="birthdateFrom"
                                                 >
                                                     <option value="all"
                                                         >All</option
@@ -203,16 +203,16 @@
                                                 </select>
                                                 <jet-input-error
                                                     :message="
-                                                        form.error('religion')
+                                                        form.error('birthdateFrom')
                                                     "
                                                     class="mt-2"
                                                 />
                                             </div>
-                                            <div>
+                                            <div class="w-full ml-2">
                                                <select
                                                     v-model="form.birthdateTo"
                                                     class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                                    id="gender"
+                                                    id="birthdateTo"
                                                 >
                                                     <option value="all"
                                                         >All</option
@@ -227,16 +227,13 @@
                                                 </select>
                                                 <jet-input-error
                                                     :message="
-                                                        form.error('religion')
+                                                        form.error('birthdateTo')
                                                     "
                                                     class="mt-2"
                                                 />
                                             </div>
                                         </div>
-                                        <jet-input-error
-                                            :message="form.error('birthdate')"
-                                            class="mt-2"
-                                        />
+                                       
                                     </div>
                                     <div
                                         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
@@ -564,8 +561,8 @@ export default {
                     count: 500,
                     religion: "",
                     birthdate: "all",
-                    birthdateTo: "",
-                    birthdateFrom: "",
+                    birthdateTo: "all",
+                    birthdateFrom: "all",
                     work: "",
                     position: "",
                     education: "",

@@ -7640,9 +7640,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -7670,8 +7667,8 @@ __webpack_require__.r(__webpack_exports__);
         count: 500,
         religion: "",
         birthdate: "all",
-        birthdateTo: "",
-        birthdateFrom: "",
+        birthdateTo: "all",
+        birthdateFrom: "all",
         work: "",
         position: "",
         education: "",
@@ -37075,6 +37072,7 @@ var render = function() {
                           _c("div", { staticClass: "flex items-center" }, [
                             _c(
                               "div",
+                              { staticClass: "w-full mr-2" },
                               [
                                 _c(
                                   "select",
@@ -37089,7 +37087,7 @@ var render = function() {
                                     ],
                                     staticClass:
                                       "form-input rounded-md shadow-sm mt-1 block w-full",
-                                    attrs: { id: "gender" },
+                                    attrs: { id: "birthdateFrom" },
                                     on: {
                                       change: function($event) {
                                         var $$selectedVal = Array.prototype.filter
@@ -37136,7 +37134,9 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("jet-input-error", {
                                   staticClass: "mt-2",
-                                  attrs: { message: _vm.form.error("religion") }
+                                  attrs: {
+                                    message: _vm.form.error("birthdateFrom")
+                                  }
                                 })
                               ],
                               1
@@ -37144,6 +37144,7 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "div",
+                              { staticClass: "w-full ml-2" },
                               [
                                 _c(
                                   "select",
@@ -37158,7 +37159,7 @@ var render = function() {
                                     ],
                                     staticClass:
                                       "form-input rounded-md shadow-sm mt-1 block w-full",
-                                    attrs: { id: "gender" },
+                                    attrs: { id: "birthdateTo" },
                                     on: {
                                       change: function($event) {
                                         var $$selectedVal = Array.prototype.filter
@@ -37205,17 +37206,14 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("jet-input-error", {
                                   staticClass: "mt-2",
-                                  attrs: { message: _vm.form.error("religion") }
+                                  attrs: {
+                                    message: _vm.form.error("birthdateTo")
+                                  }
                                 })
                               ],
                               1
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("jet-input-error", {
-                            staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
-                          })
+                          ])
                         ],
                         1
                       ),
