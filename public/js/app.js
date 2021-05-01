@@ -7602,6 +7602,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -37697,13 +37704,36 @@ var render = function() {
                           "bg-gray-50 rounded-lg px-4 py-2 text-right"
                       },
                       [
-                        _c("jet-button", { on: { click: _vm.getResult } }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.__("Save Without Display")) +
-                              "\n                                "
-                          )
-                        ]),
+                        _c(
+                          "form",
+                          {
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.getResult($event)
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "jet-button",
+                              {
+                                class: {
+                                  "opacity-25": _vm.form.processing
+                                },
+                                attrs: { disabled: _vm.form.processing }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(_vm.__("Save Without Display")) +
+                                    "\n                                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
                         _vm._v(" "),
                         _c(
                           "jet-button",
@@ -37715,9 +37745,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                                " +
                                 _vm._s(_vm.__("Save")) +
-                                "\n                                "
+                                "\n                            "
                             )
                           ]
                         )

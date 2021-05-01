@@ -417,17 +417,24 @@
                                 <div
                                     class="bg-gray-50 rounded-lg px-4 py-2 text-right"
                                 >
-                                    <jet-button @click="getResult">
-                                        {{ __("Save Without Display") }}
-                                    </jet-button>
-                                    <jet-button
+                                 <form @submit.prevent="getResult">
+                                    <jet-button  
                                         :class="{
                                             'opacity-25': form.processing
                                         }"
                                         :disabled="form.processing"
-                                    >
-                                        {{ __("Save") }}
+                                        >
+                                        {{ __("Save Without Display") }}
                                     </jet-button>
+                                 </form>
+                                <jet-button
+                                    :class="{
+                                        'opacity-25': form.processing
+                                    }"
+                                    :disabled="form.processing"
+                                >
+                                    {{ __("Save") }}
+                                </jet-button>
                                 </div>
                             </div>
                         </div>
