@@ -37712,8 +37712,9 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            nativeOn: {
+                            on: {
                               click: function($event) {
+                                $event.stopPropagation()
                                 return _vm.getResult($event)
                               }
                             }
@@ -37734,8 +37735,9 @@ var render = function() {
                               "opacity-25": _vm.form.processing
                             },
                             attrs: { disabled: _vm.form.processing },
-                            nativeOn: {
+                            on: {
                               click: function($event) {
+                                $event.stopPropagation()
                                 return _vm.searchResult($event)
                               }
                             }
