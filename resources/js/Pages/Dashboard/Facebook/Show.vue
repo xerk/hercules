@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <form
-                        @submit.prevent="searchResult"
+                        @submit.prevent
                         class="w-full sm:w-1/2 md:w-2/3 lg:w-2/3 px-2"
                     >
                         <div class="bg-white shadow rounded-lg mb-6">
@@ -427,6 +427,7 @@
                                     {{ __("Save Without Display") }}
                                 </button>
                                 <jet-button
+                                    @click="searchResult"
                                     :class="{
                                         'opacity-25': form.processing
                                     }"

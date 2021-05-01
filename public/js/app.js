@@ -7608,6 +7608,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -36829,7 +36830,6 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
-                    return _vm.searchResult($event)
                   }
                 }
               },
@@ -37729,7 +37729,8 @@ var render = function() {
                             class: {
                               "opacity-25": _vm.form.processing
                             },
-                            attrs: { disabled: _vm.form.processing }
+                            attrs: { disabled: _vm.form.processing },
+                            on: { click: _vm.searchResult }
                           },
                           [
                             _vm._v(
