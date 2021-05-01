@@ -185,14 +185,22 @@
                                         />
                                         <div class="flex items-center">
                                             <div>
-                                                <jet-input
-                                                    id="religion"
-                                                    type="text"
-                                                    class="mt-1 block w-full"
-                                                    v-model="form.religion"
-                                                    ref="religion"
-                                                    autocomplete="off"
-                                                />
+                                                <select
+                                                    v-model="form.birthdateFrom"
+                                                    class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                                    id="gender"
+                                                >
+                                                    <option value="all"
+                                                        >All</option
+                                                    >
+                                                    <option
+                                                        :value="birthdateFrom"
+                                                        v-for="birthdateFrom in 80">
+                                                        {{
+                                                            birthdateFrom
+                                                        }}</option
+                                                    >
+                                                </select>
                                                 <jet-input-error
                                                     :message="
                                                         form.error('religion')
@@ -201,14 +209,22 @@
                                                 />
                                             </div>
                                             <div>
-                                                <jet-input
-                                                    id="religion"
-                                                    type="text"
-                                                    class="mt-1 block w-full"
-                                                    v-model="form.religion"
-                                                    ref="religion"
-                                                    autocomplete="off"
-                                                />
+                                               <select
+                                                    v-model="form.birthdateTo"
+                                                    class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                                    id="gender"
+                                                >
+                                                    <option value="all"
+                                                        >All</option
+                                                    >
+                                                    <option
+                                                        :value="birthdateTo"
+                                                        v-for="birthdateTo in 80">
+                                                        {{
+                                                            birthdateTo
+                                                        }}</option
+                                                    >
+                                                </select>
                                                 <jet-input-error
                                                     :message="
                                                         form.error('religion')
@@ -548,6 +564,8 @@ export default {
                     count: 500,
                     religion: "",
                     birthdate: "all",
+                    birthdateTo: "",
+                    birthdateFrom: "",
                     work: "",
                     position: "",
                     education: "",
