@@ -52,7 +52,7 @@
                             >
                                 <tr
                                     class="text-gray-700 dark:text-gray-400"
-                                    v-for="(client, key) in result"
+                                    v-for="(client, key) in result.data"
                                     :key="key"
                                 >
                                     <td class="px-4 py-3">
@@ -97,6 +97,49 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div
+                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                        <span class="flex items-center col-span-3">
+                            {{__('Showing')}} {{ result.from }}-{{ result.to }} {{__('of')}}
+                            {{ result.total }}
+                        </span>
+                        <span class="col-span-2"></span>
+                        <!-- Pagination -->
+                        <span
+                            class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end"
+                        >
+                            <nav aria-label="Table navigation">
+                                <ul class="inline-flex items-center">
+                                    <li
+                                        v-for="(link, key) in result.links"
+                                        :key="key"
+                                    >
+                                        <div
+                                            v-if="link.url === null"
+                                            class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
+                                            :class="{
+                                                'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
+                                                    link.active
+                                            }"
+                                            v-html="link.label"
+                                        ></div>
+                                        <inertia-link
+                                            v-else
+                                            class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
+                                            :class="{
+                                                'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
+                                                    link.active
+                                            }"
+                                            :href="link.url"
+                                            v-html="link.label"
+                                        >
+                                        </inertia-link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </span>
                     </div>
                 </div>
             </div>

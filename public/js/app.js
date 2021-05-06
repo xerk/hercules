@@ -7060,6 +7060,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7109,7 +7158,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
 /* harmony import */ var _components_NoDataSvg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/NoDataSvg */ "./resources/js/Pages/Dashboard/Facebook/components/NoDataSvg.vue");
-//
 //
 //
 //
@@ -36457,6 +36505,14 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("th", { staticClass: "px-4 py-3" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.__("Birthday")) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "px-4 py-3" }, [
                           _vm._v(_vm._s(_vm.__("Work")))
                         ]),
                         _vm._v(" "),
@@ -36501,7 +36557,7 @@ var render = function() {
                       staticClass:
                         "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     },
-                    _vm._l(_vm.result, function(client, key) {
+                    _vm._l(_vm.result.data, function(client, key) {
                       return _c(
                         "tr",
                         {
@@ -36568,6 +36624,14 @@ var render = function() {
                           _c("td", { staticClass: "px-4 py-3 text-sm" }, [
                             _vm._v(
                               "\n                                    " +
+                                _vm._s(client.birthday) +
+                                "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "px-4 py-3 text-sm" }, [
+                            _vm._v(
+                              "\n                                    " +
                                 _vm._s(client.work) +
                                 "\n                                "
                             )
@@ -36610,7 +36674,88 @@ var render = function() {
                     0
                   )
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                },
+                [
+                  _c("span", { staticClass: "flex items-center col-span-3" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.__("Showing")) +
+                        " " +
+                        _vm._s(_vm.result.from) +
+                        "-" +
+                        _vm._s(_vm.result.to) +
+                        " " +
+                        _vm._s(_vm.__("of")) +
+                        "\n                        " +
+                        _vm._s(_vm.result.total) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "col-span-2" }),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "flex col-span-4 mt-2 sm:mt-auto sm:justify-end"
+                    },
+                    [
+                      _c(
+                        "nav",
+                        { attrs: { "aria-label": "Table navigation" } },
+                        [
+                          _c(
+                            "ul",
+                            { staticClass: "inline-flex items-center" },
+                            _vm._l(_vm.result.links, function(link, key) {
+                              return _c(
+                                "li",
+                                { key: key },
+                                [
+                                  link.url === null
+                                    ? _c("div", {
+                                        staticClass:
+                                          "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
+                                        class: {
+                                          "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
+                                            link.active
+                                        },
+                                        domProps: {
+                                          innerHTML: _vm._s(link.label)
+                                        }
+                                      })
+                                    : _c("inertia-link", {
+                                        staticClass:
+                                          "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
+                                        class: {
+                                          "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
+                                            link.active
+                                        },
+                                        attrs: { href: link.url },
+                                        domProps: {
+                                          innerHTML: _vm._s(link.label)
+                                        }
+                                      })
+                                ],
+                                1
+                              )
+                            }),
+                            0
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              )
             ]
           )
         ])
@@ -36752,19 +36897,19 @@ var render = function() {
                     [
                       _c("div", [_vm._v("Display Data")]),
                       _vm._v(" "),
-                      _c(
-                        "form",
-                        {
-                          on: {
-                            submit: function($event) {
-                              $event.preventDefault()
-                              return _vm.getResult($event)
-                            }
-                          }
-                        },
-                        [
-                          _vm.clients.length
-                            ? _c(
+                      _vm.clients.length
+                        ? _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.getResult($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
                                 "jet-button",
                                 {
                                   class: {
@@ -36780,10 +36925,10 @@ var render = function() {
                                   )
                                 ]
                               )
-                            : _vm._e()
-                        ],
-                        1
-                      )
+                            ],
+                            1
+                          )
+                        : _vm._e()
                     ]
                   ),
                   _vm._v(" "),
