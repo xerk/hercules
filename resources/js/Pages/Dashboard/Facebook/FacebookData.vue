@@ -8,9 +8,11 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="text-right">
-                    <jet-button>
-                    {{ __("Back") }}
-                </jet-button>
+                    <inertia-link :href="route('facebook.search')">
+                        <jet-button>
+                            {{ __("Back") }}
+                        </jet-button>
+                    </inertia-link>
                 </div>
                 <div class="w-full my-8 overflow-hidden rounded-lg shadow-md">
                     <div class="w-full overflow-x-auto">
@@ -164,6 +166,11 @@
                     resetOnSuccess: false
                 })
             };
+        },
+        methods: {
+            back() {
+                this.$route.push('')
+            }
         }
     };
 

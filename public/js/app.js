@@ -7095,6 +7095,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -7122,6 +7124,11 @@ __webpack_require__.r(__webpack_exports__);
         resetOnSuccess: false
       })
     };
+  },
+  methods: {
+    back: function back() {
+      this.$route.push('');
+    }
   }
 });
 
@@ -36438,13 +36445,20 @@ var render = function() {
             "div",
             { staticClass: "text-right" },
             [
-              _c("jet-button", [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.__("Back")) +
-                    "\n            "
-                )
-              ])
+              _c(
+                "inertia-link",
+                { attrs: { href: _vm.route("facebook.search") } },
+                [
+                  _c("jet-button", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.__("Back")) +
+                        "\n                    "
+                    )
+                  ])
+                ],
+                1
+              )
             ],
             1
           ),
