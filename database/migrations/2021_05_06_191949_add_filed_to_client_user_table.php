@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFiledToClientsTable extends Migration
+class AddFiledToClientUserTable extends Migration
 {
     /**
      * Run the migrations.
