@@ -94,8 +94,8 @@ class Client extends Model
 
         if ($request->filled('birthdate')) {
             if ($request->birthdateFrom != 'all' && $request->birthdateTo != 'all') {
-                $from = Carbon::now()->subYears($request->birthdateFrom)->format('d-m-Y');
-                $to = Carbon::now()->subYears($request->birthdateTo)->format('d-m-Y');
+                $from = Carbon::now()->subYears($request->birthdateFrom)->format('d/m/Y');
+                $to = Carbon::now()->subYears($request->birthdateTo)->format('d/m/Y');
                 $query->whereBetween('birthday', [$from, $to]);
             }
         }
