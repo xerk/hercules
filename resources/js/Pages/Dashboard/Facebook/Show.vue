@@ -495,7 +495,7 @@
                             >
                                 <tr
                                     class="text-gray-700 dark:text-gray-400"
-                                    v-for="(result, key) in results.data.slice().reverse()"
+                                    v-for="(result, key) in results.data"
                                     :key="key"
                                 >
                                     <td class="px-4 py-3">

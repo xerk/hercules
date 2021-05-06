@@ -16,6 +16,7 @@ class AddFiledToClientUserTable extends Migration
         Schema::table('client_user', function (Blueprint $table) {
             $table->string('status');
             $table->string('count');
+            $table->string('order');
         });
     }
 
@@ -27,7 +28,7 @@ class AddFiledToClientUserTable extends Migration
     public function down()
     {
         Schema::table('client_user', function (Blueprint $table) {
-            $table->dropColumn('status', 'count');
+            $table->dropColumn('status', 'count', 'order');
         });
     }
 }
