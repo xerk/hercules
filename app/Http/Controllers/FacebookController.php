@@ -96,7 +96,7 @@ class FacebookController extends Controller
         
         // $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
         $user = User::find(Auth::id());
-        $maxOrder = DB::table('client_user')->sortByDesc('order')->first();
+        $maxOrder = DB::table('client_user')->orderBy('order', 'desc')->first();
         dd($maxOrder);
         // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
         FacebookJob::dispatch($request, $user)->afterResponse();
