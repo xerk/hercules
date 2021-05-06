@@ -194,10 +194,10 @@
                                                         >All</option
                                                     >
                                                     <option
-                                                        :value="birthdateFrom"
-                                                        v-for="(birthdateFrom, key) in 80" :key="key">
+                                                        :value="data"
+                                                        v-for="(data, key) in 80" :key="key">
                                                         {{
-                                                            birthdateFrom
+                                                            data
                                                         }}</option
                                                     >
                                                 </select>
@@ -210,7 +210,7 @@
                                             </div>
                                             <div class="w-full ml-2">
                                                <select
-                                                    :disabled="birthdateFrom == 'all'"
+                                                    :disabled="form.birthdateFrom == 'all'"
                                                     v-model="form.birthdateTo"
                                                     class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                     id="birthdateTo"

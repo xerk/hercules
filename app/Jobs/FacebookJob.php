@@ -39,6 +39,6 @@ class FacebookJob implements ShouldQueue
     {
         $client = Client::doesntHave('users')->filter($this->request)->limit($this->request->count)->get();
 
-        $this->user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
+        $this->user->clients()->attach($client->pluck('id'), ['group' => Str::random(12), 'status' => 'Completed', 'count' => count($client)]);
     }
 }

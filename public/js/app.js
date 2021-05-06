@@ -37309,17 +37309,14 @@ var render = function() {
                                       _vm._v("All")
                                     ]),
                                     _vm._v(" "),
-                                    _vm._l(80, function(birthdateFrom, key) {
+                                    _vm._l(80, function(data, key) {
                                       return _c(
                                         "option",
-                                        {
-                                          key: key,
-                                          domProps: { value: birthdateFrom }
-                                        },
+                                        { key: key, domProps: { value: data } },
                                         [
                                           _vm._v(
                                             "\n                                                    " +
-                                              _vm._s(birthdateFrom)
+                                              _vm._s(data)
                                           )
                                         ]
                                       )
@@ -37356,7 +37353,7 @@ var render = function() {
                                     staticClass:
                                       "form-input rounded-md shadow-sm mt-1 block w-full",
                                     attrs: {
-                                      disabled: _vm.birthdateFrom == "all",
+                                      disabled: _vm.form.birthdateFrom == "all",
                                       id: "birthdateTo"
                                     },
                                     on: {
