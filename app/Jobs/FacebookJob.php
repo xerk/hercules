@@ -40,7 +40,11 @@ class FacebookJob implements ShouldQueue
     {
         $client = Client::doesntHave('users')->filter($this->request)->limit($this->request->count)->get();
 
+        $order = 0;
         $maxOrder = DB::table('client_user')->max('order')->first();
-        $this->user->clients()->attach($client->pluck('id'), ['group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $maxOrder++]);
+        if ($maxOrder) {
+            $order = $maxOrder++;
+        }
+        $this->user->clients()->attach($client->pluck('id'), ['group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
     }
 }
