@@ -484,6 +484,7 @@
                                 >
                                     <th class="px-4 py-3">#</th>
                                     <th class="px-4 py-3">{{ __("Count") }}</th>
+                                    <th class="px-4 py-3">{{ __("Status") }}</th>
                                     <th class="px-4 py-3">
                                         {{ __("Download") }}
                                     </th>
@@ -500,9 +501,16 @@
                                     <td class="px-4 py-3">
                                         {{ result.group }}
                                     </td>
-                                    <!-- <td class="px-4 py-3">
-                                        {{ result.length }}
-                                    </td> -->
+                                    <td class="px-4 py-3">
+                                        {{ result.count }}
+                                    </td>
+                                    <td class="px-4 py-3 text-xs">
+                                        <span
+                                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                        >
+                                            {{ result.status }}
+                                        </span>
+                                    </td>
                                     <td class="px-4 py-3 text-sm capitalize">
                                         <a
                                             class="hover:underline text-indigo-500"

@@ -7713,6 +7713,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -38074,6 +38082,10 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(_vm._s(_vm.__("Status")))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(_vm.__("Download")) +
@@ -38103,6 +38115,31 @@ var render = function() {
                                   "\n                                    " +
                                     _vm._s(result.group) +
                                     "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(result.count) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3 text-xs" }, [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(result.status) +
+                                        "\n                                    "
+                                    )
+                                  ]
                                 )
                               ]),
                               _vm._v(" "),
