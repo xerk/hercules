@@ -38102,7 +38102,10 @@ var render = function() {
                           staticClass:
                             "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                         },
-                        _vm._l(_vm.results.data, function(result, key) {
+                        _vm._l(_vm.results.data.slice().reverse(), function(
+                          result,
+                          key
+                        ) {
                           return _c(
                             "tr",
                             {
