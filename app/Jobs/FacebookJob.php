@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Client;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -14,17 +15,18 @@ class FacebookJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $clients;
+    // protected $clients;
     protected $user;
+    protected $request;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($clients, $user)
+    public function __construct($request, $user)
     {
-        $this->clients = $clients;
+        $this->request = $request;
         $this->user = $user;
     }
 
@@ -35,6 +37,8 @@ class FacebookJob implements ShouldQueue
      */
     public function handle()
     {
-        $this->user->clients()->attach($this->client->pluck('id'), ['group' => Str::random(12)]);
+        $client = Client::doesntHave('users')->filter($this->request)->limit($this->request->count)->get();
+
+        $this->user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
     }
 }

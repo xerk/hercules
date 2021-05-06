@@ -45,7 +45,7 @@
                                 class="bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
                             >
                                 <div>Display Data</div>
-                                <form @submit.prevent="getResult">
+                                <form @submit.prevent="getResult"  v-if="clients.length">
                                     <jet-button
                                         :class="{
                                             'opacity-25': form.processing
@@ -258,7 +258,7 @@
                                             >
                                         </select>
                                         <jet-input-error
-                                            :message="form.error('birthdate')"
+                                            :message="form.error('gender')"
                                             class="mt-2"
                                         />
                                     </div>
@@ -385,7 +385,7 @@
                                             >
                                         </select>
                                         <jet-input-error
-                                            :message="form.error('birthdate')"
+                                            :message="form.error('relationship')"
                                             class="mt-2"
                                         />
                                     </div>
@@ -407,7 +407,7 @@
                                             />
                                         </div>
                                         <jet-input-error
-                                            :message="form.error('birthdate')"
+                                            :message="form.error('existEmail')"
                                             class="mt-2"
                                         />
                                     </div>
@@ -429,7 +429,7 @@
                                             />
                                         </div>
                                         <jet-input-error
-                                            :message="form.error('birthdate')"
+                                            :message="form.error('existMobile')"
                                             class="mt-2"
                                         />
                                     </div>
@@ -451,7 +451,7 @@
                                             />
                                         </div>
                                         <jet-input-error
-                                            :message="form.error('birthdate')"
+                                            :message="form.error('existUsername')"
                                             class="mt-2"
                                         />
                                     </div>
@@ -561,7 +561,6 @@ export default {
                     country: "all",
                     count: 500,
                     religion: "",
-                    birthdate: "all",
                     birthdateTo: "all",
                     birthdateFrom: "all",
                     work: "",

@@ -7641,6 +7641,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -7667,7 +7668,6 @@ __webpack_require__.r(__webpack_exports__);
         country: "all",
         count: 500,
         religion: "",
-        birthdate: "all",
         birthdateTo: "all",
         birthdateFrom: "all",
         work: "",
@@ -36763,22 +36763,24 @@ var render = function() {
                           }
                         },
                         [
-                          _c(
-                            "jet-button",
-                            {
-                              class: {
-                                "opacity-25": _vm.form.processing
-                              },
-                              attrs: { disabled: _vm.form.processing }
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(_vm.__("Save")) +
-                                  "\n                                "
+                          _vm.clients.length
+                            ? _c(
+                                "jet-button",
+                                {
+                                  class: {
+                                    "opacity-25": _vm.form.processing
+                                  },
+                                  attrs: { disabled: _vm.form.processing }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(_vm.__("Save")) +
+                                      "\n                                "
+                                  )
+                                ]
                               )
-                            ]
-                          )
+                            : _vm._e()
                         ],
                         1
                       )
@@ -37300,7 +37302,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
+                            attrs: { message: _vm.form.error("gender") }
                           })
                         ],
                         1
@@ -37576,7 +37578,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
+                            attrs: { message: _vm.form.error("relationship") }
                           })
                         ],
                         1
@@ -37656,7 +37658,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
+                            attrs: { message: _vm.form.error("existEmail") }
                           })
                         ],
                         1
@@ -37736,7 +37738,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
+                            attrs: { message: _vm.form.error("existMobile") }
                           })
                         ],
                         1
@@ -37819,7 +37821,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("birthdate") }
+                            attrs: { message: _vm.form.error("existUsername") }
                           })
                         ],
                         1

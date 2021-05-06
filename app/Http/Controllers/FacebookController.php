@@ -86,10 +86,10 @@ class FacebookController extends Controller
     public function store(Request $request)
     {
         
-        $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
+        // $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
         $user = User::find(Auth::id());
-        $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        // FacebookJob::dispatch($client, $user)->afterResponse();
+        // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
+        FacebookJob::dispatch($request, $user)->afterResponse();
         
         return Redirect::route('facebook.find');
 
