@@ -14,8 +14,8 @@ class AddFiledToClientUserTable extends Migration
     public function up()
     {
         Schema::table('client_user', function (Blueprint $table) {
-            $table->index('status');
-            $table->index('count');
+            $table->string('status');
+            $table->string('count');
         });
     }
 
