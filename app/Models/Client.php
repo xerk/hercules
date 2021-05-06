@@ -96,8 +96,8 @@ class Client extends Model
             if ($request->birthdateFrom != 'all' && $request->birthdateTo != 'all') {
                 $from = Carbon::now()->subYears($request->birthdateFrom)->format('d/m/Y');
                 $to = Carbon::now()->subYears($request->birthdateTo)->format('d/m/Y');
-                $query->where('birthday', '>=', $from);
-                $query->where('birthday', '<=', $to);
+                $query->where('birthday', '<=', $from);
+                $query->where('birthday', '>=', $to);
             }
         }
 
