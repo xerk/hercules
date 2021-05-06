@@ -483,6 +483,7 @@
                                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                                 >
                                     <th class="px-4 py-3">#</th>
+                                    <th class="px-4 py-3">{{ __("Code") }}</th>
                                     <th class="px-4 py-3">{{ __("Count") }}</th>
                                     <th class="px-4 py-3">{{ __("Status") }}</th>
                                     <th class="px-4 py-3">
@@ -498,6 +499,9 @@
                                     v-for="(result, key) in results.data"
                                     :key="key"
                                 >
+                                    <td class="px-4 py-3">
+                                        {{ result.order }}
+                                    </td>
                                     <td class="px-4 py-3">
                                         {{ result.group }}
                                     </td>

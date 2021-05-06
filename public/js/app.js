@@ -7721,6 +7721,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -38078,6 +38082,10 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(_vm._s(_vm.__("Code")))
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
                               _vm._v(_vm._s(_vm.__("Count")))
                             ]),
                             _vm._v(" "),
@@ -38110,6 +38118,14 @@ var render = function() {
                               staticClass: "text-gray-700 dark:text-gray-400"
                             },
                             [
+                              _c("td", { staticClass: "px-4 py-3" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(result.order) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
