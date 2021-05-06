@@ -29,6 +29,9 @@
                                     <th class="px-4 py-3">
                                         {{ __("Gender") }}
                                     </th>
+                                    <th class="px-4 py-3">
+                                        {{ __("Birthday") }}
+                                    </th>
                                     <th class="px-4 py-3">{{ __("Work") }}</th>
                                     <th class="px-4 py-3">
                                         {{ __("Position") }}
@@ -72,6 +75,9 @@
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ client.gender }}
+                                    </td>
+                                    <td class="px-4 py-3 text-sm">
+                                        {{ client.birthday }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ client.work }}
