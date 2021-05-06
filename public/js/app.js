@@ -38167,13 +38167,13 @@ var render = function() {
                             "\n                        " +
                               _vm._s(_vm.__("Showing")) +
                               " " +
-                              _vm._s(_vm.result.from) +
+                              _vm._s(_vm.results.from) +
                               "-" +
-                              _vm._s(_vm.result.to) +
+                              _vm._s(_vm.results.to) +
                               " " +
                               _vm._s(_vm.__("of")) +
                               "\n                        " +
-                              _vm._s(_vm.result.total) +
+                              _vm._s(_vm.results.total) +
                               "\n                    "
                           )
                         ]
@@ -38195,7 +38195,7 @@ var render = function() {
                               _c(
                                 "ul",
                                 { staticClass: "inline-flex items-center" },
-                                _vm._l(_vm.result.links, function(link, key) {
+                                _vm._l(_vm.results.links, function(link, key) {
                                   return _c(
                                     "li",
                                     { key: key },
