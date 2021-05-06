@@ -7095,20 +7095,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -36448,6 +36434,21 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _c(
+            "div",
+            { staticClass: "text-right" },
+            [
+              _c("jet-button", [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.__("Back")) +
+                    "\n            "
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "w-full my-8 overflow-hidden rounded-lg shadow-md" },

@@ -7,13 +7,17 @@
         </template>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="text-right">
+                    <jet-button>
+                    {{ __("Back") }}
+                </jet-button>
+                </div>
                 <div class="w-full my-8 overflow-hidden rounded-lg shadow-md">
                     <div class="w-full overflow-x-auto">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
                                 <tr
-                                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
-                                >
+                                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                     <th class="px-4 py-3">#</th>
                                     <th class="px-4 py-3">{{ __("Name") }}</th>
                                     <th class="px-4 py-3">
@@ -47,14 +51,9 @@
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody
-                                class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                            >
-                                <tr
-                                    class="text-gray-700 dark:text-gray-400"
-                                    v-for="(client, key) in result.data"
-                                    :key="key"
-                                >
+                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                <tr class="text-gray-700 dark:text-gray-400" v-for="(client, key) in result.data"
+                                    :key="key">
                                     <td class="px-4 py-3">
                                         {{ client.id }}
                                     </td>
@@ -99,42 +98,29 @@
                         </table>
                     </div>
                     <div
-                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
-                    >
+                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                         <span class="flex items-center col-span-3">
                             {{__('Showing')}} {{ result.from }}-{{ result.to }} {{__('of')}}
                             {{ result.total }}
                         </span>
                         <span class="col-span-2"></span>
                         <!-- Pagination -->
-                        <span
-                            class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end"
-                        >
+                        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
                             <nav aria-label="Table navigation">
                                 <ul class="inline-flex items-center">
-                                    <li
-                                        v-for="(link, key) in result.links"
-                                        :key="key"
-                                    >
-                                        <div
-                                            v-if="link.url === null"
+                                    <li v-for="(link, key) in result.links" :key="key">
+                                        <div v-if="link.url === null"
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
                                                 'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
                                                     link.active
-                                            }"
-                                            v-html="link.label"
-                                        ></div>
-                                        <inertia-link
-                                            v-else
+                                            }" v-html="link.label"></div>
+                                        <inertia-link v-else
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
                                                 'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
                                                     link.active
-                                            }"
-                                            :href="link.url"
-                                            v-html="link.label"
-                                        >
+                                            }" :href="link.url" v-html="link.label">
                                         </inertia-link>
                                     </li>
                                 </ul>
@@ -148,41 +134,39 @@
 </template>
 
 <script>
-import AppLayout from "./../../../Layouts/AppLayout";
-import JetActionMessage from "./../../../Jetstream/ActionMessage";
-import JetButton from "./../../../Jetstream/Button";
-import JetFormSection from "./../../../Jetstream/FormSection";
-import JetInput from "./../../../Jetstream/Input";
-import JetInputError from "./../../../Jetstream/InputError";
-import JetLabel from "./../../../Jetstream/Label";
+    import AppLayout from "./../../../Layouts/AppLayout";
+    import JetActionMessage from "./../../../Jetstream/ActionMessage";
+    import JetButton from "./../../../Jetstream/Button";
+    import JetFormSection from "./../../../Jetstream/FormSection";
+    import JetInput from "./../../../Jetstream/Input";
+    import JetInputError from "./../../../Jetstream/InputError";
+    import JetLabel from "./../../../Jetstream/Label";
 
-export default {
-    props: ["result"],
+    export default {
+        props: ["result"],
 
-    components: {
-        AppLayout,
-        JetActionMessage,
-        JetButton,
-        JetFormSection,
-        JetInput,
-        JetInputError,
-        JetLabel
-    },
+        components: {
+            AppLayout,
+            JetActionMessage,
+            JetButton,
+            JetFormSection,
+            JetInput,
+            JetInputError,
+            JetLabel
+        },
 
-    data() {
-        return {
-            form: this.$inertia.form(
-                {
+        data() {
+            return {
+                form: this.$inertia.form({
                     code: null
-                },
-                {
+                }, {
                     bag: "redeemCode",
                     resetOnSuccess: false
-                }
-            )
-        };
-    }
-};
+                })
+            };
+        }
+    };
+
 </script>
 
 <style></style>
