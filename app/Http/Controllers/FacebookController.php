@@ -38,8 +38,12 @@ class FacebookController extends Controller
     public function data($key)
     {
         $user = User::find(Auth::id());
+        $clients = Client::whereHas('users', function($q) use ($key) {
+            $q->where('pivot.group', $key);
+        })->paginate(15);
         return Inertia::render('Dashboard/Facebook/FacebookData', [
-            'result' => $user->clients->where('pivot.group', $key)->paginate(15),
+            // 'result' => $user->clients->where('pivot.group', $key)->paginate(15),
+            'result' => $clients,
         ]);
     }
 
