@@ -41,7 +41,8 @@ class FacebookJob implements ShouldQueue
         $client = Client::doesntHave('users')->filter($this->request)->limit($this->request->count)->get();
 
         $order = 0;
-        $maxOrder = DB::table('client_user')->max('order')->first();
+        $maxOrder = DB::table('client_user')->orderBy('order', 'desc')->first();
+
         if ($maxOrder) {
             $order = $maxOrder++;
         }
