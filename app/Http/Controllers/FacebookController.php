@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Exports\FacebookExport;
 use App\Jobs\FacebookJob;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
@@ -25,8 +26,9 @@ class FacebookController extends Controller
     public function index()
     {
         $user = User::find(Auth::id());
+        $clientUser = DB::table('client_user')->where('user_id', $user->id)->distinct();
         return Inertia::render('Dashboard/Facebook/Show', [
-            'results' => $user->clients->groupBy('pivot.group'),
+            'results' => $clientUser,
             'clients' => [],
         ]);
     }
