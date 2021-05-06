@@ -7683,6 +7683,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -38063,7 +38093,7 @@ var render = function() {
                           staticClass:
                             "bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                         },
-                        _vm._l(_vm.results, function(result, key) {
+                        _vm._l(_vm.results.data, function(result, key) {
                           return _c(
                             "tr",
                             {
@@ -38074,15 +38104,7 @@ var render = function() {
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
-                                    _vm._s(key) +
-                                    "\n                                "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "px-4 py-3" }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(result.length) +
+                                    _vm._s(result.group) +
                                     "\n                                "
                                 )
                               ]),
@@ -38099,7 +38121,7 @@ var render = function() {
                                       attrs: {
                                         href: _vm.route(
                                           "clients.fb.download",
-                                          key
+                                          result.group
                                         )
                                       }
                                     },
@@ -38112,7 +38134,10 @@ var render = function() {
                                       staticClass:
                                         "hover:underline ml-2 text-indigo-500",
                                       attrs: {
-                                        href: _vm.route("facebook.data", key)
+                                        href: _vm.route(
+                                          "facebook.data",
+                                          result.group
+                                        )
                                       }
                                     },
                                     [_vm._v(_vm._s(_vm.__("Show")))]
@@ -38125,7 +38150,92 @@ var render = function() {
                         0
                       )
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                    },
+                    [
+                      _c(
+                        "span",
+                        { staticClass: "flex items-center col-span-3" },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(_vm.__("Showing")) +
+                              " " +
+                              _vm._s(_vm.result.from) +
+                              "-" +
+                              _vm._s(_vm.result.to) +
+                              " " +
+                              _vm._s(_vm.__("of")) +
+                              "\n                        " +
+                              _vm._s(_vm.result.total) +
+                              "\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "col-span-2" }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "flex col-span-4 mt-2 sm:mt-auto sm:justify-end"
+                        },
+                        [
+                          _c(
+                            "nav",
+                            { attrs: { "aria-label": "Table navigation" } },
+                            [
+                              _c(
+                                "ul",
+                                { staticClass: "inline-flex items-center" },
+                                _vm._l(_vm.result.links, function(link, key) {
+                                  return _c(
+                                    "li",
+                                    { key: key },
+                                    [
+                                      link.url === null
+                                        ? _c("div", {
+                                            staticClass:
+                                              "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
+                                            class: {
+                                              "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
+                                                link.active
+                                            },
+                                            domProps: {
+                                              innerHTML: _vm._s(link.label)
+                                            }
+                                          })
+                                        : _c("inertia-link", {
+                                            staticClass:
+                                              "px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple",
+                                            class: {
+                                              "text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600":
+                                                link.active
+                                            },
+                                            attrs: { href: link.url },
+                                            domProps: {
+                                              innerHTML: _vm._s(link.label)
+                                            }
+                                          })
+                                    ],
+                                    1
+                                  )
+                                }),
+                                0
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
                 ]
               )
             : _vm._e()

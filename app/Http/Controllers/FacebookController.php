@@ -26,10 +26,10 @@ class FacebookController extends Controller
     public function index()
     {
         $user = User::find(Auth::id());
-        $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group')->distinct('group')->get();
+        $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group')->distinct('group')->paginate(15);
         return Inertia::render('Dashboard/Facebook/Show', [
-            'results' => $user->clients->groupBy('pivot.group'),
-            'test' => $clientUser,
+            // 'test' => $user->clients->groupBy('pivot.group'),
+            'results' => $clientUser,
             'clients' => [],
         ]);
     }
