@@ -39,7 +39,7 @@ class FacebookController extends Controller
     {
         $user = User::find(Auth::id());
         return Inertia::render('Dashboard/Facebook/FacebookData', [
-            'result' => $user->clients->where('pivot.group', $key)->latest()->paginate(15),
+            'result' => $user->clients->where('pivot.group', $key)->paginate(15),
         ]);
     }
 
