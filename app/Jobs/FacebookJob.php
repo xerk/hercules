@@ -4,7 +4,7 @@ namespace App\Jobs;
 
 use App\Models\User;
 use App\Models\Client;
-use App\Nova\PointLog;
+use App\Models\PointLog;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\DB;
@@ -49,7 +49,9 @@ class FacebookJob implements ShouldQueue
             $order = $maxOrder->order + 1;
         }
         $this->user->clients()->attach($client->pluck('id'), ['group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
+
         User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
+
         $pointLog = PointLog::create([
             'log' => 'Points have been deducted from your account for facebook information',
             'point' => '-' . (count($client) * 2),
