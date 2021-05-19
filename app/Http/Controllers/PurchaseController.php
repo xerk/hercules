@@ -53,12 +53,11 @@ class PurchaseController extends Controller
             $user->point = $user->point + $card->amount;
             
             $user->save();
-            
+
             $pointLog = PointLog::create([
                 'log' => 'The user has been Redeem code',
                 'point' => $card->amount,
                 'user_id' => $user->id,
-                'owner_id' => '',
                 'status' => 'Succeed',
             ]);
 
