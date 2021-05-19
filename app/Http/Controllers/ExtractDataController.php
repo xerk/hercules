@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\Client;
 use App\Models\Export;
 use App\Jobs\ExportJob;
+use App\Models\PointLog;
 use App\Mail\DataExported;
 use Illuminate\Support\Str;
 use App\Exports\UsersExport;

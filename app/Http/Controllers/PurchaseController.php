@@ -56,7 +56,7 @@ class PurchaseController extends Controller
 
             $pointLog = PointLog::create([
                 'log' => 'The user has been Redeem code',
-                'point' => $card->amount,
+                'point' => '+' . $card->amount,
                 'user_id' => $user->id,
                 'status' => 'succeed',
             ]);

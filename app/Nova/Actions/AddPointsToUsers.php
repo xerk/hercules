@@ -39,7 +39,7 @@ class AddPointsToUsers extends Action
             if (($model->point + $fields->amount) >= 0) {
                 $pointLog = PointLog::create([
                     'log' => 'Owner has been Added Points to ther user',
-                    'point' => $fields->amount,
+                    'point' => '+' . $fields->amount,
                     'user_id' => $model->id,
                     'owner_id' => auth()->user()->id,
                     'status' => 'succeed',

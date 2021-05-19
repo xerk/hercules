@@ -5,6 +5,7 @@ namespace App\Jobs;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Export;
+use App\Models\PointLog;
 use App\Mail\DataExported;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Mail;
