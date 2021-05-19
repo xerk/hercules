@@ -70,6 +70,12 @@ class ExtractDataController extends Controller
                     new ExportJob($result, $path, auth()->user()->id),
                 ]);
                 User::find(auth()->user()->id)->decrement('point', $result);
+                $pointLog = PointLog::create([
+                    'log' => 'Points have been deducted from your account for export data',
+                    'point' => '-' . $result,
+                    'user_id' => auth()->user()->id,
+                    'status' => 'Succeed',
+                ]);
             } else {
                 return back()->withErrors([
                     'message' => 'Not found data',

@@ -2,6 +2,7 @@
 
 namespace App\Nova\Actions;
 
+use App\Models\PointLog;
 use Illuminate\Bus\Queueable;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Actions\Action;
@@ -36,6 +37,13 @@ class AddPointsToUsers extends Action
     {
         foreach ($models as $model) {
             if (($model->point + $fields->amount) >= 0) {
+                $pointLog = PointLog::create([
+                    'log' => 'Owner has been Added Points to ther user',
+                    'point' => $fields->amount,
+                    'user_id' => $model->id,
+                    'owner_id' => auth()->user()->id,
+                    'status' => 'Succeed',
+                ]);
                 $model->point = $model->point + $fields->amount;
             } else {
                 $model->point = 0;

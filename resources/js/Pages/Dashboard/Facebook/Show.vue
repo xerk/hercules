@@ -805,15 +805,23 @@ export default {
     },
 
     methods: {
-        searchResult(url = null) {
-            this.form.post(route("facebook.find"), {
-                preserveScroll: true
-            });
+        async searchResult(url = null) {
+            if ((this.form.count * 2) <= this.$page.user.point) {
+                await this.form.post(route("facebook.find"), {
+                    preserveScroll: true
+                });
+            }  else {
+                alert(this.__("You didn\'t have points enough"));
+            }
         },
-        getResult(url = null) {
-            this.form.post(route("facebook.store"), {
-                preserveScroll: true
-            });
+        async getResult(url = null) {
+             if ((this.form.count * 2) <= this.$page.user.point) {
+                await this.form.post(route("facebook.store"), {
+                    preserveScroll: true
+                });
+            }  else {
+                alert(this.__("You didn\'t have points enough"));
+            }
         }
     }
 };

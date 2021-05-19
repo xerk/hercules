@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Inertia\Inertia;
 use App\Models\CardCode;
-use Carbon\Carbon;
+use App\Models\PointLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -50,8 +51,16 @@ class PurchaseController extends Controller
             $user = User::find(Auth::id());
 
             $user->point = $user->point + $card->amount;
-
+            
             $user->save();
+            
+            $pointLog = PointLog::create([
+                'log' => 'The user has been Redeem code',
+                'point' => $card->amount,
+                'user_id' => $user->id,
+                'owner_id' => '',
+                'status' => 'Succeed',
+            ]);
 
             $card->delete();
         } else {

@@ -49,6 +49,12 @@ class ExportJob implements ShouldQueue
         ]);
 
         User::find($this->user->id)->decrement('point', count($this->clients)); 
+        $pointLog = PointLog::create([
+            'log' => 'Points have been deducted from your account for export data',
+            'point' => '-' . $result,
+            'user_id' => auth()->user()->id,
+            'status' => 'Succeed',
+        ]);
 
     }
 }

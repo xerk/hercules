@@ -76,6 +76,7 @@ class FacebookController extends Controller
      */
     public function find(Request $request)
     {
+        if ($request->count )
         $user = User::find(Auth::id());
         $client = Client::select('name', 'gender', 'id')->doesntHave('users')->filter($request)->limit(10)->get();
         $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
