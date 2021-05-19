@@ -84,8 +84,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            // new \Bernhardh\NovaTranslationEditor\NovaTranslationEditor(),
-            // new NovaLanguageTool(),
+            new \Bernhardh\NovaTranslationEditor\NovaTranslationEditor(),
+            new NovaLanguageTool(),
         ];
     }
 
