@@ -58,7 +58,7 @@ class PurchaseController extends Controller
                 'log' => 'The user has been Redeem code',
                 'point' => $card->amount,
                 'user_id' => $user->id,
-                'status' => 'Succeed',
+                'status' => 'succeed',
             ]);
 
             $card->delete();

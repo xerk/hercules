@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PointLog extends Resource
@@ -44,6 +45,10 @@ class PointLog extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            BelongsTo::make('User'),
+
+           BelongsTo::make('Author', 'owner', 'App\Nova\User'),
+
             Text::make(__('Log'), 'log')
                 ->sortable(),
 
@@ -54,6 +59,7 @@ class PointLog extends Resource
                 'faild' => 'Faild',
                 'pending' => 'Pending',
             ])->displayUsingLabels(),
+            
         ];
     }
 

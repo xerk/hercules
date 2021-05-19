@@ -54,7 +54,7 @@ class FacebookJob implements ShouldQueue
             'log' => 'Points have been deducted from your account for facebook information',
             'point' => '-' . (count($client) * 2),
             'user_id' => auth()->user()->id,
-            'status' => 'Succeed',
+            'status' => 'succeed',
         ]);
 
     }

@@ -17,4 +17,12 @@ class PointLog extends Model
     protected $fillable = [
         'log', 'status', 'point', 'user_id', 'owner_id'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function owner() {
+        return $this->belongsTo(User::class);
+    }
 }

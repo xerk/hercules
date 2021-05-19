@@ -42,7 +42,7 @@ class AddPointsToUsers extends Action
                     'point' => $fields->amount,
                     'user_id' => $model->id,
                     'owner_id' => auth()->user()->id,
-                    'status' => 'Succeed',
+                    'status' => 'succeed',
                 ]);
                 $model->point = $model->point + $fields->amount;
             } else {

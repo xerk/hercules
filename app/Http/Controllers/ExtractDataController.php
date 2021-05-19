@@ -74,7 +74,7 @@ class ExtractDataController extends Controller
                     'log' => 'Points have been deducted from your account for export data',
                     'point' => '-' . $result,
                     'user_id' => auth()->user()->id,
-                    'status' => 'Succeed',
+                    'status' => 'succeed',
                 ]);
             } else {
                 return back()->withErrors([
