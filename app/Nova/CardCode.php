@@ -95,7 +95,7 @@ class CardCode extends Resource
             Number::make(__('Amount'), 'amount')
                 ->rules('required'),
 
-            DateTime::make(__('Expire Date'), 'expire_date'),
+            DateTime::make(__('Expire Date'), 'expire_date')->rules('required'),
 
         ];
     }
