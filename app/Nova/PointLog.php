@@ -52,7 +52,7 @@ class PointLog extends Resource
             Text::make(__('Log'), 'log')
                 ->sortable(),
 
-            Text::make(__('point'), 'Point'),
+            Text::make(__('Point'), 'point'),
 
             Select::make('Status')->options([
                 'succeed' => 'Succeed',
