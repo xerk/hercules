@@ -39,7 +39,21 @@ class UsersExport implements FromQuery, WithHeadings
         //         'nationality' => $user->nationality,
         //     ];
         // });
-        return Client::query()->whereIn('unique_id', $this->clients)->select('unique_id', 'mobile', 'nationality')->orderBy('unique_id');
+        return Client::query()->whereIn('unique_id', $this->clients)->select(
+            'unique_id',
+            'mobile',
+            'username',
+            'name',
+            'religion',
+            'birthday',
+            'gender',
+            'work',
+            'position',
+            'hometown',
+            'location',
+            'education',
+            'relationship',
+            'nationality')->orderBy('unique_id');
     }
 
     private function decode($ids)
@@ -54,6 +68,17 @@ class UsersExport implements FromQuery, WithHeadings
         return [
             'facebook ID',
             'Mobile',
+            'Username',
+            'Name',
+            'Religion',
+            'Birthday',
+            'Gender',
+            'Work',
+            'Position',
+            'Hometown',
+            'Location',
+            'Education',
+            'Relationship',
             'Country',
         ];
     }
