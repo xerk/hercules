@@ -15,10 +15,6 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-if ($app->environment() !== 'production') {
-    $app->register(\Helldar\LaravelLangPublisher\ServiceProvider::class);
-}
-
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
