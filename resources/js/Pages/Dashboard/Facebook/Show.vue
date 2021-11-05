@@ -44,8 +44,16 @@
                             <div
                                 class="bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
                             >
-                                <div>Display Data</div>
-                                <form @submit.prevent="getResult"  v-if="clients.length">
+                                <div>
+                                    Display Data
+                                    <span v-if="clientCount > 0"
+                                        >({{ clientCount }})</span
+                                    >
+                                </div>
+                                <form
+                                    @submit.prevent="getResult"
+                                    v-if="clients.length"
+                                >
                                     <jet-button
                                         :class="{
                                             'opacity-25': form.processing
@@ -156,28 +164,32 @@
                                     Facebook Search
                                 </div>
                                 <div class="p-6 flex flex-wrap items-end">
+                                    <!-- Religion -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
                                     >
                                         <jet-label
                                             for="religion"
                                             :value="__('Religion')"
                                         />
-                                        <jet-input
-                                            id="religion"
-                                            type="text"
-                                            class="mt-1 block w-full"
+                                        <vue-tags-input
                                             v-model="form.religion"
-                                            ref="religion"
-                                            autocomplete="off"
+                                            :tags="form.religions"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.religions = newTags)
+                                            "
+                                            placeholder="Add Reliation"
                                         />
                                         <jet-input-error
                                             :message="form.error('religion')"
                                             class="mt-2"
                                         />
                                     </div>
+
+                                    <!-- Birthdate -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
                                     >
                                         <jet-label
                                             for="birthdate"
@@ -195,22 +207,28 @@
                                                     >
                                                     <option
                                                         :value="data"
-                                                        v-for="(data, key) in 80" :key="key">
-                                                        {{
-                                                            data
-                                                        }}</option
+                                                        v-for="(data,
+                                                        key) in 80"
+                                                        :key="key"
+                                                    >
+                                                        {{ data }}</option
                                                     >
                                                 </select>
                                                 <jet-input-error
                                                     :message="
-                                                        form.error('birthdateFrom')
+                                                        form.error(
+                                                            'birthdateFrom'
+                                                        )
                                                     "
                                                     class="mt-2"
                                                 />
                                             </div>
                                             <div class="w-full ml-2">
-                                               <select
-                                                    :disabled="form.birthdateFrom == 'all'"
+                                                <select
+                                                    :disabled="
+                                                        form.birthdateFrom ==
+                                                            'all'
+                                                    "
                                                     v-model="form.birthdateTo"
                                                     class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                     id="birthdateTo"
@@ -220,7 +238,10 @@
                                                     >
                                                     <option
                                                         :value="birthdateTo"
-                                                        v-for="(birthdateTo, key) in 80" :key="key">
+                                                        v-for="(birthdateTo,
+                                                        key) in 80"
+                                                        :key="key"
+                                                    >
                                                         {{
                                                             birthdateTo
                                                         }}</option
@@ -228,16 +249,19 @@
                                                 </select>
                                                 <jet-input-error
                                                     :message="
-                                                        form.error('birthdateTo')
+                                                        form.error(
+                                                            'birthdateTo'
+                                                        )
                                                     "
                                                     class="mt-2"
                                                 />
                                             </div>
                                         </div>
-                                       
                                     </div>
+
+                                    <!-- Gender -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
                                     >
                                         <jet-label
                                             for="gender"
@@ -262,108 +286,10 @@
                                             class="mt-2"
                                         />
                                     </div>
+
+                                    <!-- Relationship -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                                    >
-                                        <jet-label
-                                            for="work"
-                                            :value="__('Work')"
-                                        />
-                                        <jet-input
-                                            id="work"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="form.work"
-                                            ref="work"
-                                            autocomplete="off"
-                                        />
-                                        <jet-input-error
-                                            :message="form.error('work')"
-                                            class="mt-2"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                                    >
-                                        <jet-label
-                                            for="position"
-                                            :value="__('Position')"
-                                        />
-                                        <jet-input
-                                            id="position"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="form.position"
-                                            ref="position"
-                                            autocomplete="off"
-                                        />
-                                        <jet-input-error
-                                            :message="form.error('position')"
-                                            class="mt-2"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                                    >
-                                        <jet-label
-                                            for="hometown"
-                                            :value="__('Home Town')"
-                                        />
-                                        <jet-input
-                                            id="hometown"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="form.hometown"
-                                            ref="hometown"
-                                            autocomplete="off"
-                                        />
-                                        <jet-input-error
-                                            :message="form.error('hometown')"
-                                            class="mt-2"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                                    >
-                                        <jet-label
-                                            for="location"
-                                            :value="__('Location')"
-                                        />
-                                        <jet-input
-                                            id="location"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="form.location"
-                                            ref="location"
-                                            autocomplete="off"
-                                        />
-                                        <jet-input-error
-                                            :message="form.error('location')"
-                                            class="mt-2"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                                    >
-                                        <jet-label
-                                            for="education"
-                                            :value="__('Education')"
-                                        />
-                                        <jet-input
-                                            id="education"
-                                            type="text"
-                                            class="mt-1 block w-full"
-                                            v-model="form.education"
-                                            ref="education"
-                                            autocomplete="off"
-                                        />
-                                        <jet-input-error
-                                            :message="form.error('education')"
-                                            class="mt-2"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
                                     >
                                         <jet-label
                                             for="relationship"
@@ -385,10 +311,123 @@
                                             >
                                         </select>
                                         <jet-input-error
-                                            :message="form.error('relationship')"
+                                            :message="
+                                                form.error('relationship')
+                                            "
                                             class="mt-2"
                                         />
                                     </div>
+
+                                    <!-- Work -->
+                                    <div class="w-full pb-2 px-2">
+                                        <jet-label
+                                            for="work"
+                                            :value="__('Work')"
+                                        />
+                                        <vue-tags-input
+                                            v-model="form.work"
+                                            :tags="form.works"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.works = newTags)
+                                            "
+                                            placeholder="Add Work"
+                                        />
+                                        <jet-input-error
+                                            :message="form.error('work')"
+                                            class="mt-2"
+                                        />
+                                    </div>
+
+                                    <!-- Position -->
+                                    <div class="w-full sm:w-full pb-2 px-2">
+                                        <jet-label
+                                            for="position"
+                                            :value="__('Position')"
+                                        />
+                                        <vue-tags-input
+                                            v-model="form.position"
+                                            :tags="form.positions"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.positions = newTags)
+                                            "
+                                            placeholder="Add Position"
+                                        />
+                                        <jet-input-error
+                                            :message="form.error('position')"
+                                            class="mt-2"
+                                        />
+                                    </div>
+
+                                    <!-- Hometown -->
+                                    <div
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                                    >
+                                        <jet-label
+                                            for="hometown"
+                                            :value="__('Home Town')"
+                                        />
+                                        <vue-tags-input
+                                            v-model="form.hometown"
+                                            :tags="form.hometowns"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.hometowns = newTags)
+                                            "
+                                            placeholder="Add Hometown"
+                                        />
+                                        <jet-input-error
+                                            :message="form.error('hometown')"
+                                            class="mt-2"
+                                        />
+                                    </div>
+
+                                    <!-- Location -->
+                                    <div
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                                    >
+                                        <jet-label
+                                            for="location"
+                                            :value="__('Location')"
+                                        />
+                                        <vue-tags-input
+                                            v-model="form.location"
+                                            :tags="form.locations"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.locations = newTags)
+                                            "
+                                            placeholder="Add location"
+                                        />
+                                        <jet-input-error
+                                            :message="form.error('location')"
+                                            class="mt-2"
+                                        />
+                                    </div>
+
+                                    <!-- Education  -->
+                                    <div class="w-full sm:w-full pb-2 px-2">
+                                        <jet-label
+                                            for="education"
+                                            :value="__('Education')"
+                                        />
+                                        <vue-tags-input
+                                            v-model="form.education"
+                                            :tags="form.educations"
+                                            @tags-changed="
+                                                newTags =>
+                                                    (form.educations = newTags)
+                                            "
+                                            placeholder="Add Education"
+                                        />
+                                        <jet-input-error
+                                            :message="form.error('education')"
+                                            class="mt-2"
+                                        />
+                                    </div>
+
+                                    <!-- Exist Email -->
                                     <div
                                         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
                                     >
@@ -411,6 +450,8 @@
                                             class="mt-2"
                                         />
                                     </div>
+
+                                    <!-- Exist Mobile -->
                                     <div
                                         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
                                     >
@@ -433,6 +474,8 @@
                                             class="mt-2"
                                         />
                                     </div>
+
+                                    <!-- Exist Username -->
                                     <div
                                         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
                                     >
@@ -451,11 +494,15 @@
                                             />
                                         </div>
                                         <jet-input-error
-                                            :message="form.error('existUsername')"
+                                            :message="
+                                                form.error('existUsername')
+                                            "
                                             class="mt-2"
                                         />
                                     </div>
                                 </div>
+
+                                <!-- Submit Button -->
                                 <div
                                     class="bg-gray-50 rounded-lg px-4 py-2 text-right"
                                 >
@@ -468,10 +515,13 @@
                                         {{ __("Save") }}
                                     </jet-button>
                                 </div>
+
                             </div>
                         </div>
                     </form>
                 </div>
+
+                <!-- Client Table  -->
                 <div
                     class="w-full my-8 overflow-hidden rounded-lg shadow-md"
                     v-if="clients"
@@ -485,7 +535,9 @@
                                     <th class="px-4 py-3">#</th>
                                     <th class="px-4 py-3">{{ __("Code") }}</th>
                                     <th class="px-4 py-3">{{ __("Count") }}</th>
-                                    <th class="px-4 py-3">{{ __("Status") }}</th>
+                                    <th class="px-4 py-3">
+                                        {{ __("Status") }}
+                                    </th>
                                     <th class="px-4 py-3">
                                         {{ __("Download") }}
                                     </th>
@@ -528,7 +580,12 @@
                                         >
                                         <a
                                             class="hover:underline ml-2 text-indigo-500"
-                                            :href="route('facebook.data', result.group)"
+                                            :href="
+                                                route(
+                                                    'facebook.data',
+                                                    result.group
+                                                )
+                                            "
                                             >{{ __("Show") }}</a
                                         >
                                     </td>
@@ -537,29 +594,45 @@
                         </table>
                     </div>
                     <div
-                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+                        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+                    >
                         <span class="flex items-center col-span-3">
-                            {{__('Showing')}} {{ results.from }}-{{ results.to }} {{__('of')}}
+                            {{ __("Showing") }} {{ results.from }}-{{
+                                results.to
+                            }}
+                            {{ __("of") }}
                             {{ results.total }}
                         </span>
                         <span class="col-span-2"></span>
                         <!-- Pagination -->
-                        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                        <span
+                            class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end"
+                        >
                             <nav aria-label="Table navigation">
                                 <ul class="inline-flex items-center">
-                                    <li v-for="(link, key) in results.links" :key="key">
-                                        <div v-if="link.url === null"
+                                    <li
+                                        v-for="(link, key) in results.links"
+                                        :key="key"
+                                    >
+                                        <div
+                                            v-if="link.url === null"
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
                                                 'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
                                                     link.active
-                                            }" v-html="link.label"></div>
-                                        <inertia-link v-else
+                                            }"
+                                            v-html="link.label"
+                                        ></div>
+                                        <inertia-link
+                                            v-else
                                             class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                                             :class="{
                                                 'text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600':
                                                     link.active
-                                            }" :href="link.url" v-html="link.label">
+                                            }"
+                                            :href="link.url"
+                                            v-html="link.label"
+                                        >
                                         </inertia-link>
                                     </li>
                                 </ul>
@@ -581,9 +654,10 @@ import JetInput from "./../../../Jetstream/Input";
 import JetInputError from "./../../../Jetstream/InputError";
 import JetLabel from "./../../../Jetstream/Label";
 import NoDataSvg from "./components/NoDataSvg";
+import VueTagsInput from "@johmun/vue-tags-input";
 
 export default {
-    props: ["clients", "errors", "results"],
+    props: ["clients", "errors", "results", "clientCount"],
 
     components: {
         AppLayout,
@@ -593,7 +667,8 @@ export default {
         JetFormSection,
         JetInput,
         JetInputError,
-        JetLabel
+        JetLabel,
+        VueTagsInput
     },
 
     data() {
@@ -603,14 +678,20 @@ export default {
                     country: "all",
                     count: 500,
                     religion: "",
+                    religions: [],
                     birthdateTo: "all",
                     birthdateFrom: "all",
                     work: "",
+                    works: [],
                     position: "",
+                    positions: [],
                     education: "",
+                    educations: [],
                     gender: "all",
                     hometown: "",
+                    hometowns: [],
                     location: "",
+                    locations: [],
                     relationship: "all",
                     existEmail: false,
                     existMobile: false,
@@ -806,25 +887,42 @@ export default {
 
     methods: {
         async searchResult(url = null) {
-            if ((this.form.count * 2) <= this.$page.user.point) {
+            if (this.form.count * 2 <= this.$page.user.point) {
                 await this.form.post(route("facebook.find"), {
                     preserveScroll: true
                 });
-            }  else {
-                alert(this.__("You didn\'t have points enough"));
+            } else {
+                alert(this.__("You didn't have points enough"));
             }
         },
         async getResult(url = null) {
-             if ((this.form.count * 2) <= this.$page.user.point) {
+            if (this.form.count * 2 <= this.$page.user.point) {
                 await this.form.post(route("facebook.store"), {
                     preserveScroll: true
                 });
-            }  else {
-                alert(this.__("You didn\'t have points enough"));
+            } else {
+                alert(this.__("You didn't have points enough"));
             }
         }
     }
 };
 </script>
-
-<style></style>
+<style lang="css">
+.vue-tags-input {
+    @apply max-w-full !important
+}
+.vue-tags-input .ti-input {
+    appearance: none;
+    background-color: #ffffff;
+    border-color: #d2d6dc;
+    border-width: 1 px;
+    border-radius: 0.375 rem;
+    padding-top: 0.5 rem;
+    padding-right: 0.75 rem;
+    padding-bottom: 0.5 rem;
+    padding-left: 0.75 rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    @apply rounded-md shadow-sm mt-1 block w-full;
+}
+</style>

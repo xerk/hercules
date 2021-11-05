@@ -50,48 +50,7 @@ class Client extends Model
 
     public function scopeFilter($query, $request) {
 
-        if ($request->filled('religion')) {
-            $query->where('religion',  'like', '%' . $request->religion . '%');
-        }
-
-        if ($request->filled('country')) {
-            if ($request->country != 'all') {
-                $query->where('nationality', $request->country);
-            }
-        }
-
-        if ($request->filled('gender')) {
-            if ($request->gender != 'all') {
-                $query->where('gender', $request->gender);
-            }
-        }
-
-        if ($request->filled('relationship')) {
-            if ($request->relationship != 'all') {
-                $query->where('relationship', $request->relationship);
-            }
-        }
-
-        if ($request->filled('work')) {
-            $query->where('work',  'like', '%' . $request->work . '%');
-        }
-
-        if ($request->filled('position')) {
-            $query->where('position',  'like', '%' . $request->position . '%');
-        }
-
-        if ($request->filled('hometown')) {
-            $query->where('hometown', 'like', '%' . $request->hometown . '%');
-        }
-
-        if ($request->filled('location')) {
-            $query->where('location', 'like', '%' . $request->location . '%');
-        }
-
-        if ($request->filled('education')) {
-            $query->where('education', 'like', '%' . $request->education . '%');
-        }
-
+        // Find Between two birthdates
         if ($request->filled('birthdate')) {
             if ($request->birthdateFrom != 'all' && $request->birthdateTo != 'all') {
                 $from = Carbon::now()->subYears($request->birthdateFrom)->format('d/m/Y');
@@ -101,16 +60,118 @@ class Client extends Model
             }
         }
 
+        // Find Relationships ex: Single
+        if ($request->filled('relationship')) {
+            if ($request->relationship != 'all') {
+                $query->where('relationship', $request->relationship);
+            }
+        }
+
+        // Find Country ex: egypt
+        if ($request->filled('country')) {
+            if ($request->country != 'all') {
+                $query->where('nationality', $request->country);
+            }
+        }
+
+        // Find Gender ['male', 'female', 'other']
+        if ($request->filled('gender')) {
+            if ($request->gender != 'all') {
+                $query->where('gender', $request->gender);
+            }
+        }
+
+        // Only has email
         if ($request->existEmail) {
             $query->whereNotNull('email')->where('email', '<>', '');
         }
 
+        // Only has mobile
         if ($request->existMobile) {
             $query->whereNotNull('mobile')->where('mobile', '<>', '');
         }
 
+        // Only has Username
         if ($request->existUsername) {
             $query->whereNotNull('username')->where('username', '<>', '');
+        }
+
+        // Find array of relations
+        if ($request->filled('religions')) {
+            $query->where(function($q) use ($request) {
+                foreach($request->religions as $key => $religion) {
+                    if($key == 0) {
+                        $q->where('religion',  'like', '%' . $religion['text'] . '%');
+                    } else {
+                        $q->orWhere('religion',  'like', '%' . $religion['text'] . '%');
+                    }
+                }
+            });
+        }
+
+        // Find array of works
+        if ($request->filled('works')) {
+            $query->where(function($q) use ($request) {
+                foreach($request->works as $key => $work) {
+                    if($key == 0) {
+                        $q->where('work',  'like', '%' . $work['text'] . '%');
+                    } else {
+                        $q->orWhere('work',  'like', '%' . $work['text'] . '%');
+                    }
+                }
+            });
+        }
+
+        // Find array of positions
+        if ($request->filled('positions')) {
+            $query->where(function($q) use ($request) {
+                foreach($request->positions as $key => $position) {
+                    if($key == 0) {
+                        $q->where('position',  'like', '%' . $position['text'] . '%');
+                    } else {
+                        $q->orWhere('position',  'like', '%' . $position['text'] . '%');
+                    }
+                }
+            });
+        }
+
+        // Find array of hometowns
+        if ($request->filled('hometowns')) {
+            $query->where(function($q) use($request) {
+                foreach($request->hometowns as $key => $hometown) {
+                    if($key == 0) {
+                        $q->where('hometown',  'like', '%' . $hometown['text'] . '%');
+                    } else {
+                        $q->orWhere('hometown',  'like', '%' . $hometown['text'] . '%');
+                    }
+                }
+            });
+        }
+
+        // Find array of locations
+        if ($request->filled('locations')) {
+            $query->where(function($q) use ($request) {
+                foreach($request->locations as $key => $location) {
+                    if($key == 0) {
+                        $q->where('location',  'like', '%' . $location['text'] . '%');
+                    } else {
+                        $q->orWhere('location',  'like', '%' . $location['text'] . '%');
+                    }
+                }
+            });
+        }
+
+        // Find array of educations
+        if ($request->filled('educations')) {
+            $query->where(function($q) use ($request) {
+            foreach($request->educations as $key => $education) {
+                    if($key == 0) {
+                        $q->where('education',  'like', '%' . $education['text'] . '%');
+                    } else {
+                        $q->orWhere('education',  'like', '%' . $education['text'] . '%');
+                    }
+                }
+            });
         }
 
     }
