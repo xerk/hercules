@@ -691,8 +691,8 @@ export default {
                     value: "turkey"
                 },
                 {
-                    name: "SaudiArabia",
-                    value: "saudiArabia"
+                    name: "Saudi Arabia",
+                    value: "saudi"
                 },
                 {
                     name: "Emirates",
@@ -748,7 +748,7 @@ export default {
                 },
                 {
                     name: "Libya",
-                    value: "libya"
+                    value: "lybia"
                 },
                 {
                     name: "Morocco",
