@@ -49,7 +49,20 @@ class PrepareDataJob implements ShouldQueue
      */
     public function handle()
     {
-        DB::table('clients')->orderBy('id')->select('unique_id', 'mobile', 'nationality')->whereIn('unique_id', $this->clients)->chunk(10000, function ($clients) {
+        DB::table('clients')->orderBy('id')->select('unique_id',
+        'mobile',
+        'username',
+        'name',
+        'religion',
+        'birthday',
+        'gender',
+        'work',
+        'position',
+        'hometown',
+        'location',
+        'education',
+        'relationship',
+        'nationality')->whereIn('unique_id', $this->clients)->chunk(10000, function ($clients) {
             foreach ($clients as $client) {
                 $this->result[] = $client;
             }

@@ -32,6 +32,17 @@ class ClientsExport implements FromCollection, WithHeadings
         return [
             'facebook ID',
             'Mobile',
+            'Username',
+            'Name',
+            'Religion',
+            'Birthday',
+            'Gender',
+            'Work',
+            'Position',
+            'Hometown',
+            'Location',
+            'Education',
+            'Relationship',
             'Country',
         ];
     }
