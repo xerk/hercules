@@ -101,9 +101,10 @@ class Client extends Model
             $query->where(function($q) use ($request) {
                 foreach($request->religions as $key => $religion) {
                     if($key == 0) {
-                        $q->where('religion',  'like', '%' . $religion['text'] . '%');
+                        // $q->where('religion',  'like', '%' . $religion['text'] . '%');
+                        $q->where('religion', $religion['text']);
                     } else {
-                        $q->orWhere('religion',  'like', '%' . $religion['text'] . '%');
+                        $q->orWhere('religion', $religion['text']);
                     }
                 }
             });
@@ -114,9 +115,9 @@ class Client extends Model
             $query->where(function($q) use ($request) {
                 foreach($request->works as $key => $work) {
                     if($key == 0) {
-                        $q->where('work',  'like', '%' . $work['text'] . '%');
+                        $q->where('work', $work['text']);
                     } else {
-                        $q->orWhere('work',  'like', '%' . $work['text'] . '%');
+                        $q->orWhere('work', $work['text']);
                     }
                 }
             });
@@ -127,9 +128,9 @@ class Client extends Model
             $query->where(function($q) use ($request) {
                 foreach($request->positions as $key => $position) {
                     if($key == 0) {
-                        $q->where('position',  'like', '%' . $position['text'] . '%');
+                        $q->where('position', $position['text']);
                     } else {
-                        $q->orWhere('position',  'like', '%' . $position['text'] . '%');
+                        $q->orWhere('position', $position['text']);
                     }
                 }
             });
@@ -140,9 +141,9 @@ class Client extends Model
             $query->where(function($q) use($request) {
                 foreach($request->hometowns as $key => $hometown) {
                     if($key == 0) {
-                        $q->where('hometown',  'like', '%' . $hometown['text'] . '%');
+                        $q->where('hometown', $hometown['text']);
                     } else {
-                        $q->orWhere('hometown',  'like', '%' . $hometown['text'] . '%');
+                        $q->orWhere('hometown', $hometown['text']);
                     }
                 }
             });
@@ -153,9 +154,9 @@ class Client extends Model
             $query->where(function($q) use ($request) {
                 foreach($request->locations as $key => $location) {
                     if($key == 0) {
-                        $q->where('location',  'like', '%' . $location['text'] . '%');
+                        $q->where('location', $location['text']);
                     } else {
-                        $q->orWhere('location',  'like', '%' . $location['text'] . '%');
+                        $q->orWhere('location', $location['text']);
                     }
                 }
             });
@@ -166,9 +167,9 @@ class Client extends Model
             $query->where(function($q) use ($request) {
             foreach($request->educations as $key => $education) {
                     if($key == 0) {
-                        $q->where('education',  'like', '%' . $education['text'] . '%');
+                        $q->where('education', $education['text']);
                     } else {
-                        $q->orWhere('education',  'like', '%' . $education['text'] . '%');
+                        $q->orWhere('education', $education['text']);
                     }
                 }
             });
