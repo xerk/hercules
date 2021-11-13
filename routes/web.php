@@ -1,15 +1,14 @@
 <?php
 
 
-use App\Models\User;
 use App\Models\Price;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\SyncDataController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtractDataController;
-use App\Models\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +29,16 @@ Route::middleware('local')->get('/', function () {
 })->name('landingpage');
 
 Route::get('dev', function() {
-    $user = User::find(1);
-    // return $user->clients->groupBy('pivot.group');
-    // return $user->clients;
+    //
 });
 
-
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/sync-data', [SyncDataController::class, 'index'])->name('synnc.index');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/sync-data', [SyncDataController::class, 'store'])->name('sync.store');
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/license/{id}/download', [DashboardController::class, 'download'])->name('license.download');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/clients', [ExtractDataController::class, 'index'])->name('clients');
-Route::middleware(['auth:sanctum', 'verified', 'local'])->put('/dashboard/clients', [ExtractDataController::class, 'export2'])->name('clients.export');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->put('/dashboard/clients', [ExtractDataController::class, 'export'])->name('clients.export');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/{id}/download', [ExtractDataController::class, 'download'])->name('clients.download');
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/purchase', [PurchaseController::class, 'index'])->name('purchase');
@@ -50,6 +48,7 @@ Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutori
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}', [TutorialController::class, 'show'])->name('tutorials.show');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/tutorials/{category}/{tutorial}', [TutorialController::class, 'tutorial'])->name('tutorials.show.tutorial');
 
+// Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook/autocomplete', [FacebookController::class, 'autocomplete'])->name('facebook.autocomplete.find');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook', [FacebookController::class, 'index'])->name('facebook.search');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/facebook', [FacebookController::class, 'find'])->name('facebook.find');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/facebook/{key}', [FacebookController::class, 'data'])->name('facebook.data');

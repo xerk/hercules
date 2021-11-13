@@ -82,7 +82,8 @@ class PrepareDataJob implements ShouldQueue
         } else {
             $export = Export::find($this->export->id);
 
-            $export->delete();
+            $export->status = 'failed';
+            $export->save();
         }
     }
 }

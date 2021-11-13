@@ -6,12 +6,17 @@ use Carbon\Carbon;
 use App\Models\User;
 use Inertia\Inertia;
 use App\Models\Client;
+use App\Jobs\FacebookJob;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Exports\FacebookExport;
-use App\Jobs\FacebookJob;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Query\QueryWork;
 use Illuminate\Support\Facades\DB;
+use App\Models\Query\QueryHometown;
+use App\Models\Query\QueryLocation;
+use App\Models\Query\QueryPosition;
+use App\Models\Query\QueryEducation;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
@@ -23,16 +28,35 @@ class FacebookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $autocomplete = [];
+        if ($request->has('q')) {
+            $collection = collect([
+                ['class' => QueryWork::class, 'field' => 'work'],
+                ['class' => QueryPosition::class, 'field' => 'position'],
+                ['class' => QueryHometown::class, 'field' => 'hometown'],
+                ['class' => QueryLocation::class, 'field' => 'location'],
+                ['class' => QueryEducation::class, 'field' => 'education']
+            ]);
+            
+            $query = $request->q;
+    
+            $filtered = $collection->firstWhere('field', $request->table);
+    
+            $autocomplete = $filtered['class']::where('name', 'LIKE', '%' . $query . '%')->get();
+        }
+
         $user = User::find(Auth::id());
         $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
         return Inertia::render('Dashboard/Facebook/Show', [
             // 'test' => $user->clients->groupBy('pivot.group'),
             'results' => $clientUser,
             'clients' => [],
+            'autocomplete' => $autocomplete
         ]);
     }
+
     /**
      * Display a listing of the resource.
      *

@@ -25,8 +25,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ExtractDataController extends Controller
 {
-    private $result = [];
-    private $file = '';
     /**
      * Display a listing of the resource.
      *
@@ -49,49 +47,6 @@ class ExtractDataController extends Controller
     }
 
     public function export(Request $request) 
-    {
-        Validator::make($request->all(), [
-            'text' => ['required', 'mimetypes:text/plain'],
-        ])->validateWithBag('filter');
-        
-        if ($request->hasFile('text')) {
-            $fileContent = file_get_contents($request->text);
-            $clients = $this->endcode($fileContent);
-            
-            $result = Client::whereIn('unique_id', $clients)->count();
-            if ((auth()->user()->point - $result) <= -1) {
-                return back()->withErrors([
-                    'message' => 'You not have enough points.',
-                ]);
-            }
-
-            if ($result > 0) {
-                $path = "/exports/extract-data-" . Str::random(6) . '.csv';
-                Excel::queue(new UsersExport($clients, $path), $path)->chain([
-                    new ExportJob($result, $path, auth()->user()->id),
-                ]);
-                User::find(auth()->user()->id)->decrement('point', $result);
-                $pointLog = PointLog::create([
-                    'log' => 'Points have been deducted from your account for export data',
-                    'point' => '-' . $result,
-                    'user_id' => auth()->user()->id,
-                    'status' => 'succeed',
-                ]);
-            } else {
-                return back()->withErrors([
-                    'message' => 'Not found data',
-                ]);
-            }
-
-
-            return Inertia::render('Dashboard/Clients/Show', [
-                'clients' => Export::where('user_id', auth()->user()->id)->latest()->paginate(10),
-            ]);
-        } 
-
-    }
-
-    public function export2(Request $request) 
     {
         Validator::make($request->all(), [
             'text' => ['required', 'mimetypes:text/plain'],
@@ -120,71 +75,5 @@ class ExtractDataController extends Controller
     public function download($id) {
         $file = Export::where('id', $id)->where('user_id', Auth::id())->firstOrFail()->file;
         return Storage::download($file);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

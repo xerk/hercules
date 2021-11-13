@@ -327,10 +327,9 @@
                                         <vue-tags-input
                                             v-model="form.work"
                                             :tags="form.works"
-                                            @tags-changed="
-                                                newTags =>
-                                                    (form.works = newTags)
-                                            "
+                                            @tags-changed="workUpdate"
+                                            :autocomplete-items="autocompleteItems"
+                                            :add-only-from-autocomplete="true"
                                             placeholder="Add Work"
                                         />
                                         <jet-input-error
@@ -348,10 +347,9 @@
                                         <vue-tags-input
                                             v-model="form.position"
                                             :tags="form.positions"
-                                            @tags-changed="
-                                                newTags =>
-                                                    (form.positions = newTags)
-                                            "
+                                            @tags-changed="positionUpdate"
+                                            :autocomplete-items="autocompleteItems"
+                                            :add-only-from-autocomplete="true"
                                             placeholder="Add Position"
                                         />
                                         <jet-input-error
@@ -371,10 +369,9 @@
                                         <vue-tags-input
                                             v-model="form.hometown"
                                             :tags="form.hometowns"
-                                            @tags-changed="
-                                                newTags =>
-                                                    (form.hometowns = newTags)
-                                            "
+                                            @tags-changed="hometownUpdate"
+                                            :autocomplete-items="autocompleteItems"
+                                            :add-only-from-autocomplete="true"
                                             placeholder="Add Hometown"
                                         />
                                         <jet-input-error
@@ -394,10 +391,9 @@
                                         <vue-tags-input
                                             v-model="form.location"
                                             :tags="form.locations"
-                                            @tags-changed="
-                                                newTags =>
-                                                    (form.locations = newTags)
-                                            "
+                                            @tags-changed="locationUpdate"
+                                            :autocomplete-items="autocompleteItems"
+                                            :add-only-from-autocomplete="true"
                                             placeholder="Add location"
                                         />
                                         <jet-input-error
@@ -415,10 +411,9 @@
                                         <vue-tags-input
                                             v-model="form.education"
                                             :tags="form.educations"
-                                            @tags-changed="
-                                                newTags =>
-                                                    (form.educations = newTags)
-                                            "
+                                            @tags-changed="educationUpdate"
+                                            :autocomplete-items="autocompleteItems"
+                                            :add-only-from-autocomplete="true"
                                             placeholder="Add Education"
                                         />
                                         <jet-input-error
@@ -515,7 +510,6 @@
                                         {{ __("Save") }}
                                     </jet-button>
                                 </div>
-
                             </div>
                         </div>
                     </form>
@@ -657,7 +651,7 @@ import NoDataSvg from "./components/NoDataSvg";
 import VueTagsInput from "@johmun/vue-tags-input";
 
 export default {
-    props: ["clients", "errors", "results", "clientCount"],
+    props: ["clients", "errors", "results", "clientCount", "autocomplete"],
 
     components: {
         AppLayout,
@@ -673,6 +667,8 @@ export default {
 
     data() {
         return {
+            autocompleteItems: [],
+            debounce: null,
             form: this.$inertia.form(
                 {
                     country: "all",
@@ -885,6 +881,25 @@ export default {
         };
     },
 
+    watch: {
+        "form.work": function (val) {
+            console.log(val)
+            this.initItems(val, 'work')
+        },
+        "form.position": function (val) {
+            this.initItems(val, 'position')
+        },
+        "form.education": function (val) {
+            this.initItems(val, 'education')
+        },
+        "form.hometown": function (val) {
+            this.initItems(val, 'hometown')
+        },
+        "form.location": function (val) {
+            this.initItems(val, 'location')
+        },
+    },
+
     methods: {
         async searchResult(url = null) {
             if (this.form.count * 2 <= this.$page.user.point) {
@@ -903,13 +918,47 @@ export default {
             } else {
                 alert(this.__("You didn't have points enough"));
             }
+        },
+        workUpdate(newTags) {
+            this.autocompleteItems = [];
+            this.form.works = newTags;
+        },
+        positionUpdate(newTags) {
+            this.autocompleteItems = [];
+            this.form.positions = newTags;
+        },
+        locationUpdate(newTags) {
+            this.autocompleteItems = [];
+            this.form.locations = newTags;
+        },
+        hometownUpdate(newTags) {
+            this.autocompleteItems = [];
+            this.form.hometowns = newTags;
+        },
+        educationUpdate(newTags) {
+            this.autocompleteItems = [];
+            this.form.educations = newTags;
+        },
+        async initItems(q, table) {
+            if (q.length < 2) return;
+            
+            clearTimeout(this.debounce);
+
+            this.debounce = setTimeout(async () => {
+                await this.$inertia.replace(route('facebook.search', {q: q, table: table}), {preserveScroll: true})
+                if (this.autocomplete.length > 0) {
+                    this.autocompleteItems = this.autocomplete.map(a => {
+                        return { text: a.name };
+                    });
+                }
+            }, 600);
         }
     }
 };
 </script>
 <style lang="css">
 .vue-tags-input {
-    @apply max-w-full !important
+    @apply max-w-full !important;
 }
 .vue-tags-input .ti-input {
     appearance: none;
