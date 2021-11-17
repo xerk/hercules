@@ -102,9 +102,13 @@ class FacebookController extends Controller
     {
         if ($request->count)
             $user = User::find(Auth::id());
-            $client = Client::select('name', 'gender', 'id')->doesntHave('users')->filter($request)->limit(10)->get();
+            $client = Client::select('name', 'gender', 'id')->whereDoesntHave('users', function($q) use($user) {
+                $q->where('user_id', $user->id);
+            })->filter($request)->limit(10)->get();
             
-            $clientCount = Client::select('id')->doesntHave('users')->filter($request)->limit($request->count)->get()->count();
+            $clientCount = Client::select('id')->whereDoesntHave('users', function($q) use($user) {
+                $q->where('user_id', $user->id);
+            })->filter($request)->limit($request->count)->get()->count();
             $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
 
         return Inertia::render('Dashboard/Facebook/Show', [
