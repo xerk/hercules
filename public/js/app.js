@@ -7613,19 +7613,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -37988,37 +37975,6 @@ var render = function() {
                                                   ")\n                                                "
                                               )
                                             ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                }
-                              },
-                              {
-                                key: "tag-left",
-                                fn: function(props) {
-                                  return _c(
-                                    "div",
-                                    {
-                                      staticClass: "my-tag-left",
-                                      on: {
-                                        click: function($event) {
-                                          return props.performOpenEdit(
-                                            props.index
-                                          )
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "i",
-                                        { staticClass: "material-icons" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                " +
-                                              _vm._s(props.tag.text) +
-                                              "\n                                            "
                                           )
                                         ]
                                       )
