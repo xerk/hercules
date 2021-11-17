@@ -188,12 +188,8 @@
                                     <div class="w-full pb-2 px-2">
                                         <jet-label for="work" :value="__('Work')" />
                                         <vue-tags-input v-model="form.work" :tags="form.works"
-                                            @tags-changed="workUpdate" :allow-edit-tags="true" :autocomplete-items="
-                                                autocompleteItems
-                                            " :add-only-from-autocomplete="true" placeholder="Add Work">
-                                            <div slot="autocomplete-item" slot-scope="props" @click="
-                                                    props.performAdd(props.item)
-                                                ">
+                                            @tags-changed="workUpdate" :allow-edit-tags="true" :autocomplete-items="autocompleteItems" :add-only-from-autocomplete="true" placeholder="Add Work">
+                                            <div slot="autocomplete-item" slot-scope="props" @click="props.performAdd(props.item)">
                                                 <div class="flex items-center justify-between">
                                                     <div>
                                                         {{ props.item.text }}
@@ -202,15 +198,6 @@
                                                         ({{ props.item.count }})
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div slot="tag-left" slot-scope="props" class="my-tag-left" @click="
-                                                    props.performOpenEdit(
-                                                        props.index
-                                                    )
-                                                ">
-                                                <i class="material-icons">
-                                                    {{ props.tag.text }}
-                                                </i>
                                             </div>
                                         </vue-tags-input>
                                         <jet-input-error :message="form.error('work')" class="mt-2" />
