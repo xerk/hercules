@@ -7626,194 +7626,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -8006,19 +7818,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   watch: {
     "form.work": function formWork(val) {
       console.log(val);
-      this.initItems(val, 'work');
+      this.initItems(val, "work");
     },
     "form.position": function formPosition(val) {
-      this.initItems(val, 'position');
+      this.initItems(val, "position");
     },
     "form.education": function formEducation(val) {
-      this.initItems(val, 'education');
+      this.initItems(val, "education");
     },
     "form.hometown": function formHometown(val) {
-      this.initItems(val, 'hometown');
+      this.initItems(val, "hometown");
     },
     "form.location": function formLocation(val) {
-      this.initItems(val, 'location');
+      this.initItems(val, "location");
     }
   },
   methods: {
@@ -8139,7 +7951,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       switch (_context3.prev = _context3.next) {
                         case 0:
                           _context3.next = 2;
-                          return _this3.$inertia.replace(route('facebook.search', {
+                          return _this3.$inertia.replace(route("facebook.search", {
                             q: q,
                             table: table
                           }), {
@@ -8150,7 +7962,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                           if (_this3.autocomplete.length > 0) {
                             _this3.autocompleteItems = _this3.autocomplete.map(function (a) {
                               return {
-                                text: a.name
+                                text: a.name,
+                                count: a.count
                               };
                             });
                           }
@@ -10764,7 +10577,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".vue-tags-input {\n  max-width: 100% !important;\n}\n.vue-tags-input .ti-input {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #ffffff;\n  border-color: #d2d6dc;\n  border-width: 1 px;\n  border-radius: 0.375 rem;\n  padding-top: 0.5 rem;\n  padding-right: 0.75 rem;\n  padding-bottom: 0.5 rem;\n  padding-left: 0.75 rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.375rem;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  margin-top: 0.25rem;\n  display: block;\n  width: 100%;\n}\r\n", ""]);
+exports.push([module.i, ".vue-tags-input {\n  max-width: 100% !important;\n}\n.vue-tags-input .ti-input {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #ffffff;\n  border-color: #d2d6dc;\n  border-width: 1 px;\n  border-radius: 0.375 rem;\n  padding-top: 0.5 rem;\n  padding-right: 0.75 rem;\n  padding-bottom: 0.5 rem;\n  padding-left: 0.75 rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.375rem;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  margin-top: 0.25rem;\n  display: block;\n  width: 100%;\n}\n\n", ""]);
 
 // exports
 
@@ -38127,11 +37940,93 @@ var render = function() {
                           _c("vue-tags-input", {
                             attrs: {
                               tags: _vm.form.works,
+                              "allow-edit-tags": true,
                               "autocomplete-items": _vm.autocompleteItems,
                               "add-only-from-autocomplete": true,
                               placeholder: "Add Work"
                             },
                             on: { "tags-changed": _vm.workUpdate },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "autocomplete-item",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return props.performAdd(props.item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-between"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _vm._v(
+                                              "\n                                                    " +
+                                                _vm._s(props.item.text) +
+                                                "\n                                                "
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "font-semibold text-gray-700 px-1"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    (" +
+                                                  _vm._s(props.item.count) +
+                                                  ")\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              },
+                              {
+                                key: "tag-left",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      staticClass: "my-tag-left",
+                                      on: {
+                                        click: function($event) {
+                                          return props.performOpenEdit(
+                                            props.index
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [
+                                          _vm._v(
+                                            "\n                                                " +
+                                              _vm._s(props.tag.text) +
+                                              "\n                                            "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              }
+                            ]),
                             model: {
                               value: _vm.form.work,
                               callback: function($$v) {
@@ -38163,11 +38058,62 @@ var render = function() {
                           _c("vue-tags-input", {
                             attrs: {
                               tags: _vm.form.positions,
+                              "allow-edit-tags": true,
                               "autocomplete-items": _vm.autocompleteItems,
                               "add-only-from-autocomplete": true,
                               placeholder: "Add Position"
                             },
                             on: { "tags-changed": _vm.positionUpdate },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "autocomplete-item",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return props.performAdd(props.item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-between"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _vm._v(
+                                              "\n                                                    " +
+                                                _vm._s(props.item.text) +
+                                                "\n                                                "
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "font-semibold text-gray-700 px-1"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    (" +
+                                                  _vm._s(props.item.count) +
+                                                  ")\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              }
+                            ]),
                             model: {
                               value: _vm.form.position,
                               callback: function($$v) {
@@ -38204,9 +38150,60 @@ var render = function() {
                               tags: _vm.form.hometowns,
                               "autocomplete-items": _vm.autocompleteItems,
                               "add-only-from-autocomplete": true,
+                              "allow-edit-tags": true,
                               placeholder: "Add Hometown"
                             },
                             on: { "tags-changed": _vm.hometownUpdate },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "autocomplete-item",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return props.performAdd(props.item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-between"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _vm._v(
+                                              "\n                                                    " +
+                                                _vm._s(props.item.text) +
+                                                "\n                                                "
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "font-semibold text-gray-700 px-1"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    (" +
+                                                  _vm._s(props.item.count) +
+                                                  ")\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              }
+                            ]),
                             model: {
                               value: _vm.form.hometown,
                               callback: function($$v) {
@@ -38243,9 +38240,60 @@ var render = function() {
                               tags: _vm.form.locations,
                               "autocomplete-items": _vm.autocompleteItems,
                               "add-only-from-autocomplete": true,
+                              "allow-edit-tags": true,
                               placeholder: "Add location"
                             },
                             on: { "tags-changed": _vm.locationUpdate },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "autocomplete-item",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return props.performAdd(props.item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-between"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _vm._v(
+                                              "\n                                                    " +
+                                                _vm._s(props.item.text) +
+                                                "\n                                                "
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "font-semibold text-gray-700 px-1"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    (" +
+                                                  _vm._s(props.item.count) +
+                                                  ")\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              }
+                            ]),
                             model: {
                               value: _vm.form.location,
                               callback: function($$v) {
@@ -38279,9 +38327,60 @@ var render = function() {
                               tags: _vm.form.educations,
                               "autocomplete-items": _vm.autocompleteItems,
                               "add-only-from-autocomplete": true,
+                              "allow-edit-tags": true,
                               placeholder: "Add Education"
                             },
                             on: { "tags-changed": _vm.educationUpdate },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "autocomplete-item",
+                                fn: function(props) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return props.performAdd(props.item)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-between"
+                                        },
+                                        [
+                                          _c("div", [
+                                            _vm._v(
+                                              "\n                                                    " +
+                                                _vm._s(props.item.text) +
+                                                "\n                                                "
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "font-semibold text-gray-700 px-1"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                    (" +
+                                                  _vm._s(props.item.count) +
+                                                  ")\n                                                "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                }
+                              }
+                            ]),
                             model: {
                               value: _vm.form.education,
                               callback: function($$v) {
@@ -38374,169 +38473,6 @@ var render = function() {
                           _c("jet-input-error", {
                             staticClass: "mt-2",
                             attrs: { message: _vm.form.error("existEmail") }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "flex mt-4 items-center" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.existMobile,
-                                    expression: "form.existMobile"
-                                  }
-                                ],
-                                staticClass:
-                                  "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
-                                attrs: { id: "exist-mobile", type: "checkbox" },
-                                domProps: {
-                                  value: false,
-                                  checked: Array.isArray(_vm.form.existMobile)
-                                    ? _vm._i(_vm.form.existMobile, false) > -1
-                                    : _vm.form.existMobile
-                                },
-                                on: {
-                                  change: function($event) {
-                                    var $$a = _vm.form.existMobile,
-                                      $$el = $event.target,
-                                      $$c = $$el.checked ? true : false
-                                    if (Array.isArray($$a)) {
-                                      var $$v = false,
-                                        $$i = _vm._i($$a, $$v)
-                                      if ($$el.checked) {
-                                        $$i < 0 &&
-                                          _vm.$set(
-                                            _vm.form,
-                                            "existMobile",
-                                            $$a.concat([$$v])
-                                          )
-                                      } else {
-                                        $$i > -1 &&
-                                          _vm.$set(
-                                            _vm.form,
-                                            "existMobile",
-                                            $$a
-                                              .slice(0, $$i)
-                                              .concat($$a.slice($$i + 1))
-                                          )
-                                      }
-                                    } else {
-                                      _vm.$set(_vm.form, "existMobile", $$c)
-                                    }
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("jet-label", {
-                                staticClass: "bold",
-                                attrs: {
-                                  for: "exist-mobile",
-                                  value: "Exist Mobile Mandatory"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("jet-input-error", {
-                            staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("existMobile") }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-full sm:w-1/2 md:w-1/3 lg:w-1/3 pb-2 px-2"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "flex mt-4 items-center" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.form.existUsername,
-                                    expression: "form.existUsername"
-                                  }
-                                ],
-                                staticClass:
-                                  "focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded mr-2",
-                                attrs: {
-                                  id: "exist-username",
-                                  type: "checkbox"
-                                },
-                                domProps: {
-                                  value: false,
-                                  checked: Array.isArray(_vm.form.existUsername)
-                                    ? _vm._i(_vm.form.existUsername, false) > -1
-                                    : _vm.form.existUsername
-                                },
-                                on: {
-                                  change: function($event) {
-                                    var $$a = _vm.form.existUsername,
-                                      $$el = $event.target,
-                                      $$c = $$el.checked ? true : false
-                                    if (Array.isArray($$a)) {
-                                      var $$v = false,
-                                        $$i = _vm._i($$a, $$v)
-                                      if ($$el.checked) {
-                                        $$i < 0 &&
-                                          _vm.$set(
-                                            _vm.form,
-                                            "existUsername",
-                                            $$a.concat([$$v])
-                                          )
-                                      } else {
-                                        $$i > -1 &&
-                                          _vm.$set(
-                                            _vm.form,
-                                            "existUsername",
-                                            $$a
-                                              .slice(0, $$i)
-                                              .concat($$a.slice($$i + 1))
-                                          )
-                                      }
-                                    } else {
-                                      _vm.$set(_vm.form, "existUsername", $$c)
-                                    }
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("jet-label", {
-                                staticClass: "bold",
-                                attrs: {
-                                  for: "exist-username",
-                                  value: "Exist Username Mandatory"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("jet-input-error", {
-                            staticClass: "mt-2",
-                            attrs: { message: _vm.form.error("existUsername") }
                           })
                         ],
                         1
