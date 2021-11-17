@@ -44,7 +44,7 @@ class FacebookController extends Controller
     
             $filtered = $collection->firstWhere('field', $request->table);
     
-            $autocomplete = $filtered['class']::where('name', 'LIKE', '%' . $query . '%')->get();
+            $autocomplete = $filtered['class']::select('name', 'count')->where('name', 'LIKE', '%' . $query . '%')->orderBy('count', 'DESC')->limit(20)->get();
         }
 
         $user = User::find(Auth::id());

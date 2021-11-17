@@ -16,7 +16,7 @@ class CreateQueryEducationTable extends Migration
         Schema::create('query_education', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index()->nullable();
-            $table->string('count')->nullable();
+            $table->integer('count')->nullable();
             $table->timestamps();
         });
     }
