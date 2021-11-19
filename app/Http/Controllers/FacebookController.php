@@ -53,6 +53,7 @@ class FacebookController extends Controller
             // 'test' => $user->clients->groupBy('pivot.group'),
             'results' => $clientUser,
             'clients' => [],
+            'clientWithOut' => [],
             'autocomplete' => $autocomplete
         ]);
     }
@@ -109,12 +110,19 @@ class FacebookController extends Controller
             $clientCount = Client::select('id')->whereDoesntHave('users', function($q) use($user) {
                 $q->where('user_id', $user->id);
             })->filter($request)->limit($request->count)->get()->count();
+
+            $clientWithOut = Client::select('name', 'gender', 'id')->filter($request)->limit(10)->get();
+            
+            $clientCountWithOut = Client::select('id')->filter($request)->limit($request->count)->get()->count();
+
             $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
 
         return Inertia::render('Dashboard/Facebook/Show', [
             'clients' => $client,
             'clientCount' => $clientCount,
             'results' => $clientUser,
+            'clientWithOut' => $clientWithOut,
+            'clientCountWithOut' => $clientCountWithOut,
         ]);
     }
 

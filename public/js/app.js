@@ -15496,6 +15496,370 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -15506,7 +15870,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["clients", "errors", "results", "clientCount", "autocomplete"],
+  props: ["clients", "errors", "results", "clientCount", "autocomplete", "clientWithOut", "clientCountWithOut"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
     NoDataSvg: _components_NoDataSvg__WEBPACK_IMPORTED_MODULE_8__["default"],
@@ -18800,7 +19164,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".vue-tags-input {\n  max-width: 100% !important;\n}\n.vue-tags-input .ti-input {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #ffffff;\n  border-color: #d2d6dc;\n  border-width: 1 px;\n  border-radius: 0.375 rem;\n  padding-top: 0.5 rem;\n  padding-right: 0.75 rem;\n  padding-bottom: 0.5 rem;\n  padding-left: 0.75 rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.375rem;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  margin-top: 0.25rem;\n  display: block;\n  width: 100%;\n}\n\n", ""]);
+exports.push([module.i, ".vue-tags-input {\n  max-width: 100% !important;\n}\n.vue-tags-input .ti-input {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background-color: #ffffff;\n  border-color: #d2d6dc;\n  border-width: 1 px;\n  border-radius: 0.375 rem;\n  padding-top: 0.5 rem;\n  padding-right: 0.75 rem;\n  padding-bottom: 0.5 rem;\n  padding-left: 0.75 rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.375rem;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  margin-top: 0.25rem;\n  display: block;\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -45494,7 +45858,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                _c("div", { staticClass: "bg-white shadow rounded-lg mb-4" }, [
                   _c(
                     "div",
                     {
@@ -45504,7 +45868,7 @@ var render = function() {
                     [
                       _c("div", [
                         _vm._v(
-                          "\n                                Display Data\n                                "
+                          "\n                                Display Not Dublicated Data\n                                "
                         ),
                         _vm.clientCount > 0
                           ? _c("span", [
@@ -45622,7 +45986,153 @@ var render = function() {
                         )
                       : _vm._e()
                   ])
-                ])
+                ]),
+                _vm._v(" "),
+                _vm.clientCountWithOut > 0 &&
+                _vm.clientCountWithOut != _vm.clientCount
+                  ? _c("div", { staticClass: "bg-white shadow rounded-lg" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
+                        },
+                        [
+                          _c("div", [
+                            _vm._v(
+                              "\n                                Display All Data\n                                "
+                            ),
+                            _vm.clientCountWithOut > 0
+                              ? _c("span", [
+                                  _vm._v(
+                                    "(" + _vm._s(_vm.clientCountWithOut) + ")"
+                                  )
+                                ])
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _vm.clientWithOut.length
+                            ? _c(
+                                "form",
+                                {
+                                  on: {
+                                    submit: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.getResult($event)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "jet-button",
+                                    {
+                                      class: {
+                                        "opacity-25": _vm.form.processing
+                                      },
+                                      attrs: { disabled: _vm.form.processing }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(_vm.__("Save")) +
+                                          "\n                                "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "p-2" }, [
+                        _vm.clientWithOut.length > 0 && !_vm.form.processing
+                          ? _c(
+                              "ul",
+                              {
+                                staticClass:
+                                  "px-4 overflow-scroll max-h-96 my-2"
+                              },
+                              _vm._l(_vm.clientWithOut, function(client, key) {
+                                return _c(
+                                  "li",
+                                  {
+                                    key: key,
+                                    staticClass:
+                                      "pb-2 flex justify-between items-center"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "text-gray-400 capitalize"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(client.name) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "font-semibold capitalize"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(client.gender) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              }),
+                              0
+                            )
+                          : !_vm.form.processing
+                          ? _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex items-center justify-center flex-col"
+                              },
+                              [
+                                _c("no-data-svg"),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "font-semibold mb-4" },
+                                  [
+                                    _vm._v(
+                                      "\n                                    No Data\n                                "
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.form.processing
+                          ? _c(
+                              "div",
+                              { staticClass: "font-semibold my-4 text-center" },
+                              [
+                                _vm._v(
+                                  "\n                                Loading data...\n                            "
+                                )
+                              ]
+                            )
+                          : _vm._e()
+                      ])
+                    ])
+                  : _vm._e()
               ]
             ),
             _vm._v(" "),
