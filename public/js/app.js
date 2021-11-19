@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -8,6 +11,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
+<<<<<<< HEAD
+>>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
+=======
 >>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
@@ -67768,7 +67774,11 @@ module.exports = __webpack_require__(/*! G:\Laravel\hercules\resources\css\app.c
 /***/ })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /******/ });
+=======
+/******/ });
+>>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
 =======
 /******/ });
 >>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
