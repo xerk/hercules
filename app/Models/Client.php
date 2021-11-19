@@ -48,6 +48,13 @@ class Client extends Model
         return $this->belongsToMany(User::class)->withPivot('group');;
     }
 
+    public function scopeSearch($query, $request) {
+        if ($request->filled('username')) {
+            $query->where('unique_id', $request->username)
+                    ->orWhere('username', $request->username);
+        }
+    }
+
     public function scopeFilter($query, $request) {
 
         // Find Between two birthdates
