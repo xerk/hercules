@@ -3,6 +3,7 @@
 
 use App\Models\Price;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SyncDataController;
@@ -32,8 +33,12 @@ Route::get('dev', function() {
     //
 });
 
+Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/search', [SearchController::class, 'index'])->name('search.index');
+Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/search', [SearchController::class, 'store'])->name('search.store');
+
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/sync-data', [SyncDataController::class, 'index'])->name('synnc.index');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->post('/dashboard/sync-data', [SyncDataController::class, 'store'])->name('sync.store');
+
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/license/{id}/download', [DashboardController::class, 'download'])->name('license.download');
