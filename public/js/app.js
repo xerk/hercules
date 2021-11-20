@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -11,10 +6,6 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-<<<<<<< HEAD
->>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
-=======
->>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
@@ -15869,6 +15860,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -16170,6 +16187,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     educationUpdate: function educationUpdate(newTags) {
       this.autocompleteItems = [];
       this.form.educations = newTags;
+    },
+    dateAgo: function dateAgo(time) {
+      return moment(time).fromNow();
     },
     initItems: function initItems(q, table) {
       var _this3 = this;
@@ -45795,6 +45815,59 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+          _vm.errors.message
+            ? _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md mb-4",
+                  attrs: { role: "alert" }
+                },
+                [
+                  _c("div", { staticClass: "flex" }, [
+                    _c("div", { staticClass: "py-1" }, [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "fill-current h-6 w-6 text-red-500 mr-4",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 20 20"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                            }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", { staticClass: "font-bold" }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.__("Ops, You have an error")) +
+                            "\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-sm" }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.errors.message) +
+                            "\n                        "
+                        )
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
           _c("div", { staticClass: "flex flex-wrap" }, [
             _c(
               "div",
@@ -46008,50 +46081,23 @@ var render = function() {
                         },
                         [
                           _c("div", [
-                            _vm._v(
-                              "\n                                Display All Data\n                                "
-                            ),
-                            _vm.clientCountWithOut > 0
-                              ? _c("span", [
-                                  _vm._v(
-                                    "(" + _vm._s(_vm.clientCountWithOut) + ")"
-                                  )
-                                ])
-                              : _vm._e()
-                          ]),
-                          _vm._v(" "),
-                          _vm.clientWithOut.length
-                            ? _c(
-                                "form",
-                                {
-                                  on: {
-                                    submit: function($event) {
-                                      $event.preventDefault()
-                                      return _vm.getResult($event)
-                                    }
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "jet-button",
-                                    {
-                                      class: {
-                                        "opacity-25": _vm.form.processing
-                                      },
-                                      attrs: { disabled: _vm.form.processing }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(_vm.__("Save")) +
-                                          "\n                                "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            : _vm._e()
+                            _c("div", [
+                              _vm._v(
+                                "\n                                    Display All Data\n                                    "
+                              ),
+                              _vm.clientCountWithOut > 0
+                                ? _c("span", [
+                                    _vm._v(
+                                      "(" + _vm._s(_vm.clientCountWithOut) + ")"
+                                    )
+                                  ])
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("small", { staticClass: "text-gray-400" }, [
+                              _vm._v("You already have those data")
+                            ])
+                          ])
                         ]
                       ),
                       _vm._v(" "),
@@ -47263,6 +47309,14 @@ var render = function() {
                             _c("th", { staticClass: "px-4 py-3" }, [
                               _vm._v(
                                 "\n                                    " +
+                                  _vm._s(_vm.__("Created At")) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "px-4 py-3" }, [
+                              _vm._v(
+                                "\n                                    " +
                                   _vm._s(_vm.__("Download")) +
                                   "\n                                "
                               )
@@ -47288,7 +47342,7 @@ var render = function() {
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
-                                    _vm._s(result.order) +
+                                    _vm._s(result.id) +
                                     "\n                                "
                                 )
                               ]),
@@ -47296,7 +47350,7 @@ var render = function() {
                               _c("td", { staticClass: "px-4 py-3" }, [
                                 _vm._v(
                                   "\n                                    " +
-                                    _vm._s(result.group) +
+                                    _vm._s(result.name) +
                                     "\n                                "
                                 )
                               ]),
@@ -47326,6 +47380,14 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
+                              _c("td", { staticClass: "px-4 py-3" }, [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(_vm.dateAgo(result.created_at)) +
+                                    "\n                                "
+                                )
+                              ]),
+                              _vm._v(" "),
                               _c(
                                 "td",
                                 { staticClass: "px-4 py-3 text-sm capitalize" },
@@ -47338,7 +47400,7 @@ var render = function() {
                                       attrs: {
                                         href: _vm.route(
                                           "clients.fb.download",
-                                          result.group
+                                          result.id
                                         )
                                       }
                                     },
@@ -47353,7 +47415,7 @@ var render = function() {
                                       attrs: {
                                         href: _vm.route(
                                           "facebook.data",
-                                          result.group
+                                          result.id
                                         )
                                       }
                                     },
@@ -68283,12 +68345,4 @@ module.exports = __webpack_require__(/*! G:\Laravel\hercules\resources\css\app.c
 
 /***/ })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /******/ });
-=======
-/******/ });
->>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5
-=======
-/******/ });
->>>>>>> 26a16bd947b3c785b5465245c10cdd4362a8d2f5

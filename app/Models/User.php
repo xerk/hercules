@@ -72,6 +72,6 @@ class User extends Authenticatable
      */
     public function clients()
     {
-        return $this->belongsToMany(Client::class)->withPivot('group');;
+        return $this->belongsToMany(Client::class)->withPivot('group', 'data_group_id');
     }
 }

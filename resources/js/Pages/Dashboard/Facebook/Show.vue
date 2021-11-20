@@ -7,6 +7,33 @@
         </template>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div
+                    v-if="errors.message"
+                    class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md mb-4"
+                    role="alert"
+                >
+                    <div class="flex">
+                        <div class="py-1">
+                            <svg
+                                class="fill-current h-6 w-6 text-red-500 mr-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-bold">
+                                {{ __("Ops, You have an error") }}
+                            </p>
+                            <p class="text-sm">
+                                {{ errors.message }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div class="flex flex-wrap">
                     <div
                         class="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-2"
@@ -64,6 +91,7 @@
                                     </jet-button>
                                 </form>
                             </div>
+
                             <div class="p-2">
                                 <ul
                                     class="px-4 overflow-scroll max-h-96 my-2"
@@ -112,24 +140,16 @@
                                 class="bg-gray-50 rounded-lg px-4 py-2 font-semibold flex items-center justify-between"
                             >
                                 <div>
-                                    Display All Data
-                                    <span v-if="clientCountWithOut > 0"
-                                        >({{ clientCountWithOut }})</span
+                                    <div>
+                                        Display All Data
+                                        <span v-if="clientCountWithOut > 0"
+                                            >({{ clientCountWithOut }})</span
+                                        >
+                                    </div>
+                                    <small class="text-gray-400"
+                                        >You already have those data</small
                                     >
                                 </div>
-                                <form
-                                    @submit.prevent="getResult"
-                                    v-if="clientWithOut.length"
-                                >
-                                    <jet-button
-                                        :class="{
-                                            'opacity-25': form.processing
-                                        }"
-                                        :disabled="form.processing"
-                                    >
-                                        {{ __("Save") }}
-                                    </jet-button>
-                                </form>
                             </div>
                             <div class="p-2">
                                 <ul
@@ -696,6 +716,9 @@
                                         {{ __("Status") }}
                                     </th>
                                     <th class="px-4 py-3">
+                                        {{ __("Created At") }}
+                                    </th>
+                                    <th class="px-4 py-3">
                                         {{ __("Download") }}
                                     </th>
                                 </tr>
@@ -709,10 +732,10 @@
                                     :key="key"
                                 >
                                     <td class="px-4 py-3">
-                                        {{ result.order }}
+                                        {{ result.id }}
                                     </td>
                                     <td class="px-4 py-3">
-                                        {{ result.group }}
+                                        {{ result.name }}
                                     </td>
                                     <td class="px-4 py-3">
                                         {{ result.count }}
@@ -724,13 +747,16 @@
                                             {{ result.status }}
                                         </span>
                                     </td>
+                                    <td class="px-4 py-3">
+                                        {{ dateAgo(result.created_at) }}
+                                    </td>
                                     <td class="px-4 py-3 text-sm capitalize">
                                         <a
                                             class="hover:underline text-indigo-500"
                                             :href="
                                                 route(
                                                     'clients.fb.download',
-                                                    result.group
+                                                    result.id
                                                 )
                                             "
                                             >{{ __("Download") }}</a
@@ -740,7 +766,7 @@
                                             :href="
                                                 route(
                                                     'facebook.data',
-                                                    result.group
+                                                    result.id
                                                 )
                                             "
                                             >{{ __("Show") }}</a
@@ -1109,6 +1135,9 @@ export default {
         educationUpdate(newTags) {
             this.autocompleteItems = [];
             this.form.educations = newTags;
+        },
+        dateAgo(time) {
+            return moment(time).fromNow();
         },
         async initItems(q, table) {
             if (q.length < 2) return;

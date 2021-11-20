@@ -2,9 +2,11 @@
 
 namespace App\Jobs;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\PointLog;
+use App\Models\DataGroup;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +52,16 @@ class FacebookJob implements ShouldQueue
         if ($maxOrder) {
             $order = $maxOrder->order + 1;
         }
-        $this->user->clients()->attach($client->pluck('id'), ['group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
+
+        $dataGroup = DataGroup::create([
+            'name' => 'Facebook-Search ' . Carbon::now()->toDateTimeString(),
+            'user_id' => $this->user->id,
+            'group' => Str::random(6),
+            'status' => 'Completed',
+            'count' => count($client)
+        ]);
+
+        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
 
         User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
 

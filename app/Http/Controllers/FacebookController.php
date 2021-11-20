@@ -10,6 +10,7 @@ use App\Jobs\FacebookJob;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Exports\FacebookExport;
+use App\Models\DataGroup;
 use App\Models\Query\QueryWork;
 use Illuminate\Support\Facades\DB;
 use App\Models\Query\QueryHometown;
@@ -47,8 +48,7 @@ class FacebookController extends Controller
             $autocomplete = $filtered['class']::select('name', 'count')->where('name', 'LIKE', '%' . $query . '%')->orderBy('count', 'DESC')->limit(20)->get();
         }
 
-        $user = User::find(Auth::id());
-        $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
+        $clientUser = DataGroup::where('user_id', Auth::id())->orderBy('id', 'desc')->paginate(15);
         return Inertia::render('Dashboard/Facebook/Show', [
             // 'test' => $user->clients->groupBy('pivot.group'),
             'results' => $clientUser,
@@ -63,24 +63,32 @@ class FacebookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function data($key)
+    public function data($id)
     {
-        $user = User::find(Auth::id());
-        $clients = Client::whereHas('users', function($q) use ($key) {
-            $q->where('group', $key);
-        })->paginate(15);
-        return Inertia::render('Dashboard/Facebook/FacebookData', [
-            // 'result' => $user->clients->where('pivot.group', $key)->paginate(15),
-            'result' => $clients,
-        ]);
+        $dataGroup = DataGroup::find($id);
+        if ($dataGroup->user_id == Auth::id()) {
+            $clients = Client::whereHas('users', function($q) use ($dataGroup) {
+                $q->where('data_group_id', $dataGroup->id);
+            })->paginate(15);
+            return Inertia::render('Dashboard/Facebook/FacebookData', [
+                'result' => $clients,
+            ]);
+        }
     }
 
-    public function download($token) {
+    public function download($id) {
         $user = User::find(Auth::id());
-        $clients = $user->clients->where('pivot.group', $token);
-        
-        // $file = Export::where('id', $id)->where('user_id', Auth::id())->firstOrFail()->file;
-        return Excel::download(new FacebookExport($clients), 'clients.csv');
+        $dataGroup = DataGroup::find($id);
+
+        if ($dataGroup->user_id == $user->id) {
+            $clients = $user->clients->where('pivot.data_group_id', $dataGroup->id);
+            return Excel::download(new FacebookExport($clients), 'clients.csv');
+
+        } else {
+            return back()->withErrors([
+                'message' => 'Not Authorize data.',
+            ]);
+        }   
     }
 
     /**
@@ -115,7 +123,7 @@ class FacebookController extends Controller
             
             $clientCountWithOut = Client::select('id')->filter($request)->limit($request->count)->get()->count();
 
-            $clientUser = DB::table('client_user')->where('user_id', $user->id)->select('group', 'status', 'count', 'order')->orderBy('order', 'desc')->distinct('group')->paginate(15);
+            $clientUser = DataGroup::where('user_id', Auth::id())->orderBy('id', 'desc')->paginate(15);
 
         return Inertia::render('Dashboard/Facebook/Show', [
             'clients' => $client,
