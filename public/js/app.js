@@ -15925,6 +15925,276 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -15951,6 +16221,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       autocompleteItems: [],
       debounce: null,
+      loading: [],
       form: this.$inertia.form({
         country: "all",
         count: 500,
@@ -16247,6 +16518,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 clearTimeout(_this3.debounce);
+
+                _this3.loading.push(table);
+
                 _this3.debounce = setTimeout( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
                   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
                     while (1) {
@@ -16262,6 +16536,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                         case 2:
                           if (_this3.autocomplete.length > 0) {
+                            _this3.loading = [];
                             _this3.autocompleteItems = _this3.autocomplete.map(function (a) {
                               return {
                                 text: a.name,
@@ -16278,7 +16553,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }, _callee3);
                 })), 600);
 
-              case 4:
+              case 5:
               case "end":
                 return _context4.stop();
             }
@@ -19891,14 +20166,15 @@ function cloneDeep(object) {
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.20';
+  var VERSION = '4.17.21';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
 
   /** Error message constants. */
   var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
-      FUNC_ERROR_TEXT = 'Expected a function';
+      FUNC_ERROR_TEXT = 'Expected a function',
+      INVALID_TEMPL_VAR_ERROR_TEXT = 'Invalid `variable` option passed into `_.template`';
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -20031,10 +20307,11 @@ function cloneDeep(object) {
   var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
       reHasRegExpChar = RegExp(reRegExpChar.source);
 
-  /** Used to match leading and trailing whitespace. */
-  var reTrim = /^\s+|\s+$/g,
-      reTrimStart = /^\s+/,
-      reTrimEnd = /\s+$/;
+  /** Used to match leading whitespace. */
+  var reTrimStart = /^\s+/;
+
+  /** Used to match a single whitespace character. */
+  var reWhitespace = /\s/;
 
   /** Used to match wrap detail comments. */
   var reWrapComment = /\{(?:\n\/\* \[wrapped with .+\] \*\/)?\n?/,
@@ -20043,6 +20320,18 @@ function cloneDeep(object) {
 
   /** Used to match words composed of alphanumeric characters. */
   var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
+
+  /**
+   * Used to validate the `validate` option in `_.template` variable.
+   *
+   * Forbids characters which could potentially change the meaning of the function argument definition:
+   * - "()," (modification of function parameters)
+   * - "=" (default value)
+   * - "[]{}" (destructuring of function parameters)
+   * - "/" (beginning of a comment)
+   * - whitespace
+   */
+  var reForbiddenIdentifierChars = /[()=,{}\[\]\/\s]/;
 
   /** Used to match backslashes in property paths. */
   var reEscapeChar = /\\(\\)?/g;
@@ -20873,6 +21162,19 @@ function cloneDeep(object) {
   }
 
   /**
+   * The base implementation of `_.trim`.
+   *
+   * @private
+   * @param {string} string The string to trim.
+   * @returns {string} Returns the trimmed string.
+   */
+  function baseTrim(string) {
+    return string
+      ? string.slice(0, trimmedEndIndex(string) + 1).replace(reTrimStart, '')
+      : string;
+  }
+
+  /**
    * The base implementation of `_.unary` without support for storing metadata.
    *
    * @private
@@ -21203,6 +21505,21 @@ function cloneDeep(object) {
     return hasUnicode(string)
       ? unicodeToArray(string)
       : asciiToArray(string);
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
+   * character of `string`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the index of the last non-whitespace character.
+   */
+  function trimmedEndIndex(string) {
+    var index = string.length;
+
+    while (index-- && reWhitespace.test(string.charAt(index))) {}
+    return index;
   }
 
   /**
@@ -32373,7 +32690,7 @@ function cloneDeep(object) {
       if (typeof value != 'string') {
         return value === 0 ? value : +value;
       }
-      value = value.replace(reTrim, '');
+      value = baseTrim(value);
       var isBinary = reIsBinary.test(value);
       return (isBinary || reIsOctal.test(value))
         ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
@@ -34745,6 +35062,12 @@ function cloneDeep(object) {
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
       }
+      // Throw an error if a forbidden character was found in `variable`, to prevent
+      // potential command injection attacks.
+      else if (reForbiddenIdentifierChars.test(variable)) {
+        throw new Error(INVALID_TEMPL_VAR_ERROR_TEXT);
+      }
+
       // Cleanup code by stripping empty strings.
       source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
         .replace(reEmptyStringMiddle, '$1')
@@ -34858,7 +35181,7 @@ function cloneDeep(object) {
     function trim(string, chars, guard) {
       string = toString(string);
       if (string && (guard || chars === undefined)) {
-        return string.replace(reTrim, '');
+        return baseTrim(string);
       }
       if (!string || !(chars = baseToString(chars))) {
         return string;
@@ -34893,7 +35216,7 @@ function cloneDeep(object) {
     function trimEnd(string, chars, guard) {
       string = toString(string);
       if (string && (guard || chars === undefined)) {
-        return string.replace(reTrimEnd, '');
+        return string.slice(0, trimmedEndIndex(string) + 1);
       }
       if (!string || !(chars = baseToString(chars))) {
         return string;
@@ -46794,7 +47117,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "w-full pb-2 px-2" },
+                        { staticClass: "w-full pb-2 px-2 relative" },
                         [
                           _c("jet-label", {
                             attrs: { for: "work", value: _vm.__("Work") }
@@ -46868,6 +47191,219 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
+                          _vm.loading.includes("work")
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "absolute",
+                                  staticStyle: { bottom: "16px", right: "20px" }
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        width: "22",
+                                        height: "24",
+                                        viewBox: "0 0 135 140",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "#000"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "30",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "60",
+                                            width: "15",
+                                            height: "140",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "90",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "120",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
                             attrs: { message: _vm.form.error("work") }
@@ -46878,7 +47414,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "w-full sm:w-full pb-2 px-2" },
+                        { staticClass: "w-full sm:w-full pb-2 px-2 relative" },
                         [
                           _c("jet-label", {
                             attrs: {
@@ -46955,6 +47491,219 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
+                          _vm.loading.includes("position")
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "absolute",
+                                  staticStyle: { bottom: "16px", right: "20px" }
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        width: "22",
+                                        height: "24",
+                                        viewBox: "0 0 135 140",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "#000"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "30",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "60",
+                                            width: "15",
+                                            height: "140",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "90",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "120",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
                             attrs: { message: _vm.form.error("position") }
@@ -46967,7 +47716,7 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                            "w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2 relative"
                         },
                         [
                           _c("jet-label", {
@@ -47045,6 +47794,219 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
+                          _vm.loading.includes("hometown")
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "absolute",
+                                  staticStyle: { bottom: "16px", right: "20px" }
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        width: "22",
+                                        height: "24",
+                                        viewBox: "0 0 135 140",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "#000"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "30",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "60",
+                                            width: "15",
+                                            height: "140",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "90",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "120",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
                             attrs: { message: _vm.form.error("hometown") }
@@ -47057,7 +48019,7 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                            "w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2 relative"
                         },
                         [
                           _c("jet-label", {
@@ -47135,6 +48097,219 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
+                          _vm.loading.includes("location")
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "absolute",
+                                  staticStyle: { bottom: "16px", right: "20px" }
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        width: "22",
+                                        height: "24",
+                                        viewBox: "0 0 135 140",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "#000"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "30",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "60",
+                                            width: "15",
+                                            height: "140",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "90",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "120",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",
                             attrs: { message: _vm.form.error("location") }
@@ -47145,7 +48320,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "w-full sm:w-full pb-2 px-2" },
+                        { staticClass: "w-full sm:w-full pb-2 px-2 relative" },
                         [
                           _c("jet-label", {
                             attrs: {
@@ -47221,6 +48396,219 @@ var render = function() {
                               expression: "form.education"
                             }
                           }),
+                          _vm._v(" "),
+                          _vm.loading.includes("education")
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "absolute",
+                                  staticStyle: { bottom: "16px", right: "20px" }
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        width: "22",
+                                        height: "24",
+                                        viewBox: "0 0 135 140",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "#000"
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "30",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "60",
+                                            width: "15",
+                                            height: "140",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "90",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.25s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "rect",
+                                        {
+                                          attrs: {
+                                            x: "120",
+                                            y: "10",
+                                            width: "15",
+                                            height: "120",
+                                            rx: "6"
+                                          }
+                                        },
+                                        [
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "height",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "120;110;100;90;80;70;60;50;40;140;120",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("animate", {
+                                            attrs: {
+                                              attributeName: "y",
+                                              begin: "0.5s",
+                                              dur: "1s",
+                                              values:
+                                                "10;15;20;25;30;35;40;45;50;0;10",
+                                              calcMode: "linear",
+                                              repeatCount: "indefinite"
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
                           _vm._v(" "),
                           _c("jet-input-error", {
                             staticClass: "mt-2",

@@ -407,7 +407,7 @@
                                     </div>
 
                                     <!-- Work -->
-                                    <div class="w-full pb-2 px-2">
+                                    <div class="w-full pb-2 px-2 relative">
                                         <jet-label
                                             for="work"
                                             :value="__('Work')"
@@ -444,6 +444,60 @@
                                                 </div>
                                             </div>
                                         </vue-tags-input>
+                                        <div v-if="loading.includes('work')" class="absolute" style="bottom:16px; right:20px">
+                                            <svg width="22" height="24" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#000">
+                                                <rect y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="30" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="60" width="15" height="140" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="90" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="120" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                            </svg>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('work')"
                                             class="mt-2"
@@ -451,7 +505,7 @@
                                     </div>
 
                                     <!-- Position -->
-                                    <div class="w-full sm:w-full pb-2 px-2">
+                                    <div class="w-full sm:w-full pb-2 px-2 relative">
                                         <jet-label
                                             for="position"
                                             :value="__('Position')"
@@ -488,6 +542,60 @@
                                                 </div>
                                             </div>
                                         </vue-tags-input>
+                                        <div v-if="loading.includes('position')" class="absolute" style="bottom:16px; right:20px">
+                                            <svg width="22" height="24" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#000">
+                                                <rect y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="30" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="60" width="15" height="140" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="90" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="120" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                            </svg>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('position')"
                                             class="mt-2"
@@ -496,7 +604,7 @@
 
                                     <!-- Hometown -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2 relative"
                                     >
                                         <jet-label
                                             for="hometown"
@@ -534,6 +642,60 @@
                                                 </div>
                                             </div>
                                         </vue-tags-input>
+                                        <div v-if="loading.includes('hometown')" class="absolute" style="bottom:16px; right:20px">
+                                            <svg width="22" height="24" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#000">
+                                                <rect y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="30" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="60" width="15" height="140" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="90" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="120" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                            </svg>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('hometown')"
                                             class="mt-2"
@@ -542,7 +704,7 @@
 
                                     <!-- Location -->
                                     <div
-                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2"
+                                        class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 pb-2 px-2 relative"
                                     >
                                         <jet-label
                                             for="location"
@@ -580,6 +742,60 @@
                                                 </div>
                                             </div>
                                         </vue-tags-input>
+                                        <div v-if="loading.includes('location')" class="absolute" style="bottom:16px; right:20px">
+                                            <svg width="22" height="24" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#000">
+                                                <rect y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="30" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="60" width="15" height="140" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="90" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="120" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                            </svg>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('location')"
                                             class="mt-2"
@@ -587,7 +803,7 @@
                                     </div>
 
                                     <!-- Education  -->
-                                    <div class="w-full sm:w-full pb-2 px-2">
+                                    <div class="w-full sm:w-full pb-2 px-2 relative">
                                         <jet-label
                                             for="education"
                                             :value="__('Education')"
@@ -624,6 +840,60 @@
                                                 </div>
                                             </div>
                                         </vue-tags-input>
+                                        <div v-if="loading.includes('education')" class="absolute" style="bottom:16px; right:20px">
+                                            <svg width="22" height="24" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#000">
+                                                <rect y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="30" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="60" width="15" height="140" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="90" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.25s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.25s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                                <rect x="120" y="10" width="15" height="120" rx="6">
+                                                    <animate attributeName="height"
+                                                        begin="0.5s" dur="1s"
+                                                        values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                    <animate attributeName="y"
+                                                        begin="0.5s" dur="1s"
+                                                        values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                                                        repeatCount="indefinite" />
+                                                </rect>
+                                            </svg>
+                                        </div>
                                         <jet-input-error
                                             :message="form.error('education')"
                                             class="mt-2"
@@ -866,6 +1136,7 @@ export default {
         return {
             autocompleteItems: [],
             debounce: null,
+            loading: [],
             form: this.$inertia.form(
                 {
                     country: "all",
@@ -888,7 +1159,7 @@ export default {
                     relationship: "all",
                     existEmail: false,
                     existMobile: false,
-                    existUsername: false
+                    existUsername: false,
                 },
                 {
                     bag: "redeemCode",
@@ -1144,6 +1415,7 @@ export default {
 
             clearTimeout(this.debounce);
 
+            this.loading.push(table)
             this.debounce = setTimeout(async () => {
                 await this.$inertia.replace(
                     route("facebook.search", {
@@ -1155,6 +1427,7 @@ export default {
                     }
                 );
                 if (this.autocomplete.length > 0) {
+                    this.loading = []
                     this.autocompleteItems = this.autocomplete.map(a => {
                         return {
                             text: a.name,
