@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Laravel\Nova\Nova;
 use App\Models\CardCode;
+use App\Models\Tutorial;
 use Laravel\Nova\Cards\Help;
 use App\Observers\CardCodeObserver;
+use App\Observers\TutorialObserver;
 use Day4\SwitchLocale\SwitchLocale;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -21,6 +23,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         CardCode::observe(CardCodeObserver::class);
+        Tutorial::observe(TutorialObserver::class);
         parent::boot();
     }
 

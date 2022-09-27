@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Client;
 use App\Models\PointLog;
 use App\Models\DataGroup;
+use App\Notifications\Facebook;
 use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\DB;
@@ -72,5 +73,6 @@ class FacebookJob implements ShouldQueue
             'status' => 'succeed',
         ]);
 
+        $this->user->notify(new Facebook(count($client)));
     }
 }

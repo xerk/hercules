@@ -8,6 +8,7 @@ use App\Models\Export;
 use App\Models\PointLog;
 use App\Mail\DataExported;
 use Illuminate\Bus\Queueable;
+use App\Notifications\FileGenerate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -56,6 +57,8 @@ class ExportJob implements ShouldQueue
             'user_id' => auth()->user()->id,
             'status' => 'succeed',
         ]);
+
+        $this->user->notify(new FileGenerate(count($this->clients)));
 
     }
 }

@@ -1,7 +1,9 @@
 <?php
 
 
+use App\Models\User;
 use App\Models\Price;
+use App\Notifications\PurchasePoint;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FacebookController;
@@ -10,6 +12,7 @@ use App\Http\Controllers\SyncDataController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtractDataController;
+use App\Mail\DataExported;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +33,10 @@ Route::middleware('local')->get('/', function () {
 })->name('landingpage');
 
 Route::get('dev', function() {
-    //
+    Mail::to('gm.xerk@gmail.com')->send(new DataExported);
+    // $user = User::where('email', 'gm.xerk@gmail.com')->first();
+    // $user->notify(new PurchasePoint(92));
+
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'local'])->get('/dashboard/search', [SearchController::class, 'index'])->name('search.index');

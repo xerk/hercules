@@ -356,6 +356,75 @@
                             </svg>
                         </a>
                         <div class="ml-3 relative">
+                            <jet-dropdown align="right" width="96">
+                                <template #trigger>
+                                    <button
+                                        class="flex items-center text-sm border-transparent rounded-full focus:outline-none transition duration-150 ease-in-out"
+                                    >
+                                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                                        </svg>
+                                    </button>
+                                </template>
+
+                                <template #content>
+                                    <!-- Account Management -->
+                                    <jet-dropdown-link
+                                    class="py-2 px-0 hover:bg-gray-100"
+                                        :href="route('profile.show')"
+                                    >
+                                    <div class="flex items-center">
+                                        <p class="text-gray-600 text-sm mx-2 flex items-center">
+                                            <svg class="h2 w-2 text-teal-500 mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                                <circle cx="4" cy="4" r="3" />
+                                            </svg>
+                                            <span>
+                                                <span class="" href="#"> Facebook data exported <b>(200 User)</b></span> . 2m
+                                            </span>
+                                        </p>
+                                    </div>
+                                    </jet-dropdown-link>
+
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <jet-dropdown-link
+                                    class="py-2 hover:bg-gray-100"
+                                        :href="route('profile.show')"
+                                    >
+                                    <div class="flex items-center">
+                                        <p class="text-gray-600 text-sm mx-2 flex items-center">
+                                            <svg class="h2 w-2 text-teal-500 mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                                <circle cx="4" cy="4" r="3" />
+                                            </svg>
+                                            <span>
+                                                <span class="" href="#"> Facebook data exported <b>(200 User)</b></span> . 2m
+                                            </span>
+                                        </p>
+                                    </div>
+                                    </jet-dropdown-link>
+
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <jet-dropdown-link
+                                    class="py-2 hover:bg-gray-100"
+                                        :href="route('profile.show')"
+                                    >
+                                    <div class="flex items-center">
+                                        <p class="text-gray-600 text-sm mx-2 flex items-center">
+                                            <svg class="h2 w-2 text-teal-500 mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                                <circle cx="4" cy="4" r="3" />
+                                            </svg>
+                                            <span>
+                                                <span class="" href="#">File has been generated <b>(200 IDs)</b></span> . 2m
+                                            </span>
+                                        </p>
+                                    </div>
+                                    </jet-dropdown-link>
+                                    <a href="#" class="block bg-gray-800 text-white text-center font-bold py-2">See all notifications</a>
+                                </template>
+                            </jet-dropdown>
+                        </div>
+                        <div class="ml-3 relative">
                             <jet-dropdown align="right" width="48">
                                 <template #trigger>
                                     <button

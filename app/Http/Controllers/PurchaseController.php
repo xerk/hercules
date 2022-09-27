@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\CardCode;
 use App\Models\PointLog;
 use Illuminate\Http\Request;
+use App\Notifications\PurchasePoint;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -22,16 +23,6 @@ class PurchaseController extends Controller
     public function index()
     {
         return Inertia::render('Dashboard/Purchase/Show');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -54,6 +45,8 @@ class PurchaseController extends Controller
             
             $user->save();
 
+            $user->notify(new PurchasePoint($card->amount));
+
             $pointLog = PointLog::create([
                 'log' => 'The user has been Redeem code',
                 'point' => '+' . $card->amount,
@@ -68,50 +61,5 @@ class PurchaseController extends Controller
             ]);
         }
         return Redirect::route('purchase')->with('success', 'Redeem successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
