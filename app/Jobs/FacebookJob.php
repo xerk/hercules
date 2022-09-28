@@ -34,7 +34,7 @@ class FacebookJob implements ShouldQueue
     {
         $this->request = $request;
         $this->user = $user;
-        $this->dataGroup = DataGroup::find($dataGroup->id);
+        $this->dataGroup = $dataGroup;
     }
 
     /**
@@ -44,8 +44,9 @@ class FacebookJob implements ShouldQueue
      */
     public function handle()
     {
-        $this->dataGroup->status = 'Processing';
-        $this->dataGroup->save();
+        $dataGroup = DataGroup::find($this->dataGroup);
+        $dataGroup->status = 'Processing';
+        $dataGroup->save();
 
         $client = Client::whereDoesntHave('users', function($q) {
             $q->where('user_id', $this->user->id);
@@ -58,15 +59,15 @@ class FacebookJob implements ShouldQueue
             $order = $maxOrder->order + 1;
         }
 
-        $this->dataGroup->status = 'Completed';
-        $this->dataGroup->save();
+        $dataGroup->status = 'Completed';
+        $dataGroup->save();
 
-        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $this->dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
+        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
 
         User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
 
-        $this->dataGroup->status = 'Processing';
-        $this->dataGroup->save();
+        $dataGroup->status = 'Processing';
+        $dataGroup->save();
        
 
         $pointLog = PointLog::create([
