@@ -60,6 +60,7 @@
     "Saved.": "تم الحفظ.",
     "You check you max and min records": "من فضلك تحقق من حجم الملف، أقل شئ للرفع هو 100 ID وأقصي شئ للرفع هو 20.000 ID",
     "You didn't have points enough": "ليس دليك نقاط كافية",
+    "Sorry, you've reached your maximum limit of data.": "عذرًا ، لقد وصلت إلى الحد الأقصى من البيانات.",
     "Name": "اسم الملف",
     "Count": "العدد",
     "File": "رابط الملف",

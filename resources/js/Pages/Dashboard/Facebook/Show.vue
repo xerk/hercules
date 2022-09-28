@@ -203,7 +203,7 @@
                                 </div>
                             </div>
                             <div class="p-6 flex flex-wrap items-end">
-                                <div class="w-full sm:w-1/2 px-2">
+                                <div class="w-full sm:w-1/2 px-2 h-24">
                                     <jet-label for="country" value="Country" />
                                     <select
                                         v-model="form.country"
@@ -224,7 +224,7 @@
                                         class="mt-2"
                                     />
                                 </div>
-                                <div class="w-full sm:w-1/2 px-2">
+                                <div class="w-full sm:w-1/2 px-2 h-24">
                                     <jet-label
                                         for="count"
                                         :value="__('Facebook Count')"
@@ -241,6 +241,7 @@
                                         :message="form.error('count')"
                                         class="mt-2"
                                     />
+                                    <p class="mt-2 text-xs text-gray-500">The maximum data is 1,000,000</p>
                                 </div>
                             </div>
                         </div>
@@ -1108,6 +1109,7 @@ import JetInputError from "./../../../Jetstream/InputError";
 import JetLabel from "./../../../Jetstream/Label";
 import NoDataSvg from "./components/NoDataSvg";
 import VueTagsInput from "@johmun/vue-tags-input";
+import { re } from "semver";
 
 export default {
     props: [
@@ -1370,6 +1372,10 @@ export default {
 
     methods: {
         async searchResult(url = null) {
+            if (this.form.count >= 1000000) {
+                alert(this.__("Sorry, you've reached your maximum limit of data."));
+                return
+            }
             if (this.form.count * 2 <= this.$page.user.point) {
                 await this.form.post(route("facebook.find"), {
                     preserveScroll: true
@@ -1379,6 +1385,10 @@ export default {
             }
         },
         async getResult(url = null) {
+            if (this.form.count >= 1000000) {
+                alert(this.__("Sorry, you've reached your maximum limit of data."));
+                return
+            }
             if (this.form.count * 2 <= this.$page.user.point) {
                 await this.form.post(route("facebook.store"), {
                     preserveScroll: true

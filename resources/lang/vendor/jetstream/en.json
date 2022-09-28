@@ -60,6 +60,7 @@
     "Saved.": "Saved.",
     "You check you max and min records": "Please check the file count, minimum is 100 ID and maximum is 20.000 ID",
     "You didn't have points enough": "You didn't have points enough.",
+    "Sorry, you've reached your maximum limit of data.": "Sorry, you've reached your maximum limit of data.",
     "Name": "Name",
     "Count": "Count",
     "File": "File",
