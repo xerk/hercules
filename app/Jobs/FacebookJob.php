@@ -44,9 +44,6 @@ class FacebookJob implements ShouldQueue
      */
     public function handle()
     {
-        $dataGroup = DataGroup::find($this->dataGroup);
-        $dataGroup->status = 'Processing';
-        $dataGroup->save();
 
         $client = Client::whereDoesntHave('users', function($q) {
             $q->where('user_id', $this->user->id);
@@ -59,16 +56,13 @@ class FacebookJob implements ShouldQueue
             $order = $maxOrder->order + 1;
         }
 
-        $dataGroup->status = 'Completed';
-        $dataGroup->save();
+        $dataGroup = DataGroup::where('id', $this->dataGroup)->update(['status' => 'Processing', 'count' => count($client)]);
 
         $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
 
         User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
 
-        $dataGroup->status = 'Processing';
-        $dataGroup->save();
-       
+        $dataGroup = DataGroup::where('id', $this->dataGroup)->update(['status' => 'Completed', 'count' => count($client)]);       
 
         $pointLog = PointLog::create([
             'log' => 'Points have been deducted from your account for facebook information',
