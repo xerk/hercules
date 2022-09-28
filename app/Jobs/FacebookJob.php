@@ -23,16 +23,18 @@ class FacebookJob implements ShouldQueue
     // protected $clients;
     protected $user;
     protected $request;
+    protected $dataGroup;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($request, $user)
+    public function __construct($request, $user, $dataGroup)
     {
         $this->request = $request;
         $this->user = $user;
+        $this->dataGroup = DataGroup::find($dataGroup->id);
     }
 
     /**
@@ -42,7 +44,8 @@ class FacebookJob implements ShouldQueue
      */
     public function handle()
     {
-        
+        $this->dataGroup->status = 'Processing';
+        $this->dataGroup->save();
 
         $client = Client::whereDoesntHave('users', function($q) {
             $q->where('user_id', $this->user->id);
@@ -55,25 +58,16 @@ class FacebookJob implements ShouldQueue
             $order = $maxOrder->order + 1;
         }
 
-        $dataGroup = DataGroup::create([
-            'name' => 'Facebook-Search ' . Carbon::now()->toDateTimeString(),
-            'user_id' => $this->user->id,
-            'group' => Str::random(6),
-            'status' => 'Pending',
-            'count' => count($client)
-        ]);
+        $this->dataGroup->status = 'Completed';
+        $this->dataGroup->save();
 
-        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
+        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $this->dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
 
         User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
 
-        $dataGroup = DataGroup::create([
-            'name' => 'Facebook-Search ' . Carbon::now()->toDateTimeString(),
-            'user_id' => $this->user->id,
-            'group' => Str::random(6),
-            'status' => 'Completed',
-            'count' => count($client)
-        ]);
+        $this->dataGroup->status = 'Processing';
+        $this->dataGroup->save();
+       
 
         $pointLog = PointLog::create([
             'log' => 'Points have been deducted from your account for facebook information',

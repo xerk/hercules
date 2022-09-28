@@ -134,8 +134,17 @@ class FacebookController extends Controller
     {
         // $client = Client::doesntHave('users')->filter($request)->limit($request->count)->get();
         $user = User::find(Auth::id());
+
+        $dataGroup = DataGroup::create([
+            'name' => 'Facebook-Search ' . Carbon::now()->toDateTimeString(),
+            'user_id' => $user->id,
+            'group' => Str::random(6),
+            'status' => 'Pending',
+            'count' => 0,
+        ]);
+
         // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        FacebookJob::dispatch($request, $user)->afterResponse();
+        FacebookJob::dispatch($request, $user, $dataGroup);
         
         return Redirect::route('facebook.find');
     }
