@@ -45,9 +45,9 @@ class FacebookJob implements ShouldQueue
     public function handle()
     {
 
-        $client = Client::whereDoesntHave('users', function($q) {
+        $client = Client::select('id')->whereDoesntHave('users', function($q) {
             $q->where('user_id', $this->user->id);
-        })->filter($this->request)->limit($this->request->count)->get();
+        })->filter($this->request)->limit($this->request['count'])->get();
 
         $order = 1;
         $maxOrder = DB::table('client_user')->orderBy('order', 'desc')->first();
@@ -56,20 +56,46 @@ class FacebookJob implements ShouldQueue
             $order = $maxOrder->order + 1;
         }
 
-        $dataGroup = DataGroup::where('id', $this->dataGroup)->update(['status' => 'Processing', 'count' => count($client)]);
+        $this->dataGroup->update(['status' => 'Processing', 'count' => count($client)]);
+        
+        $chunk = 1000;
+        if ($this->request['count'] >= 100000) {
+            $chunk = $this->request['count'] * 0.001;
+        }
+        if ($chunk <= 1000) {
+            $chunk = 1000;
+        }
 
-        $this->user->clients()->attach($client->pluck('id'), ['data_group_id' => $dataGroup->id, 'group' => 'Facebook-Search-' . Str::random(12), 'status' => 'Completed', 'count' => count($client), 'order' => $order]);
+        if ($this->request['count'] <= 500) {
+            $chunk = 100;
+        }
 
-        User::find(auth()->user()->id)->decrement('point', (count($client) * 2));
+        $clients = collect(array_chunk($client->toArray(), $chunk));
 
-        $dataGroup = DataGroup::where('id', $this->dataGroup)->update(['status' => 'Completed', 'count' => count($client)]);       
+        foreach($clients as $item) {
+            foreach($item as $i) {
+                Client::find($i['id'])->users()->attach($this->user->id, 
+                [
+                    'data_group_id' => $this->dataGroup->id, 
+                    'group' => 'Facebook-Search-' . Str::random(12), 
+                    'status' => 'Completed', 
+                    'count' => count($client), 
+                    'order' => $order
+                ]);
+            }
+        }
+        
+        User::find($this->user->id)->decrement('point', (count($client) * 2));
+
 
         $pointLog = PointLog::create([
             'log' => 'Points have been deducted from your account for facebook information',
             'point' => '-' . (count($client) * 2),
-            'user_id' => auth()->user()->id,
+            'user_id' => $this->user->id,
             'status' => 'succeed',
         ]);
+
+        $this->dataGroup->update(['status' => 'Completed', 'count' => count($client)]);       
 
     }
 }

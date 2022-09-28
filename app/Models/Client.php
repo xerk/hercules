@@ -45,68 +45,59 @@ class Client extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class)->withPivot('group');;
+        return $this->belongsToMany(User::class)->withPivot('group', 'data_group_id');
     }
 
     public function scopeSearch($query, $request) {
-        if ($request->filled('username')) {
+        if (isset($request['username'])) {
             $query->where('unique_id', $request->username)
-                    ->orWhere('username', $request->username);
+                    ->orWhere('username', $request->username)
+                    ->orWhere('mobile', $request->username);
         }
     }
 
     public function scopeFilter($query, $request) {
 
-        // Find Between two birthdates
-        if ($request->filled('birthdate')) {
-            if ($request->birthdateFrom != 'all' && $request->birthdateTo != 'all') {
-                $from = Carbon::now()->subYears($request->birthdateFrom)->format('d/m/Y');
-                $to = Carbon::now()->subYears($request->birthdateTo)->format('d/m/Y');
-                $query->where('birthday', '<=', $from);
-                $query->where('birthday', '>=', $to);
-            }
-        }
-
         // Find Relationships ex: Single
-        if ($request->filled('relationship')) {
-            if ($request->relationship != 'all') {
-                $query->where('relationship', $request->relationship);
+        if (isset($request['relationship'])) {
+            if ($request['relationship'] != 'all') {
+                $query->where('relationship', $request['relationship']);
             }
         }
 
         // Find Country ex: egypt
-        if ($request->filled('country')) {
-            if ($request->country != 'all') {
-                $query->where('nationality', $request->country);
+        if (isset($request['country'])) {
+            if ($request['country'] != 'all') {
+                $query->where('nationality', $request['country']);
             }
         }
 
         // Find Gender ['male', 'female', 'other']
-        if ($request->filled('gender')) {
-            if ($request->gender != 'all') {
-                $query->where('gender', $request->gender);
+        if (isset($request['gender'])) {
+            if ($request['gender'] != 'all') {
+                $query->where('gender', $request['gender']);
             }
         }
 
         // Only has email
-        if ($request->existEmail) {
+        if ($request['existEmail']) {
             $query->whereNotNull('email')->where('email', '<>', '');
         }
 
         // Only has mobile
-        if ($request->existMobile) {
+        if ($request['existMobile']) {
             $query->whereNotNull('mobile')->where('mobile', '<>', '');
         }
 
         // Only has Username
-        if ($request->existUsername) {
+        if ($request['existUsername']) {
             $query->whereNotNull('username')->where('username', '<>', '');
         }
 
         // Find array of relations
-        if ($request->filled('religions')) {
+        if (isset($request['religions'])) {
             $query->where(function($q) use ($request) {
-                foreach($request->religions as $key => $religion) {
+                foreach($request['religions'] as $key => $religion) {
                     if($key == 0) {
                         // $q->where('religion',  'like', '%' . $religion['text'] . '%');
                         $q->where('religion', $religion['text']);
@@ -118,9 +109,9 @@ class Client extends Model
         }
 
         // Find array of works
-        if ($request->filled('works')) {
+        if (isset($request['works'])) {
             $query->where(function($q) use ($request) {
-                foreach($request->works as $key => $work) {
+                foreach($request['works'] as $key => $work) {
                     if($key == 0) {
                         $q->where('work', $work['text']);
                     } else {
@@ -131,9 +122,9 @@ class Client extends Model
         }
 
         // Find array of positions
-        if ($request->filled('positions')) {
+        if (isset($request['positions'])) {
             $query->where(function($q) use ($request) {
-                foreach($request->positions as $key => $position) {
+                foreach($request['positions'] as $key => $position) {
                     if($key == 0) {
                         $q->where('position', $position['text']);
                     } else {
@@ -144,9 +135,9 @@ class Client extends Model
         }
 
         // Find array of hometowns
-        if ($request->filled('hometowns')) {
+        if (isset($request['hometowns'])) {
             $query->where(function($q) use($request) {
-                foreach($request->hometowns as $key => $hometown) {
+                foreach($request['hometowns'] as $key => $hometown) {
                     if($key == 0) {
                         $q->where('hometown', $hometown['text']);
                     } else {
@@ -157,9 +148,9 @@ class Client extends Model
         }
 
         // Find array of locations
-        if ($request->filled('locations')) {
+        if (isset($request['locations'])) {
             $query->where(function($q) use ($request) {
-                foreach($request->locations as $key => $location) {
+                foreach($request['locations'] as $key => $location) {
                     if($key == 0) {
                         $q->where('location', $location['text']);
                     } else {
@@ -170,9 +161,9 @@ class Client extends Model
         }
 
         // Find array of educations
-        if ($request->filled('educations')) {
+        if (isset($request['educations'])) {
             $query->where(function($q) use ($request) {
-            foreach($request->educations as $key => $education) {
+            foreach($request['educations'] as $key => $education) {
                     if($key == 0) {
                         $q->where('education', $education['text']);
                     } else {

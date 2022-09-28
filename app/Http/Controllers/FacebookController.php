@@ -103,15 +103,16 @@ class FacebookController extends Controller
             $user = User::find(Auth::id());
             $client = Client::select('name', 'gender', 'id')->whereDoesntHave('users', function($q) use($user) {
                 $q->where('user_id', $user->id);
-            })->filter($request)->limit(10)->get();
+            })->filter($request->all())->limit(10)->get();
+
             
             $clientCount = Client::select('id')->whereDoesntHave('users', function($q) use($user) {
                 $q->where('user_id', $user->id);
-            })->filter($request)->limit($request->count)->get()->count();
+            })->filter($request->all())->limit($request->count)->get()->count();
 
-            $clientWithOut = Client::select('name', 'gender', 'id')->filter($request)->limit(10)->get();
+            $clientWithOut = Client::select('name', 'gender', 'id')->filter($request->all())->limit(10)->get();
             
-            $clientCountWithOut = Client::select('id')->filter($request)->limit($request->count)->get()->count();
+            $clientCountWithOut = Client::select('id')->filter($request->all())->limit($request->count)->get()->count();
 
             $clientUser = DataGroup::where('user_id', Auth::id())->orderBy('id', 'desc')->paginate(15);
 
@@ -144,7 +145,7 @@ class FacebookController extends Controller
         ]);
 
         // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        FacebookJob::dispatch($request, $user, $dataGroup)->afterResponse();
+        FacebookJob::dispatch($request->all(), $user, $dataGroup);
         
         return Redirect::route('facebook.find');
     }
