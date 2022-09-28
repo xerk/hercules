@@ -30,7 +30,7 @@ class FacebookJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($request, $user, $dataGroup)
+    public function __construct($request, $user, DataGroup $dataGroup)
     {
         $this->request = $request;
         $this->user = $user;

@@ -144,7 +144,7 @@ class FacebookController extends Controller
         ]);
 
         // $user->clients()->attach($client->pluck('id'), ['group' => Str::random(12)]);
-        FacebookJob::dispatch($request, $user, $dataGroup->id);
+        FacebookJob::dispatch($request, $user, $dataGroup)->afterResponse();
         
         return Redirect::route('facebook.find');
     }
