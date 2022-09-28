@@ -53,7 +53,7 @@ class ExportJob implements ShouldQueue
         $pointLog = PointLog::create([
             'log' => 'Points have been deducted from your account for export data',
             'point' => '-' . count($this->clients),
-            'user_id' => auth()->user()->id,
+            'user_id' => $this->user->id,
             'status' => 'succeed',
         ]);
 
