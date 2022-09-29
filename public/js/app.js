@@ -16205,6 +16205,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
@@ -50399,41 +50402,63 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c(
-                                "td",
-                                { staticClass: "px-4 py-3 text-sm capitalize" },
-                                [
-                                  _c(
-                                    "a",
+                              result.status == "Completed"
+                                ? _c(
+                                    "td",
                                     {
                                       staticClass:
-                                        "hover:underline text-indigo-500",
-                                      attrs: {
-                                        href: _vm.route(
-                                          "clients.fb.download",
-                                          result.id
-                                        )
-                                      }
+                                        "px-4 py-3 text-sm capitalize"
                                     },
-                                    [_vm._v(_vm._s(_vm.__("Download")))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass:
-                                        "hover:underline ml-2 text-indigo-500",
-                                      attrs: {
-                                        href: _vm.route(
-                                          "facebook.data",
-                                          result.id
-                                        )
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.__("Show")))]
+                                    [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "hover:underline text-indigo-500",
+                                          attrs: {
+                                            href: _vm.route(
+                                              "clients.fb.download",
+                                              result.id
+                                            )
+                                          }
+                                        },
+                                        [_vm._v(_vm._s(_vm.__("Download")))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "hover:underline ml-2 text-indigo-500",
+                                          attrs: {
+                                            href: _vm.route(
+                                              "facebook.data",
+                                              result.id
+                                            )
+                                          }
+                                        },
+                                        [_vm._v(_vm._s(_vm.__("Show")))]
+                                      )
+                                    ]
                                   )
-                                ]
-                              )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              result.status == "processing"
+                                ? _c(
+                                    "td",
+                                    {
+                                      staticClass:
+                                        "px-4 py-3 text-sm capitalize text-gray-400"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(_vm.__("Loading...")) +
+                                          "\n                                "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
                             ]
                           )
                         }),

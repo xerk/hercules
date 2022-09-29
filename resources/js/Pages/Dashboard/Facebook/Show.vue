@@ -1028,7 +1028,7 @@
                                     <td class="px-4 py-3">
                                         {{ dateAgo(result.created_at) }}
                                     </td>
-                                    <td class="px-4 py-3 text-sm capitalize">
+                                    <td class="px-4 py-3 text-sm capitalize" v-if="result.status == 'Completed'">
                                         <a
                                             class="hover:underline text-indigo-500"
                                             :href="
@@ -1049,6 +1049,9 @@
                                             "
                                             >{{ __("Show") }}</a
                                         >
+                                    </td>
+                                    <td class="px-4 py-3 text-sm capitalize text-gray-400" v-if="result.status == 'processing'">
+                                            {{ __("Loading...") }}
                                     </td>
                                 </tr>
                             </tbody>
