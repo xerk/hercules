@@ -105,7 +105,6 @@ class FacebookController extends Controller
                 $q->where('user_id', $user->id);
             })->filter($request->all())->limit(10)->get();
 
-            
             $clientCount = Client::select('id')->whereDoesntHave('users', function($q) use($user) {
                 $q->where('user_id', $user->id);
             })->filter($request->all())->limit($request->count)->get()->count();

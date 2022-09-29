@@ -60,29 +60,24 @@ class FacebookJob implements ShouldQueue
         
         $chunk = 1000;
         if ($this->request['count'] >= 100000) {
-            $chunk = $this->request['count'] * 0.001;
+            $chunk = $this->request['count'] * 0.01;
         }
-        if ($chunk <= 1000) {
-            $chunk = 1000;
-        }
-
-        if ($this->request['count'] <= 500) {
-            $chunk = 100;
+        if ($chunk <= 5000) {
+            $chunk = 5000;
         }
 
         $clients = collect(array_chunk($client->toArray(), $chunk));
 
         foreach($clients as $item) {
-            foreach($item as $i) {
-                Client::find($i['id'])->users()->attach($this->user->id, 
-                [
+            $collection = collect($item);
+
+            $this->user->clients()->attach($collection->pluck('id'), [
                     'data_group_id' => $this->dataGroup->id, 
                     'group' => 'Facebook-Search-' . Str::random(12), 
                     'status' => 'Completed', 
                     'count' => count($client), 
                     'order' => $order
                 ]);
-            }
         }
         
         User::find($this->user->id)->decrement('point', (count($client) * 2));
