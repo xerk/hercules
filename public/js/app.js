@@ -16208,6 +16208,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
@@ -50443,7 +50446,7 @@ var render = function() {
                                   )
                                 : _vm._e(),
                               _vm._v(" "),
-                              result.status == "processing"
+                              result.status === "Processing"
                                 ? _c(
                                     "td",
                                     {
@@ -50458,7 +50461,11 @@ var render = function() {
                                       )
                                     ]
                                   )
-                                : _vm._e()
+                                : _c("td", [
+                                    _vm._v(
+                                      "\n                                    Empty\n                                "
+                                    )
+                                  ])
                             ]
                           )
                         }),

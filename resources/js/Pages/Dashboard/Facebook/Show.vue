@@ -1050,8 +1050,11 @@
                                             >{{ __("Show") }}</a
                                         >
                                     </td>
-                                    <td class="px-4 py-3 text-sm capitalize text-gray-400" v-if="result.status == 'processing'">
+                                    <td class="px-4 py-3 text-sm capitalize text-gray-400" v-if="result.status === 'Processing'">
                                             {{ __("Loading...") }}
+                                    </td>
+                                    <td v-else>
+                                        Empty
                                     </td>
                                 </tr>
                             </tbody>
