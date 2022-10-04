@@ -241,7 +241,7 @@
                                         :message="form.error('count')"
                                         class="mt-2"
                                     />
-                                    <p class="mt-2 text-xs text-gray-500">The maximum data is 9000,000</p>
+                                    <p class="mt-2 text-xs text-gray-500">The maximum data is 900,000</p>
                                 </div>
                             </div>
                         </div>

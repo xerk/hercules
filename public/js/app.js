@@ -48254,7 +48254,7 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("p", { staticClass: "mt-2 text-xs text-gray-500" }, [
-                          _vm._v("The maximum data is 9000,000")
+                          _vm._v("The maximum data is 900,000")
                         ])
                       ],
                       1
