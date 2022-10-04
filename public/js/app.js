@@ -48253,9 +48253,19 @@ var render = function() {
                           attrs: { message: _vm.form.error("count") }
                         }),
                         _vm._v(" "),
-                        _c("p", { staticClass: "mt-2 text-xs text-gray-500" }, [
-                          _vm._v("The maximum data is 900,000")
-                        ])
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "mt-2 text-xs text-blue-700 cursor-pointer font-semibold hover:underline",
+                            on: {
+                              click: function($event) {
+                                _vm.form.count = 900000
+                              }
+                            }
+                          },
+                          [_vm._v("The maximum data is 900,000")]
+                        )
                       ],
                       1
                     )
