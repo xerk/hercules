@@ -1383,7 +1383,7 @@ export default {
 
     methods: {
         async searchResult(url = null) {
-            if (this.form.count >= 900000) {
+            if (this.form.count > 900000) {
                 alert(this.__("Sorry, you've reached your maximum limit of data."));
                 return
             }
@@ -1396,7 +1396,7 @@ export default {
             }
         },
         async getResult(url = null) {
-            if (this.form.count >= 900000) {
+            if (this.form.count > 900000) {
                 alert(this.__("Sorry, you've reached your maximum limit of data."));
                 return
             }
