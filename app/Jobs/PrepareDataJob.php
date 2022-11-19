@@ -49,24 +49,28 @@ class PrepareDataJob implements ShouldQueue
      */
     public function handle()
     {
-        DB::table('clients')->orderBy('id')->select('unique_id',
-        'mobile',
-        'username',
-        'name',
-        'religion',
-        'birthday',
-        'gender',
-        'work',
-        'position',
-        'hometown',
-        'location',
-        'education',
-        'relationship',
-        'nationality')->whereIn('unique_id', $this->clients)->chunk(10000, function ($clients) {
-            foreach ($clients as $client) {
-                $this->result[] = $client;
-            }
-        });
+
+        $fileClients = collect(array_chunk($this->clients->toArray(), 10000));
+        foreach ($fileClients as $client) {
+            DB::table('clients')->orderBy('id')->select('unique_id',
+            'mobile',
+            'username',
+            'name',
+            'religion',
+            'birthday',
+            'gender',
+            'work',
+            'position',
+            'hometown',
+            'location',
+            'education',
+            'relationship',
+            'nationality')->whereIn('unique_id', $client)->chunk(10000, function ($clients) {
+                foreach ($clients as $client) {
+                    $this->result[] = $client;
+                }
+            });
+        }
 
         $uniques = [];
         foreach ($this->result as $c) {
