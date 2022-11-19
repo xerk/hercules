@@ -63,7 +63,7 @@ class ExtractDataController extends Controller
             'status' => 'processing',
         ]);
 
-        PrepareDataJob::dispatch($clients, $request->user(), $exportTable)->afterResponse();
+        PrepareDataJob::dispatch($clients, $request->user(), $exportTable);
 
 
         return Inertia::render('Dashboard/Clients/Show', [
