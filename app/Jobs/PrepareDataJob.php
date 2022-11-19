@@ -49,8 +49,7 @@ class PrepareDataJob implements ShouldQueue
      */
     public function handle()
     {
-
-        $fileClients = collect(array_chunk($this->clients->toArray(), 10000));
+        $fileClients = collect(array_chunk($this->clients, 10000));
         foreach ($fileClients as $client) {
             DB::table('clients')->orderBy('id')->select('unique_id',
             'mobile',
