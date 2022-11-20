@@ -39,7 +39,7 @@
                             <p class="text-sm">
                                 {{ __("Export facebook IDs") }}
                                 <strong>100</strong> {{ __("to") }}
-                                <strong>500.000</strong> {{ __("records") }}
+                                <strong>100.000</strong> {{ __("records") }}
                             </p>
                         </div>
                     </div>
@@ -369,7 +369,7 @@ export default {
     methods: {
         async filter() {
             try {
-                if (this.countFile >= 100 && this.countFile <= 500000 && this.status == 0) {
+                if (this.countFile >= 100 && this.countFile <= 100000 && this.status == 0) {
                     if (this.countFile <= this.$page.user.point) {
 
                         await this.form.post(route("clients.export"), {

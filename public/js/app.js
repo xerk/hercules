@@ -14732,7 +14732,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.prev = 0;
 
-                if (!(_this.countFile >= 100 && _this.countFile <= 500000 && _this.status == 0)) {
+                if (!(_this.countFile >= 100 && _this.countFile <= 100000 && _this.status == 0)) {
                   _context.next = 12;
                   break;
                 }
@@ -46525,7 +46525,7 @@ var render = function() {
                           _vm._s(_vm.__("to")) +
                           "\n                            "
                       ),
-                      _c("strong", [_vm._v("500.000")]),
+                      _c("strong", [_vm._v("100.000")]),
                       _vm._v(
                         " " +
                           _vm._s(_vm.__("records")) +
