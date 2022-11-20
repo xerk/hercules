@@ -241,7 +241,7 @@
                                         :message="form.error('count')"
                                         class="mt-2"
                                     />
-                                    <p class="mt-2 text-xs text-blue-700 cursor-pointer font-semibold hover:underline" @click="form.count = 900000">The maximum data is 900,000</p>
+                                    <p class="mt-2 text-xs text-blue-700 cursor-pointer font-semibold hover:underline" @click="form.count = 400000">The maximum data is 900,000</p>
                                 </div>
                             </div>
                         </div>
@@ -1383,7 +1383,7 @@ export default {
 
     methods: {
         async searchResult(url = null) {
-            if (this.form.count > 900000) {
+            if (this.form.count > 400000) {
                 alert(this.__("Sorry, you've reached your maximum limit of data."));
                 return
             }
@@ -1396,7 +1396,7 @@ export default {
             }
         },
         async getResult(url = null) {
-            if (this.form.count > 900000) {
+            if (this.form.count > 400000) {
                 alert(this.__("Sorry, you've reached your maximum limit of data."));
                 return
             }

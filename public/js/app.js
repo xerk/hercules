@@ -16431,7 +16431,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 url = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : null;
 
-                if (!(_this.form.count > 900000)) {
+                if (!(_this.form.count > 400000)) {
                   _context.next = 4;
                   break;
                 }
@@ -16477,7 +16477,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 url = _arguments2.length > 0 && _arguments2[0] !== undefined ? _arguments2[0] : null;
 
-                if (!(_this2.form.count > 900000)) {
+                if (!(_this2.form.count > 400000)) {
                   _context2.next = 4;
                   break;
                 }
@@ -48260,7 +48260,7 @@ var render = function() {
                               "mt-2 text-xs text-blue-700 cursor-pointer font-semibold hover:underline",
                             on: {
                               click: function($event) {
-                                _vm.form.count = 900000
+                                _vm.form.count = 400000
                               }
                             }
                           },
